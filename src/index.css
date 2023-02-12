@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+ /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;*/
+}
+
+@font-face {
+  font-family: 'MrBedfort';
+  src: local('MrBedfort'), url(./fonts/mr-bedfort/MrBedfort.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'radicalis';
+  src: local('radicalis'), url(./fonts/radicalis/Radicalis.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'comic';
+  src: local('comic'), url(./fonts/comic_book/comic.otf) format('truetype');
+}

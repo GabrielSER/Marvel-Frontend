@@ -1,0 +1,111 @@
+#Products{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products-header{
+    width: 100%;
+    margin-top: 20%;
+    padding-left: 11vw;
+    padding-right: 11vw;
+}
+
+.product-h3{
+    font-size:5rem;
+}
+
+@media(min-width: 992px) {
+    .products-header{
+        margin-top: 20%;
+    }
+}
+
+@media(max-width: 992px) {
+    .products-header{
+        margin-top: 10%;
+    }
+}
+
+.filter-container{
+    width: 100%;
+    padding-left: 11vw;
+    padding-right: 11vw;
+    display: flex;
+    align-items: center;
+}
+
+.products-header h3{
+    font-family: "Playfair Display";
+    color: var(--black);
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.products-header p{
+    font-family: "Montserrat";
+    color: var(--black);
+    margin-bottom: 3rem;
+}
+
+.background{
+    
+}
+
+
+
+@media(max-width: 900px){
+    .products-container{
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+        -moz-column-gap: 3rem;
+        -webkit-column-gap: 3rem;
+        column-gap: 2rem;
+        column-fill: balance;
+        -moz-column-fill: balance;
+    }
+}
+
+
+
+@media(min-width: 900px) {
+    .products-container{
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+        -moz-column-gap: 3rem;
+        -webkit-column-gap: 3rem;
+        column-gap: 3rem;
+        column-fill: balance;
+        -moz-column-fill: balance;
+    }
+}
+
+.filter-container button{
+    font-family: "Montserrat";
+    color: var(--black);
+}
+
+
+.filter-container button:hover{
+    color: var(--orange);
+}
+
+.products-image-col{
+    text-align: center;
+}
+
+.products-image{
+    width: 50%;
+}
+
+.products-row{
+    margin-bottom: 2em;
+    background: url(https://iili.io/HHS0TkQ.jpg) center;
+}
+
+#colombia_map{
+    max-height: 30em;
+}

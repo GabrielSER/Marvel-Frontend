@@ -1,0 +1,29 @@
+.ChevronRight{
+    display: flex;
+    margin-bottom: 5vh;
+}
+
+.ChevronRight a{
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat";
+    color: var(--black);
+    letter-spacing: 1px;
+}
+
+.ChevronRight a:hover{
+    text-decoration: none;
+    color: #000000;
+}
+
+.ChevronRight p{
+    margin-bottom: 0;
+    margin-left: 1rem;
+}
+
+.chevron-img{
+    margin-top: .3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display:inline-flex;
+}

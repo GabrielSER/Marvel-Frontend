@@ -1,0 +1,25 @@
+.Breadcrumbs{
+    display: flex;
+    margin-left: 11.5vw;
+    margin-right: 11.5vw;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    font-family: "Montserrat";
+}
+
+.Breadcrumbs p{
+    color: var(--black);
+    margin-bottom: 0;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.Breadcrumbs a{
+    text-decoration: none;
+}
+
+.Breadcrumbs a:hover{
+    text-decoration: underline;
+    color: var(--black);
+}

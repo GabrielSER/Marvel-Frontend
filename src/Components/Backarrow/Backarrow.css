@@ -1,0 +1,27 @@
+.Backarrow{
+    display: flex;
+    margin-bottom: 5vh;
+
+}
+
+.Backarrow a{
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat";
+    color: var(--black);
+    letter-spacing: 1px;
+}
+
+.Backarrow a:hover{
+    text-decoration: none;
+    color: #000000;
+}
+
+.Backarrow p{
+    margin-bottom: 0;
+    margin-left: 1rem;
+}
+
+.backarro-img{
+    margin-left: 0.5rem;
+}

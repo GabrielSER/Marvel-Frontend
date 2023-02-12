@@ -1,0 +1,29 @@
+#RightArrow{
+    display: flex;
+    margin-bottom: 5vh;
+}
+
+#RightArrow a{
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat";
+    color: var(--black);
+    letter-spacing: 1px;
+}
+
+#RightArrow a:hover{
+    text-decoration: none;
+    color: #000000;
+}
+
+#RightArrow p{
+    margin-bottom: 0;
+    margin-left: 1rem;
+}
+
+.rightArrow{
+    margin-top: .3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display:inline-flex;
+}

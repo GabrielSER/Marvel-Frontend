@@ -1,0 +1,31 @@
+* .image-zoom5 {
+    width: 100%;
+    float: left;
+    position: relative;
+    background: #000000;
+    overflow: hidden;
+    height: 500px
+  }
+  .image-zoom5:before {
+    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://www.todofondos.net/wp-content/uploads/4k-fondos-de-escritorio-de-comics.jpg) no-repeat center;
+    content: "";
+    display: inline-block;
+    height: 100%;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    /*z-index: -1;*/
+    animation: 30s ease 0s normal none infinite running zoomin;
+    -webkit-animation: 30s ease 0s normal none infinite running zoomin;
+    -o-animation: 30s ease 0s normal none infinite running zoomin;
+    -moz--o-animation: 30s ease 0s normal none infinite running zoomin;
+  }
+  
+  @keyframes zoomin {
+      0% { transform: scale(1.5, 1.5) }
+      50% { transform: scale(1, 1) }
+      100% { transform: scale(1.5, 1.5) }
+  }
+  

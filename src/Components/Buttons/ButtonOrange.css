@@ -1,0 +1,27 @@
+.ButtonOrange{
+    background-color: var(--orange);
+    width: fit-content;
+    margin-top: 2rem;
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.ButtonOrange span{
+    font-family: "Montserrat";
+    font-style: normal;
+    color: white;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing:1px;
+    text-transform: uppercase;
+}
+.ButtonOrange a{
+    color: white;
+    text-decoration: none;
+}
+
+.ButtonOrange a:hover{
+    text-decoration: underline;
+    color: white;
+}

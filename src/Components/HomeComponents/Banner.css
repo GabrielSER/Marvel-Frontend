@@ -1,0 +1,242 @@
+@media(min-width: 992px){
+    #banner-left{
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        left: 0;
+        top:0;
+    }
+
+    #banner-right{
+        top: 0;
+        width: 50%;
+        left: 50%;
+    }
+    #banner-left1{
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        left: 50%;
+        top:0;
+    }
+
+    #banner-right1{
+        top: 0;
+        width: 50%;
+        left: 0;
+    }
+
+    #Banner{
+        display: flex;
+        position: relative;
+        margin-bottom: 3em;
+    }
+
+    #banner-white-extrusion{
+        height: 70%;
+        width: 15%;
+        top: 15%;
+    }
+
+    #banner-image{
+        width: 100%;
+    }
+
+
+}
+
+@media(max-width: 992px){
+    #banner-white-extrusion{
+        width: 80%;
+        height: 15%;
+        bottom: 0;
+        left: 10%
+    }
+
+    #banner-left{
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+    #banner-left1{
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    #banner-image{
+        width: 100%;
+    }
+
+    #banner-right{
+        margin-top: 1em;
+    }
+    #banner-right1{
+        margin-top: 1em;
+    }
+
+}
+
+@media (min-width: 1200px){
+    #banner-left-text{
+        padding: 2.5rem 4rem 2.5rem 5rem;
+    }
+
+    .banner-left-subtitle{
+        font-weight: 700;
+        font-size: 3rem;
+    }
+
+    .banner-left-firstRow{
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .banner-left-description{
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px){
+    #banner-left-text{
+        padding: 2.5rem 4rem 2.5rem 5rem;
+    }
+
+    .banner-left-subtitle{
+        font-weight: 700;
+        font-size: 1.8rem;
+    }
+
+    .banner-left-firstRow{
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .banner-left-description{
+        font-size: 1em;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+    #banner-left-text{
+        padding: 2.5rem 0 2.5rem 0;
+    }
+
+    .banner-left-subtitle{
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    .banner-left-firstRow{
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .banner-left-description{
+        margin-top: 1.5rem;
+        font-size: 1em;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 768px){
+    #banner-left-text{
+        padding: 2.5rem 0 2.5rem 0;
+
+    }
+
+    .banner-left-subtitle{
+        font-weight: 700;
+        font-size: 1.8rem;
+    }
+
+    .banner-left-firstRow{
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .banner-left-description{
+        margin-top: 1.5rem;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 576px){
+    #banner-left-text{
+        padding: 1rem 0 1rem 0;
+    }
+
+    .banner-left-subtitle{
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+
+    .banner-left-firstRow{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .banner-left-description{
+        margin-top: 1.5rem;
+        font-size: .8em;
+    }
+}
+
+#banner-right{
+    position: relative;
+}
+#banner-right1{
+    position: relative;
+}
+
+#Banner{
+    width: 100%;
+}
+
+#banner-left{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background-color: --orange;
+}
+
+#banner-left1{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding-left: 5rem;
+}
+
+#banner-left2{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding-left: 3rem;
+}
+
+
+#banner-white-extrusion{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.banner-left-subtitle{
+    font-family: "Playfair Display";
+    color: var(--black);
+}
+
+.banner-left-firstRow{
+    font-family: "Montserrat";
+    color: var(--orange);
+}
+
+.banner-left-description{
+    font-family: "Montserrat";
+    color: var(--black);
+}
+
+.banner-left-firstRow{
+    margin: 0;
+}
