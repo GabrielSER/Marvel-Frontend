@@ -129,16 +129,16 @@ function Navbar() {
                                     </span>
                                 </Nav.Link>
                                 <Nav.Link className="navbarBootstrap-item"
-                                    href="/nosotros">
+                                    href="/objects">
                                     <span className={window?.location.pathname ===
-                                        '/nosotros' ? "navbarBootstrap-active" : ""}>
+                                        '/objects' ? "navbarBootstrap-active" : ""}>
                                         <FormattedMessage id="OBJECTS" />
                                     </span>
                                 </Nav.Link>
                                 <Nav.Link className="navbarBootstrap-item"
-                                    href="/nosotros">
+                                    href="/places">
                                     <span className={window?.location.pathname ===
-                                        '/nosotros' ? "navbarBootstrap-active" : ""}>
+                                        '/places' ? "navbarBootstrap-active" : ""}>
                                         <FormattedMessage id="PLACES" />
                                     </span>
                                 </Nav.Link>

@@ -61,7 +61,8 @@ function App() {
               <Route path="/services" exact element={<Services />} />
               <Route path="/combat" exact element={<CombatMain/>} />
               <Route path="/roleplay" exact element={<AboutUs />} />
-              <Route path="/signup" exact element={<SignUp />} />
+              <Route path="/places" exact element={<SignUp />} />
+              <Route path="/objects" exact element={<SignUp />} />
               
             </Routes>
           </BrowserRouter>

@@ -471,106 +471,445 @@ function CombatInfo() {
                     <div className="col-12">
                         <Title>
                             <h3 id="aboutUs-WhoAreWe">
-                                <FormattedMessage id="Popularity" />
+                                <FormattedMessage id="Status" />
                             </h3>
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
                         <Title>
-                            <p><FormattedMessage id="PopularityDesc" /></p>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Bleeding" />
+                            </h1><p><FormattedMessage id="BleedingD" /></p>
                         </Title>
-                        <div className="d-lg-none d-xl-none">
-                            <Title>
-                                <img id="crushtable" src="/Assets/Photos/AboutUs/populartable.png" alt="ITTI Team #2" />
-                            </Title>
-                        </div>
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
-                                <img id="throwsmall" src="/Assets/Photos/AboutUs/popular.png" alt="ITTI Team #2" />
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/bleeding.png" alt="ITTI Team #2" />
                             </Title>
                         </div>
                     </div>
                     <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
                         <Title>
-                            <img id="crush" src="/Assets/Photos/AboutUs/popular.png" alt="ITTI Team #2" />
-                        </Title>
-                    </div>
-                    <div className="d-none d-lg-block">
-                        <Title>
-                            <img id="crushtable" src="/Assets/Photos/AboutUs/populartable.png" alt="ITTI Team #2" />
+                            <img id="crush" src="/Assets/Photos/AboutUs/bleeding.png" alt="ITTI Team #2" />
                         </Title>
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
-                    <div className="col-12">
-                        <Title>
-                            <h3 id="aboutUs-WhoAreWe">
-                                <FormattedMessage id="Reputation" />
-                            </h3>
-                        </Title>
-                    </div>
                     <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
                         <Title>
-                            <img id="crush" src="/Assets/Photos/AboutUs/reputation.png" alt="ITTI Team #2" />
+                            <img id="crush" src="/Assets/Photos/AboutUs/blind.png" alt="ITTI Team #2" />
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
                         <Title>
-                            <p><FormattedMessage id="ReputationDesc" /></p>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Blind" />
+                            </h1><p><FormattedMessage id="BlindD" /></p>
                         </Title>
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
-                    <div className="col-12">
-                        <Title>
-                            <h3 id="aboutUs-WhoAreWe">
-                                <FormattedMessage id="PublicImage" />
-                            </h3>
-                        </Title>
-                    </div>
                     <div className="col-12 col-lg-6 text-center">
                         <Title>
-                            <p><FormattedMessage id="PublicImageDesc" /></p>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Burned" />
+                            </h1><p><FormattedMessage id="BurnedD" /></p>
                         </Title>
-                        <div className="d-lg-none d-xl-none">
-                            <Title>
-                                <img id="flytablesmall" src="/Assets/Photos/AboutUs/publictable.png" alt="ITTI Team #2" />
-                            </Title>
-                        </div>
-                        <div className="d-none d-lg-block">
-                            <Title>
-                                <img id="flytable" src="/Assets/Photos/AboutUs/publictable.png" alt="ITTI Team #2" />
-                            </Title>
-                        </div>
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
-                                <img id="throwsmall" src="/Assets/Photos/AboutUs/public.png" alt="ITTI Team #2" />
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/burned.png" alt="ITTI Team #2" />
                             </Title>
                         </div>
-
                     </div>
                     <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
                         <Title>
-                            <img id="crush" src="/Assets/Photos/AboutUs/public.png" alt="ITTI Team #2" />
+                            <img id="crush" src="/Assets/Photos/AboutUs/burned.png" alt="ITTI Team #2" />
                         </Title>
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
-                    <div className="col-12">
-                        <Title>
-                            <h3 id="aboutUs-WhoAreWe">
-                                <FormattedMessage id="Identity" />
-                            </h3>
-                        </Title>
-                    </div>
                     <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
                         <Title>
-                            <img id="crush" src="/Assets/Photos/AboutUs/identity.png" alt="ITTI Team #2" />
+                            <img id="crush" src="/Assets/Photos/AboutUs/charmed.png" alt="ITTI Team #2" />
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
                         <Title>
-                            <p><FormattedMessage id="IdentityDesc" /></p>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Charmed" />
+                            </h1><p><FormattedMessage id="CharmedD" /></p>
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Comatose" />
+                            </h1><p><FormattedMessage id="ComatoseD" /></p>
+                        </Title>
+                        <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
+                            <Title>
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/coma.png" alt="ITTI Team #2" />
+                            </Title>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/coma.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/confused.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Confused" />
+                            </h1><p><FormattedMessage id="ConfusedD" /></p>
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Concentrated" />
+                            </h1><p><FormattedMessage id="ConcentratedD" /></p>
+                        </Title>
+                        <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
+                            <Title>
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/concentrated.png" alt="ITTI Team #2" />
+                            </Title>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/concentrated.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/deaf.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Deafened" />
+                            </h1><p><FormattedMessage id="DeafenedD" /></p>
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Drugged" />
+                            </h1><p><FormattedMessage id="DruggedD" /></p>
+                        </Title>
+                        <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
+                            <Title>
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/drugged.png" alt="ITTI Team #2" />
+                            </Title>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/drugged.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/drunk.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <div className="d-none d-lg-block">
+                                    <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
+                                </div>
+                                <FormattedMessage id="Drunk" />
+                            </h1><p><FormattedMessage id="DrunkD" /></p>
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <div className="d-none d-lg-block">
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
+                            </div>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Frightened" />
+                            </h1><p><FormattedMessage id="FrightenedD" /></p>
+                        </Title>
+                        <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
+                            <Title>
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/fright.png" alt="ITTI Team #2" />
+                            </Title>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/fright.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/frozen.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Frozen" />
+                            </h1><p><FormattedMessage id="FrozenD" /></p>
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Irradiated" />
+                            </h1><p><FormattedMessage id="IrradiatedD" /></p>
+                        </Title>
+                        <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
+                            <Title>
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/irradianted.png" alt="ITTI Team #2" />
+                            </Title>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/irradianted.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/grappled.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <div className="d-none d-lg-block">
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
+                            </div>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Grappled" />
+                            </h1><p><FormattedMessage id="GrappledD" /></p>
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Prone" />
+                            </h1><p><FormattedMessage id="ProneD" /></p>
+                        </Title>
+                        <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
+                            <Title>
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/prone.png" alt="ITTI Team #2" />
+                            </Title>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/prone.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/invisible.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Invisible" />
+                            </h1><p><FormattedMessage id="InvisibleD" /></p>
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <div className="d-none d-lg-block">
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
+                            </div>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Paralyzed" />
+                            </h1><p><FormattedMessage id="ParalyzedD" /></p>
+                        </Title>
+                        <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
+                            <Title>
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/paralyzed.png" alt="ITTI Team #2" />
+                            </Title>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/paralyzed.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/petrified.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Petrified" />
+                            </h1><p><FormattedMessage id="PetrifiedD" /></p>
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Possessed" />
+                            </h1><p><FormattedMessage id="PossessedD" /></p>
+                        </Title>
+                        <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
+                            <Title>
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/possessed.png" alt="ITTI Team #2" />
+                            </Title>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/possessed.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/poison.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Poisoned" />
+                            </h1><p><FormattedMessage id="PoisonedD" /></p>
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Purple" />
+                            </h1><p><FormattedMessage id="PurpleD" /></p>
+                        </Title>
+                        <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
+                            <Title>
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/purple.png" alt="ITTI Team #2" />
+                            </Title>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/purple.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/sleeping.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <div className="d-none d-lg-block">
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
+                            </div>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Sleeping" />
+                            </h1><p><FormattedMessage id="SleepingD" /></p>
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <div className="d-none d-lg-block">
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
+                            </div>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Soaked" />
+                            </h1><p><FormattedMessage id="SoakedD" /></p>
+                        </Title>
+                        <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
+                            <Title>
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/soaked.png" alt="ITTI Team #2" />
+                            </Title>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/soaked.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/stunned.png" alt="ITTI Team #2" />
+                        </Title>
+                    </div>
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <div className="d-none d-lg-block">
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
+                            </div>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Stunned" />
+                            </h1><p><FormattedMessage id="StunnedD" /></p>
+                        </Title>
+                    </div>
+                </div>
+                <div className="aboutUs-behindITTI row">
+                    <div className="col-12 col-lg-6 text-center">
+                        <Title>
+                            <div className="d-none d-lg-block">
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
+                            </div>
+                            <h1 id="aboutUs-WhoAreWe">
+                                <FormattedMessage id="Telepath" />
+                            </h1><p><FormattedMessage id="TelepathD" /></p>
+                        </Title>
+                        <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
+                            <Title>
+                                <img id="throwsmall" src="/Assets/Photos/AboutUs/telepathic.png" alt="ITTI Team #2" />
+                            </Title>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
+                        <Title>
+                            <img id="crush" src="/Assets/Photos/AboutUs/telepathic.png" alt="ITTI Team #2" />
                         </Title>
                     </div>
                 </div>
