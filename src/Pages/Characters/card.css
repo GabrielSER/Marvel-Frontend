@@ -1,0 +1,43 @@
+.card:hover {
+    box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.273) !important;
+    transition: all 0.7s linear;
+  }
+
+
+  
+.card{
+    width: 60%;
+    max-width: 345px;
+    height: auto;
+    display: block;
+}
+  
+  .card-text {
+    padding: 1rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .overflow {
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    max-width: 345px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card-img-bottom {
+    position: absolute;
+    top: 250px;
+    left: 0px;
+  }
+  
+  .card-img-top:hover {
+    transform: scale(1.2);
+  }

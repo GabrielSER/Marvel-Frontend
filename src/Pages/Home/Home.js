@@ -45,29 +45,7 @@ function Home() {
                 <div className='d-lg-none d-xl-none'>
                     <SmallCarrousel />
                 </div>
-                <div>
-                    <Title>
-                        <Banner className='image' />
-                    </Title>
-                </div>
-                <div>
-                    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-                    <div class="elfsight-app-2aba7585-66ca-4abe-9286-e95fb352d237"></div>
-                </div>
-                <div className='d-lg-none d-xl-none'>
-                    <ServicesList />
-                </div>
-                <Title>
-                    <div className='d-lg-none d-xl-none'>
-                        <AboutInfo />
-                    </div>
-                </Title>
-                <div className='d-none d-lg-block'>
-                    <GoogleReviewsImage />
-                </div>
-                <div className='d-lg-none d-xl-none'>
-                    <GoogleReviewsImageSmall />
-                </div>
+
 
             </div>
             <Footer />

@@ -12,6 +12,7 @@ import es from "./Dictionaries/es.json";
 import SignUp from "./Pages/SignUp/SignUp";
 import { useAlert } from "react-alert";
 import CombatMain from "./Pages/CombatMain/CombatMain";
+import Characters from "./Pages/Characters/Characters";
 
 
 
@@ -58,7 +59,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" exact element={<Home />} />
-              <Route path="/services" exact element={<Services />} />
+              <Route path="/services" exact element={<Characters/>} />
               <Route path="/combat" exact element={<CombatMain/>} />
               <Route path="/roleplay" exact element={<AboutUs />} />
               <Route path="/places" exact element={<SignUp />} />
