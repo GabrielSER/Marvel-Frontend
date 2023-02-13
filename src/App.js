@@ -13,6 +13,7 @@ import SignUp from "./Pages/SignUp/SignUp";
 import { useAlert } from "react-alert";
 import CombatMain from "./Pages/CombatMain/CombatMain";
 import Characters from "./Pages/Characters/Characters";
+import CharacterDetail from "./Pages/Characters/CharacterDetail";
 
 
 
@@ -46,7 +47,10 @@ function App() {
  
 
   return (
-    <div className="App">
+    <div className="App" style={{ 
+      backgroundImage: `url(https://i.ibb.co/WxtjcnS/backgound.png)`,
+      backgroundRepeat: 'repeat', 
+    }}>
       <AppContext.Provider
         value={{ 
                 languageSettings, setLang
@@ -59,12 +63,12 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" exact element={<Home />} />
-              <Route path="/services" exact element={<Characters/>} />
+              <Route path="/characters" exact element={<Characters/>} />
               <Route path="/combat" exact element={<CombatMain/>} />
               <Route path="/roleplay" exact element={<AboutUs />} />
               <Route path="/places" exact element={<SignUp />} />
               <Route path="/objects" exact element={<SignUp />} />
-              
+              <Route path="/characters/:_id" exact element={<CharacterDetail/>} />
             </Routes>
           </BrowserRouter>
         </IntlProvider>

@@ -108,9 +108,9 @@ function Navbar() {
                                     </span>
                                 </Nav.Link>
                                 <Nav.Link className="navbarBootstrap-item"
-                                    href="/services">
+                                    href="/characters">
                                     <span className={window?.location.pathname ===
-                                        '/productos' ? "navbarBootstrap-active" : ""}>
+                                        '/characters' ? "navbarBootstrap-active" : ""}>
                                         <FormattedMessage id="Services" />
                                     </span>
                                 </Nav.Link>
