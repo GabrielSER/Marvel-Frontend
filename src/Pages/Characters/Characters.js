@@ -22,7 +22,7 @@ function Characters() {
             setLoading(true);
             try {
                 const res = await axios.request('http://localhost:5000/api/characters')
-                setChars(res.data.data);
+                setChars(res.data);
                 console.log(res);
                 setLoading(false);
             } catch (err) {

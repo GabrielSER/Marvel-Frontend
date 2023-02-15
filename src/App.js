@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="App" style={{ 
-      backgroundImage: `url(https://i.ibb.co/WxtjcnS/backgound.png)`,
+      backgroundImage: `url(https://i.ibb.co/Jqr4f35/backgound.png)`,
       backgroundRepeat: 'repeat', 
     }}>
       <AppContext.Provider
