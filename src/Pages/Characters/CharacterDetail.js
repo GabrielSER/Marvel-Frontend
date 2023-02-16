@@ -3,8 +3,8 @@ import { FormattedMessage } from "react-intl";
 import { Carousel } from "react-bootstrap";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
-import Card from "./Card";
-import { Fade } from 'react-reveal';
+import Card from "./CharacterCard";
+import { Fade, Slide } from 'react-reveal';
 import styled from 'styled-components';
 import withReveal from 'react-reveal/withReveal';
 import axios from 'axios';
@@ -18,6 +18,8 @@ import NormalFormSkills from './NormalFormSkills';
 import NormalFormStats from './NormalFormStats';
 import IronManArmors from './IronManArmors';
 import AlternateFormImage from './AlternateFormImage';
+import Tooltip from '../../Components/Tooltip/Tooltip';
+import Powercard from './Powercard';
 
 function CharacterDetail() {
 
@@ -128,6 +130,9 @@ function CharacterDetail() {
     let params = useParams();
 
     const Title = withReveal(styled.p`
+  `, <Fade right duration={1000} delay={200} />);
+
+    const Title2 = withReveal(styled.p`
   `, <Fade up duration={1000} delay={200} />);
 
     useEffect(() => {
@@ -220,6 +225,7 @@ function CharacterDetail() {
                 setweaknesses(res.data.weaknesses)
                 settype(res.data.type)
                 setpowers(res.data.powers)
+                console.log(res.data.powers)
                 setforms(res.data.forms)
                 setLoading(false);
             } catch (err) {
@@ -235,11 +241,11 @@ function CharacterDetail() {
     else return (
         <React.Fragment>
             <Navbar />
-            <Title>
+            <Title2>
                 <div className="container d-flex justify-content-center ">
                     <img class="img-fluid" src={logo} alt="Banner artisan" />
                 </div>
-            </Title>
+            </Title2>
             <div id="AboutUs">
                 <div className="container-fluid">
                     <div className="aboutUs-behindITTI row">
@@ -247,9 +253,9 @@ function CharacterDetail() {
                         <div className="col-12 col-lg-6 text-center">
 
                             <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
-                                <Title>
+                                <Title2>
                                     {!alternate && <img id="crushnew" src={image} alt="ITTI Team #2" />}
-                                </Title>
+                                </Title2>
                             </div>
                             <p><b>Real Name:</b> {alterego}</p>
                             <p>{description}</p>
@@ -265,87 +271,59 @@ function CharacterDetail() {
 
                                     <div className='row'>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Strength:</b> {strength}</p>
-                                            </Title>
+                                            <p><b>Strength:</b> {strength}</p>
                                         </div>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>HP:</b> {hp}</p>
-                                            </Title>
+                                            <p><b>HP:</b> {hp}</p>
                                         </div>
                                     </div>
 
                                     <div className='row'>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Intelligence:</b> {intelligence}</p>
-                                            </Title>
+                                            <p><b>Intelligence:</b> {intelligence}</p>
                                         </div>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Power:</b> {power}</p>
-                                            </Title>
+                                            <p><b>Power:</b> {power}</p>
                                         </div>
                                     </div>
                                     <div className='row'>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Durability:</b> {durability}</p>
-                                            </Title>
+                                            <p><b>Durability:</b> {durability}</p>
                                         </div>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Defense:</b> {defense}</p>
-                                            </Title>
+                                            <p><b>Defense:</b> {defense}</p>
                                         </div>
                                     </div>
                                     <div className='row'>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Agility:</b> {agility}</p>
-                                            </Title>
+                                            <p><b>Agility:</b> {agility}</p>
                                         </div>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Melee:</b> {melee}</p>
-                                            </Title>
+                                            <p><b>Melee:</b> {melee}</p>
                                         </div>
                                     </div>
                                     <div className='row'>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Wisdom:</b> {wisdom}</p>
-                                            </Title>
+                                            <p><b>Wisdom:</b> {wisdom}</p>
                                         </div>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Energy Projection:</b> {energyprojection}</p>
-                                            </Title>
+                                            <p><b>Energy Projection:</b> {energyprojection}</p>
                                         </div>
                                     </div>
                                     <div className='row'>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Charisma:</b> {charisma}</p>
-                                            </Title>
+                                            <p><b>Charisma:</b> {charisma}</p>
                                         </div>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Speed:</b> {speed}</p>
-                                            </Title>
+                                            <p><b>Speed:</b> {speed}</p>
                                         </div>
                                     </div>
                                     <div className='row'>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Perception:</b> {perception}</p>
-                                            </Title>
+                                            <p><b>Perception:</b> {perception}</p>
                                         </div>
                                         <div className='col'>
-                                            <Title>
-                                                <p><b>Luck:</b> {luck}</p>
-                                            </Title>
+                                            <p><b>Luck:</b> {luck}</p>
                                         </div>
                                     </div>
                                 </div>}
@@ -371,312 +349,194 @@ function CharacterDetail() {
                                     <h1 id="aboutUs-WhoAreWe">
                                         Skills{(forms.length != 0 && name !== "Iron Man" && name !== "War Machine" && name !== "Moon Knight") && <h1> as {name}</h1>}
                                         {name == "Moon Knight" && <h1 id="aboutUs-WhoAreWe">
-                                        as {alterego}</h1>
-                                    }
+                                            as {alterego}</h1>
+                                        }
                                     </h1>
                                 </Title>
                                 {acrobatics != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Acrobatics:</b> {acrobatics}</p>
-                                    </Title>
+                                    <p><b>Acrobatics:</b> {acrobatics}</p>
                                 </div>}
                                 {accuracy != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Accuracy:</b> {accuracy}</p>
-                                    </Title>
+                                    <p><b>Accuracy:</b> {accuracy}</p>
                                 </div>}
                                 {athletics != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Athletics:</b> {athletics}</p>
-                                    </Title>
+                                    <p><b>Athletics:</b> {athletics}</p>
                                 </div>}
                                 {aerialPiloting != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Aerial Piloting:</b> {aerialPiloting}</p>
-                                    </Title>
+                                    <p><b>Aerial Piloting:</b> {aerialPiloting}</p>
                                 </div>}
                                 {bikePiloting != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Bike Piloting:</b> {bikePiloting}</p>
-                                    </Title>
+                                    <p><b>Bike Piloting:</b> {bikePiloting}</p>
                                 </div>}
                                 {heavyEquipmentPiloting != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Heavy Equipment Piloting :</b> {heavyEquipmentPiloting}</p>
-                                    </Title>
+                                    <p><b>Heavy Equipment Piloting :</b> {heavyEquipmentPiloting}</p>
                                 </div>}
                                 {lockpicking != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Lockpicking:</b> {lockpicking}</p>
-                                    </Title>
+                                    <p><b>Lockpicking:</b> {lockpicking}</p>
                                 </div>}
                                 {meleeWeapons != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Melee Weapons:</b> {meleeWeapons}</p>
-                                    </Title>
+                                    <p><b>Melee Weapons:</b> {meleeWeapons}</p>
                                 </div>}
                                 {motorVehiclePiloting != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Motor Vehicle Piloting:</b> {motorVehiclePiloting}</p>
-                                    </Title>
+                                    <p><b>Motor Vehicle Piloting:</b> {motorVehiclePiloting}</p>
                                 </div>}
                                 {pickpocket != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Pickpocket:</b> {pickpocket}</p>
-                                    </Title>
+                                    <p><b>Pickpocket:</b> {pickpocket}</p>
                                 </div>}
                                 {rangedWeapons != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Ranged Weapons:</b> {rangedWeapons}</p>
-                                    </Title>
+                                    <p><b>Ranged Weapons:</b> {rangedWeapons}</p>
                                 </div>}
                                 {stealth != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Stealth:</b> {stealth}</p>
-                                    </Title>
+                                    <p><b>Stealth:</b> {stealth}</p>
                                 </div>}
                                 {throwst != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Throw:</b> {throwst}</p>
-                                    </Title>
+                                    <p><b>Throw:</b> {throwst}</p>
                                 </div>}
                                 {underwater != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Underwater:</b> {underwater}</p>
-                                    </Title>
+                                    <p><b>Underwater:</b> {underwater}</p>
                                 </div>}
                                 {waterPiloting != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Water Piloting:</b> {waterPiloting}</p>
-                                    </Title>
+                                    <p><b>Water Piloting:</b> {waterPiloting}</p>
                                 </div>}
                                 {animalHandling != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Animal Handling:</b> {animalHandling}</p>
-                                    </Title>
+                                    <p><b>Animal Handling:</b> {animalHandling}</p>
                                 </div>}
                                 {arcana != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Arcana:</b> {arcana}</p>
-                                    </Title>
+                                    <p><b>Arcana:</b> {arcana}</p>
                                 </div>}
                                 {deception != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Deception:</b> {deception}</p>
-                                    </Title>
+                                    <p><b>Deception:</b> {deception}</p>
                                 </div>}
                                 {espionage != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Espionage:</b> {espionage}</p>
-                                    </Title>
+                                    <p><b>Espionage:</b> {espionage}</p>
                                 </div>}
                                 {etiquette != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Etiquette:</b> {etiquette}</p>
-                                    </Title>
+                                    <p><b>Etiquette:</b> {etiquette}</p>
                                 </div>}
                                 {explosives != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Explosives:</b> {explosives}</p>
-                                    </Title>
+                                    <p><b>Explosives:</b> {explosives}</p>
                                 </div>}
                                 {firstAid != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>First Aid:</b> {firstAid}</p>
-                                    </Title>
+                                    <p><b>First Aid:</b> {firstAid}</p>
                                 </div>}
                                 {firearms != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Firearms:</b> {firearms}</p>
-                                    </Title>
+                                    <p><b>Firearms:</b> {firearms}</p>
                                 </div>}
                                 {electronicsKnowledge != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Electronics Knowledge:</b> {electronicsKnowledge}</p>
-                                    </Title>
+                                    <p><b>Electronics Knowledge:</b> {electronicsKnowledge}</p>
                                 </div>}
                                 {historyKnowledge != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>History Knowledge:</b> {historyKnowledge}</p>
-                                    </Title>
+                                    <p><b>History Knowledge:</b> {historyKnowledge}</p>
                                 </div>}
                                 {intimidation != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Intimidation:</b> {intimidation}</p>
-                                    </Title>
+                                    <p><b>Intimidation:</b> {intimidation}</p>
                                 </div>}
                                 {intuition != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Intuition:</b> {intuition}</p>
-                                    </Title>
+                                    <p><b>Intuition:</b> {intuition}</p>
                                 </div>}
                                 {investigation != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Investigation:</b> {investigation}</p>
-                                    </Title>
+                                    <p><b>Investigation:</b> {investigation}</p>
                                 </div>}
                                 {marksman != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Marksman:</b> {marksman}</p>
-                                    </Title>
+                                    <p><b>Marksman:</b> {marksman}</p>
                                 </div>}
                                 {medicine != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Medicine:</b> {medicine}</p>
-                                    </Title>
+                                    <p><b>Medicine:</b> {medicine}</p>
                                 </div>}
                                 {mechanic != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Mechanic:</b> {mechanic}</p>
-                                    </Title>
+                                    <p><b>Mechanic:</b> {mechanic}</p>
                                 </div>}
                                 {naturalSciencesKnowledge != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Natural Sciences Knowledge:</b> {naturalSciencesKnowledge}</p>
-                                    </Title>
+                                    <p><b>Natural Sciences Knowledge:</b> {naturalSciencesKnowledge}</p>
                                 </div>}
                                 {persuasion != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Persuasion:</b> {persuasion}</p>
-                                    </Title>
+                                    <p><b>Persuasion:</b> {persuasion}</p>
                                 </div>}
                                 {religion != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Religion:</b> {religion}</p>
-                                    </Title>
+                                    <p><b>Religion:</b> {religion}</p>
                                 </div>}
                                 {softwareKnowledge != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Software Knowledge:</b> {softwareKnowledge}</p>
-                                    </Title>
+                                    <p><b>Software Knowledge:</b> {softwareKnowledge}</p>
                                 </div>}
                                 {survivalist != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Survivalist:</b> {survivalist}</p>
-                                    </Title>
+                                    <p><b>Survivalist:</b> {survivalist}</p>
                                 </div>}
                                 {tracking != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Tracking:</b> {tracking}</p>
-                                    </Title>
+                                    <p><b>Tracking:</b> {tracking}</p>
                                 </div>}
                                 {willpower != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Willpower:</b> {willpower}</p>
-                                    </Title>
+                                    <p><b>Willpower:</b> {willpower}</p>
                                 </div>}
                                 {bodyStretching != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Body Stretching:</b> {bodyStretching}</p>
-                                    </Title>
+                                    <p><b>Body Stretching:</b> {bodyStretching}</p>
                                 </div>}
                                 {enviromentalAwareness != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Enviromental Awareness:</b> {enviromentalAwareness}</p>
-                                    </Title>
+                                    <p><b>Enviromental Awareness:</b> {enviromentalAwareness}</p>
                                 </div>}
                                 {flight != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Flight:</b> {flight} {name == "War Machine" && "(only with War Machine Armor)"
-                                        }</p>
-                                    </Title>
+                                    <p><b>Flight:</b> {flight} {name == "War Machine" && "(only with War Machine Armor)"
+                                    }</p>
                                 </div>}
                                 {magic != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Magic:</b> {magic}</p>
-                                    </Title>
+                                    <p><b>Magic:</b> {magic}</p>
                                 </div>}
                                 {chiControl != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Chi Control:</b> {chiControl}</p>
-                                    </Title>
+                                    <p><b>Chi Control:</b> {chiControl}</p>
                                 </div>}
                                 {magnetism != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Magnetism:</b> {magnetism}</p>
-                                    </Title>
+                                    <p><b>Magnetism:</b> {magnetism}</p>
                                 </div>}
                                 {telepathy != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Telepathy:</b> {telepathy}</p>
-                                    </Title>
+                                    <p><b>Telepathy:</b> {telepathy}</p>
                                 </div>}
                                 {pyrokinesis != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Pyrokinesis:</b> {pyrokinesis}</p>
-                                    </Title>
+                                    <p><b>Pyrokinesis:</b> {pyrokinesis}</p>
                                 </div>}
                                 {electrokinesis != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Electrokinesis:</b> {electrokinesis}</p>
-                                    </Title>
+                                    <p><b>Electrokinesis:</b> {electrokinesis}</p>
                                 </div>}
                                 {cryokinesis != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Cryokinesis:</b> {cryokinesis}</p>
-                                    </Title>
+                                    <p><b>Cryokinesis:</b> {cryokinesis}</p>
                                 </div>}
                                 {gravitokinesis != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Gravitokinesis:</b> {gravitokinesis}</p>
-                                    </Title>
+                                    <p><b>Gravitokinesis:</b> {gravitokinesis}</p>
                                 </div>}
                                 {hydrokinesis != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Hydrokinesis:</b> {hydrokinesis}</p>
-                                    </Title>
+                                    <p><b>Hydrokinesis:</b> {hydrokinesis}</p>
                                 </div>}
                                 {aerokinesis != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Aerokinesis:</b> {aerokinesis}</p>
-                                    </Title>
+                                    <p><b>Aerokinesis:</b> {aerokinesis}</p>
                                 </div>}
                                 {seismokinesis != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Seismokinsis:</b> {seismokinesis}</p>
-                                    </Title>
+                                    <p><b>Seismokinsis:</b> {seismokinesis}</p>
                                 </div>}
                                 {terrakinesis != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Terrakinesis:</b> {terrakinesis}</p>
-                                    </Title>
+                                    <p><b>Terrakinesis:</b> {terrakinesis}</p>
                                 </div>}
                                 {thermokinesis != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Thermokinesis:</b> {thermokinesis}</p>
-                                    </Title>
+                                    <p><b>Thermokinesis:</b> {thermokinesis}</p>
                                 </div>}
                                 {powerCosmic != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Power Cosmic:</b> {powerCosmic}</p>
-                                    </Title>
+                                    <p><b>Power Cosmic:</b> {powerCosmic}</p>
                                 </div>}
                                 {spiritualAffinity != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Spiritual Affinity:</b> {spiritualAffinity}</p>
-                                    </Title>
+                                    <p><b>Spiritual Affinity:</b> {spiritualAffinity}</p>
                                 </div>}
                                 {weatherControl != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Weather Control:</b> {weatherControl}</p>
-                                    </Title>
+                                    <p><b>Weather Control:</b> {weatherControl}</p>
                                 </div>}
                                 {wallCrawling != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Wall Crawling:</b> {wallCrawling}</p>
-                                    </Title>
+                                    <p><b>Wall Crawling:</b> {wallCrawling}</p>
                                 </div>
                                 }
                                 {special1 != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Radiation:</b> {special1}</p>
-                                    </Title>
+                                    <p><b>Radiation:</b> {special1}</p>
                                 </div>}
-
                                 {special2 != 0 && <div className='col'>
-                                    <Title>
-                                        <p><b>Phasing:</b> {special2}</p>
-                                    </Title>
+                                    <p><b>Phasing:</b> {special2}</p>
+                                </div>}
+                                {special3 != 0 && <div className='col'>
+                                    <p><b>Chlorokinesis:</b> {special3}</p>
                                 </div>}
 
                             </div>}
@@ -693,7 +553,7 @@ function CharacterDetail() {
                                 <Title>
                                     <h1 id="aboutUs-WhoAreWe">
                                         <FormattedMessage id="Abilities" />{
-                                            (forms.length != 0 && name !== "Iron Man" && name !== "War Machine" && name !== "Moon Knight") && 
+                                            (forms.length != 0 && name !== "Iron Man" && name !== "War Machine" && name !== "Moon Knight") &&
                                             <h1> as {name}</h1>
                                         }
                                     </h1>
@@ -705,7 +565,7 @@ function CharacterDetail() {
                                     <Title>
                                         <h1 id="aboutUs-WhoAreWe">
                                             <FormattedMessage id="Weaknesses" />{
-                                                (forms.length != 0 && name !== "Iron Man" && name !== "War Machine" && name !== "Moon Knight") && 
+                                                (forms.length != 0 && name !== "Iron Man" && name !== "War Machine" && name !== "Moon Knight") &&
                                                 <h1> as {name}</h1>
                                             }
                                         </h1>
@@ -724,17 +584,37 @@ function CharacterDetail() {
                         </div>
 
                     </div>
-                    
-                    {name == "Moon Knight" && 
-                            <div className='aboutUs-behindITTI row'>
-                                <div className='col-12 col-lg-6'>
-                                    <NormalFormSkills id={forms[0]} />
-                                </div>
-                                <div className='col-12 col-lg-6'>
-                                 <NormalFormSkills id={forms[1]} />
-                                </div>
+
+                    {name == "Moon Knight" &&
+                        <div className='aboutUs-behindITTI row'>
+                            <div className='col-12 col-lg-6'>
+                                <NormalFormSkills id={forms[0]} />
+                            </div>
+                            <div className='col-12 col-lg-6'>
+                                <NormalFormSkills id={forms[1]} />
+                            </div>
 
                         </div>}
+
+
+
+                    <div className="container d-flex justify-content-center align-items-center">
+                        <div className="row py-4">
+
+                            <Title>
+                                {(powers.length != 0) && <h1 id="aboutUs-WhoAreWe">
+                                    <FormattedMessage id="Powers" />
+
+                                </h1>}
+                            </Title>
+                            {powers.map((power) => (
+                                <div className="col-md-3 py-2">
+                                    <Powercard id={power} />
+                                </div>
+
+                            ))}
+                        </div>
+                    </div>
                     {name == "Iron Man" && <IronManArmors></IronManArmors>}
                     {!alternate && <div>
                         {(name == "Venom" || name == "Agent Venom") &&

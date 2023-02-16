@@ -81,13 +81,16 @@ function Navbar() {
                 </div>
             </div>
             <div class="row1">
-                    <div className="d-none d-lg-block">
-                        <div className="navbarBootstrap-logo">
+                <div className="d-none d-lg-block">
+                    <div className="navbarBootstrap-logo">
+                        <Nav.Link className="navbarBootstrap-item"
+                            href="/">
                             <img className="navbarBootstrap-logo-img"
                                 src="/Assets/Logos/New-Logo.png"
                                 alt="Logo Victoria" />
-                        </div>
+                        </Nav.Link>
                     </div>
+                </div>
             </div>
 
 
@@ -186,11 +189,15 @@ function Navbar() {
                                 )*/}
                         </NavbarReact.Collapse>
                     </Container>
-                    <div className="navbarBootstrap-logo-sm d-lg-none d-xl-none">
-                        <img className="navbarBootstrap-logo-img2"
-                            src="/Assets/Logos/small-logo.png"
-                            alt="Logo VHS" />
-                    </div>
+                    <Nav.Link className="navbarBootstrap-item"
+                        href="/">
+                        <div className="navbarBootstrap-logo-sm d-lg-none d-xl-none">
+                            <img className="navbarBootstrap-logo-img2"
+                                src="/Assets/Logos/small-logo.png"
+                                alt="Logo VHS" />
+                        </div>
+                    </Nav.Link>
+
 
 
                     <div className="navbarBootstrap-cart">

@@ -80,26 +80,22 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="Attack1" /></p>
-                        </Title>
+
+                        <p><FormattedMessage id="Attack1" /></p>
+
                         <div className="">
                             <Title>
                                 <img id="tableimagesmall" src="/Assets/Photos/AboutUs/attacktable.png" alt="ITTI Team #2" />
                             </Title>
                         </div>
-                        <Title>
-                            <p><FormattedMessage id="Attack2" /></p>
-                        </Title>
-                        <Title>
-                            <p><FormattedMessage id="Attack3" /></p>
-                        </Title>
-                        <Title>
-                            <p><FormattedMessage id="Attack4" /></p>
-                        </Title>
-                        <Title>
-                            <p><FormattedMessage id="Attack5" /></p>
-                        </Title>
+                        <p><FormattedMessage id="Attack2" /></p>
+
+                        <p><FormattedMessage id="Attack3" /></p>
+
+                        <p><FormattedMessage id="Attack4" /></p>
+
+                        <p><FormattedMessage id="Attack5" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -115,8 +111,9 @@ function CombatInfo() {
                             <div className="d-none d-lg-block">
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
                             </div>
-                            <p><FormattedMessage id="RangedDesc" /></p>
                         </Title>
+                        <p><FormattedMessage id="RangedDesc" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/ranged.png" alt="ITTI Team #2" />
@@ -144,9 +141,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="CombosDesc" /></p>
-                        </Title>
+
+                        <p><FormattedMessage id="CombosDesc" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -158,9 +155,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12  text-center">
-                        <Title>
-                            <p className="text-center"><FormattedMessage id="DodgeDesc" /></p>
-                        </Title>
+
+                        <p className="text-center"><FormattedMessage id="DodgeDesc" /></p>
+
                     </div>
                     <div className="col-12">
                         <Title>
@@ -170,9 +167,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12  text-center">
-                        <Title>
-                            <p className="text-center"><FormattedMessage id="GuardDesc" /></p>
-                        </Title>
+
+                        <p className="text-center"><FormattedMessage id="GuardDesc" /></p>
+
                     </div>
                     <div className="col-12">
                         <Title>
@@ -182,9 +179,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12  text-center">
-                        <Title>
-                            <p className="text-center"><FormattedMessage id="OpportunityDesc" /></p>
-                        </Title>
+
+                        <p className="text-center"><FormattedMessage id="OpportunityDesc" /></p>
+
                     </div>
 
                     <div className="aboutUs-behindITTI row">
@@ -202,9 +199,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12  text-center">
-                        <Title>
-                            <p className="text-center"><FormattedMessage id="DisengageDesc" /></p>
-                        </Title>
+
+                        <p className="text-center"><FormattedMessage id="DisengageDesc" /></p>
+
                     </div>
                     <div className="col-12">
                         <Title>
@@ -214,9 +211,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12  text-center">
-                        <Title>
-                            <p className="text-center"><FormattedMessage id="ReviveDesc" /></p>
-                        </Title>
+
+                        <p className="text-center"><FormattedMessage id="ReviveDesc" /></p>
+
                     </div>
                     <div className="col-12">
                         <Title>
@@ -226,9 +223,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12  text-center">
-                        <Title>
-                            <p className="text-center"><FormattedMessage id="DashDesc" /></p>
-                        </Title>
+
+                        <p className="text-center"><FormattedMessage id="DashDesc" /></p>
+
                     </div>
                     <div className="col-12">
                         <Title>
@@ -238,9 +235,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12  text-center">
-                        <Title>
-                            <p className="text-center"><FormattedMessage id="HelpDesc" /></p>
-                        </Title>
+
+                        <p className="text-center"><FormattedMessage id="HelpDesc" /></p>
+
                     </div>
                     <div className="aboutUs-behindITTI row">
                         <Title>
@@ -257,9 +254,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12  text-center">
-                        <Title>
-                            <p className="text-center"><FormattedMessage id="RadialDesc" /></p>
-                        </Title>
+
+                        <p className="text-center"><FormattedMessage id="RadialDesc" /></p>
+
                     </div>
                     <div className="col-12">
                         <Title>
@@ -269,9 +266,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12  text-center">
-                        <Title>
-                            <p className="text-center"><FormattedMessage id="TelekineticDesc" /></p>
-                        </Title>
+
+                        <p className="text-center"><FormattedMessage id="TelekineticDesc" /></p>
+
                     </div>
                     <div className="col-12">
                         <Title>
@@ -281,9 +278,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12  text-center">
-                        <Title>
-                            <p className="text-center"><FormattedMessage id="PsychicDesc" /></p>
-                        </Title>
+
+                        <p className="text-center"><FormattedMessage id="PsychicDesc" /></p>
+
                     </div>
 
                     <div className="aboutUs-behindITTI row">
@@ -309,13 +306,11 @@ function CombatInfo() {
                     <div className="col-12 col-lg-6 text-center d-none d-lg-block">
                         <Title>
                             <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
-                            <p><FormattedMessage id="LevelDesc" /></p>
                         </Title>
+                        <p><FormattedMessage id="LevelDesc" /></p>
                     </div>
                     <div className="d-lg-none d-xl-none">
-                        <Title>
-                            <p><FormattedMessage id="LevelDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="LevelDesc" /></p>
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -326,9 +321,7 @@ function CombatInfo() {
                             </h3>
                         </Title>
                     </div>
-                    <Title>
-                        <p><FormattedMessage id="CriticalDesc" /></p>
-                    </Title>
+                    <p><FormattedMessage id="CriticalDesc" /></p>
 
                     <div className="d-lg-none d-xl-none">
                         <Title>
@@ -338,7 +331,7 @@ function CombatInfo() {
                     <div className="aboutUs-behindITTI row">
                         <div className="text-center aboutUs-team2-col d-none d-lg-block">
                             <Title>
-                                <img id="crush5" src="/Assets/Photos/AboutUs/criticaltable.png" alt="ITTI Team #2" />
+                                <img id="crushtable" src="/Assets/Photos/AboutUs/criticaltable.png" alt="ITTI Team #2" />
                             </Title>
                         </div>
                     </div>
@@ -351,9 +344,7 @@ function CombatInfo() {
                             </h3>
                         </Title>
                     </div>
-                    <Title>
-                        <p><FormattedMessage id="FailDesc" /></p>
-                    </Title>
+                    <p><FormattedMessage id="FailDesc" /></p>
 
                     <div className="d-lg-none d-xl-none">
                         <Title>
@@ -366,7 +357,7 @@ function CombatInfo() {
                     <div className="aboutUs-behindITTI row">
                         <div className="text-center aboutUs-team2-col d-none d-lg-block">
                             <Title>
-                                <img id="crush5" src="/Assets/Photos/AboutUs/failure.png" alt="ITTI Team #2" />
+                                <img id="crushtable" src="/Assets/Photos/AboutUs/failure.png" alt="ITTI Team #2" />
                             </Title>
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/fail.png" alt="ITTI Team #2" />
@@ -388,9 +379,9 @@ function CombatInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="Powers1" /></p>
-                        </Title>
+
+                        <p><FormattedMessage id="Powers1" /></p>
+
                         <div className="d-lg-none d-xl-none">
                             <Title>
                                 <img id="flytablesmall" src="/Assets/Photos/AboutUs/powersmall.png" alt="ITTI Team #2" />
@@ -401,16 +392,14 @@ function CombatInfo() {
                                 <img id="flytable" src="/Assets/Photos/AboutUs/powertable.png" alt="ITTI Team #2" />
                             </Title>
                         </div>
-                        <Title>
-                            <p><FormattedMessage id="Powers2" /></p>
-                        </Title>
+                        <p><FormattedMessage id="Powers2" /></p>
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="Powers3" /></p>
-                        </Title>
+
+                        <p><FormattedMessage id="Powers3" /></p>
+
                         <div className="d-lg-none d-xl-none">
                             <Title>
                                 <img id="flytablesmall" src="/Assets/Photos/AboutUs/powerexamplesmall.png" alt="ITTI Team #2" />
@@ -454,12 +443,10 @@ function CombatInfo() {
                         <div className="d-none d-lg-block">
                             <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
                         </div>
-                        <Title>
-                            <p><FormattedMessage id="Powers4" /></p>
-                        </Title>
-                        <Title>
-                            <p><FormattedMessage id="Powers5" /></p>
-                        </Title>
+                        <p><FormattedMessage id="Powers4" /></p>
+
+                        <p><FormattedMessage id="Powers5" /></p>
+
                         <div className="row d-lg-none d-xl-none">
                             <Title>
                                 <img id="crush" src="/Assets/Photos/AboutUs/powermeter.png" alt="ITTI Team #2" />
@@ -479,8 +466,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Bleeding" />
-                            </h1><p><FormattedMessage id="BleedingD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="BleedingD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/bleeding.png" alt="ITTI Team #2" />
@@ -503,8 +492,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Blind" />
-                            </h1><p><FormattedMessage id="BlindD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="BlindD" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -512,8 +503,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Burned" />
-                            </h1><p><FormattedMessage id="BurnedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="BurnedD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/burned.png" alt="ITTI Team #2" />
@@ -536,8 +529,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Charmed" />
-                            </h1><p><FormattedMessage id="CharmedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="CharmedD" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -545,8 +540,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Comatose" />
-                            </h1><p><FormattedMessage id="ComatoseD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="ComatoseD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/coma.png" alt="ITTI Team #2" />
@@ -569,8 +566,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Confused" />
-                            </h1><p><FormattedMessage id="ConfusedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="ConfusedD" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -578,8 +577,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Concentrated" />
-                            </h1><p><FormattedMessage id="ConcentratedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="ConcentratedD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/concentrated.png" alt="ITTI Team #2" />
@@ -602,8 +603,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Deafened" />
-                            </h1><p><FormattedMessage id="DeafenedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="DeafenedD" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -611,8 +614,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Drugged" />
-                            </h1><p><FormattedMessage id="DruggedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="DruggedD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/drugged.png" alt="ITTI Team #2" />
@@ -638,8 +643,10 @@ function CombatInfo() {
                                     <img id="throwsmall" src="/Assets/Photos/AboutUs/space.png" alt="ITTI Team #2" />
                                 </div>
                                 <FormattedMessage id="Drunk" />
-                            </h1><p><FormattedMessage id="DrunkD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="DrunkD" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -650,8 +657,10 @@ function CombatInfo() {
                             </div>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Frightened" />
-                            </h1><p><FormattedMessage id="FrightenedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="FrightenedD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/fright.png" alt="ITTI Team #2" />
@@ -674,8 +683,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Frozen" />
-                            </h1><p><FormattedMessage id="FrozenD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="FrozenD" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -683,8 +694,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Irradiated" />
-                            </h1><p><FormattedMessage id="IrradiatedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="IrradiatedD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/irradianted.png" alt="ITTI Team #2" />
@@ -710,8 +723,10 @@ function CombatInfo() {
                             </div>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Grappled" />
-                            </h1><p><FormattedMessage id="GrappledD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="GrappledD" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -719,8 +734,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Prone" />
-                            </h1><p><FormattedMessage id="ProneD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="ProneD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/prone.png" alt="ITTI Team #2" />
@@ -743,8 +760,9 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Invisible" />
-                            </h1><p><FormattedMessage id="InvisibleD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="InvisibleD" /></p>
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -755,8 +773,10 @@ function CombatInfo() {
                             </div>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Paralyzed" />
-                            </h1><p><FormattedMessage id="ParalyzedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="ParalyzedD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/paralyzed.png" alt="ITTI Team #2" />
@@ -779,8 +799,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Petrified" />
-                            </h1><p><FormattedMessage id="PetrifiedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="PetrifiedD" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -788,8 +810,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Possessed" />
-                            </h1><p><FormattedMessage id="PossessedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="PossessedD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/possessed.png" alt="ITTI Team #2" />
@@ -812,8 +836,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Poisoned" />
-                            </h1><p><FormattedMessage id="PoisonedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="PoisonedD" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -821,8 +847,10 @@ function CombatInfo() {
                         <Title>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Purple" />
-                            </h1><p><FormattedMessage id="PurpleD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="PurpleD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/purple.png" alt="ITTI Team #2" />
@@ -848,8 +876,10 @@ function CombatInfo() {
                             </div>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Sleeping" />
-                            </h1><p><FormattedMessage id="SleepingD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="SleepingD" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -860,8 +890,11 @@ function CombatInfo() {
                             </div>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Soaked" />
-                            </h1><p><FormattedMessage id="SoakedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="SoakedD" /></p>
+
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/soaked.png" alt="ITTI Team #2" />
@@ -887,8 +920,10 @@ function CombatInfo() {
                             </div>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Stunned" />
-                            </h1><p><FormattedMessage id="StunnedD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="StunnedD" /></p>
+
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -899,8 +934,10 @@ function CombatInfo() {
                             </div>
                             <h1 id="aboutUs-WhoAreWe">
                                 <FormattedMessage id="Telepath" />
-                            </h1><p><FormattedMessage id="TelepathD" /></p>
+                            </h1>
                         </Title>
+                        <p><FormattedMessage id="TelepathD" /></p>
+
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/telepathic.png" alt="ITTI Team #2" />

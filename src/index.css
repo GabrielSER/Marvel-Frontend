@@ -18,3 +18,4 @@ body {
   font-family: 'comic';
   src: local('comic'), url(./fonts/comic_book/comic.otf) format('truetype');
 }
+

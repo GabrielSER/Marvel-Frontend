@@ -3,7 +3,7 @@ import { FormattedMessage } from "react-intl";
 import { Carousel } from "react-bootstrap";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
-import Card from "./Card";
+import Card from "./CharacterCard";
 import { Fade } from 'react-reveal';
 import styled from 'styled-components';
 import withReveal from 'react-reveal/withReveal';
@@ -85,87 +85,59 @@ function NormalFormStats(props) {
             </Title>
             <div className='row'>
                 <div className='col'>
-                    <Title>
-                        <p><b>Strength:</b> {strength}</p>
-                    </Title>
+                    <p><b>Strength:</b> {strength}</p>
                 </div>
                 <div className='col'>
-                    <Title>
-                        <p><b>HP:</b> {hp}</p>
-                    </Title>
+                    <p><b>HP:</b> {hp}</p>
                 </div>
             </div>
 
             <div className='row'>
                 <div className='col'>
-                    <Title>
-                        <p><b>Intelligence:</b> {intelligence}</p>
-                    </Title>
+                    <p><b>Intelligence:</b> {intelligence}</p>
                 </div>
                 <div className='col'>
-                    <Title>
-                        <p><b>Power:</b> {power}</p>
-                    </Title>
+                    <p><b>Power:</b> {power}</p>
                 </div>
             </div>
             <div className='row'>
                 <div className='col'>
-                    <Title>
-                        <p><b>Durability:</b> {durability}</p>
-                    </Title>
+                    <p><b>Durability:</b> {durability}</p>
                 </div>
                 <div className='col'>
-                    <Title>
-                        <p><b>Defense:</b> {defense}</p>
-                    </Title>
+                    <p><b>Defense:</b> {defense}</p>
                 </div>
             </div>
             <div className='row'>
                 <div className='col'>
-                    <Title>
-                        <p><b>Agility:</b> {agility}</p>
-                    </Title>
+                    <p><b>Agility:</b> {agility}</p>
                 </div>
                 <div className='col'>
-                    <Title>
-                        <p><b>Melee:</b> {melee}</p>
-                    </Title>
+                    <p><b>Melee:</b> {melee}</p>
                 </div>
             </div>
             <div className='row'>
                 <div className='col'>
-                    <Title>
-                        <p><b>Wisdom:</b> {wisdom}</p>
-                    </Title>
+                    <p><b>Wisdom:</b> {wisdom}</p>
                 </div>
                 <div className='col'>
-                    <Title>
-                        <p><b>Energy Projection:</b> {energyprojection}</p>
-                    </Title>
+                    <p><b>Energy Projection:</b> {energyprojection}</p>
                 </div>
             </div>
             <div className='row'>
                 <div className='col'>
-                    <Title>
-                        <p><b>Charisma:</b> {charisma}</p>
-                    </Title>
+                    <p><b>Charisma:</b> {charisma}</p>
                 </div>
                 <div className='col'>
-                    <Title>
-                        <p><b>Speed:</b> {speed}</p>
-                    </Title>
+                    <p><b>Speed:</b> {speed}</p>
                 </div>
             </div>
             <div className='row'>
                 <div className='col'>
-                    <Title>
-                        <p><b>Perception:</b> {perception}</p>
-                    </Title>
+                    <p><b>Perception:</b> {perception}</p>
                 </div>
                 <div className='col'>
-                    <Title>
-                        <p><b>Luck:</b> {luck}</p>
-                    </Title>
+                    <p><b>Luck:</b> {luck}</p>
                 </div>
             </div>
             </div>}

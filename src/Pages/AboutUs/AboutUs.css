@@ -100,15 +100,18 @@
 @media(min-width: 992px) {
     .aboutUs-banner h1{
         font-size: 3rem;
+        caret-color: transparent;
     }
     #AboutUs h2{
         font-size: 2.2em;
         padding: 0 3.5em;
+        caret-color: transparent;
     }
 
     #AboutUs h3{
         font-size: 4em;
         margin-bottom: 1em;
+        caret-color: transparent;
     }
     .aboutUs-artisans h3{
         width: 70%;
@@ -116,12 +119,14 @@
 
     #AboutUs p{
         font-size: 1em;
+        caret-color: transparent;
     }
 }
 
 @media(min-width: 576px) and (max-width: 991px) {
     .aboutUs-banner h1{
         font-size: 2rem;
+        caret-color: transparent;
     }
 
     #AboutUs h2{

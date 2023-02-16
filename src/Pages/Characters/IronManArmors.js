@@ -87,28 +87,28 @@ const IronManArmors = () => {
                     <div className='row'>
                         <div className='col'>
                             <p><b>1st Category: Unlocked at level 1</b></p>
-                            <p class="armor-text" onClick={() => setarmorId("mk1")}>Model 1 Mk 1</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("mk1")}>Model 1 Mk 1</p>
                             <p><b>2nd Category: Unlocked at level 2</b></p>
-                            <p class="armor-text" onClick={() => setarmorId("classic")}>Classic Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("classic")}>Classic Armor</p>
                             <p><b>3rd Category: Unlocked at level 5</b></p>
-                            <p class="armor-text" onClick={() => setarmorId("stealth")}>Stealth Armor</p>
-                            <p class="armor-text" onClick={() => setarmorId("space")}> Space Armor</p>
-                            <p class="armor-text" onClick={() => setarmorId("deepsea")}>Deep Sea Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("stealth")}>Stealth Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("space")}> Space Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("deepsea")}>Deep Sea Armor</p>
                             <p><b>4th Category: Unlocked at level 10</b></p>
-                            <p class="armor-text" onClick={() => setarmorId("unit")}>Neuromimetic Telepresence Unit</p>
-                            <p class="armor-text" onClick={() => setarmorId("silver")}>Silver Centurion Armor</p>
-                            <p class="armor-text" onClick={() => setarmorId("modular")}>Modular Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("unit")}>Neuromimetic Telepresence Unit</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("silver")}>Silver Centurion Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("modular")}>Modular Armor</p>
                         </div>
 
                         <div className='col'>
-                            <p class="armor-text" onClick={() => setarmorId("extremis")}>Extremis Armor</p>
-                            <p class="armor-text" onClick={() => setarmorId("model42")}>Armor 616</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("extremis")}>Extremis Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("model42")}>Armor 616</p>
                             <p class="armor-text">Armor 616</p>
                             <p><b>6th Category: Unlocked at level 17</b></p>
-                            <p class="armor-text" onClick={() => setarmorId("hulkbuster")}>Hulkbuster Armor</p>
-                            <p class="armor-text" onClick={() => setarmorId("endo")}>Endo Symbiotic Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("hulkbuster")}>Hulkbuster Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("endo")}>Endo Symbiotic Armor</p>
                             <p><b>7th Category: Unlocked at level 20</b></p>
-                            <p class="armor-text" onClick={() => setarmorId("edge")}>Bleeding Edg Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("edge")}>Bleeding Edg Armor</p>
                         </div>
                     </div>
                 </div>

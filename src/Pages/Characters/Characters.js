@@ -3,13 +3,13 @@ import { FormattedMessage } from "react-intl";
 import { Carousel } from "react-bootstrap";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
-import Card from "./Card";
 import { Slide, Fade } from 'react-reveal';
 import styled from 'styled-components';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import CharacterCard from './CharacterCard';
 
 function Characters() {
 
@@ -56,7 +56,7 @@ function Characters() {
                         <Link className="d-flex justify-content-center col-md-4 col-sm-2 py-3" to={`/characters/${char._id}`} >
                             <Fade down>
                                 <div className="col d-flex justify-content-center " key={char._id}>
-                                    <Card imageSource={char.image} logo={char.logo} />
+                                    <CharacterCard imageSource={char.image} logo={char.logo} />
                                 </div> </Fade>
                         </Link>
                     ))}

@@ -1,6 +1,7 @@
 #NavbarBootstrap{
     padding-top: 0.5rem;
     padding-bottom: 2rem;
+    caret-color: transparent;
 }
 
 .navbarBootstrap-collapse{
@@ -20,6 +21,7 @@
 .row1{
     text-align:center;
     margin:0 auto;
+    caret-color: transparent;
 }
 
 .row1 .col-md-3{
@@ -32,6 +34,7 @@
 #NavbarBootstrap .navbar-brand{
     margin: 0;
     padding: 0;
+    caret-color: transparent;
 }
 
 #NavbarBootstrap .navbarBootstrap-item{
@@ -40,6 +43,7 @@
     margin-right: 1rem;
     text-transform: uppercase;
     text-decoration: none;
+    caret-color: transparent;
     color: var(--black);
 }
 
@@ -53,6 +57,7 @@
     top:0px;
     left:0px;
     padding:5px 7px;
+    caret-color: transparent;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -141,3 +146,7 @@
 .navbarBootstrap-user-cart:focus{
     border: 0 !important;
 }
+
+.input {
+    color: transparent;
+  }

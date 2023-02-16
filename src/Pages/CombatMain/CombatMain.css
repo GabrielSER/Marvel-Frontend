@@ -1,6 +1,7 @@
 @media (max-width: 992px){
     #AboutUs{
         margin-top: 1em;
+        caret-color: transparent;
     }
 }
 
@@ -57,6 +58,7 @@
 .aboutUs-banner-col{
     padding: 0;
     position: relative;
+    caret-color: transparent;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -69,6 +71,7 @@
     width: 100%;
     height: 100%;
     display: flex;
+    caret-color: transparent;
     justify-content: center;
     align-content: center;
     text-align: center;
@@ -85,6 +88,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    caret-color: transparent;
     text-align: center;
     align-items: flex-start;
 }
@@ -93,6 +97,7 @@
     font-family: "Montserrat";
     font-weight: bold;
     text-shadow: 2px 2px black;
+    caret-color: transparent;
     padding: 0;
     color: white;
 }
@@ -100,47 +105,57 @@
 @media(min-width: 992px) {
     .aboutUs-banner h1{
         font-size: 3rem;
+        caret-color: transparent;
     }
     #AboutUs h2{
         font-size: 2.2em;
         padding: 0 3.5em;
+        caret-color: transparent;
     }
 
     #AboutUs h3{
         font-size: 4em;
         margin-bottom: 0.3em;
+        caret-color: transparent;
     }
     .aboutUs-artisans h3{
         width: 70%;
+        caret-color: transparent;
     }
 
     #AboutUs p{
         font-size: 1em;
         margin-bottom: 1em;
+        caret-color: transparent;
     }
 }
 
 @media(min-width: 576px) and (max-width: 991px) {
     .aboutUs-banner h1{
         font-size: 2rem;
+        caret-color: transparent;
     }
 
     #AboutUs h2{
         font-size: 2em;
         width: 60%;
+        caret-color: transparent;
         margin-bottom: 1em;
     }
 
     #AboutUs h3{
         font-size: 2em;
         margin-bottom: 2em;
+        caret-color: transparent;
     }
 
     .aboutUs-artisans h3{
         width: 80%;
+        caret-color: transparent;
     }
     #AboutUs p{
         font-size: .9em;
+        caret-color: transparent;
     }
 }
 

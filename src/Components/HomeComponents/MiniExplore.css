@@ -1,27 +1,18 @@
-* .image-zoom1 {
+* .image-small25 {
     width: 100%;
-    float: left;
     position: relative;
-    background: #000000;
-    overflow: hidden;
-    caret-color: transparent;
-    height: 500px
+    background: white;
+    height: 255px
   }
-  .image-zoom1:before {
-    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://www.teahub.io/photos/full/18-183444_marvel-characters.jpg) no-repeat center;
+  .image-small25:before {
+    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/01/Marvel-Locations-to-Visit-Split-Featured-Chandilar-Asgard-Wakanda.jpg) no-repeat center;
     content: "";
-    display: inline-block;
     height: 100%;
-    opacity: 1;
     position: absolute;
     top: 0;
     text-align: center;
+    caret-color: transparent;
     width: 100%;
-    /*z-index: -1;*/
-    animation: 30s ease 0s normal none infinite running zoomin;
-    -webkit-animation: 30s ease 0s normal none infinite running zoomin;
-    -o-animation: 30s ease 0s normal none infinite running zoomin;
-    -moz--o-animation: 30s ease 0s normal none infinite running zoomin;
   }
   
   @keyframes zoomin {

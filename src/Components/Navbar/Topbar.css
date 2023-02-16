@@ -5,6 +5,7 @@
     padding-top: 2px;
     display: flex;
     justify-content: space-between;
+    caret-color: transparent;
 }
 
 .Topbar-text{

@@ -40,18 +40,14 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="Victoria" /></p>
-                        </Title>
+                        <p><FormattedMessage id="Victoria" /></p>
 
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="team2imagesmall" src="/Assets/Photos/AboutUs/teamsmall.png" alt="ITTI Team #2" />
                             </Title>
                         </div>
-                        <Title>
-                            <p><FormattedMessage id="Victoria2" /></p>
-                        </Title>
+                        <p><FormattedMessage id="Victoria2" /></p>
                     </div>
                     <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
                         <Title>
@@ -73,9 +69,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="LiftingDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="LiftingDesc" /></p>
                         <div className="d-none d-lg-block">
                             <Title>
                                 <img id="tableimage" src="/Assets/Photos/AboutUs/lifttable.png" alt="ITTI Team #2" />
@@ -97,9 +91,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="ThrowDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="ThrowDesc" /></p>
 
                         <div className="d-none d-lg-block">
                             <Title>
@@ -138,9 +130,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="CrushDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="CrushDesc" /></p>
                         <div>
                             <Title>
                                 <img id="crushtable" src="/Assets/Photos/AboutUs/crushtable.png" alt="ITTI Team #2" />
@@ -157,9 +147,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="TrafficDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="TrafficDesc" /></p>
 
                         <div>
                             <Title>
@@ -167,9 +155,7 @@ function AboutInfo() {
                             </Title>
                         </div>
 
-                        <Title>
-                            <p><FormattedMessage id="TrafficDesc2" /></p>
-                        </Title>
+                        <p><FormattedMessage id="TrafficDesc2" /></p>
                         <div className="col-lg-6 aboutUs-team2-col d-lg-none d-xl-none">
                             <Title>
                                 <img id="throwsmall" src="/Assets/Photos/AboutUs/crash.png" alt="ITTI Team #2" />
@@ -197,9 +183,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="Jump1" /></p>
-                        </Title>
+                        <p><FormattedMessage id="Jump1" /></p>
                         <div className="d-lg-none d-xl-none">
                             <Title>
                                 <img id="jumptablesmall" src="/Assets/Photos/AboutUs/jump1.png" alt="ITTI Team #2" />
@@ -210,9 +194,7 @@ function AboutInfo() {
                                 <img id="jumptable" src="/Assets/Photos/AboutUs/jump1.png" alt="ITTI Team #2" />
                             </Title>
                         </div>
-                        <Title>
-                            <p><FormattedMessage id="Jump2" /></p>
-                        </Title>
+                        <p><FormattedMessage id="Jump2" /></p>
                         <div className="d-lg-none d-xl-none">
                             <Title>
                                 <img id="jumptablesmall" src="/Assets/Photos/AboutUs/jump2.png" alt="ITTI Team #2" />
@@ -225,9 +207,7 @@ function AboutInfo() {
                         </div>
                     </div>
                     <div className="text-center">
-                        <Title>
-                            <p><FormattedMessage id="Jump3" /></p>
-                        </Title>
+                        <p><FormattedMessage id="Jump3" /></p>
                         <div className="d-lg-none d-xl-none">
                             <Title>
                                 <img id="jumptablesmall" src="/Assets/Photos/AboutUs/jump3.png" alt="ITTI Team #2" />
@@ -240,9 +220,7 @@ function AboutInfo() {
                         </div>
                     </div>
                     <div className="text-center">
-                        <Title>
-                            <p><FormattedMessage id="Jump4" /></p>
-                        </Title>
+                        <p><FormattedMessage id="Jump4" /></p>
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -254,9 +232,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="BreakDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="BreakDesc" /></p>
 
                         <div>
                             <Title>
@@ -290,12 +266,8 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="Fly1" /></p>
-                        </Title>
-                        <Title>
-                            <p><FormattedMessage id="Fly2" /></p>
-                        </Title>
+                        <p><FormattedMessage id="Fly1" /></p>
+                        <p><FormattedMessage id="Fly2" /></p>
                         <div className="d-lg-none d-xl-none">
                             <Title>
                                 <img id="flytablesmall" src="/Assets/Photos/AboutUs/flytable.png" alt="ITTI Team #2" />
@@ -306,9 +278,7 @@ function AboutInfo() {
                                 <img id="flytable" src="/Assets/Photos/AboutUs/flytable.png" alt="ITTI Team #2" />
                             </Title>
                         </div>
-                        <Title>
-                            <p><FormattedMessage id="Fly3" /></p>
-                        </Title>
+                        <p><FormattedMessage id="Fly3" /></p>
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -320,9 +290,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="SpeedFlightDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="SpeedFlightDesc" /></p>
                         <div className="d-lg-none d-xl-none">
                             <Title>
                                 <img id="flytablesmall" src="/Assets/Photos/AboutUs/speedtable.png" alt="ITTI Team #2" />
@@ -360,9 +328,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="CustomDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="CustomDesc" /></p>
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -374,9 +340,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="PopularityDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="PopularityDesc" /></p>
                     <div className="d-lg-none d-xl-none">
                             <Title>
                                 <img id="crushtable" src="/Assets/Photos/AboutUs/populartable.png" alt="ITTI Team #2" />
@@ -413,9 +377,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="ReputationDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="ReputationDesc" /></p>
                     </div>
                 </div>
                 <div className="aboutUs-behindITTI row">
@@ -427,9 +389,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="PublicImageDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="PublicImageDesc" /></p>
                         <div className="d-lg-none d-xl-none">
                             <Title>
                                 <img id="flytablesmall" src="/Assets/Photos/AboutUs/publictable.png" alt="ITTI Team #2" />
@@ -467,9 +427,7 @@ function AboutInfo() {
                         </Title>
                     </div>
                     <div className="col-12 col-lg-6 text-center">
-                        <Title>
-                            <p><FormattedMessage id="IdentityDesc" /></p>
-                        </Title>
+                        <p><FormattedMessage id="IdentityDesc" /></p>
                     </div>
                 </div>
             </div>

@@ -416,11 +416,15 @@
   }
 
   .armor-text{ 
-    color: blue;
+    color: darkgrey;
   
   }
 .armor-text:hover{ 
   color: red;
   text-decoration: underline;
 
+}
+
+.Title{
+  font: comic;
 }
