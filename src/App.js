@@ -14,6 +14,7 @@ import { useAlert } from "react-alert";
 import CombatMain from "./Pages/CombatMain/CombatMain";
 import Characters from "./Pages/Characters/Characters";
 import CharacterDetail from "./Pages/Characters/CharacterDetail";
+import Places from "./Pages/Places/Places";
 
 
 
@@ -66,7 +67,7 @@ function App() {
               <Route path="/characters" exact element={<Characters/>} />
               <Route path="/combat" exact element={<CombatMain/>} />
               <Route path="/roleplay" exact element={<AboutUs />} />
-              <Route path="/places" exact element={<SignUp />} />
+              <Route path="/places" exact element={<Places />} />
               <Route path="/objects" exact element={<SignUp />} />
               <Route path="/characters/:_id" exact element={<CharacterDetail/>} />
             </Routes>
