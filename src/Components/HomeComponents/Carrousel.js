@@ -15,17 +15,17 @@ import SocialBanner from './SocialBanner';
 import withReveal from 'react-reveal/withReveal';
 
 function Carrousel() {
-    const width = '1515px', height = '550px';
+   
     const Container = styled.div`
   position: relative;
   overflow: hidden;
-  width: ${width};
-  height: ${height};
+  width: 100%;
+  height: auto;
 `;
     const Arrow = styled.div`
   text-shadow: 1px 1px 1px #fff;
-  z-index: 100;
-  line-height: ${height};
+  z-index: 100%;
+  line-height: auto;
   text-align: center;
   position: absolute;
   top: 0;

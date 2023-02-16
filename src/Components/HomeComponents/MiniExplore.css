@@ -2,12 +2,12 @@
     width: 100%;
     position: relative;
     background: white;
-    height: 255px
+    height: 300px
   }
   .image-small25:before {
-    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/01/Marvel-Locations-to-Visit-Split-Featured-Chandilar-Asgard-Wakanda.jpg) no-repeat center;
+    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://i.ibb.co/x7VHJkB/Marvel-Locations-to-Visit-Split-Featured-Chandilar-Asgard-Wakanda.png) no-repeat center;
     content: "";
-    height: 100%;
+    height: 120%;
     position: absolute;
     top: 0;
     text-align: center;

@@ -2,12 +2,12 @@
     width: 100%;
     position: relative;
     background: white;
-    height: 255px
+    height: 300px
   }
   .image-small:before {
-    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://www.teahub.io/photos/full/18-183444_marvel-characters.jpg) no-repeat center;
+    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://i.ibb.co/s3Jps6j/desktop-1920x1080.jpg) no-repeat center;
     content: "";
-    height: 100%;
+    height: 120%;
     position: absolute;
     top: 0;
     text-align: center;

@@ -18,7 +18,7 @@ import MiniSocial from './MiniSocial';
 import MiniExplore from './MiniExplore';
 
 function SmallCarrousel() {
-    const width = '390px', height = '322px';
+    const width = '390px', height = '360px';
     const Container = styled.div`
   position: relative;
   overflow: hidden;

@@ -39,10 +39,7 @@ function Home() {
         <React.Fragment>
             <Navbar />
             <div id='Home'>
-                <div className='d-none d-lg-block'>
-                    <Carrousel />
-                </div>
-                <div className='d-lg-none d-xl-none'>
+                <div className=''>
                     <SmallCarrousel />
                 </div>
 
