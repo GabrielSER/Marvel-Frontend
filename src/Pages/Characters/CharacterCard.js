@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import "./card.css";
 
-function Card({ imageSource, logo}) {
+function CharacterCard({ imageSource, logo}) {
     return (
         <div className="card text-center bg-dark animate__animated animate__fadeInUp">
             <div className="overflow">
@@ -14,11 +13,11 @@ function Card({ imageSource, logo}) {
     );
 }
 
-Card.propTypes = {
+CharacterCard.propTypes = {
     title: PropTypes.string.isRequired,
     text: PropTypes.string,
     logo: PropTypes.string,
     imageSource: PropTypes.string
 };
 
-export default Card;
+export default CharacterCard;

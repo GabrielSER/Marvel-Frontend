@@ -5,12 +5,13 @@
     height: 255px
   }
   .image-small:before {
-    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://www.todofondos.net/wp-content/uploads/4k-fondos-de-escritorio-de-comics.jpg) no-repeat center;
+    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://www.teahub.io/photos/full/18-183444_marvel-characters.jpg) no-repeat center;
     content: "";
     height: 100%;
     position: absolute;
     top: 0;
     text-align: center;
+    caret-color: transparent;
     width: 100%;
   }
   

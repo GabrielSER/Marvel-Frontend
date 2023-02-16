@@ -1,13 +1,13 @@
 import React from 'react'
 import { FormattedMessage } from 'react-intl';
-import "./MiniSocial.css";
+import "./MiniExplore.css";
 import Fade from 'react-reveal/Fade';
 import styled from 'styled-components';
 import withReveal from 'react-reveal/withReveal';
 import { Slide } from 'react-reveal';
 
 
-function MiniSocial() {
+function MiniExplore() {
     const Title = withReveal(styled.h1`
     font-size: 2rem;
     padding-top: 1em;
@@ -38,7 +38,7 @@ text-shadow: 2px 2px black;
 
 `, <Slide bottom duration={1000} delay={150}/>);
     return (
-        <div className="image-small2">
+        <div className="image-small25">
             <Title >
                 <p> </p>
             </Title>
@@ -46,7 +46,7 @@ text-shadow: 2px 2px black;
                 <p> </p>
             </Title>
             <PhoneN >
-                Create your Own Stories
+                Explore New Worlds and locations
             </PhoneN>
             <Title >
                 <p> </p>
@@ -58,4 +58,4 @@ text-shadow: 2px 2px black;
 
 }
 
-export default MiniSocial
+export default MiniExplore

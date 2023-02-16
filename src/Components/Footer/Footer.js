@@ -21,6 +21,7 @@ function Footer() {
                         <p className="footer-section-content">Gabriel Santiago Serna</p>
                         <p className="footer-section-content">Daniel Peña</p>
                         <p className="footer-section-content">Susana Sarmiento</p>
+                        <p className="footer-section-content">Marco Acosta</p>
                     </div>
                     <div className=" col-lg-3 col-sm-12 col-xs-12  footer-col d-none d-lg-block">
                         <p className="footer-section-title">Contact Me!</p>

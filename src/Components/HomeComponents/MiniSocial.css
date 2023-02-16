@@ -2,14 +2,16 @@
     width: 100%;
     position: relative;
     background: white;
+    caret-color: transparent;
     height: 255px
   }
   .image-small2:before {
-    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://iili.io/HHoXDMX.png) no-repeat center;
+    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://www.todofondos.net/wp-content/uploads/4k-fondos-de-escritorio-de-comics.jpg) no-repeat center;
     content: "";
     height: 100%;
     position: absolute;
     top: 0;
+    caret-color: transparent;
     text-align: center;
     width: 100%;
   }

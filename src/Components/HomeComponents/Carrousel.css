@@ -14,6 +14,7 @@
     --control-bullet-active-color: #6a6a6a;
     --loader-bar-color: transparent;
     --loader-bar-height: 6px;
+    caret-color: transparent;
     }
 
     * .image-zoom {
@@ -22,7 +23,8 @@
         position: relative;
         background: #000000;
         overflow: hidden;
-        height: 500px
+        height: 500px;
+        caret-color: transparent;
       }
       .image-zoom:before {
         background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://iili.io/H933luj.png) no-repeat center;
@@ -32,6 +34,7 @@
         opacity: 1;
         position: absolute;
         top: 0;
+        caret-color: transparent;
         width: 100%;
         /*z-index: -1;*/
         animation: 30s ease 0s normal none infinite running zoomin;

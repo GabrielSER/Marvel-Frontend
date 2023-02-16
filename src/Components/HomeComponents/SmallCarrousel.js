@@ -15,6 +15,7 @@ import SocialBanner from './SocialBanner';
 import withReveal from 'react-reveal/withReveal';
 import CarrouselTel from './CarrouselTel';
 import MiniSocial from './MiniSocial';
+import MiniExplore from './MiniExplore';
 
 function SmallCarrousel() {
     const width = '390px', height = '322px';
@@ -60,6 +61,9 @@ ${props => props.right ? css`left: 90%;` : css`left: 0%;`}
               </Slide>
               <Slide right>
                   <MiniSocial />
+              </Slide>
+              <Slide right>
+                  <MiniExplore />
               </Slide>
           </Carousel>
       </div>
