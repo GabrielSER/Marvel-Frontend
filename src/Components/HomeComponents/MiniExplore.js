@@ -45,6 +45,9 @@ text-shadow: 2px 2px black;
             <Title >
                 <p> </p>
             </Title>
+            <Title >
+                <p> </p>
+            </Title>
             <PhoneN >
                 Explore New Worlds and locations
             </PhoneN>

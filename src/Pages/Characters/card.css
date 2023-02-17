@@ -371,14 +371,14 @@
     max-width: 345px;
     height: 60%;
     display: block;
-    background-color: rgb(0, 0, 0);
+    background-color: white;
 }
   
   .card-text {
     padding: 1rem 1rem;
     font-size: 1rem;
-    background-color: rgb(0, 0, 0);
-  }
+    background-color: white;
+  } 
   
   .overflow {
     overflow: hidden;

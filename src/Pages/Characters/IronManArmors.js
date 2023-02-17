@@ -41,10 +41,10 @@ const IronManArmors = () => {
         setarmorId(armor)
         const element = document.getElementById('section-1');
         if (element) {
-          // 👇 Will scroll smoothly to the top of the next section
-          element.scrollIntoView({ behavior: 'smooth' });
+            // 👇 Will scroll smoothly to the top of the next section
+            element.scrollIntoView({ behavior: 'smooth' });
         }
-      };
+    };
 
     return (
         <div>
@@ -79,7 +79,7 @@ const IronManArmors = () => {
                             <p class="armor-text" onClick={() => handleClickScroll("hulkbuster")}>Hulkbuster Armor</p>
                             <p class="armor-text" onClick={() => handleClickScroll("endo")}>Endo Symbiotic Armor</p>
                             <p><b>7th Category: Unlocked at level 20</b></p>
-                            <p class="armor-text" onClick={() => handleClickScroll("edge")}>Bleeding Edg Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("edge")}>Bleeding Edge Armor</p>
                         </div>
                     </div>
                 </div>
@@ -101,14 +101,14 @@ const IronManArmors = () => {
                         </div>
 
                         <div className='col'>
+                            <p><b>5th Category: Unlocked at level 15</b></p>
                             <p class="armor-text" onClick={() => handleClickScroll("extremis")}>Extremis Armor</p>
                             <p class="armor-text" onClick={() => handleClickScroll("model42")}>Armor 616</p>
-                            <p class="armor-text">Armor 616</p>
                             <p><b>6th Category: Unlocked at level 17</b></p>
                             <p class="armor-text" onClick={() => handleClickScroll("hulkbuster")}>Hulkbuster Armor</p>
                             <p class="armor-text" onClick={() => handleClickScroll("endo")}>Endo Symbiotic Armor</p>
                             <p><b>7th Category: Unlocked at level 20</b></p>
-                            <p class="armor-text" onClick={() => handleClickScroll("edge")}>Bleeding Edg Armor</p>
+                            <p class="armor-text" onClick={() => handleClickScroll("edge")}>Bleeding Edge Armor</p>
                         </div>
                     </div>
                 </div>

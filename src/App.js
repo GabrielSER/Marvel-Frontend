@@ -15,6 +15,9 @@ import CombatMain from "./Pages/CombatMain/CombatMain";
 import Characters from "./Pages/Characters/Characters";
 import CharacterDetail from "./Pages/Characters/CharacterDetail";
 import Places from "./Pages/Places/Places";
+import AddPower from "./Pages/Characters/AddPower";
+import { CharactersProvider } from "./Contexts/CharactersContext";
+import { PowersProvider } from "./Contexts/PowersContext";
 
 
 
@@ -45,33 +48,38 @@ function App() {
     localStorage.setItem("language", updatedLang.locale);
     setLanguageSettings(updatedLang);
   }
- 
+
 
   return (
-    <div className="App" style={{ 
+    <div className="App" style={{
       backgroundImage: `url(https://i.ibb.co/Jqr4f35/backgound.png)`,
-      backgroundRepeat: 'repeat', 
+      backgroundRepeat: 'repeat',
     }}>
       <AppContext.Provider
-        value={{ 
-                languageSettings, setLang
-              }}
+        value={{
+          languageSettings, setLang
+        }}
       >
         <IntlProvider
           locale={languageSettings.locale}
           messages={languageSettings.messages}
         >
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" exact element={<Home />} />
-              <Route path="/characters" exact element={<Characters/>} />
-              <Route path="/combat" exact element={<CombatMain/>} />
-              <Route path="/roleplay" exact element={<AboutUs />} />
-              <Route path="/places" exact element={<Places />} />
-              <Route path="/objects" exact element={<SignUp />} />
-              <Route path="/characters/:_id" exact element={<CharacterDetail/>} />
-            </Routes>
-          </BrowserRouter>
+          <CharactersProvider>
+            <PowersProvider>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" exact element={<Home />} />
+                  <Route path="/characters" exact element={<Characters />} />
+                  <Route path="/combat" exact element={<CombatMain />} />
+                  <Route path="/roleplay" exact element={<AboutUs />} />
+                  <Route path="/places" exact element={<Places />} />
+                  <Route path="/objects" exact element={<SignUp />} />
+                  <Route path="/characters/:_id" exact element={<CharacterDetail />} />
+                  <Route path="/addpower" exact element={<AddPower />} />
+                </Routes>
+              </BrowserRouter>
+            </PowersProvider>
+          </CharactersProvider>
         </IntlProvider>
       </AppContext.Provider>
     </div>

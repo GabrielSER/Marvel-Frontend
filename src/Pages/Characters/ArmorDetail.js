@@ -511,15 +511,21 @@ function ArmorDetail(props) {
                         </div>
 
                     </div>
-                    
+
                     <div className="container d-flex justify-content-center align-items-center">
                         <div className="row py-4">
 
                             <Title>
-                                {(powers.length != 0) && <h1 id="aboutUs-WhoAreWe">
-                                    <FormattedMessage id="Powers" />
-
-                                </h1>}
+                                {(powers.length != 0) && <div>
+                                    <h1 id="aboutUs-WhoAreWe">
+                                        {(name !== ("Modular Armor"||"Armor 616")) &&
+                                            <FormattedMessage id="Powers" />}
+                                    </h1>
+                                    <h1 id="aboutUs-WhoAreWe">
+                                        {(name == "Modular Armor" || name == "Armor 616") &&
+                                            <FormattedMessage id="Modules" />}
+                                    </h1>
+                                </div>}
                             </Title>
                             {powers.map((power) => (
                                 <div className="col-md-3 py-2">

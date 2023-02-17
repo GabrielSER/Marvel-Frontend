@@ -20,14 +20,26 @@ import IronManArmors from './IronManArmors';
 import AlternateFormImage from './AlternateFormImage';
 import Tooltip from '../../Components/Tooltip/Tooltip';
 import Powercard from './Powercard';
+import NormalFormPowers from './NormalFormPowers';
 
-function CharacterDetail() {
+const CharacterProperty = (props) => {
+
+    const { name, value } = props
+
+    return (
+        <label><b>{name}:</b> {value}</label>
+    )
+}
+
+const CharacterDetail = () => {
 
     const [name, setName] = useState("");
     const [alterego, setAlter] = useState("");
     const [description, setDesc] = useState("");
     const [logo, setLogo] = useState("");
     const [image, setImage] = useState("");
+
+    // Stats
     const [strength, setStrength] = useState(0);
     const [intelligence, setintelligence] = useState(0);
     const [durability, setdurability] = useState(0);
@@ -42,6 +54,8 @@ function CharacterDetail() {
     const [energyprojection, setenergyprojection] = useState(0);
     const [speed, setspeed] = useState(0);
     const [luck, setluck] = useState(0);
+
+    // Skills
     const [acrobatics, setacrobatics] = useState(0);
     const [accuracy, setaccuracy] = useState(0);
     const [athletics, setathletics] = useState(0);
@@ -104,6 +118,7 @@ function CharacterDetail() {
     const [special2, setspecial2] = useState(0);
     const [special3, setspecial3] = useState(0);
     const [special4, setspecial4] = useState(0);
+
     const [abilities, setabilities] = useState([]);
     const [weaknesses, setweaknesses] = useState([]);
     const [type, settype] = useState("");
@@ -235,11 +250,16 @@ function CharacterDetail() {
         }
         fetchChars();
     }, []);
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <div id="AboutUs">
+        <div className="container-fluid">
+            <div className="aboutUs-behindITTI row"><h3>Loading...</h3>
+            </div>
+        </div>
+    </div>;
     if (error) return <p>An error occurred: {error.message}</p>;
 
     else return (
-        <React.Fragment>
+        <>
             <Navbar />
             <Title2>
                 <div className="container d-flex justify-content-center ">
@@ -595,26 +615,27 @@ function CharacterDetail() {
                             </div>
 
                         </div>}
+                    {(forms.length > 0 && name != "Iron Man") && <NormalFormPowers id={forms[0]} />}
 
-
-
-                    <div className="container d-flex justify-content-center align-items-center">
+                    <div className="d-flex justify-content-center align-items-center p-5">
                         <div className="row py-4">
 
                             <Title>
                                 {(powers.length != 0) && <h1 id="aboutUs-WhoAreWe">
-                                    <FormattedMessage id="Powers" />
-
+                                    <FormattedMessage id="Powers" />  {(forms.length != 0 && name !== "Iron Man" && name !== "War Machine" && name !== "Moon Knight") &&
+                                        <h1>as {name}</h1>}
                                 </h1>}
                             </Title>
                             {powers.map((power) => (
-                                <div className="col-md-3 py-2">
+                                <div className="col py-2">
                                     <Powercard id={power} />
                                 </div>
 
                             ))}
                         </div>
                     </div>
+
+
                     {name == "Iron Man" && <IronManArmors></IronManArmors>}
                     {!alternate && <div>
                         {(name == "Venom" || name == "Agent Venom") &&
@@ -636,7 +657,7 @@ function CharacterDetail() {
                 </div>
             </div>
             <Footer />
-        </React.Fragment >
+        </>
     );
 }
 

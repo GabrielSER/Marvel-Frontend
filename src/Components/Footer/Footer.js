@@ -10,10 +10,10 @@ function Footer() {
                 <div className="row footer-row">
                     <img className="img d-lg-none d-xl-none" src="/Assets/Logos/minilogo.png" alt="VHS" />
                     <div className="col-lg-4 col-sm-12 col-xs-12 footer-icon-col footer-col">
-                        <img className="img d-none d-lg-block px-5" src="/Assets/Logos/footer-logo.png" alt="VHS" />
+                    <a href="https://www.marvel.com/"> <img className="img d-none d-lg-block px-5" src="/Assets/Logos/footer-logo.png" alt="VHS" /></a>
                         <div id="footer-copyright-region" className="p-1">
                             <p> </p>
-                            <span className='text-center'>All logos, characters, artwork, stories, information, names, and other elements associated with Marvel Entertainment, LLC, its subsidiaries and affiliates are the sole and exclusive property of the aforementioned companies. </span>
+                            <span className='text-center'>Disclaimer: This is a fan project. All logos, characters, artwork, stories, information, names, and other elements associated with Marvel Entertainment, LLC, its subsidiaries and affiliates are the sole and exclusive property of the aforementioned companies. </span>
                         </div>
                     </div>
                     <div className="col-lg-3 col-sm-12 col-xs-12 footer-col d-none d-lg-block">

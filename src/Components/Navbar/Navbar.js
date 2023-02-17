@@ -152,10 +152,6 @@ function Navbar() {
                                         <FormattedMessage id="ENEMIES" />
                                     </span>
                                 </Nav.Link>
-                                <div className="Topbar-hide-lg">
-                                    <button className={context.languageSettings.locale.startsWith("en") ? 'Topbar-button-active' : 'Topbar-button'} id="EN" value="en" onClick={handleChangeLanguage}><img src="Assets\Photos\Login\state.png"></img></button>
-                                    <button className={context.languageSettings.locale.startsWith("es") ? 'Topbar-button-active' : 'Topbar-button'} id="ES" value="es" onClick={handleChangeLanguage}><img src="Assets\Photos\Login\spain.png"></img></button>
-                                </div>
                             </Nav>
                             {/*isSigned(context.user)
                                 ?

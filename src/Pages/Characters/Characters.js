@@ -10,14 +10,16 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CharacterCard from './CharacterCard';
+import { useCharacters } from '../../Contexts/CharactersContext';
 
 function Characters() {
 
-    const [chars, setChars] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const { characters, loading } = useCharacters()
     const [error, setError] = useState(false);
 
-    useEffect(() => {
+    console.log(characters.values())
+
+    /*useEffect(() => {
         async function fetchChars() {
             setLoading(true);
             try {
@@ -31,8 +33,15 @@ function Characters() {
             }
         }
         fetchChars();
-    }, []);
-    if (loading) return <p>Loading...</p>;
+    }, []);*/
+
+    if (loading) return <div id="AboutUs">
+        <div className="container-fluid">
+            <div className="aboutUs-behindITTI row">
+                <h3>Loading...</h3>
+            </div>;
+        </div>;
+    </div>;
     if (error) return <p>An error occurred: {error.message}</p>;
 
     else return (
@@ -52,14 +61,19 @@ function Characters() {
             </div>
             <div className="container d-flex">
                 <div className="row py-4">
-                    {chars.map((char) => (
-                        <Link className="d-flex justify-content-center col-md-4 col-sm-2 py-3" to={`/characters/${char._id}`} >
-                            <Fade down>
-                                <div className="col d-flex justify-content-center " key={char._id}>
-                                    <CharacterCard imageSource={char.image} logo={char.logo} />
-                                </div> </Fade>
-                        </Link>
-                    ))}
+                    {
+                        Array.from(characters.values()).map((char) => (
+                            <Link
+                                className="d-flex justify-content-center col-md-4 col-sm-2 py-3"
+                                to={`/characters/${char._id}`}
+                            >
+                                <Fade down>
+                                    <div className="col d-flex justify-content-center " key={char._id}>
+                                        <CharacterCard imageSource={char.image} logo={char.logo} />
+                                    </div>
+                                </Fade>
+                            </Link>
+                        ))}
                 </div>
             </div>
             <Footer />
