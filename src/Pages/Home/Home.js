@@ -13,7 +13,6 @@ import CarrouselTel from '../../Components/HomeComponents/CarrouselTel'
 import MiniSocial from '../../Components/HomeComponents/MiniSocial';
 import SmallCarrousel from '../../Components/HomeComponents/SmallCarrousel';
 import ServicesList from '../Services/ServicesList';
-import AppointmentForm from '../SignUp/AppointmentForm';
 import AboutInfo from '../AboutUs/AboutInfo';
 import GoogleReviews from './ImageEffects';
 import GoogleReviewsImage from './GoogleReviewsImage';

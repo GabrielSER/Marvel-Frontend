@@ -9,7 +9,6 @@ import AppContext from "./AppContext";
 import { IntlProvider } from "react-intl";
 import en from "./Dictionaries/en.json";
 import es from "./Dictionaries/es.json";
-import SignUp from "./Pages/SignUp/SignUp";
 import { useAlert } from "react-alert";
 import CombatMain from "./Pages/CombatMain/CombatMain";
 import Characters from "./Pages/Characters/Characters";
@@ -73,7 +72,7 @@ function App() {
                   <Route path="/combat" exact element={<CombatMain />} />
                   <Route path="/roleplay" exact element={<AboutUs />} />
                   <Route path="/places" exact element={<Places />} />
-                  <Route path="/objects" exact element={<SignUp />} />
+                  <Route path="/objects" exact element={<Places />} />
                   <Route path="/characters/:_id" exact element={<CharacterDetail />} />
                   <Route path="/addpower" exact element={<AddPower />} />
                 </Routes>

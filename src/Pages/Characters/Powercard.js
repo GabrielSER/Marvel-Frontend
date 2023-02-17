@@ -18,7 +18,7 @@ function Powercard(props) {
             setPower(getPowerbyId(id))
         }
         fetchPower(props.id);
-    }, [loading]);
+    }, [loading, getPowerbyId]);
 
 
 

@@ -14,6 +14,7 @@ const initialState = {
     skillCheck: "",
     description: "",
     character: "",
+    module: "",
     chance: [],
     statusEffect: [],
     form: ""
