@@ -25,7 +25,7 @@ function Powercard(props) {
     // Set the background color of the card based on the level state
     const cardStyle = {
         font: 'comic',
-        width: '18rem',
+        width: '20em',
     };
     const titleStyle = {
         font: 'comic',
