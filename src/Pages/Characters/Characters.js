@@ -35,17 +35,23 @@ function Characters() {
         fetchChars();
     }, []);*/
 
-    if (loading) return <div id="AboutUs">
-        <div className="container-fluid">
-            <div className="aboutUs-behindITTI row">
-                <h3>Loading...</h3>
+    if (loading) return <>
+        <Navbar />
+        <div id="AboutUs">
+            <div className="container-fluid">
+                <div className="d-flex aboutUs-behindITTI row justify-center">
+                    <h3> <div class="spinner-border text-danger" role="status">
+                        <span class="sr-only"> </span>
+                    </div> Loading...</h3>
+                </div>;
             </div>;
         </div>;
-    </div>;
+        <Footer />
+    </>
     if (error) return <p>An error occurred: {error.message}</p>;
 
     else return (
-        <React.Fragment>
+        <>
             <Navbar />
             <div className="aboutUs-banner row">
                 <div className="col-12 aboutUs-banner-col d-none d-lg-block">
@@ -77,7 +83,7 @@ function Characters() {
                 </div>
             </div>
             <Footer />
-        </React.Fragment>
+        </>
     );
 }
 
