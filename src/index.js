@@ -6,7 +6,6 @@ import './index.css';
 import App from './App';
 import { Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
-import 'react-datepicker/dist/react-datepicker-cssmodules.min.css';
 
 const alertOptions = {
     position: 'top left',

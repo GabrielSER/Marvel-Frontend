@@ -6,8 +6,6 @@ import React from "react";
 import { Container, Nav, Navbar as NavbarReact } from "react-bootstrap";
 import AppContext from "../../AppContext";
 import { useContext } from "react";
-import * as mdb from 'mdb-ui-kit'; // lib
-import { Input } from 'mdb-ui-kit'; // module
 
 /*function isEmpty(object) {
     for (const property in object) {
