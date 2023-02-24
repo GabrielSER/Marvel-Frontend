@@ -1,7 +1,5 @@
 import "./CombatMain.css";
 import React, {useLayoutEffect} from 'react';
-import {FormattedMessage} from "react-intl";
-import {Carousel} from "react-bootstrap";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
 import { Fade } from 'react-reveal';

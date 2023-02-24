@@ -1,12 +1,7 @@
-import React, { useLayoutEffect } from 'react';
-import { FormattedMessage } from "react-intl";
-import { Carousel } from "react-bootstrap";
+import React from 'react';
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
-import { Slide, Fade } from 'react-reveal';
-import styled from 'styled-components';
-import axios from 'axios';
-import { useEffect } from 'react';
+import { Fade } from 'react-reveal';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CharacterCard from './CharacterCard';

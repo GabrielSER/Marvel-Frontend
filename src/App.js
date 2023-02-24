@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import Home from "./Pages/Home/Home";
-import Services from "./Pages/Services/Services";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import AppContext from "./AppContext";
 import { IntlProvider } from "react-intl";
@@ -17,9 +16,6 @@ import Places from "./Pages/Places/Places";
 import AddPower from "./Pages/Characters/AddPower";
 import { CharactersProvider } from "./Contexts/CharactersContext";
 import { PowersProvider } from "./Contexts/PowersContext";
-
-
-
 
 const nthElement = (arr, n = 0) => (n > 0 ? arr.slice(n, n + 1) : arr.slice(n))[0];
 function delay(time) {

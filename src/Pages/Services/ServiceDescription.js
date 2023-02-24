@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect } from 'react'
 import "./Services.css"
 import Footer from '../../Components/Footer/Footer'
 import Navbar from '../../Components/Navbar/Navbar'
