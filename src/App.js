@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import Home from "./Pages/Home/Home";
-import Services from "./Pages/Services/Services";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import AppContext from "./AppContext";
 import { IntlProvider } from "react-intl";

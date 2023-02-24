@@ -1,9 +1,5 @@
 import React, { useLayoutEffect } from 'react';
 import { FormattedMessage } from "react-intl";
-import { Carousel } from "react-bootstrap";
-import Footer from "../../Components/Footer/Footer";
-import Navbar from "../../Components/Navbar/Navbar";
-import Card from "./CharacterCard";
 import { Fade } from 'react-reveal';
 import styled from 'styled-components';
 import withReveal from 'react-reveal/withReveal';

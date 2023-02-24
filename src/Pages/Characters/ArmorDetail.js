@@ -1,9 +1,5 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import { FormattedMessage } from "react-intl";
-import { Carousel } from "react-bootstrap";
-import Footer from "../../Components/Footer/Footer";
-import Navbar from "../../Components/Navbar/Navbar";
-import Card from "./CharacterCard";
 import { Fade } from 'react-reveal';
 import styled from 'styled-components';
 import withReveal from 'react-reveal/withReveal';
@@ -12,11 +8,6 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import "./card.css";
-import NormalForm from './NormalFormStats';
-import NormalFormAbilities from './NormalFormAbilities';
-import NormalFormSkills from './NormalFormSkills';
-import NormalFormStats from './NormalFormStats';
-import IronManArmors from './IronManArmors';
 import Powercard from './Powercard';
 
 function ArmorDetail(props) {
