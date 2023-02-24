@@ -55,7 +55,7 @@ function Navbar() {
     }
 
     return (
-        <React.Fragment>
+        <>
             <div className="container-fluid">
                 <div className="row">
                     <div className='col-lg-12 col-xl-12 Topbar d-none d-lg-block d-xl-block'>
@@ -78,7 +78,7 @@ function Navbar() {
                     </div>
                 </div>
             </div>
-            <div class="row1">
+            <div className="row1">
                 <div className="d-none d-lg-block">
                     <div className="navbarBootstrap-logo">
                         <Nav.Link className="navbarBootstrap-item"
@@ -208,7 +208,7 @@ function Navbar() {
                     </div>
                 </NavbarReact>
             </div>
-        </React.Fragment>
+        </>
 
     )
 }

@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import Home from "./Pages/Home/Home";
@@ -16,6 +16,8 @@ import Places from "./Pages/Places/Places";
 import AddPower from "./Pages/Characters/AddPower";
 import { CharactersProvider } from "./Contexts/CharactersContext";
 import { PowersProvider } from "./Contexts/PowersContext";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 
 const nthElement = (arr, n = 0) => (n > 0 ? arr.slice(n, n + 1) : arr.slice(n))[0];
 function delay(time) {
@@ -62,6 +64,7 @@ function App() {
           <CharactersProvider>
             <PowersProvider>
               <BrowserRouter>
+              <Navbar/>
                 <Routes>
                   <Route path="/" exact element={<Home />} />
                   <Route path="/characters" exact element={<Characters />} />
@@ -72,6 +75,7 @@ function App() {
                   <Route path="/characters/:_id" exact element={<CharacterDetail />} />
                   <Route path="/addpower" exact element={<AddPower />} />
                 </Routes>
+                <Footer/>
               </BrowserRouter>
             </PowersProvider>
           </CharactersProvider>

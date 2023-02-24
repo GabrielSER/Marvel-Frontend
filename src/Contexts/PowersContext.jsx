@@ -39,7 +39,6 @@ const PowersProvider = (props) => {
         const loadPowers = async () => {
             try {
                 const powers = await query('/powers')
-                console.log(powers)
                 setState({
                     ...state,
                     powers

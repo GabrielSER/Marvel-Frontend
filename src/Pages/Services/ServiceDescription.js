@@ -1,7 +1,5 @@
 import React, { useLayoutEffect } from 'react'
 import "./Services.css"
-import Footer from '../../Components/Footer/Footer'
-import Navbar from '../../Components/Navbar/Navbar'
 import { FormattedMessage } from "react-intl";
 import { Slide } from 'react-reveal';
 import styled from 'styled-components';

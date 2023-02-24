@@ -143,7 +143,6 @@ const CharacterDetail = () => {
 
     else return (
         <>
-            <Navbar />
             <Title2>
                 <div className="container d-flex justify-content-center ">
                     <img class="img-fluid" src={character.logo} alt="Banner artisan" />
@@ -307,7 +306,6 @@ const CharacterDetail = () => {
                     </div>}
                 </div>
             </div>
-            <Footer />
         </>
     );
 }

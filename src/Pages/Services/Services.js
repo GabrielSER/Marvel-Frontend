@@ -1,7 +1,5 @@
 import React, { useLayoutEffect } from 'react'
 import "./Services.css"
-import Footer from '../../Components/Footer/Footer'
-import Navbar from '../../Components/Navbar/Navbar'
 import { Slide } from 'react-reveal';
 import styled from 'styled-components';
 import withReveal from 'react-reveal/withReveal';
@@ -26,14 +24,12 @@ function Services() {
 `, <Slide left duration={1000} delay={200} />);
     return (
         <div>
-            <Navbar />
             <div id='Products' className='background'>
                 <ServiceDescription></ServiceDescription>
                 <div>
                     <ServicesList></ServicesList>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

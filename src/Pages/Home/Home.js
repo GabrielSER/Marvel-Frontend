@@ -1,5 +1,3 @@
-import Navbar from '../../Components/Navbar/Navbar'
-import Footer from '../../Components/Footer/Footer'
 import './Home.css'
 import { useLayoutEffect } from "react";
 import React, { useState } from 'react';
@@ -22,15 +20,13 @@ function Home() {
     const [error, setError] = useState(false);
 
     return (
-        <React.Fragment>
-            <Navbar />
+        <>
             <div id='Home'>
                 <div className=''>
                     <SmallCarrousel />
                 </div>
             </div>
-            <Footer />
-        </React.Fragment>
+        </>
 
     )
 }
