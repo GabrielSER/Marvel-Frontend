@@ -30,7 +30,9 @@ function Powercard(props) {
     const titleStyle = {
         font: 'comic',
     };
-    if (loading||!power) return <p>Loading...</p>;
+    if (loading||!power) return <div class="loadingring">Loading
+        <span></span>
+    </div>;
     const {
         level,
         name,

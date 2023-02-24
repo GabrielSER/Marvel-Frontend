@@ -167,7 +167,9 @@ function NormalFormSkills(props) {
         }
         fetchForms(props.id);
     }, []);
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <div class="loadingring">Loading
+        <span></span>
+    </div>;
     if (error) return <p>An error occurred: {error.message}</p>;
 
     else return (

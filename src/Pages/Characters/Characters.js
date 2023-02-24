@@ -40,9 +40,9 @@ function Characters() {
         <div id="AboutUs">
             <div className="container-fluid">
                 <div className="d-flex aboutUs-behindITTI row justify-center">
-                    <h3> <div class="spinner-border text-danger" role="status">
-                        <span class="sr-only"> </span>
-                    </div> Loading...</h3>
+                    <div class="loadingring">Loading
+                        <span></span>
+                    </div>
                 </div>;
             </div>;
         </div>;

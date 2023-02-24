@@ -137,7 +137,10 @@ const CharacterDetail = () => {
 
     if (loading || !character) return <div id="AboutUs">
         <div className="container-fluid">
-            <div className="aboutUs-behindITTI row"><h3>Loading...</h3>
+            <div className="aboutUs-behindITTI row">
+                <div class="loadingring">Loading
+                    <span></span>
+                </div>
             </div>
         </div>
     </div>;
