@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Slide } from 'react-reveal';
+import styled from 'styled-components';
+import withReveal from 'react-reveal/withReveal';
 import './ImageEffects.css'
 
 function ImageEffects() {

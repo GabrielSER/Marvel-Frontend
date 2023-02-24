@@ -1,5 +1,7 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl';
 import "./CarrouselTel.css";
+import Fade from 'react-reveal/Fade';
 import styled from 'styled-components';
 import withReveal from 'react-reveal/withReveal';
 import { Slide } from 'react-reveal';

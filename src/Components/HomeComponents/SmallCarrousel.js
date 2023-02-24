@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl';
 import "./Carrousel.css";
 import makeCarousel from 'react-reveal/makeCarousel';
 // we'll need the Slide component for sliding animations
@@ -7,6 +8,10 @@ import Slide from 'react-reveal/Slide';
 // we'll use styled components for this tutorial
 // but you can use any other styling options ( like plain old css )
 import styled, { css } from 'styled-components';
+import CarrouselImage from './CarrouselImage';
+import Lymphatic from './Lymphatic';
+import Hair from './Hair';
+import SocialBanner from './SocialBanner';
 import withReveal from 'react-reveal/withReveal';
 import CarrouselTel from './CarrouselTel';
 import MiniSocial from './MiniSocial';

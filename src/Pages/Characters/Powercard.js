@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import Card from 'react-bootstrap/Card';
+import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import "./card.css";
+import { useParams } from 'react-router-dom';
 import { usePowers } from '../../Contexts/PowersContext';
 
 function Powercard(props) {
