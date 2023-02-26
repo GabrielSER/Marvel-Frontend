@@ -1,9 +1,5 @@
 import "./AboutUs.css";
 import React, {useLayoutEffect} from 'react';
-import {FormattedMessage} from "react-intl";
-import {Carousel} from "react-bootstrap";
-import Footer from "../../Components/Footer/Footer";
-import Navbar from "../../Components/Navbar/Navbar";
 import { Fade } from 'react-reveal';
 import styled from 'styled-components';
 import withReveal from 'react-reveal/withReveal';
@@ -18,11 +14,9 @@ function AboutUs() {
   `, <Fade up duration={1000} delay={200} />);
 
   return (
-      <React.Fragment>
-          <Navbar/>
-          <AboutInfo></AboutInfo>
-          <Footer/>
-      </React.Fragment>
+      <>
+          <AboutInfo/>
+      </>
 
   )
 }

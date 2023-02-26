@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useState } from 'react'
 import "./Services.css"
 import { FormattedMessage } from "react-intl";
 import { Slide } from 'react-reveal';
