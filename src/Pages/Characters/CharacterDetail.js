@@ -267,7 +267,7 @@ const CharacterDetail = () => {
                         </div>}
                     {(character.forms.length > 0 && character.name != "Iron Man") && <NormalFormPowers id={character.forms[0]} />}
 
-                    <div className="d-flex justify-content-center align-items-center p-5">
+                    {!alternate && <div className="d-flex justify-content-center align-items-center p-5">
                         <div className="row py-4">
 
                             <Title>
@@ -283,8 +283,8 @@ const CharacterDetail = () => {
 
                             ))}
                         </div>
-                    </div>
-
+                    </div>}
+                    {alternate && <NormalFormPowers id={character.forms[1]} />}
 
                     {character.name == "Iron Man" && <IronManArmors></IronManArmors>}
                     {!alternate && <div>
