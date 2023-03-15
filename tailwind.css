@@ -1,0 +1,42 @@
+@layer base {
+    @font-face {
+      font-family: 'ComicBook';
+      src: url(/src/assets/fonts/comic_book/ComicBook.otf) format('opentype');
+    }
+
+    @font-face {
+      font-family: 'Montserrat';
+      src: url(/src/assets/fonts/montserrat/Montserrat.ttf) format('truetype');
+    }
+  }
+
+  @layer components {
+    div.react-reveal {
+      @apply w-full h-full;
+    }
+  }
+  
+  /* Scrollbar */
+  
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0,0,0, 0.2);
+    border-radius: 7px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(120, 4, 4);
+    border-radius: 7px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(184, 0, 0);
+  }
+  
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;

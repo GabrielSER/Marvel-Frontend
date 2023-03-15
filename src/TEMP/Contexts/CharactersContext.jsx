@@ -6,10 +6,11 @@ import {
     useContext,
     useCallback
 } from 'react'
-import { useMarvel, httpMethod } from '../hooks/useMarvel'
+import { useMarvel, httpMethod } from '../Hooks/useMarvel'
 
 const CharactersContext = createContext()
 
+// Jsdoc
 /**
  * @typedef Character
  * @property {string} _id

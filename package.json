@@ -5,12 +5,13 @@
   "dependencies": {
     "axios": "^1.2.3",
     "bootstrap": "^5.1.3",
+    "clsx": "^1.2.1",
     "node-env-file": "^0.1.8",
     "react": "^17.0.2",
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",
-    "react-bootstrap": "^2.2.0",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.7.1",
     "react-intl": "^5.24.6",
     "react-leaf-polls": "^1.0.3",
     "react-reveal": "^1.2.2",
@@ -25,10 +26,10 @@
   "proxy": "http://localhost:5000/api",
   "homepage": "https://todo/",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "concurrently npm:start:*",
+    "start:js": "react-scripts start",
+    "start:css": "npx tailwindcss -i ./tailwind.css -o ./src/index.css --jit -w",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -47,5 +48,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "tailwindcss": "^3.2.7"
   }
 }
