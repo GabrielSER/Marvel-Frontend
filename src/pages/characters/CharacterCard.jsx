@@ -1,9 +1,10 @@
 import clsx from 'clsx'
+import LazyImage from '../ui/LazyImage'
 
 const CharacterCard = (props) => {
 
     const { character } = props
-    const { image, logo } = character
+    const { name, image, logo } = character
 
     return (
         <div
@@ -11,21 +12,20 @@ const CharacterCard = (props) => {
                 'flex',
                 'relative',
                 'w-52 h-80',
-                'object-contain',
                 'rounded-md',
                 'hover:scale-105',
                 'overflow-hidden'
             )}
         >
-            <img
+            <LazyImage
                 src={image}
-                alt='logo'
-                className={clsx(
-                    ''
-                )}
+                alt={name}
+                className='w-full h-full object-cover'
+                imageClassname='w-full h-full object-cover'
             />
-            <img
+            <LazyImage
                 src={logo}
+                alt={`${name}'s logo`}
                 className={clsx(
                     'flex absolute',
                     'w-full bottom-0 justify-center',

@@ -7,6 +7,7 @@ import {
     useCallback
 } from 'react'
 import { useMarvel, httpMethod } from '../hooks/useMarvel'
+import { normalizeName } from '../util/characterUtil'
 
 const CharactersContext = createContext()
 
@@ -20,9 +21,11 @@ const CharactersContext = createContext()
 /**
  * @typedef CharactersState
  * @property {Map<string, Character>} characters
+ * @property {Map<string, Character>} charactersByNormalized
  */
 const initialState = {
-    characters: new Map()
+    characters: new Map(),
+    charactersByNormalized: new Map()
 }
 
 const CharactersProvider = (props) => {
@@ -37,7 +40,9 @@ const CharactersProvider = (props) => {
         const loadCharacters = async () => {
             try {
                 const charactersArray = await query('/characters')
-                const characters = new Map(charactersArray.map(character => [character._id, character]))
+                const characters = new Map(charactersArray.map(character =>
+                    [character._id, character]
+                ))
                 setState({
                     ...state,
                     characters
@@ -50,14 +55,25 @@ const CharactersProvider = (props) => {
         loadCharacters()
     }, [])
 
+    useEffect(() => {
+        const characters = Array.from(state.characters.values())
+        const charactersByNormalized = new Map(characters.map(character =>
+            [normalizeName(character.name), character]
+        ))
+        setState({
+            ...state,
+            charactersByNormalized
+        })
+    }, [state.characters])
+
     const updateCharacter = useCallback(async (character) => {
         const updatedCharacter = await query(`/characters/${character._id}`, {
             method: httpMethod.PUT,
             body: character
         })
-        state.characters[updateCharacter._id] = updatedCharacter
+        state.characters.set(updatedCharacter._id, updatedCharacter)
         setState({ ...state })
-    }, [query, state])
+    }, [query, state.characters])
 
     const value = useMemo(() => ({
         ...state,

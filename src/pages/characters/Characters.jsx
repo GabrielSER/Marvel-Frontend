@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Fade } from 'react-reveal'
 import CharacterCard from './CharacterCard'
 import { useCharacters } from '../../contexts/CharactersContext'
+import { normalizeName } from '../../util/characterUtil'
 
 const Characters = () => {
 
@@ -22,7 +23,7 @@ const Characters = () => {
                 Array.from(characters.values()).map((character) => (
                     <Link
                         key={character._id}
-                        to={`/characters/${character._id}`}
+                        to={`/characters/${normalizeName(character.name)}`}
                     >
                         <Fade down>
                             <CharacterCard character={character} />

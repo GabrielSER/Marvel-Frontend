@@ -4,14 +4,21 @@ import confused from '../../assets/photos/AboutUs/confused.png'
 
 const NotFound = () => {
   return (
-    <div  
+    <div
       className={clsx(
-        'bottom-0',
-        'h-120',
-        'bg-primary'
+        'flex relative',
+        'bg-primary',
+        'object-cover'
       )}
     >
-      <img className='flex w-20 h-20 'src={confused}/>
+      <img
+        className='flex w-full h-full'
+        src={confused}
+      />
+      <h1
+        className='flex absolute w-full h-full justify-center items-center text-4xl text-white'>
+        Oh oh!
+      </h1>
     </div>
   )
 }

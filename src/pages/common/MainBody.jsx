@@ -15,6 +15,7 @@ import clsx from 'clsx'
 import { CharactersProvider } from '../../contexts/CharactersContext'
 import Banner from './Banner'
 import NotFound from '../not-found/NotFound'
+import CharacterDetail from '../character-detail/CharacterDetail'
 
 const MainBody = () => {
   return (
@@ -31,7 +32,7 @@ const MainBody = () => {
           <div
             className={clsx(
               'flex flex-col',
-              'w-full h-full',
+              'w-full h-full shrink-0',
               'overflow-x-hidden overflow-y-auto'
             )}
           >
@@ -39,6 +40,7 @@ const MainBody = () => {
             <Routes>
               <Route path='/' exact element={<Home />} />
               <Route path='/characters' exact element={<Characters />} />
+              <Route path='/characters/:normalized' exact element={<CharacterDetail />} />
               <Route path='/not-found' exact element={<NotFound/>} />
               <Route
                 path='*'

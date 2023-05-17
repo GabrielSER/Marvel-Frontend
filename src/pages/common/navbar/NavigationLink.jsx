@@ -17,7 +17,7 @@ const NavigationLink = (props) => {
             'flex',
             'justify-center items-center',
             'w-min',
-            'px-3 py-1',
+            'px-3 pt-2',
             'bg-dark',
             'font-montserrat font-bold'
           )}
