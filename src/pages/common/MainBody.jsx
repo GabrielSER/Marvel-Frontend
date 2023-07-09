@@ -36,7 +36,7 @@ const MainBody = () => {
               'overflow-x-hidden overflow-y-auto'
             )}
           >
-            <Banner />
+            
             <Routes>
               <Route path='/' exact element={<Home />} />
               <Route path='/characters' exact element={<Characters />} />

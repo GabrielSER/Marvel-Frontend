@@ -1,10 +1,12 @@
 import clsx from 'clsx'
 import LanguageLink from './LanguageLink'
 import UserLogo from './UserLogo'
+import Banner from '../Banner'
 
 
 const StateBar = () => {
     return (
+        <div>
         <div
             className={clsx(
                 'flex shrink-0',
@@ -15,9 +17,13 @@ const StateBar = () => {
                 'shadow-lg'
             )}
         >
+            
             <LanguageLink label='EN' active={true} />
             <LanguageLink label='ES' />
             <UserLogo />
+        </div>
+        
+        <Banner />
         </div>
     )
 }

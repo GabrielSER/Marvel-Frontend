@@ -8,9 +8,10 @@ const Banner = () => {
                 'flex',
                 'flex-col',
                 'justify-center items-center',
-                'p-4',
+                'p-2',
                 'space-y-2',
                 'text-2xl',
+                'text-white',
                 'font-bold font-montserrat'
             )}
         >
