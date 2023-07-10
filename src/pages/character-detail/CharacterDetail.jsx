@@ -4,6 +4,7 @@ import { useCharacterWithNormalizedName } from '../../hooks/useCharacterWithNorm
 import clsx from 'clsx'
 import { useEffect } from 'react'
 import LazyImage from '../ui/LazyImage'
+import CharacterPower from './CharacterPower'
 
 const CharacterDetail = () => {
 
@@ -280,6 +281,22 @@ const CharacterDetail = () => {
                                     <p className='py-2'><b>{weakness.split(":")[0]}</b>: {weakness.split(":")[1]}</p>
                                 ))}
                             </div>}
+                        </div>
+                    </div>
+                </div>
+                <div className="d-flex justify-content-center align-items-center p-5">
+                    <div className="row py-4">
+                        {(character.powers.length !== 0) && (
+                            <h1 className="text-2xl font-bold">
+                                Powers
+                            </h1>
+                        )}
+                        <div className="grid grid-cols-4 gap-4">
+                            {character.powers.map((power) => (
+                                <div className="flex flex-col py-2">
+                                    <CharacterPower id={power} />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

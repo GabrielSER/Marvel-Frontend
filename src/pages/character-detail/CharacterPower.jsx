@@ -1,39 +1,66 @@
 import clsx from 'clsx'
-import LazyImage from '../ui/LazyImage'
+import { PowersProvider, usePowers } from '../../contexts/PowersContext';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const CharacterPower = (props) => {
 
-    const { character } = props
+    const [power, setPower] = useState()
+    const [error, setError] = useState(false);
+    const { getPowerbyId, loading, powers } = usePowers()
 
-    return (
-        <div
-            className={clsx(
-                'flex',
-                'relative',
-                'w-52 h-80',
-                'rounded-md',
-                'hover:scale-105',
-                'overflow-hidden'
-            )}
-        >
-            <LazyImage
-                src={image}
-                alt={name}
-                className='w-full h-full object-cover'
-                imageClassname='w-full h-full object-cover'
-            />
-            <LazyImage
-                src={logo}
-                alt={`${name}'s logo`}
+    useEffect(() => {
+        async function fetchPower(id) {
+            setPower(getPowerbyId(id))
+        }
+        fetchPower(props.id);
+    }, [loading, getPowerbyId]);
+
+
+
+    // Set the background color of the card based on the level state
+    const cardStyle = {
+        font: 'comic',
+        width: '20em',
+    };
+    const titleStyle = {
+        font: 'comic',
+    };
+    if (loading||!power) return <div class="loadingring">Loading
+        <span></span>
+    </div>;
+    const {
+        level,
+        name,
+        module,
+        bonusDamage,
+        type,
+        skillCheck,
+        description
+    } = power
+    cardStyle.backgroundColor= level == '0' ? 'violet' : level == '1' ? 'cornflowerblue' : level == '2' ? 'darkseagreen' : level == '3' ? 'gold' : level == '4' ? 'tomato' : level == '5' ? 'darkgrey' : 'orange'
+
+    if (error) return <p>An error occurred: {error.message}</p>;
+
+    else return (
+       <PowersProvider power={power}>
+            <div
                 className={clsx(
-                    'flex absolute',
-                    'w-full bottom-0 justify-center',
-                    'z-20',
+                    'flex',
+                    'relative',
+                    'w-52 h-auto',
+                    'rounded-md',
+                    'hover:scale-105',
+                    'overflow-hidden',
                     'p-2'
                 )}
-            />
-        </div>
-    )
+                style={cardStyle}>
+                <p><b>{power.name}</b></p>
+                    <p><b><i>{power.bonusDamage} {power.type} {power.skillCheck} </i></b>{power.description}</p>
+                </div>
+        </PowersProvider>
+            );
+
 }
 
-export default CharacterPower
+            export default CharacterPower   

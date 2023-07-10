@@ -16,10 +16,12 @@ import { CharactersProvider } from '../../contexts/CharactersContext'
 import Banner from './Banner'
 import NotFound from '../not-found/NotFound'
 import CharacterDetail from '../character-detail/CharacterDetail'
+import { PowersProvider } from '../../contexts/PowersContext'
 
 const MainBody = () => {
   return (
     <CharactersProvider>
+    <PowersProvider>
       <BrowserRouter>
         <div
           className={clsx(
@@ -60,6 +62,7 @@ const MainBody = () => {
           </div>
         </div>
       </BrowserRouter>
+      </PowersProvider>
     </CharactersProvider>
   )
 }
