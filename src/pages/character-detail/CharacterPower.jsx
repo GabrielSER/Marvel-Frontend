@@ -55,7 +55,7 @@ const CharacterPower = (props) => {
                     'p-2'
                 )}
                 style={cardStyle}>
-                <p><b>{power.name}</b></p>
+                <p><b>{power.name} { console.log(power)}</b></p>
                     <p><b><i>{power.bonusDamage} {power.type} {power.skillCheck} </i></b>{power.description}</p>
                 </div>
         </PowersProvider>
