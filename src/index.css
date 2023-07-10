@@ -723,10 +723,6 @@ div.react-reveal {
   display: flex;
 }
 
-.grid {
-  display: grid;
-}
-
 .hidden {
   display: none;
 }
@@ -757,6 +753,10 @@ div.react-reveal {
 
 .h-full {
   height: 100%;
+}
+
+.h-7 {
+  height: 1.75rem;
 }
 
 .w-10 {
@@ -797,6 +797,26 @@ div.react-reveal {
   width: min-content;
 }
 
+.w-20 {
+  width: 5rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.w-7 {
+  width: 1.75rem;
+}
+
+.w-72 {
+  width: 18rem;
+}
+
+.w-80 {
+  width: 20rem;
+}
+
 .flex-initial {
   flex: 0 1 auto;
 }
@@ -835,10 +855,6 @@ div.react-reveal {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -905,6 +921,10 @@ div.react-reveal {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .overflow-y-auto {
@@ -989,6 +1009,36 @@ div.react-reveal {
 
 .bg-shadow {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bg-\[violet\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 130 238 / var(--tw-bg-opacity));
+}
+
+.bg-\[cornflowerblue\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 149 237 / var(--tw-bg-opacity));
+}
+
+.bg-\[darkseagreen\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(143 188 143 / var(--tw-bg-opacity));
+}
+
+.bg-\[gold\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 215 0 / var(--tw-bg-opacity));
+}
+
+.bg-\[tomato\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 99 71 / var(--tw-bg-opacity));
+}
+
+.bg-\[darkgrey\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(169 169 169 / var(--tw-bg-opacity));
 }
 
 .bg-local {

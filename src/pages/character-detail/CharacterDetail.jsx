@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import { useEffect } from 'react'
 import LazyImage from '../ui/LazyImage'
 import CharacterPower from './CharacterPower'
+import CharacterPowers from './CharacterPowers'
 
 const CharacterDetail = () => {
 
@@ -45,7 +46,7 @@ const CharacterDetail = () => {
                             </div>
                             <div className='row my-2'>
                                 {<div>
-                                    <h1 className="text-2xl font-bold">
+                                    <h1 className='text-2xl font-bold'>
                                         Stats:
                                     </h1>
                                     <div className='flex flex-row'>
@@ -70,9 +71,9 @@ const CharacterDetail = () => {
                                     </div>
                                 </div>}
                             </div>
-                            <div className="flex flex-row">
-                                {<div className="flex flex-col my-2">
-                                    <h1 className="text-2xl font-bold">
+                            <div className='flex flex-row'>
+                                {<div className='flex flex-col my-2'>
+                                    <h1 className='text-2xl font-bold'>
                                         Skills:
                                     </h1>
                                     {character.skills.acrobatics !== 0 && <div className='col'>
@@ -258,48 +259,33 @@ const CharacterDetail = () => {
                             </div>
                         </div>
                         <div className={clsx('flex flex-col w-full sm:w-2/3 h-full mx-2 sm:mx-20')}>
-                            <p className="sm:self-start mb-2"> <b className="text-2xl font-bold">Real Name: </b>{character.alterego} </p>
-                            <h1 className="text-2xl font-bold">
+                            <p className='sm:self-start mb-2'> <b className='text-2xl font-bold'>Real Name: </b>{character.alterego} </p>
+                            <h1 className='text-2xl font-bold'>
                                 Bio:
                             </h1>
-                            <span className="sm:self-start">
+                            <span className='sm:self-start'>
                                 {character.description}
                             </span>
-                            {character.abilities.length > 0 && <div className="flex flex-col my-2">
-                                <h1 className="text-2xl font-bold">
+                            {character.abilities.length > 0 && <div className='flex flex-col my-2'>
+                                <h1 className='text-2xl font-bold'>
                                     Abilities:
                                 </h1>
                                 {character.abilities.map((ability) => (
-                                    <p className='py-2'><b>{ability.split(":")[0]}</b>: {ability.split(":")[1]}</p>
+                                    <p className='py-2'><b>{ability.split(':')[0]}</b>: {ability.split(':')[1]}</p>
                                 ))}
                             </div>}
-                            {character.weaknesses.length > 0 && <div className="flex flex-col my-2">
-                                <h1 className="text-2xl font-bold">
+                            {character.weaknesses.length > 0 && <div className='flex flex-col my-2'>
+                                <h1 className='text-2xl font-bold'>
                                     Weaknesses:
                                 </h1>
                                 {character.weaknesses.map((weakness) => (
-                                    <p className='py-2'><b>{weakness.split(":")[0]}</b>: {weakness.split(":")[1]}</p>
+                                    <p className='py-2'><b>{weakness.split(':')[0]}</b>: {weakness.split(':')[1]}</p>
                                 ))}
                             </div>}
                         </div>
                     </div>
                 </div>
-                <div className="d-flex justify-content-center align-items-center p-5">
-                    <div className="row py-4">
-                        {(character.powers.length !== 0) && (
-                            <h1 className="text-2xl font-bold">
-                                Powers
-                            </h1>
-                        )}
-                        <div className="grid grid-cols-4 gap-4">
-                            {character.powers.map((power) => (
-                                <div className="flex flex-col py-2">
-                                    <CharacterPower id={power} />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                <CharacterPowers/>
             </div>
         </CharacterProvider>
     )

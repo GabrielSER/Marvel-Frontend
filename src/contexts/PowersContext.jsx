@@ -39,9 +39,10 @@ const PowersProvider = (props) => {
         const loadPowers = async () => {
             try {
                 const powers = await query('/powers')
+                const powersMap = new Map(powers.map(power => [power._id, power]))
                 setState({
                     ...state,
-                    powers
+                    powers: powersMap
                 })
             }
             catch (error) {
@@ -71,19 +72,13 @@ const PowersProvider = (props) => {
         updateCharacter(character)
     }, [state, query, characters, updateCharacter])
 
-    const getPowerbyId = (id) => {
-        return state.powers.find(power => power._id === id)
-    }
-
     const value = useMemo(() => ({
         ...state,
         loading,
-        getPowerbyId,
         addPowerToCharacter,
     }), [
         state,
         loading,
-        getPowerbyId,
         addPowerToCharacter
     ])
 
