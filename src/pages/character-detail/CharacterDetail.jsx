@@ -30,13 +30,13 @@ const CharacterDetail = () => {
                         <LazyImage
                             src={character.logo}
                             alt={character.name}
-                            className='w-200 h-auto self-center sm:mx-0 mx-5 py-4'
+                            className='w-200 h-auto self-center sm:mx-0 mx-5 py-4 hover:scale-105'
                             imageClassname='w-full h-auto'
                         />
                     </div>
                     <div className={clsx('flex flex-col sm:flex-row w-full h-full p-4 my-10 sm:ml-20')}>
                         <div className={clsx('flex flex-col w-full sm:w-1/3 h-full')}>
-                            <div className='flex flex-row'>
+                            <div className='flex flex-row hover:scale-105'>
                                 <LazyImage
                                     src={character.image}
                                     alt={character.name}

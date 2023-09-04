@@ -14,7 +14,7 @@ const Navbar = () => {
                 'shadow-lg'
             )}
         >
-            <StateBar/>
+            <StateBar />
 
             <NavigationContainer>
                 <NavigationLink
@@ -32,6 +32,14 @@ const Navbar = () => {
                 <NavigationLink
                     text='Objects'
                     to='/objects'
+                />
+                <NavigationLink
+                    text='Combat'
+                    to='/combat'
+                />
+                <NavigationLink
+                    text='Roleplaying'
+                    to='/roleplaying'
                 />
             </NavigationContainer>
         </div>
