@@ -5,17 +5,26 @@ import {
     useMemo,
     useContext
 } from 'react'
+import { usePowers } from './PowersContext'
 
 const CharactersContext = createContext()
 
 const CharacterProvider = (props) => {
 
+    const { powers } = usePowers()
     const { character } = props
+    const [characterPowers, setCharacterPowers] = useState([])
+
+    useEffect(() => {
+        setCharacterPowers(character.powers.map(powerId => powers.get(powerId)))
+    }, [character, powers])
 
     const value = useMemo(() => ({
-        character
+        character,
+        characterPowers
     }), [
-        character
+        character,
+        characterPowers
     ])
 
     return <CharactersContext.Provider value={value} {...props} />
