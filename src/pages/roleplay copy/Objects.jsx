@@ -1,5 +1,10 @@
 import clsx from 'clsx'
-import FirstFamily from '../../assets/images/combat/firstfamily.jpg'
+import Add from '../../assets/images/combat/add.PNG'
+import Beretta from '../../assets/images/combat/Baretta.PNG'
+import Deadpool from '../../assets/images/combat/deadpool.jpg'
+import Sniper from '../../assets/images/combat/sniper.jpg'
+import Machine from '../../assets/images/combat/machinegun.jpg'
+import Dual from '../../assets/images/combat/dualpistol.PNG'
 import Lifting from '../../assets/images/combat/Lifting.PNG'
 import Shehulk from '../../assets/images/combat/she-hulk.png'
 import Throw1 from '../../assets/images/combat/throw1.PNG'
@@ -29,38 +34,164 @@ import GreenGoblin from '../../assets/images/combat/greengoblin.jpg'
 import Identity from '../../assets/images/combat/identity.jpg'
 
 
-const Roleplay = () => {
+const Objects = () => {
   return (
 
 
 
     <div className="flex flex-col items-center justify-center min-h-screen space-y-4">
       <div className="max-w-5xl p-2 mx-auto items-center">
-        <h1 className="text-5xl font-semibold mt-4 text-center p-4">ROLEPLAYING ACTIONS</h1>
-        <p className="text-gray-700 mb-6 text-center mx-auto lg:px-0 px-10">
-          When roleplaying, characters can perform many kinds of actions. In this game, actions are divided in three categories. Common Actions, Special Actions and Custom Actions. Common actions are actions that can be performed by normal humans. For example, every character can lie. Some characters are better lying than others, but every character can attempt that action. Every character can also attempt to fire a gun, though some characters find it harder, but every character can attempt to do it. Special Actions are those that, despite in some cases every character can do it, superhuman abilities can create a huge difference when trying to perform said action. For example, Daredevil is not even close to being capable of lifting the same weight as the Hulk can and Hawkeye is not able to Jump as high as Jessica Jones. Custom actions are special cases in which a player comes up with different kinds of actions that cannot be described as common or special actions.
-        </p>
+        <h1 className="text-5xl font-semibold mt-4 text-center p-8">OBJECTS</h1>
       </div>
 
-      <div className="max-w-5xl p-2 mx-auto items-center lg:px-0 px-4">
-        <h1 className="text-4xl font-semibold mb-4 text-center">Common Actions</h1>
-        <p className="text-gray-700 mb-6 text-center">
-          A character that wants to perform any kind of action, must perform a 1d20 dice check, the number obtained in the dice will have a bonus according to the skill, stat or attribute required to perform given action. For example, hiding from another character requires the skill ‘stealth’, so the user must throw 1d20 and add the stealth skill value to the dice result. The GM will decide the check required for the action to be successful according to the circumstances, but the most basic successful action requires a result of 10.
+      <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
+        <h1 className="text-4xl font-semibold mb-4 text-center">Firearms</h1>
+        <p className="text-gray-700 mb-6 text-left">
+          Projectile Weapons have these attributes:
         </p>
-        <div className="flex justify-center"> {/* Added a flex container for centering */}
-          <img
-            className="lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
-            src={FirstFamily}
-            alt="FF"
-          />
+        <div className="flex flex-col items-left">
+          <p className="text-gray-700 text-left">
+            <p className="text-gray-700 font-semibold text-left">• 	Weapon type (WT):</p> sets some common behavior between weapons of the same type.
+          </p>
+          <p className="text-gray-700 text-left">
+            <p className="text-gray-700 font-semibold text-left">•	Weapon range (WR):</p> The maximum range in feet of a specific weapon.
+          </p>
+          <p className="text-gray-700 text-left">
+            <p className="text-gray-700 font-semibold text-left">•	Weapon damage factor (WF):</p> A portion of damage that is applied proportionally to the final damage made by a weapon attack, see Weapon damage/Modifier by performance.
+          </p>
+          <p className="text-gray-700 text-left">
+            <p className="text-gray-700 font-semibold text-left">•	Weapon distance penalty (WDP):</p> Describes how much the weapon damage is affected depending on the distance, for a projectile is the distance from shooter to target.
+          </p>
+          <p className="text-gray-700 text-left">
+            <p className="text-gray-700 font-semibold text-left">•	Weapon Capacity (WC):</p> The amount of ammo or charges that the weapon can hold at once.
+          </p>
+          <p className="text-gray-700 text-left">
+            <p className="text-gray-700 font-semibold text-left">•	Weapon Reload (WRE):</p> The number of actions required to reload a magazine or return the weapon to a loaded state.
+          </p>
+          <p className="text-gray-700 text-left">
+            <p className="text-gray-700 font-semibold text-left">•  Weapon Modifier (WM):</p> Weapons require some skill to be used efficiently, for instance a pistol will be used with firearms skill. To abbreviate, the skills Handguns, Shotguns, Rifles are under the Firearms skill, that means that a character with 4 of Firearms skill has 4 of Handguns too, but if the Handgun skill is greater that value will be used. This modifier will be applied to the hit roll and the final damage.
+          </p>
+          <p className="text-gray-700 text-left">
+            <p className="text-gray-700 font-semibold text-left">•  Modifier by performance:</p> The damage delt by a weapon depends on the performance of his user in that attack (1d20), in other words: Is not the same to attack the same target that has a 12 agility with a roll of 13 than with a 19 where both attacks are hits. That’s why the final total damage of a weapon depends on the roll and is defined in the next table.
+          </p>
+          <div className="flex justify-center"> {/* Added a flex container for centering */}
+            <img
+              className="lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-6"
+              src={Add}
+              alt="Add Modifier"
+            />
+          </div>
+          <p className="text-gray-700 text-left">
+            <p className="text-gray-700 font-semibold text-left">•  Static Weapon Damage:</p> Any weapon that requires some talent component of his user will have a damage output depending on the WF, for example a C4 explosive charge will always have the same damage value and it does not depend on the user that activated the device, so the WF stat of the weapon will be used as a base damage.
+          </p>
+        </div>
+      </div>
+      <div className="flex justify-center"> {/* Added a flex container for centering */}
+        <img
+          className="lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4"
+          src={Deadpool}
+          alt="Deadpool"
+        />
+      </div>
+      <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
+        <h1 className="text-xl font-semibold mb-4 text-center">Calculating final damage for firearms</h1>
+        <div className="flex flex-col items-left">
+          <p className="text-gray-700 mb-6 text-left">
+            The final damage of an attack is the sum of the weapon modifier (WM) and the modifier obtained with ADD and WF.
+          </p>
+          <h1 className="text-gray-700 mb-6 text-center">
+            <span> <span className="text-gray-700 font-semibold">Final damage = </span> WM + (ADD * WF)</span>
+          </h1>
+          <p className="text-gray-700 text-left">
+            For example, we will use Black Widow as a shooter with this weapon:
+          </p>
+          <div className="flex justify-center"> {/* Added a flex container for centering */}
+            <img
+              className="lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4"
+              src={Beretta}
+              alt="Beretta M9"
+            />
+          </div>
+          <p className="text-gray-700 mb-2 text-left">
+            For handguns Black Widow has 5 as Firearms skill, so the weapon modifier (WM) in this example is 5.
+          </p>
+          <p className="text-gray-700 mb-2 text-left">
+            We will shoot a target with an agility stat of 4.
+          </p>
+          <p className="text-gray-700 mb-2 text-left">
+            Black Widow attacks successfully to the target with a base roll of 14, but the WM is added to the final roll making a total of 19. To avoid damage, the target makes a roll of 11 and its agility stat is added making its agility check a total of 15. Knowing this, the final damage is:
+          </p>
+          <h1 className="text-gray-700 mb-6 text-center">
+            <span> <span className="text-gray-700 font-semibold">ADD = </span>19-15 = 4</span>
+          </h1>
+          <h1 className="text-gray-700 mb-6 text-center">
+            <span> <span className="text-gray-700 font-semibold">Final damage = </span> WM + (ADD * WF)</span>
+          </h1>
+          <h1 className="text-gray-700 mb-6 text-center">
+            <span> <span className="text-gray-700 font-semibold">Final damage = </span> 5 + (4 * 2) = 13</span>
+          </h1>
+          <p className="text-gray-700 mb-2 text-left">
+            It’s easier to calculate if you know that for every ADD, you add one WF.
+            All firearms leave the victim bleeding.
+          </p>
+          <p className="text-gray-700 mb-2 text-left">
+            This system allows Firearms to deal a great range of damage. A non critical shot from the beretta m9 can deal between 3 and 58 damage.
+          </p>
+          <p className="text-gray-700 mb-2 text-left">
+            However weapons can easily fall from the user grip, when recieving an attack that deals knockback, the user must make a durability check of 10 or their weapon will fall from their hands.
+          </p>
+          <p className="text-gray-700 mb-2 text-left">
+            A character can also use their action to attempt to disarm another character. It is a strength duel. If the character that is attempting to disarm wins with a difference of more than 3 strength points they will keep the stolen weapon. If they win with a difference lower than 2, the weapon will fall to the ground.
+          </p>
         </div>
       </div>
 
-      <div className="max-w-5xl p-2 mx-auto items-center lg:px-0 px-10 ">
-        <h1 className="text-4xl font-semibold mb-4 text-center">Special Actions</h1>
-        <p className="text-gray-700 mb-6 text-center">
-          Some actions can be completely different depending on the character you’re playing. This kind of actions will be scaled according to a range, and the capacity of certain character to perform given action will be given by the Stat, Skill or Attribute required for it to be performed. These are some examples of special actions and how do they work:
-        </p>
+      <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
+        <h1 className="text-xl font-semibold mb-4 text-center">Shooting long distances</h1>
+        <div className="flex flex-col items-left">
+          <p className="text-gray-700 mb-6 text-left">
+            When the weapon is used further its first limit of distance penalty the final damage will be reduced by a weapon factor (WF). The check for these distances is marksman instead of firearms.
+          </p>
+          <div className="flex justify-center"> {/* Added a flex container for centering */}
+            <img
+              className="lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4"
+              src={Sniper}
+              alt="Sniper"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
+        <h1 className="text-xl font-semibold mb-4 text-center">Automatic and semi-automatic Firearms</h1>
+        <div className="flex flex-col items-left">
+          <p className="text-gray-700 mb-6 text-left">
+            For automatic firearms like Submachine guns, you can fire up to 10 bullets on a single turn from which only 1d10 will hit. For semiautomatic firearms you can fire up 6 bullets on a single turn, but only 1d6 will hit. The damage is calculated only once and it applies for every bullet that hits. However these weapons have the bonus applied to the firearms or marksman check halfed.
+          </p>
+          <div className="flex justify-center"> {/* Added a flex container for centering */}
+            <img
+              className="lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4"
+              src={Machine}
+              alt="Crossbones"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
+        <h1 className="text-xl font-semibold mb-4 text-center">Dual-Wielding Firearms</h1>
+        <div className="flex flex-col items-left">
+          <p className="text-gray-700 mb-6 text-left">
+          If a character is holding two firearms, one in each hand, they can attempt to fire the second weapon, but without the weapon modifier bonus.
+              </p>
+          <div className="flex justify-center"> {/* Added a flex container for centering */}
+            <img
+              className="lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4"
+              src={Dual}
+              alt="Black Widow"
+            />
+          </div>
+        </div>
       </div>
 
       <div className='flex lg:flex-row flex-col'>
@@ -71,7 +202,7 @@ const Roleplay = () => {
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-md max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
               src={Lifting}
               alt="Lift Table"
             />
@@ -79,7 +210,7 @@ const Roleplay = () => {
         </div>
         <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 py-10"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Shehulk}
             alt="Lift Table"
           />
@@ -93,21 +224,21 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-2xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-2xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Throw1}
             alt="Throw Table 1"
           />
         </div>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-2xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-2xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Throw2}
             alt="Throw Table 2"
           />
         </div>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-2xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-2xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Throw3}
             alt="Colossus and Wolverine"
           />
@@ -121,14 +252,14 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-5xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Crush}
             alt="Crushing Damage Table"
           />
         </div>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-4xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-4xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Destiny}
             alt="If this be my Destiny!"
           />
@@ -142,7 +273,7 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-5xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={CarCrash}
             alt="Crushing Damage Table"
           />
@@ -152,7 +283,7 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-4xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-4xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Crash}
             alt="Car Crash"
           />
@@ -168,7 +299,7 @@ const Roleplay = () => {
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-md max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
               src={Jump}
               alt="Vertical Jump Table"
             />
@@ -176,7 +307,7 @@ const Roleplay = () => {
         </div>
         <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 hidden lg:block py-10"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={HulkJump}
             alt="Hulk Jump"
           />
@@ -185,7 +316,7 @@ const Roleplay = () => {
       <div className='flex lg:flex-row flex-col'>
         <div className="flex justify-center lg:pl-28 pl-0 lg:pr-16 pr-0 py-10"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={CapJump}
             alt="Captain America Jumping"
           />
@@ -196,7 +327,7 @@ const Roleplay = () => {
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-md max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
               src={HorizontalJump}
               alt="Horizontal Jump Table"
             />
@@ -210,7 +341,7 @@ const Roleplay = () => {
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-md max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
               src={AcrobatJump}
               alt="Acrobatic Jump Table"
             />
@@ -221,7 +352,7 @@ const Roleplay = () => {
         </div>
         <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 py-10"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={DaredevilJump}
             alt="Hulk Jump"
           />
@@ -235,14 +366,14 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-5xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Breaking}
             alt="Breaking Table"
           />
         </div>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-4xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-4xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Serpent}
             alt="Cap's Shield Broken"
           />
@@ -256,7 +387,7 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-5xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Flying}
             alt="Falcon Flying"
           />
@@ -272,7 +403,7 @@ const Roleplay = () => {
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-xs max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="lg:max-w-xs max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
               src={Flytable}
               alt="Flying per turns Table"
             />
@@ -283,7 +414,7 @@ const Roleplay = () => {
         </div>
         <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 py-10"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Flycombat}
             alt="Rogue Flying"
           />
@@ -293,7 +424,7 @@ const Roleplay = () => {
       <div className='flex lg:flex-row flex-col'>
         <div className="flex justify-center lg:pl-28 pl-0 lg:pr-16 pr-0 py-10 hidden lg:block "> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Ironfly}
             alt="Iron Man Flying"
           />
@@ -305,7 +436,7 @@ const Roleplay = () => {
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-md max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
               src={Speedflight}
               alt="Speed Flight Table"
             />
@@ -320,7 +451,7 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-5xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Xmen}
             alt="X-Men"
           />
@@ -368,7 +499,7 @@ const Roleplay = () => {
         </div>
         <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 py-10"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Popular}
             alt="The (In)famous Iron Man"
           />
@@ -383,7 +514,7 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-5xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={MoonKnight}
             alt="Moon Knight has a bad reputation!"
           />
@@ -431,7 +562,7 @@ const Roleplay = () => {
         </div>
         <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={GreenGoblin}
             alt="Super Villain"
           />
@@ -445,7 +576,7 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-5xl max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 mb-6"
             src={Identity}
             alt="Spider-Man's Identity"
           />
@@ -457,4 +588,4 @@ const Roleplay = () => {
   )
 }
 
-export default Roleplay
+export default Objects

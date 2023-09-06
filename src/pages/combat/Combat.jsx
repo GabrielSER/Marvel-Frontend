@@ -86,7 +86,7 @@ const Combat = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Ranged}
             alt="Hawkeye"
           />
@@ -100,14 +100,14 @@ const Combat = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Combo}
             alt="Fighting"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="max-w-xl p-2 mx-auto items-center">
           <h1 className="text-2xl font-semibold mb-4 text-center">Dodge</h1>
           <p className="text-gray-700 mb-6 text-center">
@@ -126,14 +126,14 @@ const Combat = () => {
       <div className="max-w-5xl p-2 mx-auto items-center">
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Dodge}
             alt="Fighting"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="max-w-xl p-2 mx-auto items-center">
           <h1 className="text-2xl font-semibold mb-4 text-center">Disengage</h1>
           <p className="text-gray-700 mb-6 text-center">
@@ -151,14 +151,14 @@ const Combat = () => {
       <div className="max-w-5xl p-2 mx-auto items-center">
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Oportunity}
             alt="Oportunity Attack"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="max-w-xl p-2 mx-auto items-center">
           <h1 className="text-2xl font-semibold mb-4 text-center">Revive</h1>
           <p className="text-gray-700 mb-6 text-center">
@@ -176,14 +176,14 @@ const Combat = () => {
       <div className="max-w-5xl p-2 mx-auto items-center">
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Dash}
             alt="Dash"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="max-w-xl p-2 mx-auto items-center">
           <h1 className="text-2xl font-semibold mb-4 text-center">Help</h1>
           <p className="text-gray-700 mb-6 text-center">
@@ -201,14 +201,14 @@ const Combat = () => {
       <div className="max-w-5xl p-2 mx-auto items-center">
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Help}
             alt="Help"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="max-w-xl p-2 mx-auto items-center">
           <h1 className="text-2xl font-semibold mb-4 text-center">Radial attacks</h1>
           <p className="text-gray-700 mb-6 text-center">
@@ -226,15 +226,15 @@ const Combat = () => {
       <div className="max-w-5xl p-2 mx-auto items-center">
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Psychic}
             alt="Psychic Attacks"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col'>
-        <div className="flex-col sm:pr-28 pr-0">
+      <div className='flex lg:flex-row flex-col'>
+        <div className="flex-col lg:pr-28 pr-0">
           <h1 className="text-3xl font-semibold mb-4 text-center">Damage types</h1>
           <div className="flex flex-row">
             <div className="flex flex-col px-5">
@@ -311,7 +311,7 @@ const Combat = () => {
             <div className="absolute inset-0 bg-black opacity-0 hover:opacity-30 transition-opacity duration-300"></div>
           </div>
         </div>
-        <div className="p-2 mx-auto items-center sm:pl-40 pl-0">
+        <div className="p-2 mx-auto items-center lg:pl-40 pl-0">
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
               className="max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
@@ -323,14 +323,14 @@ const Combat = () => {
 
       </div>
 
-      <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center">
+      <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center">
         <h1 className="text-2xl font-semibold mb-4 text-center">Critical Hit</h1>
         <p className="text-gray-700 mb-6 text-center">
           If a character or creature gets a natural 20 when throwing the check for attacking another character or creature it deals a critical hit. A critical hit always deals double damage. After the critical hit, the attacker will throw 1d100, and according to the result, the victim will have one of different effects:
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-5xl max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-5xl max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Critical}
             alt="Critical Table"
           />
@@ -340,7 +340,7 @@ const Combat = () => {
       <div className="max-w-5xl p-2 mx-auto items-center">
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Elektra}
             alt="Elektra's Death"
           />
@@ -348,14 +348,14 @@ const Combat = () => {
       </div>
 
 
-      <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center">
+      <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center">
         <h1 className="text-2xl font-semibold mb-4 text-center">Failure</h1>
         <p className="text-gray-700 mb-6 text-center">
           If a character gets 1 in their 1d20 check for any action, not only the action fails, but it produces a negative effect on the character which will be determined by the GM according to the circumstances. However, if this action is attempted during combat against an enemy, the character who failed the action will throw 1d100, and according to the result, they will have one of different effects:
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-2xl max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-2xl max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Failure}
             alt="Failure"
           />
@@ -365,7 +365,7 @@ const Combat = () => {
       <div className="max-w-5xl p-2 mx-auto items-center">
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Gwen}
             alt="Spider-Man's Failure"
           />
@@ -434,15 +434,15 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center">
+      <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center">
         <h1 className="text-4xl font-semibold mb-4 text-center">Status Effects</h1>
         <p className="text-gray-700 mb-2 text-center">
           A character can be affected by many different kinds of status effects during combat. This is a list of different statuses and their descriptions:
         </p>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Bleeding</h1>
           <p className="text-gray-700 mb-6 text-center">
             When bleeding, a character’s defense lowers by 1 and takes 1d6 damage each turn. If a character is hit while bleeding, the bleeding has 50% chance of getting worse, which will add another 1d6 damage each turn. This status will last until a long rest is taken, or until the open wound is either covered with a bandage or cauterized. Characters with lesser healing factor can cure from bleeding with a Durability check of 15 and characters with a regenerative healing factor can cure with a Durability check of 12. If a character gets hit and obtains 6d6 of bleeding it will die of blood loss.
@@ -450,22 +450,22 @@ const Combat = () => {
         </div>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Bleeding}
             alt="Spider-Man Bleeding"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Blinded}
             alt="Daredevil"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Blinded</h1>
           <p className="text-gray-700 mb-6 text-center">
             A blinded character can’t see and automatically fails any ability check that requires sight. Attack rolls against the character have advantage, and the character’s attack rolls are thrown in disadvantage. When not specified, this status lasts for 1d6 turns.
@@ -474,8 +474,8 @@ const Combat = () => {
       </div>
 
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Burned</h1>
           <p className="text-gray-700 mb-6 text-center">
             Each turn, a burned character must take 1d6 damage. While burned, this character’s physical attacks will deal half damage. This status lasts until the end of the battle, or until the character gets any kind of fire extinguisher or until it makes a Durability throw of 14. Doesn’t apply underwater.
@@ -483,31 +483,31 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Burned}
             alt="Burned Wolverine"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Charmed}
             alt="Enchantress and Executioner"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Charmed</h1>
           <p className="text-gray-700 mb-6 text-center">
-            A charmed character can’t attack the charmer or target the charmer with harmful Abilities or effects. The charmer has advantage on any ability check to interact socially with the character and can convince the charmed character to do any kind of action he wants if it doesn’t involve self-harm. Each turn, the player must save to 15 Intelligence or 18 Wisdom to uncharm the character. If the victim receives more than 12 HP damage, the controller must save to 18 charisma to keep charming its victim.
+            A charmed character can’t attack the charmer or target the charmer with harmful Abilities or effects. The charmer has advantage on any ability check to interact socially with the character and can convince the charmed character to do any kind of action he wants if it doesn’t involve self-harm. Each turn, the player must save to 15 Intelligence or 18 Wisdom to uncharm the character. If the victim receives more than 12 HP damage, the controller must save to 18 charilga to keep charming its victim.
           </p>
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Comatose</h1>
           <p className="text-gray-700 mb-6 text-center">
             A character in coma, sleeps permanently. A player can attempt to awake a comatose character once per day, but he only has 10% chance of doing so.
@@ -515,22 +515,22 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Comatose}
             alt="Comatose Iron Man"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Confused}
             alt="Confused Spider-Men"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Confused</h1>
           <p className="text-gray-700 mb-6 text-center">
             Attacks made by a confused character are thrown in disadvantage. It lasts for until the affected character saves to 15 wisdom, but the throw can only be attempted after 1 turns after getting confused.
@@ -538,8 +538,8 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Concentrated</h1>
           <p className="text-gray-700 mb-6 text-center">
             A character that requires concentration for some actions can move but they can’t attempt any other kind of action while concentrating. A character that requires high concentration cannot move while concentrating. If a character gets attacked while concentrating, it will lose its concentration.
@@ -547,22 +547,22 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Concentrated}
             alt="Professor X"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Deafened}
             alt="Deaf Hawkeye"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Deafened</h1>
           <p className="text-gray-700 mb-6 text-center">
             A deafened character can’t hear, automatically fails any ability check that requires hearing and has disadvantage with acrobatics, athletics, or agility throws. It normally lasts for 1d4 turns.
@@ -570,8 +570,8 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Drugged</h1>
           <p className="text-gray-700 mb-6 text-center">
             A drugged character obtains one or more effects depending on the drug received. In addition, the player must make a Durability save to determine if the character becomes addicted.
@@ -579,22 +579,22 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Drugged}
             alt="Drugged Harry Osbron"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Drunk}
             alt="Drunk Iron Man"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Drunk</h1>
           <p className="text-gray-700 mb-6 text-center">
             When consuming a high number of alcoholic drinks, a character gets drunk, so its intelligence gets reduced in 2 points, and its wisdom and perception gets reduced to 1. A character will stay drunk until it rests. However, after resting, it will have a hangover which will reduce its defense and perception in 2 points.
@@ -602,8 +602,8 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Frightened</h1>
           <p className="text-gray-700 mb-6 text-center">
             When frightened, a character will try to run away from the enemy that caused this status. All attacks against this enemy will be thrown in disadvantage, and if failed, the character will run 30 ft away from the causer of this status. A frightened character has 20% chance of getting stunned because of fear every turn this status lasts. If the duration is not specified, frightening lasts for 3 turns.
@@ -611,22 +611,22 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Frightened}
             alt="Frightened Ms. Marvel"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Frozen}
             alt="Frozen Captain America"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Frozen</h1>
           <p className="text-gray-700 mb-6 text-center">
             While frozen, a character can’t attempt any action, and its Speed is 0. Every turn on this status, the character takes 1d8 cold damage. To break free, the player must save to 17 Strength or cast a fire attack. All attacks against this character are thrown in advantage, but they have a 50% chance of letting the frozen character free.
@@ -634,8 +634,8 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Grappled</h1>
           <p className="text-gray-700 mb-6 text-center">
             A grappled character is trapped, and its speed is now 0. All attacks made while in this status are thrown in disadvantage. All attacks against the character are thrown in advantage. To break free, the player must save to 16 Strength.
@@ -643,22 +643,22 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Grappled}
             alt="Fantastic Grapple"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Irradiated}
             alt="The Incredible Hulk"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Irradiated</h1>
           <p className="text-gray-700 mb-6 text-center">
             While in this status, a character gets 1d6 each turn, its perception is reduced to 0 and its defense is reduced in 2 points.
@@ -666,8 +666,8 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Prone after fall</h1>
           <p className="text-gray-700 mb-6 text-center">
             A prone character fell to the ground and all attacks against this character are thrown in advantage. A prone character can only stand up in their turn by using half of their movement speed for that turn. If succeding in an agility check of 18, the fallen character can get up keeping all their movement speed.
@@ -675,22 +675,22 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Fallen}
             alt="Prone Rogue"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Invisible}
             alt="Invisible Woman"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Invsible</h1>
           <p className="text-gray-700 mb-6 text-center">
             An invisible character cannot be seen by any other character. For attempting an attack on an invisible character, the attacker must make a perception check of 15 to get an estimated location. If failed, the attacker won’t be able to attack. If succeeded, this attack will be thrown in disadvantage. Characters with superhuman senses like Daredevil can detect the location of invisible characters, so they can just attack them normally. Other characters with special senses like Spider-Man, can detect an estimated location, but their attacks are still thrown in disadvantage.
@@ -698,8 +698,8 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Paralyzed</h1>
           <p className="text-gray-700 mb-6 text-center">
             A paralyzed character has his speed reduced in half and every turn has a 50% chance of not being able to perform any action. After three turns, the player must save Durability to 15 to remove the effect.
@@ -707,22 +707,22 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Paralyzed}
             alt="Paralyzed Spider-Man"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Petrified}
             alt="Petrified Avengers"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Petrified</h1>
           <p className="text-gray-700 mb-6 text-center">
             While petrified, a character can’t attempt any action, and its Speed is 0. He cannot either see anything. To break free, the player must save to 19 Strength. All attacks against this character are thrown in advantage, but they have a 50% chance of letting the petrified character free. However, there is 5% chance that an attack will break the rock and kill the petrified character. If a character stay petrified for more than 10 turns, it dies.
@@ -730,8 +730,8 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Possessed</h1>
           <p className="text-gray-700 mb-6 text-center">
             A possessed character has the possessor’s consciousness inside his body. The possessor has advantage on any ability check to interact socially with the character and can control its victim to do any kind of action he wants. Each turn, the possessed character must save to 19 Wisdom to free himself.
@@ -739,22 +739,22 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Possessed}
             alt="Ghost Rider"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Poisoned}
             alt="Omega Red"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Poisoned</h1>
           <p className="text-gray-700 mb-6 text-center">
             Each turn, a poisoned character takes damage. The damage dice dealt to a poisoned character increases each turn, starting with 1d4, and the next turn increasing to 1d6, repenting until it gets to 1d20, the next turn another 1d4 gets added and the process repeats. Normal poison can be cured by a durability throw of 14, Bad Poison can be cured by a durability throw of 17, and a mortal poison can only be cured by an antidote or by healing powers. However, durability throws for healing poisoning can only be attempted after 3 turns of poison damage.
@@ -762,8 +762,8 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Purple Control</h1>
           <p className="text-gray-700 mb-6 text-center">
             A character controlled by purple man, when receiving a verbal command from him, will stop doing whatever action they were attempting, and they will try to accomplish whatever was ordered to them by purple man. They will not stop until they achieve what was ordered or until 12 hours pass. A character can be put to sleep for them to stop their current actions, but once they wake up, they will start trying to do again whatever purple man ordered them.
@@ -771,22 +771,22 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Purple}
             alt="Purple Man"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Sleeping}
             alt="Sleeping"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Sleeping</h1>
           <p className="text-gray-700 mb-6 text-center">
             A sleeping induced character will stay asleep util it is awaked by loud sounds, or by being hit. It can also attempt a perception check of 13 to wake up.
@@ -794,8 +794,8 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Soaked</h1>
           <p className="text-gray-700 mb-6 text-center">
             A soaked character received double damage from cold and electric attacks and half damage by fire attacks. They also have 20% chance of falling prone when dashing.
@@ -803,22 +803,22 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Soaked}
             alt="Hydro Man"
           />
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className="flex justify-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden sm:block"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block"
             src={Stunned}
             alt="Stunned Kingpin"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm mx-auto items-center my-auto  sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Stunned</h1>
           <p className="text-gray-700 mb-6 text-center">
             A character can’t make any kind of action while stunned. The player must save Durability to 14 to remove the effect. Every attack against a stunned character is done in advantage. It lasts a maximum of 3 turns
@@ -826,8 +826,8 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0">
           <h1 className="text-2xl font-semibold mb-4 text-center">Telepathically Controlled</h1>
           <p className="text-gray-700 mb-6 text-center">
             A character that is being controlled can’t attack the telepath or target the telepath with harmful Abilities or effects. The telepath has advantage on any ability check to interact socially with the character and can control its victim to do any kind of action he wants if it doesn’t involve self-harm. Each turn, the controlled character must save to 18 Intelligence or 15 Wisdom to free himself. If the victim receives more than 12 HP Damage, the controller must save to 18 wisdom to keep controlling its victim.
@@ -835,7 +835,7 @@ const Combat = () => {
         </div>
         <div className="flex justify-center items-center px-16"> {/* Added a flex container for centering */}
           <img
-            className="sm:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Telepath}
             alt="Jean Grey"
           />
@@ -843,23 +843,23 @@ const Combat = () => {
       </div>
       <h1 className="text-5xl font-semibold my-4 text-center">Level Up</h1>
 
-      <div className='flex sm:flex-row flex-col sm:px-0 px-2 mb-10'>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 my-auto px-0 mb-6">
+      <div className='flex lg:flex-row flex-col lg:px-0 px-2 mb-10'>
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0 mb-6">
           <p className="text-gray-700 mb-6 text-center">
             Every battle gives experience to all characters in a party. With enough experience the whole party can level up. Every time a character levels up, it gains 10 hp and wins an specific amount of Skill Points that can be spent on unlocking different powers or improve stats and skills. On levels 10 and 20 it gains 20 hp. The amount of skill points won on each level up can be seen on the following table:
           </p>
           <img
-            className="sm:max-w-lg max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-7"
+            className="lg:max-w-lg max-w-lg mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-7"
             src={Skilllvl}
             alt="Skill up points per level"
           />
         </div>
-        <div className="sm:max-w-5xl max-w-sm p-2 mx-auto items-center align-middle sm:px-24 px-0">
+        <div className="lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 px-0">
           <p className="text-gray-700 mb-6 text-center">
             Powers can be unlocked using skill points once you have the level required for unlocking that given power. The skill point cost for unlocking powers can be seen in this table:
           </p>
           <img
-            className="sm:max-w-lg max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Powerlvl}
             alt="Power skill points per level"
           />
@@ -867,7 +867,7 @@ const Combat = () => {
             Skills can also be improved using the skill points. The following table shows how many skill points does it cost to increase your skill to a certain level:
           </p>
           <img
-            className="sm:max-w-lg max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-lg mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Skilvl}
             alt="Skill cost per level"
           />

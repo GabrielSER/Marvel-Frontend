@@ -4,6 +4,7 @@ import NavigationLink from './NavigationLink'
 import StateBar from './StateBar'
 
 const Navbar = () => {
+    
     return (
         <div
             className={clsx(

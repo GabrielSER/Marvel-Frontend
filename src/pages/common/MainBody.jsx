@@ -19,6 +19,7 @@ import CharacterDetail from '../character-detail/CharacterDetail'
 import { PowersProvider } from '../../contexts/PowersContext'
 import Combat from '../combat/Combat'
 import Roleplay from '../roleplay/Roleplay'
+import Objects from '../objects/Objects'
 
 const MainBody = () => {
   return (
@@ -46,6 +47,7 @@ const MainBody = () => {
               <Route path='/characters' exact element={<Characters />} />
               <Route path='/combat' exact element={<Combat />} />
               <Route path='/roleplaying' exact element={<Roleplay />} />
+              <Route path='/objects' exact element={<Objects />} />
               <Route path='/characters/:normalized' exact element={<CharacterDetail />} />
               <Route path='/not-found' exact element={<NotFound/>} />
               <Route
