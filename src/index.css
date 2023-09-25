@@ -19,6 +19,27 @@
   background: rgb(184, 0, 0);
 }
 
+/** Hide scrollbar **/
+
+.hide-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.hide-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+  width: 0;
+  height: 0;
+  border-radius: 0px;
+}
+
+.hide-scroll::-webkit-scrollbar-track {
+  width: 0;
+  height: 0;
+  border-radius: 0px;
+}
+
 /* ! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com */
 
 /*
@@ -879,6 +900,10 @@ div.react-reveal {
   max-width: 20rem;
 }
 
+.max-w-sm {
+  max-width: 24rem;
+}
+
 .flex-initial {
   flex: 0 1 auto;
 }
@@ -959,6 +984,10 @@ div.react-reveal {
   gap: 2rem;
 }
 
+.gap-5 {
+  gap: 1.25rem;
+}
+
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -989,6 +1018,10 @@ div.react-reveal {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .overflow-y-auto {
@@ -1150,6 +1183,10 @@ div.react-reveal {
   padding: 2rem;
 }
 
+.p-6 {
+  padding: 1.5rem;
+}
+
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -1254,6 +1291,10 @@ div.react-reveal {
   text-align: center;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .align-middle {
   vertical-align: middle;
 }
@@ -1321,6 +1362,11 @@ div.react-reveal {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(236 29 35 / var(--tw-text-opacity));
 }
 
 .underline {
