@@ -760,6 +760,46 @@ div.react-reveal {
   margin-top: 1rem;
 }
 
+.mr-10 {
+  margin-right: 2.5rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.mr-12 {
+  margin-right: 3rem;
+}
+
+.mr-20 {
+  margin-right: 5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.ml-20 {
+  margin-left: 5rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -861,6 +901,10 @@ div.react-reveal {
 .w-min {
   width: -webkit-min-content;
   width: min-content;
+}
+
+.w-104 {
+  width: 26rem;
 }
 
 .max-w-5xl {
@@ -1246,6 +1290,26 @@ div.react-reveal {
   padding-top: 0.5rem;
 }
 
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
+.pr-5 {
+  padding-right: 1.25rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1496,6 +1560,14 @@ div.react-reveal {
     margin-right: 2.5rem;
   }
 
+  .sm\:mr-8 {
+    margin-right: 2rem;
+  }
+
+  .sm\:mr-12 {
+    margin-right: 3rem;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -1506,6 +1578,18 @@ div.react-reveal {
 
   .sm\:w-2\/3 {
     width: 66.666667%;
+  }
+
+  .sm\:w-1\/4 {
+    width: 25%;
+  }
+
+  .sm\:w-2 {
+    width: 0.5rem;
+  }
+
+  .sm\:w-2\/6 {
+    width: 33.333333%;
   }
 
   .sm\:flex-row {

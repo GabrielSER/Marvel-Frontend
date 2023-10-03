@@ -50,7 +50,7 @@ const CharacterDetail = () => {
                                         Stats:
                                     </h1>
                                     <div className='flex flex-row'>
-                                        <div className='flex flex-col mr-8 sm:mr-10 '>
+                                        <div className='flex flex-col'>
                                             <p><b>Strength:</b> {character.stats.strength}</p>
                                             <p><b>Intelligence:</b> {character.stats.intelligence}</p>
                                             <p><b>Durability:</b> {character.stats.durability}</p>
@@ -59,7 +59,7 @@ const CharacterDetail = () => {
                                             <p><b>Charisma:</b> {character.stats.charisma}</p>
                                             <p><b>Perception:</b> {character.stats.perception}</p>
                                         </div>
-                                        <div className='flex flex-col'>
+                                        <div className='flex flex-col ml-7'>
                                             <p><b>HP:</b> {character.stats.hp}</p>
                                             <p><b>Power:</b> {character.stats.power}</p>
                                             <p><b>Defense:</b> {character.stats.defense}</p>
