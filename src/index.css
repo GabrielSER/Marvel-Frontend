@@ -735,11 +735,6 @@ div.react-reveal {
   margin-bottom: 0.5rem;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -765,8 +760,8 @@ div.react-reveal {
   margin-bottom: 1.75rem;
 }
 
-.mr-8 {
-  margin-right: 2rem;
+.ml-7 {
+  margin-left: 1.75rem;
 }
 
 .mt-2 {
@@ -779,46 +774,6 @@ div.react-reveal {
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mr-10 {
-  margin-right: 2.5rem;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
-}
-
-.mr-12 {
-  margin-right: 3rem;
-}
-
-.mr-20 {
-  margin-right: 5rem;
-}
-
-.ml-2 {
-  margin-left: 0.5rem;
-}
-
-.ml-20 {
-  margin-left: 5rem;
-}
-
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
-.ml-6 {
-  margin-left: 1.5rem;
-}
-
-.ml-7 {
-  margin-left: 1.75rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
 }
 
 .block {
@@ -924,10 +879,6 @@ div.react-reveal {
   width: min-content;
 }
 
-.w-104 {
-  width: 26rem;
-}
-
 .max-w-5xl {
   max-width: 64rem;
 }
@@ -936,16 +887,16 @@ div.react-reveal {
   max-width: 32rem;
 }
 
+.max-w-sm {
+  max-width: 24rem;
+}
+
 .max-w-xl {
   max-width: 36rem;
 }
 
 .max-w-xs {
   max-width: 20rem;
-}
-
-.max-w-sm {
-  max-width: 24rem;
 }
 
 .flex-initial {
@@ -1058,6 +1009,10 @@ div.react-reveal {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .overflow-y-auto {
@@ -1215,12 +1170,12 @@ div.react-reveal {
   padding: 1.25rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-0 {
@@ -1319,26 +1274,6 @@ div.react-reveal {
   padding-top: 0.5rem;
 }
 
-.pr-2 {
-  padding-right: 0.5rem;
-}
-
-.pr-5 {
-  padding-right: 1.25rem;
-}
-
-.pr-3 {
-  padding-right: 0.75rem;
-}
-
-.pr-4 {
-  padding-right: 1rem;
-}
-
-.pl-4 {
-  padding-left: 1rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -1411,6 +1346,11 @@ div.react-reveal {
   color: rgb(179 179 179 / var(--tw-text-opacity));
 }
 
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(236 29 35 / var(--tw-text-opacity));
+}
+
 .text-shadow {
   color: rgba(0, 0, 0, 0.2);
 }
@@ -1418,11 +1358,6 @@ div.react-reveal {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-primary {
-  --tw-text-opacity: 1;
-  color: rgb(236 29 35 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1594,18 +1529,6 @@ div.react-reveal {
     margin-left: 5rem;
   }
 
-  .sm\:mr-10 {
-    margin-right: 2.5rem;
-  }
-
-  .sm\:mr-8 {
-    margin-right: 2rem;
-  }
-
-  .sm\:mr-12 {
-    margin-right: 3rem;
-  }
-
   .sm\:flex {
     display: flex;
   }
@@ -1616,18 +1539,6 @@ div.react-reveal {
 
   .sm\:w-2\/3 {
     width: 66.666667%;
-  }
-
-  .sm\:w-1\/4 {
-    width: 25%;
-  }
-
-  .sm\:w-2 {
-    width: 0.5rem;
-  }
-
-  .sm\:w-2\/6 {
-    width: 33.333333%;
   }
 
   .sm\:flex-row {
