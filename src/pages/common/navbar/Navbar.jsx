@@ -16,7 +16,6 @@ const Navbar = () => {
             )}
         >
             <StateBar />
-
             <NavigationContainer>
                 <NavigationLink
                     text='Home'

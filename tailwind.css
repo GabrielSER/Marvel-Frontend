@@ -36,6 +36,26 @@
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(184, 0, 0);
   }
+
+  /** Hide scrollbar **/
+.hide-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.hide-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+  width: 0;
+  height: 0;
+  border-radius: 0px;
+}
+
+.hide-scroll::-webkit-scrollbar-track {
+  width: 0;
+  height: 0;
+  border-radius: 0px;
+}
   
   @tailwind base;
   @tailwind components;
