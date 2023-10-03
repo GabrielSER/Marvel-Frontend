@@ -19,6 +19,27 @@
   background: rgb(184, 0, 0);
 }
 
+/** Hide scrollbar **/
+
+.hide-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.hide-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+  width: 0;
+  height: 0;
+  border-radius: 0px;
+}
+
+.hide-scroll::-webkit-scrollbar-track {
+  width: 0;
+  height: 0;
+  border-radius: 0px;
+}
+
 /* ! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com */
 
 /*
@@ -642,12 +663,23 @@ div.react-reveal {
   width: 100%;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .absolute {
   position: absolute;
 }
 
 .relative {
   position: relative;
+}
+
+.inset-0 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 
 .bottom-0 {
@@ -668,6 +700,14 @@ div.react-reveal {
 
 .z-50 {
   z-index: 50;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.m-6 {
+  margin: 1.5rem;
 }
 
 .mx-2 {
@@ -700,6 +740,10 @@ div.react-reveal {
   margin-bottom: auto;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -712,8 +756,12 @@ div.react-reveal {
   margin-bottom: 1.5rem;
 }
 
-.mr-8 {
-  margin-right: 2rem;
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
 }
 
 .mt-2 {
@@ -781,6 +829,10 @@ div.react-reveal {
   height: max-content;
 }
 
+.min-h-full {
+  min-height: 100%;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -829,6 +881,18 @@ div.react-reveal {
 
 .max-w-5xl {
   max-width: 64rem;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
+.max-w-sm {
+  max-width: 24rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .max-w-xs {
@@ -963,6 +1027,10 @@ div.react-reveal {
   overflow-y: hidden;
 }
 
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1006,34 +1074,9 @@ div.react-reveal {
   border-top-color: rgb(179 179 179 / 0.1);
 }
 
-.bg-\[cornflowerblue\] {
+.bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(100 149 237 / var(--tw-bg-opacity));
-}
-
-.bg-\[darkgrey\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(169 169 169 / var(--tw-bg-opacity));
-}
-
-.bg-\[darkseagreen\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(143 188 143 / var(--tw-bg-opacity));
-}
-
-.bg-\[gold\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 215 0 / var(--tw-bg-opacity));
-}
-
-.bg-\[tomato\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 99 71 / var(--tw-bg-opacity));
-}
-
-.bg-\[violet\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(238 130 238 / var(--tw-bg-opacity));
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-dark {
@@ -1041,9 +1084,24 @@ div.react-reveal {
   background-color: rgb(32 32 32 / var(--tw-bg-opacity));
 }
 
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.bg-green-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
+}
+
+.bg-pink-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(190 24 93 / var(--tw-bg-opacity));
 }
 
 .bg-primary {
@@ -1056,6 +1114,11 @@ div.react-reveal {
   background-color: rgb(254 202 202 / var(--tw-bg-opacity));
 }
 
+.bg-red-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(60 55 59 / var(--tw-bg-opacity));
@@ -1063,6 +1126,20 @@ div.react-reveal {
 
 .bg-shadow {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bg-sky-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 138 4 / var(--tw-bg-opacity));
+}
+
+.bg-opacity-75 {
+  --tw-bg-opacity: 0.75;
 }
 
 .bg-local {
@@ -1093,13 +1170,32 @@ div.react-reveal {
   padding: 1.25rem;
 }
 
+.p-6 {
+  padding: 1.5rem;
+}
+
 .p-8 {
   padding: 2rem;
+}
+
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .px-20 {
@@ -1158,8 +1254,20 @@ div.react-reveal {
   padding-left: 2.5rem;
 }
 
+.pl-16 {
+  padding-left: 4rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
 .pr-0 {
   padding-right: 0px;
+}
+
+.pr-16 {
+  padding-right: 4rem;
 }
 
 .pt-2 {
@@ -1172,6 +1280,14 @@ div.react-reveal {
 
 .text-center {
   text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .font-comic {
@@ -1207,6 +1323,11 @@ div.react-reveal {
   line-height: 1.25rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1225,6 +1346,11 @@ div.react-reveal {
   color: rgb(179 179 179 / var(--tw-text-opacity));
 }
 
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(236 29 35 / var(--tw-text-opacity));
+}
+
 .text-shadow {
   color: rgba(0, 0, 0, 0.2);
 }
@@ -1237,6 +1363,10 @@ div.react-reveal {
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .opacity-100 {
@@ -1267,6 +1397,12 @@ div.react-reveal {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .filter {
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1278,8 +1414,18 @@ div.react-reveal {
   transition-duration: 150ms;
 }
 
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.hover\:h-auto:hover {
+  height: auto;
 }
 
 .hover\:scale-105:hover {
@@ -1335,6 +1481,10 @@ div.react-reveal {
   opacity: 1;
 }
 
+.hover\:opacity-30:hover {
+  opacity: 0.3;
+}
+
 .hover\:opacity-70:hover {
   opacity: 0.7;
 }
@@ -1370,16 +1520,13 @@ div.react-reveal {
     margin-right: 5rem;
   }
 
+  .sm\:mx-32 {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
   .sm\:ml-20 {
     margin-left: 5rem;
-  }
-
-  .sm\:mr-10 {
-    margin-right: 2.5rem;
-  }
-
-  .sm\:block {
-    display: block;
   }
 
   .sm\:flex {
@@ -1392,34 +1539,6 @@ div.react-reveal {
 
   .sm\:w-2\/3 {
     width: 66.666667%;
-  }
-
-  .sm\:max-w-2xl {
-    max-width: 42rem;
-  }
-
-  .sm\:max-w-4xl {
-    max-width: 56rem;
-  }
-
-  .sm\:max-w-5xl {
-    max-width: 64rem;
-  }
-
-  .sm\:max-w-lg {
-    max-width: 32rem;
-  }
-
-  .sm\:max-w-md {
-    max-width: 28rem;
-  }
-
-  .sm\:max-w-sm {
-    max-width: 24rem;
-  }
-
-  .sm\:max-w-xs {
-    max-width: 20rem;
   }
 
   .sm\:flex-row {
@@ -1441,25 +1560,76 @@ div.react-reveal {
   .sm\:p-8 {
     padding: 2rem;
   }
+}
 
-  .sm\:px-0 {
+@media (min-width: 1024px) {
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:max-w-2xl {
+    max-width: 42rem;
+  }
+
+  .lg\:max-w-4xl {
+    max-width: 56rem;
+  }
+
+  .lg\:max-w-5xl {
+    max-width: 64rem;
+  }
+
+  .lg\:max-w-lg {
+    max-width: 32rem;
+  }
+
+  .lg\:max-w-md {
+    max-width: 28rem;
+  }
+
+  .lg\:max-w-xs {
+    max-width: 20rem;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
   }
 
-  .sm\:pl-16 {
+  .lg\:px-24 {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .lg\:pl-0 {
+    padding-left: 0px;
+  }
+
+  .lg\:pl-16 {
     padding-left: 4rem;
   }
 
-  .sm\:pl-28 {
+  .lg\:pl-28 {
     padding-left: 7rem;
   }
 
-  .sm\:pr-16 {
+  .lg\:pl-40 {
+    padding-left: 10rem;
+  }
+
+  .lg\:pr-0 {
+    padding-right: 0px;
+  }
+
+  .lg\:pr-16 {
     padding-right: 4rem;
   }
 
-  .sm\:pr-28 {
+  .lg\:pr-28 {
     padding-right: 7rem;
   }
 }

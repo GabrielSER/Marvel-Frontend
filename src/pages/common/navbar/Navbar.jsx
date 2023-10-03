@@ -4,6 +4,7 @@ import NavigationLink from './NavigationLink'
 import StateBar from './StateBar'
 
 const Navbar = () => {
+    
     return (
         <div
             className={clsx(
@@ -14,8 +15,7 @@ const Navbar = () => {
                 'shadow-lg'
             )}
         >
-            <StateBar/>
-
+            <StateBar />
             <NavigationContainer>
                 <NavigationLink
                     text='Home'
@@ -32,6 +32,14 @@ const Navbar = () => {
                 <NavigationLink
                     text='Objects'
                     to='/objects'
+                />
+                <NavigationLink
+                    text='Combat'
+                    to='/combat'
+                />
+                <NavigationLink
+                    text='Roleplaying'
+                    to='/roleplaying'
                 />
             </NavigationContainer>
         </div>

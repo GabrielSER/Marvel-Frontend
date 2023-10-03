@@ -12,7 +12,7 @@ const CharacterPowers = () => {
             {
                 characterPowers &&
                 <>
-                    <h1 className='text-2xl font-bold'>
+                    <h1 className='text-2xl font-bold sm:mx-32'>
                         Powers
                     </h1>
                     <div className='flex flex-wrap gap-4 justify-center items-center'>

@@ -30,13 +30,13 @@ const CharacterDetail = () => {
                         <LazyImage
                             src={character.logo}
                             alt={character.name}
-                            className='w-200 h-auto self-center sm:mx-0 mx-5 py-4'
+                            className='w-200 h-auto self-center sm:mx-0 mx-5 py-4 hover:scale-105'
                             imageClassname='w-full h-auto'
                         />
                     </div>
                     <div className={clsx('flex flex-col sm:flex-row w-full h-full p-4 my-10 sm:ml-20')}>
                         <div className={clsx('flex flex-col w-full sm:w-1/3 h-full')}>
-                            <div className='flex flex-row'>
+                            <div className='flex flex-row hover:scale-105'>
                                 <LazyImage
                                     src={character.image}
                                     alt={character.name}
@@ -50,7 +50,7 @@ const CharacterDetail = () => {
                                         Stats:
                                     </h1>
                                     <div className='flex flex-row'>
-                                        <div className='flex flex-col mr-8 sm:mr-10 '>
+                                        <div className='flex flex-col'>
                                             <p><b>Strength:</b> {character.stats.strength}</p>
                                             <p><b>Intelligence:</b> {character.stats.intelligence}</p>
                                             <p><b>Durability:</b> {character.stats.durability}</p>
@@ -59,7 +59,7 @@ const CharacterDetail = () => {
                                             <p><b>Charisma:</b> {character.stats.charisma}</p>
                                             <p><b>Perception:</b> {character.stats.perception}</p>
                                         </div>
-                                        <div className='flex flex-col'>
+                                        <div className='flex flex-col ml-7'>
                                             <p><b>HP:</b> {character.stats.hp}</p>
                                             <p><b>Power:</b> {character.stats.power}</p>
                                             <p><b>Defense:</b> {character.stats.defense}</p>
