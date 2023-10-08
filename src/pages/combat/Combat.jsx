@@ -17,7 +17,6 @@ import PowerExample from '../../assets/images/combat/PowerExample.PNG'
 import PowerLevel from '../../assets/images/combat/powerLevel.PNG'
 import Bleeding from '../../assets/images/combat/bleeding.png'
 import Blinded from '../../assets/images/combat/blinded.jpg'
-import Burned from '../../assets/images/combat/burned.jpg'
 import Charmed from '../../assets/images/combat/charmed.jpg'
 import Comatose from '../../assets/images/combat/comatose.jpg'
 import Confused from '../../assets/images/combat/confused.jpg'
@@ -43,6 +42,9 @@ import Telepath from '../../assets/images/combat/telepath.jpg'
 import Skilllvl from '../../assets/images/combat/Levelup.PNG'
 import Powerlvl from '../../assets/images/combat/powerlevelskill.PNG'
 import Skilvl from '../../assets/images/combat/skillskill.PNG'
+import ContentView from '../ui/ContentView'
+import Content from '../ui/Content'
+import { DiceType } from '../content/dice/Dice'
 
 const BigTitle = (props) =>
   <h1
@@ -84,7 +86,22 @@ const Combat = () => {
           COMBAT SYSTEM
         </h1>
         <BigTitle>Normal Attacks</BigTitle>
+        <div className='flex flex-wrap w-full justify-center items-center gap-4'>
+          {
+            Object.values(DiceType).map((type, index) => <Content
+              key={index}
+              id='roll'
+              params={{ diceType: type }}
+            />
+            )
+          }
+        </div>
 
+        <ContentView
+          className='text-primary underline {key:param,param}'
+          text='Burned state'
+          id='burned'
+        />
       </Section>
       <Section>
         <Title>Attacking and defending</Title>
@@ -112,7 +129,7 @@ const Combat = () => {
         </Paragraph>
       </Section>
 
-      
+
       <Section>
         <Title>Ranged Combat</Title>
         <Paragraph>
@@ -255,154 +272,160 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
+      <div className='flex flex-col'>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-10'
             src={Psychic}
             alt='Psychic Attacks'
           />
         </div>
+
+        <Section>
+          <div className='flex-col items-center mb-4'>
+            <BigTitle>Damage types</BigTitle>
+            <div className='flex flex-row sm:gap-40 gap-20 p-4 justify-center'>
+              <div className='flex sm:flex-row flex-col sm:gap-40 gap-4'>
+                <div className='flex flex-col'>
+                  <Title>Contact</Title>
+                  <p className='text-gray-700 text-center'>
+                    Bludgeoning
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Piercing
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Slashing
+                  </p>
+                  <p className='text-gray-700 mb-6 text-center'>
+                    Physical
+                  </p>
+                </div>
+                <div className='flex flex-col'>
+                  <h2 className='text-xl font-semibold text-center'>Energetic</h2>
+                  <p className='text-gray-700 text-center'>
+                    Cold
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Electric
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Energy
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Fire
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Water
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Sonic
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Radioactive
+                  </p>
+                </div>
+              </div>
+              <div className='flex sm:flex-row flex-col sm:gap-40 gap-0'>
+                <div className='flex flex-col'>
+                  <h2 className='text-xl font-semibold text-center'>Abstract</h2>
+                  <p className='text-gray-700 text-center'>
+                    Magic
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Necrotic
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Psychic
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Holly
+                  </p>
+                  <p className='text-gray-700 mb-6 text-center'>
+                    Demonic
+                  </p>
+                </div>
+
+                <div className='flex flex-col'>
+                  <h2 className='text-xl font-semibold  text-center'>After Effect</h2>
+                  <p className='text-gray-700 text-center'>
+                    Potion
+                  </p>
+                  <p className='text-gray-700 text-center'>
+                    Acid
+                  </p>
+                </div>
+
+              </div>
+            </div>
+            <div className='relative'>
+              <div className='absolute inset-0 bg-black opacity-0 hover:opacity-30 transition-opacity duration-300'></div>
+            </div>
+          </div>
+          <div className='p-2 mx-auto items-center '>
+            <div className='flex justify-center'> {/* Added a flex container for centering */}
+              <img
+                className='max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+                src={Venom}
+                alt='Venom'
+              />
+            </div>
+          </div>
+
+        </Section>
       </div>
 
-      <div className='flex lg:flex-row flex-col'>
-        <div className='flex-col lg:pr-28 pr-0'>
-          <Title>Damage types</Title>
-          <div className='flex flex-row'>
-            <div className='flex flex-col px-5'>
-              <Title>Contact</Title>
-              <p className='text-gray-700 text-left'>
-                •Bludgeoning
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Piercing
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Slashing
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Physical
-              </p>
-            </div>
-            <div className='flex flex-col pl-10'>
-              <h2 className='text-xl font-semibold mb-4 text-left'>Energetic</h2>
-              <p className='text-gray-700 text-left'>
-                •Cold
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Electric
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Energy
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Fire
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Water
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Sonic
-              </p>
-              <p className='text-gray-700 mb-6 text-left'>
-                •Radioactive
-              </p>
-            </div>
-          </div>
-          <div className='flex flex-row'>
-            <div className='flex flex-col px-5'>
-              <h2 className='text-xl font-semibold mb-4 text-left'>Abstract</h2>
-              <p className='text-gray-700 text-left'>
-                •Magic
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Necrotic
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Psychic
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Holly
-              </p>
-              <p className='text-gray-700 mb-6 text-left'>
-                •Demonic
-              </p>
-            </div>
-
-            <div className='flex flex-col pl-16'>
-              <h2 className='text-xl font-semibold mb-4 text-left'>After Effect</h2>
-              <p className='text-gray-700 text-left'>
-                •Potion
-              </p>
-              <p className='text-gray-700 text-left'>
-                •Acid
-              </p>
-            </div>
-          </div>
-          <div className='relative'>
-            <div className='absolute inset-0 bg-black opacity-0 hover:opacity-30 transition-opacity duration-300'></div>
-          </div>
-        </div>
-        <div className='p-2 mx-auto items-center lg:pl-40 pl-0'>
+      <Section>
+        <div className='lg:max-w-5xl max-w-xs p-2 mx-auto items-center'>
+          <Title>Critical Hit</Title>
+          <Paragraph>
+            If a character or creature gets a natural 20 when throwing the check for attacking another character or creature it deals a critical hit. A critical hit always deals double damage. After the critical hit, the attacker will throw 1d100, and according to the result, the victim will have one of different effects:
+          </Paragraph>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
             <img
-              className='max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-              src={Venom}
-              alt='Venom'
+              className='lg:max-w-5xl max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Critical}
+              alt='Critical Table'
+            />
+          </div>
+        </div>
+        <div className='max-w-5xl p-2 mx-auto items-center'>
+          <div className='flex justify-center'> {/* Added a flex container for centering */}
+            <img
+              className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Elektra}
+              alt="Elektra's Death"
+            />
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center'>
+          <Title>Failure</Title>
+          <Paragraph>
+            If a character gets 1 in their 1d20 check for any action, not only the action fails, but it produces a negative effect on the character which will be determined by the GM according to the circumstances. However, if this action is attempted during combat against an enemy, the character who failed the action will throw 1d100, and according to the result, they will have one of different effects:
+          </Paragraph>
+          <div className='flex justify-center'> {/* Added a flex container for centering */}
+            <img
+              className='lg:max-w-5xl max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Failure}
+              alt='Failure'
             />
           </div>
         </div>
 
-      </div>
-
-      <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center'>
-        <Title>Critical Hit</Title>
-        <Paragraph>
-          If a character or creature gets a natural 20 when throwing the check for attacking another character or creature it deals a critical hit. A critical hit always deals double damage. After the critical hit, the attacker will throw 1d100, and according to the result, the victim will have one of different effects:
-        </Paragraph>
-        <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-5xl max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Critical}
-            alt='Critical Table'
-          />
+        <div className='max-w-5xl p-2 mx-auto items-center'>
+          <div className='flex justify-center'> {/* Added a flex container for centering */}
+            <img
+              className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Gwen}
+              alt="Spider-Man's Failure"
+            />
+          </div>
         </div>
-      </div>
+      </Section>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
-        <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Elektra}
-            alt="Elektra's Death"
-          />
-        </div>
-      </div>
-
-
-      <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center'>
-        <Title>Failure</Title>
-        <Paragraph>
-          If a character gets 1 in their 1d20 check for any action, not only the action fails, but it produces a negative effect on the character which will be determined by the GM according to the circumstances. However, if this action is attempted during combat against an enemy, the character who failed the action will throw 1d100, and according to the result, they will have one of different effects:
-        </Paragraph>
-        <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-2xl max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Failure}
-            alt='Failure'
-          />
-        </div>
-      </div>
-
-      <div className='max-w-5xl p-2 mx-auto items-center'>
-        <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Gwen}
-            alt="Spider-Man's Failure"
-          />
-        </div>
-      </div>
 
       <div className='max-w-5xl p-2 mx-auto items-center'>
         <Title>Powers</Title>
@@ -473,133 +496,21 @@ const Combat = () => {
         </p>
       </div>
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
-        <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 px-0'>
-          <Title>Bleeding</Title>
-          <Paragraph>
-            When bleeding, a character’s defense lowers by 1 and takes 1d6 damage each turn. If a character is hit while bleeding, the bleeding has 50% chance of getting worse, which will add another 1d6 damage each turn. This status will last until a long rest is taken, or until the open wound is either covered with a bandage or cauterized. Characters with lesser healing factor can cure from bleeding with a Durability check of 15 and characters with a regenerative healing factor can cure with a Durability check of 12. If a character gets hit and obtains 6d6 of bleeding it will die of blood loss.
-          </Paragraph>
-        </div>
-        <div className='flex justify-center px-16'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Bleeding}
-            alt='Spider-Man Bleeding'
-          />
-        </div>
-      </div>
+      <Content id='bleeding' />
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
-        <div className='flex justify-center px-16'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block'
-            src={Blinded}
-            alt='Daredevil'
-          />
-        </div>
-        <div className='lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0'>
-          <Title>Blinded</Title>
-          <Paragraph>
-            A blinded character can’t see and automatically fails any ability check that requires sight. Attack rolls against the character have advantage, and the character’s attack rolls are thrown in disadvantage. When not specified, this status lasts for 1d6 turns.
-          </Paragraph>
-        </div>
-      </div>
+      <Content id='blinded' />
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
-        <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 px-0'>
-          <Title>Burned</Title>
-          <Paragraph>
-            Each turn, a burned character must take 1d6 damage. While burned, this character’s physical attacks will deal half damage. This status lasts until the end of the battle, or until the character gets any kind of fire extinguisher or until it makes a Durability throw of 14. Doesn’t apply underwater.
-          </Paragraph>
-        </div>
-        <div className='flex justify-center items-center px-16'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Burned}
-            alt='Burned Wolverine'
-          />
-        </div>
-      </div>
+      <Content id='burned' />
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
-        <div className='flex justify-center px-16'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block'
-            src={Charmed}
-            alt='Enchantress and Executioner'
-          />
-        </div>
-        <div className='lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0'>
-          <Title>Charmed</Title>
-          <Paragraph>
-            A charmed character can’t attack the charmer or target the charmer with harmful Abilities or effects. The charmer has advantage on any ability check to interact socially with the character and can convince the charmed character to do any kind of action he wants if it doesn’t involve self-harm. Each turn, the player must save to 15 Intelligence or 18 Wisdom to uncharm the character. If the victim receives more than 12 HP damage, the controller must save to 18 charilga to keep charming its victim.
-          </Paragraph>
-        </div>
-      </div>
+      <Content id='charmed' />
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
-        <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0'>
-          <Title>Comatose</Title>
-          <Paragraph>
-            A character in coma, sleeps permanently. A player can attempt to awake a comatose character once per day, but he only has 10% chance of doing so.
-          </Paragraph>
-        </div>
-        <div className='flex justify-center items-center px-16'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Comatose}
-            alt='Comatose Iron Man'
-          />
-        </div>
-      </div>
+      <Content id='comatose' />
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
-        <div className='flex justify-center px-16'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block'
-            src={Confused}
-            alt='Confused Spider-Men'
-          />
-        </div>
-        <div className='lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0'>
-          <Title>Confused</Title>
-          <Paragraph>
-            Attacks made by a confused character are thrown in disadvantage. It lasts for until the affected character saves to 15 wisdom, but the throw can only be attempted after 1 turns after getting confused.
-          </Paragraph>
-        </div>
-      </div>
+      <Content id='confused' />
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
-        <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0'>
-          <Title>Concentrated</Title>
-          <Paragraph>
-            A character that requires concentration for some actions can move but they can’t attempt any other kind of action while concentrating. A character that requires high concentration cannot move while concentrating. If a character gets attacked while concentrating, it will lose its concentration.
-          </Paragraph>
-        </div>
-        <div className='flex justify-center items-center px-16'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Concentrated}
-            alt='Professor X'
-          />
-        </div>
-      </div>
+      <Content id='concentrated' />
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
-        <div className='flex justify-center px-16'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6 hidden lg:block'
-            src={Deafened}
-            alt='Deaf Hawkeye'
-          />
-        </div>
-        <div className='lg:max-w-5xl max-w-lg mx-auto items-center my-auto  lg:px-24 px-0'>
-          <Title>Deafened</Title>
-          <Paragraph>
-            A deafened character can’t hear, automatically fails any ability check that requires hearing and has disadvantage with acrobatics, athletics, or agility throws. It normally lasts for 1d4 turns.
-          </Paragraph>
-        </div>
-      </div>
+      <Content id='deafened' />
 
       <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
         <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0'>
