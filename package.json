@@ -23,6 +23,7 @@
     "reactjs-popup": "^2.0.5",
     "save": "^2.5.0",
     "styled-components": "^5.3.6",
+    "use-sound": "^4.0.1",
     "youtube-dl-exec": "^2.4.2"
   },
   "proxy": "http://localhost:5000/api",
