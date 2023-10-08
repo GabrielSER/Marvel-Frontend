@@ -315,7 +315,7 @@ const Roleplay = () => {
 
       <div className="max-w-5xl p-2 mx-auto items-center">
         <h1 className="text-2xl font-semibold mb-4 text-center">Custom Actions</h1>
-        <p className="text-gray-700 mb-6 text-center">
+        <p className="text-gray-700 mb-6 justify-center px-4">
           During a play session, a player can come up with different kind of actions that are not described on the roleplaying actions section or as a power, skill, or ability for a certain character. These are custom actions. On these situations, the GM may or may not allow the player to perform given action, and if the custom action is permitted, he can ask for a certain dice check according to how difficult may it be to perform that specific custom action for the player’s character. If the player’s character is an already existing Marvel character, the GM may consider if that character has performed that custom action before in some media, or how hard would it be for a that character to perform this custom action. If the player’s character is a custom character, the GM may evaluate the character’s powers, stats, skills, and abilities to stablish if the character can perform given custom action and the dice check necessary for that action to be successful, according to how hard may that action be for this custom character. Custom actions can also be performed in battle, and they can also rest power points if the GM considers it would do so.
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
@@ -328,9 +328,9 @@ const Roleplay = () => {
       </div>
 
       <div className='flex lg:flex-row flex-col'>
-        <div className="max-w-5xl p-2 mx-auto items-center px-20">
+        <div className="max-w-5xl p-2 mx-auto items-center px-4">
           <h1 className="text-2xl font-semibold mb-4 text-center">Popularity</h1>
-          <p className="text-gray-700 mb-6 text-center">
+          <p className="text-gray-700 mb-6 justify-center px-4">
             Every character has an initial amount of popularity points, representing how much the character is known by the public in the entire universe. These initial popularity points are determined by the GM, according to the campaign or the character that is going to be played. For every public action, a character can gain popularity points depending on how much attention that action creates. These points determine how civilians or certain NPCs will interact with the character. The higher these points are, the most possible is that the civilians will recognize your character, the lower these points are, the more indifferent they will become towards given character. It’s very hard to lose popularity points, but if you enter long times of inactivity, it’s possible that the public may start to forget you if your popularity points are below 400. This scale indicates the proportion of the popularity you gain with these points:
           </p>
           <div className="flex flex-col items-center">

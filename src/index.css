@@ -768,9 +768,24 @@ div.react-reveal {
   margin-bottom: auto;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mx-7 {
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+}
+
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
 }
 
 .mb-10 {
@@ -793,8 +808,8 @@ div.react-reveal {
   margin-bottom: 1.75rem;
 }
 
-.mr-8 {
-  margin-right: 2rem;
+.ml-7 {
+  margin-left: 1.75rem;
 }
 
 .mt-2 {
@@ -809,16 +824,8 @@ div.react-reveal {
   margin-top: 1rem;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
-.mb-28 {
-  margin-bottom: 7rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .block {
@@ -948,8 +955,44 @@ div.react-reveal {
   width: 0.25rem;
 }
 
-.w-1\/2 {
-  width: 50%;
+.w-144 {
+  width: 36rem;
+}
+
+.w-72 {
+  width: 18rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.w-20 {
+  width: 5rem;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[20\] {
+  width: 20;
+}
+
+.w-\[340px\] {
+  width: 340px;
+}
+
+.w-\[350px\] {
+  width: 350px;
+}
+
+.w-\[30px\] {
+  width: 30px;
+}
+
+.w-\[370px\] {
+  width: 370px;
 }
 
 .max-w-5xl {
@@ -978,6 +1021,10 @@ div.react-reveal {
 
 .flex-initial {
   flex: 0 1 auto;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
 }
 
 .shrink-0 {
@@ -1080,8 +1127,16 @@ div.react-reveal {
   justify-content: space-between;
 }
 
+.gap-0 {
+  gap: 0px;
+}
+
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-20 {
+  gap: 5rem;
 }
 
 .gap-4 {
@@ -1094,26 +1149,6 @@ div.react-reveal {
 
 .gap-10 {
   gap: 2.5rem;
-}
-
-.gap-40 {
-  gap: 10rem;
-}
-
-.gap-0 {
-  gap: 0px;
-}
-
-.gap-20 {
-  gap: 5rem;
-}
-
-.gap-16 {
-  gap: 4rem;
-}
-
-.gap-6 {
-  gap: 1.5rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1140,18 +1175,20 @@ div.react-reveal {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
-.space-x-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .self-center {
   align-self: center;
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
 }
 
 .overflow-x-auto {
@@ -1420,10 +1457,6 @@ div.react-reveal {
   padding-left: 2.5rem;
 }
 
-.pl-16 {
-  padding-left: 4rem;
-}
-
 .pl-6 {
   padding-left: 1.5rem;
 }
@@ -1617,6 +1650,13 @@ div.react-reveal {
   height: auto;
 }
 
+.hover\:scale-100:hover {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -1634,13 +1674,6 @@ div.react-reveal {
 .hover\:scale-125:hover {
   --tw-scale-x: 1.25;
   --tw-scale-y: 1.25;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:scale-100:hover {
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1700,10 +1733,6 @@ div.react-reveal {
   outline-offset: 2px;
 }
 
-.hover\:duration-300:hover {
-  transition-duration: 300ms;
-}
-
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1734,10 +1763,6 @@ div.react-reveal {
     margin-left: 5rem;
   }
 
-  .sm\:mr-10 {
-    margin-right: 2.5rem;
-  }
-
   .sm\:flex {
     display: flex;
   }
@@ -1762,10 +1787,6 @@ div.react-reveal {
     gap: 10rem;
   }
 
-  .sm\:gap-0 {
-    gap: 0px;
-  }
-
   .sm\:self-start {
     align-self: flex-start;
   }
@@ -1784,11 +1805,11 @@ div.react-reveal {
     width: 50%;
   }
 
-  .md\:flex-row {
-    flex-direction: row;
+  .md\:w-144 {
+    width: 36rem;
   }
 
-  .first-letter\:md\:flex-row::first-letter {
+  .md\:flex-row {
     flex-direction: row;
   }
 }
@@ -1822,6 +1843,10 @@ div.react-reveal {
     max-width: 20rem;
   }
 
+  .lg\:max-w-sm {
+    max-width: 24rem;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -1846,10 +1871,6 @@ div.react-reveal {
 
   .lg\:pl-28 {
     padding-left: 7rem;
-  }
-
-  .lg\:pl-40 {
-    padding-left: 10rem;
   }
 
   .lg\:pr-0 {

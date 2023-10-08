@@ -17,7 +17,9 @@ const ContentViewport = (props) => {
         <div
             className={clsx(
                 'absolute',
-                'max-w-6xl max-h-104',
+                'flex',
+                'flex-shrink',
+                'w-[370px] md:w-144 max-h-104',
                 'p-2',
                 left && 'right-full',
                 right && 'left-full',
