@@ -773,6 +773,7 @@ div.react-reveal {
   margin-bottom: 1.5rem;
 }
 
+<<<<<<< Updated upstream
 .mx-7 {
   margin-left: 1.75rem;
   margin-right: 1.75rem;
@@ -783,6 +784,8 @@ div.react-reveal {
   margin-right: 1.5rem;
 }
 
+=======
+>>>>>>> Stashed changes
 .my-7 {
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
@@ -1173,6 +1176,12 @@ div.react-reveal {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
 .self-center {

@@ -48,13 +48,13 @@ import { DiceType } from '../content/dice/Dice'
 
 const BigTitle = (props) =>
   <h1
-    className='text-3xl font-semibold text-center'
+    className='text-4xl font-semibold text-center'
     {...props}
   />
 
 const Title = (props) =>
   <h2
-    className='text-xl font-semibold text-center'
+    className='text-lg font-semibold text-center'
     {...props}
   />
 
@@ -379,7 +379,7 @@ const Combat = () => {
 
       <Section>
         <div className='lg:max-w-5xl max-w-xs p-2 mx-auto items-center'>
-          <Title>Critical Hit</Title>
+          <BigTitle>Critical Hit</BigTitle>
           <Paragraph>
             If a character or creature gets a natural 20 when throwing the check for attacking another character or creature it deals a critical hit. A critical hit always deals double damage. After the critical hit, the attacker will throw 1d100, and according to the result, the victim will have one of different effects:
           </Paragraph>
@@ -404,7 +404,7 @@ const Combat = () => {
 
       <Section>
         <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center'>
-          <Title>Failure</Title>
+          <BigTitle>Failure</BigTitle>
           <Paragraph>
             If a character gets 1 in their 1d20 check for any action, not only the action fails, but it produces a negative effect on the character which will be determined by the GM according to the circumstances. However, if this action is attempted during combat against an enemy, the character who failed the action will throw 1d100, and according to the result, they will have one of different effects:
           </Paragraph>
@@ -430,7 +430,7 @@ const Combat = () => {
 
 
       <div className='max-w-5xl p-2 mx-auto items-center'>
-        <Title>Powers</Title>
+        <BigTitle>Powers</BigTitle>
         <Paragraph>
           Powers are special abilities that are unique to each character. For using these powers, you must spend points from your power meter. When a battle starts, you can increase your power meter in 1d4. Every long rest, your power meter fully recharges. Powers are classified according to a level: LV1 powers, LV2 powers, LV3 powers, LV4 powers, special powers, and Ultimate powers.
         </Paragraph>
@@ -492,7 +492,7 @@ const Combat = () => {
       </div>
 
       <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center'>
-        <Title>Status Effects</Title>
+        <BigTitle>Status Effects</BigTitle>
         <p className='text-gray-700 mb-2 text-center'>
           A character can be affected by many different kinds of status effects during combat. This is a list of different statuses and their descriptions:
         </p>
