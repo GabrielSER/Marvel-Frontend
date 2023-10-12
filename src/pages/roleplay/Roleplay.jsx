@@ -330,7 +330,7 @@ const Roleplay = () => {
       <div className='flex lg:flex-row flex-col'>
         <div className="max-w-5xl p-2 mx-auto items-center px-4">
           <h1 className="text-2xl font-semibold mb-4 text-center">Popularity</h1>
-          <p className="text-gray-700 mb-6 justify-center px-4">
+          <p className="text-gray-700 mb-6 text-center px-4">
             Every character has an initial amount of popularity points, representing how much the character is known by the public in the entire universe. These initial popularity points are determined by the GM, according to the campaign or the character that is going to be played. For every public action, a character can gain popularity points depending on how much attention that action creates. These points determine how civilians or certain NPCs will interact with the character. The higher these points are, the most possible is that the civilians will recognize your character, the lower these points are, the more indifferent they will become towards given character. It’s very hard to lose popularity points, but if you enter long times of inactivity, it’s possible that the public may start to forget you if your popularity points are below 400. This scale indicates the proportion of the popularity you gain with these points:
           </p>
           <div className="flex flex-col items-center">

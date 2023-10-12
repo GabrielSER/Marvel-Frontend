@@ -1,30 +1,24 @@
 import {
     createContext,
-    useState,
-    useEffect,
     useMemo,
     useContext
 } from 'react'
-import { usePowers } from './PowersContext'
+import { useForms } from './FormsContext'
 
 const CharactersContext = createContext()
 
 const CharacterProvider = (props) => {
 
-    const { powers } = usePowers()
     const { character } = props
-    const [characterPowers, setCharacterPowers] = useState([])
-
-    useEffect(() => {
-        setCharacterPowers(character.powers.map(powerId => powers.get(powerId)))
-    }, [character, powers])
+    const { forms } = useForms()
 
     const value = useMemo(() => ({
-        character,
-        characterPowers
+        defaultForm: forms.get(character.defaultForm),
+        characterForms: character.forms.map(formId => forms.get(formId)),
+        character
     }), [
-        character,
-        characterPowers
+        forms,
+        character
     ])
 
     return <CharactersContext.Provider value={value} {...props} />
