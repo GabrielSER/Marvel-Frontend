@@ -87,7 +87,8 @@ const Combat = () => {
           COMBAT SYSTEM
         </h1>
         <BigTitle>Normal Attacks</BigTitle>
-        <div className='flex flex-wrap w-full justify-center items-center gap-4'>
+      </Section>
+      <div className='flex flex-wrap w-full justify-center items-center gap-4'>
           {
             Object.values(DiceType).map((type, index) => <Content
               key={index}
@@ -97,9 +98,6 @@ const Combat = () => {
             )
           }
         </div>
-
-
-      </Section>
       <Section>
         <Title>Attacking and defending</Title>
         <Paragraph>

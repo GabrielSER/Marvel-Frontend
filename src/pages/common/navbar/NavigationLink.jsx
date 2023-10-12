@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { Link, useLocation } from 'react-router-dom'
+import NavigationTab from '../../ui/NavigationTab'
 
 
 const NavigationLink = (props) => {
@@ -23,23 +24,9 @@ const NavigationLink = (props) => {
           )}
           to={to}
         >
-          <span
-            className={clsx(
-              'flex',
-              'justify-center items-center',
-              'w-min',
-              'text-light',
-              'font-montserrat font-bold',
-              'hover:scale-105',
-              'opacity-80 hover:opacity-100',
-              location.pathname === to && [
-                'border-b-4 border-primary',
-                'opacity-100'
-              ]
-            )}
-          >
+          <NavigationTab active={location.pathname === to}>
             {text.toUpperCase()}
-          </span>
+          </NavigationTab>
         </Link>
       )
 }

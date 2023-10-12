@@ -21,14 +21,15 @@ import { PowersProvider } from '../../contexts/PowersContext'
 import Combat from '../combat/Combat'
 import Roleplay from '../roleplay/Roleplay'
 import Objects from '../objects/Objects'
+import { FormsProvider } from '../../contexts/FormsContext'
 
 const MainBody = () => {
   return (
     <CharactersProvider>
+      <FormsProvider>
       <PowersProvider>
         <ContentProvider>
-        <BrowserRouter>
-          
+          <BrowserRouter>
             <div
               className={clsx(
                 'flex flex-col',
@@ -69,10 +70,11 @@ const MainBody = () => {
                 </Routes>
                 <Footer />
               </div>
-            </div>  
-        </BrowserRouter>
+            </div>
+          </BrowserRouter>
         </ContentProvider>
       </PowersProvider>
+      </FormsProvider>
     </CharactersProvider>
   )
 }
