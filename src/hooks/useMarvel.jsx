@@ -1,8 +1,5 @@
 import axios from 'axios'
 import { useCallback, useState } from 'react'
-import packageJson from '../../package.json'
-
-const apiUrl = packageJson.proxy
 
 const httpMethod = {
     GET: 'get',
@@ -11,13 +8,17 @@ const httpMethod = {
     DELETE: 'delete'
 }
 
+const config = {
+    host : process.env.REACT_APP_BACKEND_PROXY
+}
+
 const useMarvel = () => {
 
     const [loading, setLoading] = useState(false)
 
     const query = useCallback(async (route, options) => {
         const axiosOptions = {
-            baseURL: apiUrl,
+            baseURL: config.host,
             url: route,
             method: options?.method ?? httpMethod.GET
         }
@@ -60,7 +61,7 @@ const useMarvel = () => {
         }
     }, [])
 
-    return {query, loading}
+    return { query, loading }
 }
 
 export { useMarvel, httpMethod }

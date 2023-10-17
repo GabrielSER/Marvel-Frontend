@@ -10,15 +10,10 @@ const CharacterPower = (props) => {
 
   const {
     level,
-    name,
-    module,
-    bonusDamage,
-    type,
-    skillCheck,
-    description
   } = power
-  return (
 
+
+  return (
     <div
       className={clsx(
         'flex',
@@ -33,12 +28,12 @@ const CharacterPower = (props) => {
         'min-h-full',
         'p-4',
         'bg-opacity-75',
-        level == '0' && 'bg-pink-700',
-        level == '1' && 'bg-sky-600',
-        level == '2' && 'bg-green-700',
-        level == '3' && 'bg-yellow-600',
-        level == '4' && 'bg-red-700',
-        level == '5' && 'bg-gray-500'
+        level === '0' && 'bg-pink-700',
+        level === '1' && 'bg-sky-600',
+        level === '2' && 'bg-green-700',
+        level === '3' && 'bg-yellow-600',
+        level === '4' && 'bg-red-700',
+        level === '5' && 'bg-gray-500'
       )}
     >
       <div className="flex flex-col h-full">

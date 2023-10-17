@@ -39,11 +39,13 @@ const DiceType = {
     }
 }
 
+const typesById = new Map(Object.values(DiceType).map((type) => [type.id, type]))
+
 const Dice = (props) => {
 
     const { type } = props
 
-    const { logo } = type
+    const { logo } = typesById.get(type) ?? type
 
     return (
         <div

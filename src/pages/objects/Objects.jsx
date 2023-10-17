@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import Add from '../../assets/images/combat/add.PNG'
 import Beretta from '../../assets/images/combat/Baretta.PNG'
 import Deadpool from '../../assets/images/combat/deadpool.jpg'

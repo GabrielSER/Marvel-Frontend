@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import FirstFamily from '../../assets/images/combat/firstfamily.jpg'
 import Lifting from '../../assets/images/combat/Lifting.PNG'
 import Shehulk from '../../assets/images/combat/she-hulk.png'

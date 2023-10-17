@@ -2,7 +2,6 @@ import {
     cloneElement,
     createContext,
     useState,
-    useEffect,
     useMemo,
     useContext,
     useCallback
@@ -22,8 +21,7 @@ const ContentProvider = (props) => {
         if (!content) {
             throw new Error(`Invalid content id '${id}', no value was found`)
         }
-        const contentWithParams = cloneElement(content, params)
-        return contentWithParams
+        return cloneElement(content, params)
     }, [setLoaded])
 
     const value = useMemo(() => ({

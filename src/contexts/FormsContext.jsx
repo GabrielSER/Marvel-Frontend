@@ -1,11 +1,9 @@
 import {
-    cloneElement,
     createContext,
     useState,
     useEffect,
     useMemo,
-    useContext,
-    useCallback
+    useContext
 } from 'react'
 import { useMarvel } from '../hooks/useMarvel'
 
