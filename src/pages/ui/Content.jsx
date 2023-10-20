@@ -1,18 +1,27 @@
 import { useMemo } from 'react'
 import { useContent } from '../../contexts/ContentContext'
 
+const ContentRegex = /^(?<id>.*?)(:(?<params>{.*?}))?$/
+
 const parseContentQuery = (query) => {
-    const sections = query.split('=')
-    const paramsSection = sections?.[1]
-    const parsedQuery = {
-        id: sections[0],
+
+    let parsedQuery = {
+        id: query,
         params: {}
     }
-    if (paramsSection) {
-        parsedQuery.params = JSON.parse(paramsSection)
+
+    const exec = ContentRegex.exec(query)
+
+    if (!exec) return parsedQuery
+
+    parsedQuery = exec.groups
+
+    if (parsedQuery.params) {
+        parsedQuery.params = JSON.parse(parsedQuery.params)
     }
+
     return parsedQuery
- }
+}
 
 const Content = (props) => {
 
@@ -25,7 +34,7 @@ const Content = (props) => {
 
     const parsedQuery = useMemo(() => parseContentQuery(id), [id])
 
-    return getContent(parsedQuery.id, {...params, ...parsedQuery.params})
+    return getContent(parsedQuery.id, { ...params, ...parsedQuery.params })
 }
 
 export default Content

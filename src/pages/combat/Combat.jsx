@@ -21,6 +21,7 @@ import Skilvl from '../../assets/images/combat/skillskill.PNG'
 import ContentView from '../ui/ContentView'
 import Content from '../ui/Content'
 import { DiceType } from '../content/dice/Dice'
+import ContentScope from '../ui/ContentScope'
 
 const BigTitle = (props) =>
   <h1
@@ -35,7 +36,7 @@ const Title = (props) =>
   />
 
 const Paragraph = (props) =>
-  <p
+  <div
     className='text-gray-700 text-justify'
     {...props}
   />
@@ -64,21 +65,25 @@ const Combat = () => {
         </h1>
         <BigTitle>Normal Attacks</BigTitle>
       </Section>
-      <Content
-        id='roll={"type":"d20"}'
-      />
+      
       <div className='flex flex-wrap w-full justify-center items-center gap-4'>
         {
-          Object.values(DiceType).map((type, index) => <Content
-            key={index}
-            id='roll'
-            params={{ type }}
-          />
+          Object.values(DiceType).map((type, index) =>
+            <Content
+              key={index}
+              id='roll'
+              params={{ type }}
+            />
           )
         }
       </div>
       <Section>
         <Title>Attacking and defending</Title>
+        <ContentScope>
+        <Paragraph>
+          {`No, he is ::view:{"text":"Burned","id":"burned"}:: ::roll:{"type":"d20"}::`}
+        </Paragraph>
+      </ContentScope>
         <Paragraph>
           When in combat a character can do a normal attack. For attempting a normal attack,
           the attacker throws 1d20. Normal attacks made at short range have a check bonus of Melee for hand-to-hand combat.

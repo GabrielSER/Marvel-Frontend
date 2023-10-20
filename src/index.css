@@ -397,6 +397,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   /* 2 */
 }
 
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -1021,6 +1028,7 @@ div.react-reveal {
 
 .select-none {
   -webkit-user-select: none;
+      -ms-user-select: none;
           user-select: none;
 }
 
@@ -1509,7 +1517,8 @@ div.react-reveal {
 }
 
 .underline {
-  text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .opacity-0 {
@@ -1631,7 +1640,8 @@ div.react-reveal {
 }
 
 .hover\:underline:hover {
-  text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .hover\:opacity-100:hover {

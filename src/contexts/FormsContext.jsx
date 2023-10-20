@@ -22,7 +22,6 @@ const FormsProvider = (props) => {
         const loadForms = async () => {
             try {
                 const formsArray = await query('/forms')
-                console.log(formsArray)
                 const forms = new Map(formsArray.map(form =>
                     [form._id, form]
                 ))

@@ -45,7 +45,13 @@ const Dice = (props) => {
 
     const { type } = props
 
-    const { logo } = typesById.get(type) ?? type
+    const diceType = typesById.get(type) ?? type
+
+    if (!diceType) {
+        throw new Error(`Invalid Dice 'type' property: ${type}`)
+    }
+
+    const { logo } = diceType
 
     return (
         <div
@@ -64,4 +70,4 @@ const Dice = (props) => {
     )
 }
 
-export { Dice, DiceType }
+export { Dice, DiceType, typesById }

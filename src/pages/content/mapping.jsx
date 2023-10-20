@@ -1,6 +1,4 @@
 import Burned from './statusEffect/Burned'
-import { Dice, DiceType } from './dice/Dice'
-import DiceRoller from './dice/DiceRoller'
 import Blinded from './statusEffect/Blinded'
 import Bleeding from './statusEffect/Bleeding'
 import Charmed from './statusEffect/Charmed'
@@ -26,7 +24,12 @@ import Soaked from './statusEffect/Soaked'
 import Stunned from './statusEffect/Stunned'
 import TelepathicControl from './statusEffect/TelepathicControl'
 
+import { Dice, DiceType } from './dice/Dice'
+import DiceRoller from './dice/DiceRoller'
+import ContentView from '../ui/ContentView'
+
 export const contentMapping = () => ({
+    'view': <ContentView />,
     'burned': <Burned />,
     'blinded': <Blinded />,
     'bleeding': <Bleeding />,
