@@ -15,36 +15,13 @@ import Gwen from '../../assets/images/combat/spiderfailure.png'
 import PowersDesc from '../../assets/images/combat/Powers.PNG'
 import PowerExample from '../../assets/images/combat/PowerExample.PNG'
 import PowerLevel from '../../assets/images/combat/powerLevel.PNG'
-import Bleeding from '../../assets/images/combat/bleeding.png'
-import Blinded from '../../assets/images/combat/blinded.jpg'
-import Charmed from '../../assets/images/combat/charmed.jpg'
-import Comatose from '../../assets/images/combat/comatose.jpg'
-import Confused from '../../assets/images/combat/confused.jpg'
-import Concentrated from '../../assets/images/combat/concentrated.jpg'
-import Deafened from '../../assets/images/combat/deafened.png'
-import Drugged from '../../assets/images/combat/drugged.jpg'
-import Drunk from '../../assets/images/combat/drunk.jpg'
-import Frightened from '../../assets/images/combat/frightened.jpg'
-import Frozen from '../../assets/images/combat/frozen.jpg'
-import Irradiated from '../../assets/images/combat/irradiated.jpg'
-import Grappled from '../../assets/images/combat/grappled.jpg'
-import Fallen from '../../assets/images/combat/fallen.jpg'
-import Invisible from '../../assets/images/combat/invisible.jpg'
-import Paralyzed from '../../assets/images/combat/Paralyzed.jpg'
-import Petrified from '../../assets/images/combat/petrified.jpg'
-import Possessed from '../../assets/images/combat/possessed.jpg'
-import Poisoned from '../../assets/images/combat/poisoned.jpg'
-import Purple from '../../assets/images/combat/purple.jpg'
-import Sleeping from '../../assets/images/combat/sleeping.jpg'
-import Soaked from '../../assets/images/combat/soaked.png'
-import Stunned from '../../assets/images/combat/stunned.jpg'
-import Telepath from '../../assets/images/combat/telepath.jpg'
 import Skilllvl from '../../assets/images/combat/Levelup.PNG'
 import Powerlvl from '../../assets/images/combat/powerlevelskill.PNG'
 import Skilvl from '../../assets/images/combat/skillskill.PNG'
 import ContentView from '../ui/ContentView'
 import Content from '../ui/Content'
 import { DiceType } from '../content/dice/Dice'
+import ContentScope from '../ui/ContentScope'
 
 const BigTitle = (props) =>
   <h1
@@ -59,7 +36,7 @@ const Title = (props) =>
   />
 
 const Paragraph = (props) =>
-  <p
+  <div
     className='text-gray-700 text-justify'
     {...props}
   />
@@ -88,18 +65,25 @@ const Combat = () => {
         </h1>
         <BigTitle>Normal Attacks</BigTitle>
       </Section>
+      
       <div className='flex flex-wrap w-full justify-center items-center gap-4'>
-          {
-            Object.values(DiceType).map((type, index) => <Content
+        {
+          Object.values(DiceType).map((type, index) =>
+            <Content
               key={index}
               id='roll'
-              params={{ diceType: type }}
+              params={{ type }}
             />
-            )
-          }
-        </div>
+          )
+        }
+      </div>
       <Section>
         <Title>Attacking and defending</Title>
+        <ContentScope>
+        <Paragraph>
+          {`No, he is ::view:{"text":"Burned","id":"burned"}:: ::roll:{"type":"d20"}::`}
+        </Paragraph>
+      </ContentScope>
         <Paragraph>
           When in combat a character can do a normal attack. For attempting a normal attack,
           the attacker throws 1d20. Normal attacks made at short range have a check bonus of Melee for hand-to-hand combat.

@@ -7,6 +7,7 @@ import clsx from 'clsx'
 import rollFile from '../../../assets/sound/dice-roll.mp3'
 import minRolFile from '../../../assets/sound/dice-min.mp3'
 import maxRolFile from '../../../assets/sound/dice-max.mp3'
+import { typesById } from './Dice'
 
 const Bubble = (props) => {
 
@@ -35,7 +36,14 @@ const ROLL_DURATION = 1000
 
 const DiceRoller = (props) => {
 
-    const { diceType } = props
+    const { type } = props
+
+    const diceType = typesById.get(type) ?? type
+
+    if (!diceType) {
+        throw new Error(`Invalid DiceRoller 'type' property: ${type}`)
+    }
+
     const { id, value } = diceType
 
     const [rolling, setRolling] = useState()
@@ -107,7 +115,7 @@ const DiceRoller = (props) => {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <Title>Roll a {id}</Title>
+            <Title>Roll {rollAmount === 1 ? 'a' : rollAmount} {id}</Title>
             <span className='relative'>
                 {
                     (!rolling && hovered) &&

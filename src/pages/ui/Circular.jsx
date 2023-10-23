@@ -2,7 +2,7 @@ import clsx from 'clsx'
 
 const Circular = (props) => {
 
-    const {className} = props
+    const { className } = props
     const properties = { ...props }
     delete properties.className
 
