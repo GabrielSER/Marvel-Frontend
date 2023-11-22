@@ -1,9 +1,9 @@
 import './index.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import MainBody from './pages/common/MainBody'
 
 ReactDOM.render(
-    <App />,
+    <MainBody />,
     document.getElementById('root')
 )

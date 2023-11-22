@@ -718,12 +718,56 @@ div.react-reveal {
   top: 100%;
 }
 
+.bottom-4 {
+  bottom: 1rem;
+}
+
+.-bottom-4 {
+  bottom: -1rem;
+}
+
+.-top-4 {
+  top: -1rem;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.bottom-1 {
+  bottom: 0.25rem;
+}
+
+.-bottom-2 {
+  bottom: -0.5rem;
+}
+
+.-bottom-full {
+  bottom: -100%;
+}
+
+.top-\[\] {
+  top: ;
+}
+
+.top-\[120\] {
+  top: 120;
+}
+
+.top-\[120\%\] {
+  top: 120%;
+}
+
 .z-10 {
   z-index: 10;
 }
 
 .z-20 {
   z-index: 20;
+}
+
+.z-40 {
+  z-index: 40;
 }
 
 .z-50 {
@@ -787,6 +831,10 @@ div.react-reveal {
 
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
 }
 
 .mt-2 {
@@ -936,6 +984,10 @@ div.react-reveal {
   width: min-content;
 }
 
+.w-5 {
+  width: 1.25rem;
+}
+
 .max-w-5xl {
   max-width: 64rem;
 }
@@ -970,6 +1022,10 @@ div.react-reveal {
 
 .grow {
   flex-grow: 1;
+}
+
+.grow-0 {
+  flex-grow: 0;
 }
 
 .-translate-x-1\/2 {
@@ -1171,6 +1227,11 @@ div.react-reveal {
   border-bottom-right-radius: 9999px;
 }
 
+.rounded-l {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1195,6 +1256,11 @@ div.react-reveal {
 .border-primary {
   --tw-border-opacity: 1;
   border-color: rgb(236 29 35 / var(--tw-border-opacity));
+}
+
+.border-dark {
+  --tw-border-opacity: 1;
+  border-color: rgb(32 32 32 / var(--tw-border-opacity));
 }
 
 .border-t-light\/10 {
@@ -1287,8 +1353,16 @@ div.react-reveal {
   background-attachment: local;
 }
 
+.object-contain {
+  object-fit: contain;
+}
+
 .object-cover {
   object-fit: cover;
+}
+
+.object-fill {
+  object-fit: fill;
 }
 
 .p-1 {
@@ -1580,6 +1654,10 @@ div.react-reveal {
   transition-duration: 300ms;
 }
 
+.duration-500 {
+  transition-duration: 500ms;
+}
+
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1731,6 +1809,10 @@ div.react-reveal {
 
   .sm\:p-10 {
     padding: 2.5rem;
+  }
+
+  .sm\:p-20 {
+    padding: 5rem;
   }
 
   .sm\:p-8 {
