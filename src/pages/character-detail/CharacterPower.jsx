@@ -6,7 +6,7 @@ import { useRef } from 'react'
 import ComicPanel from '../ui/ComicPanel'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
 
-const romanNumbers = ['0','I', 'II', 'III', 'IV', 'V']
+const romanNumbers = ['0', 'I', 'II', 'III', 'IV', 'V']
 const romanNumber = (number) => romanNumbers?.[number] ?? '?'
 
 const CharacterPower = (props) => {
@@ -19,9 +19,7 @@ const CharacterPower = (props) => {
 
   const { power } = props
 
-  const {
-    level,
-  } = power
+  const { level } = power
 
   return (
     <ComicPanel
@@ -111,7 +109,7 @@ const CharacterPower = (props) => {
                   {" "} {power.statusEffect}
                 </p>
               }
-              <hr className='mt-2 bg-secondary' />
+              <hr className='mt-2 bg-black' />
               <span className='font-condensed font-bold'>
                 {`Level ${romanNumber(power.level)}`}
               </span>

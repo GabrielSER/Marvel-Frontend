@@ -16,7 +16,11 @@ const FormProvider = (props) => {
     const [formPowers, setFormPowers] = useState([])
 
     useEffect(() => {
-        setFormPowers(form.powers.map(powerId => powers.get(powerId)))
+        const extractedPowers = form.powers
+            .map(powerId => powers.get(powerId))
+            .filter(power => power !== undefined && power !== null)
+            
+        setFormPowers(extractedPowers)
     }, [form, powers, setFormPowers])
 
     const value = useMemo(() => ({

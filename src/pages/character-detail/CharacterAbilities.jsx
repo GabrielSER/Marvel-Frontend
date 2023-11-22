@@ -1,74 +1,48 @@
-import React from 'react'
-import { useCharacter } from '../../contexts/CharacterContext'
 import clsx from 'clsx'
 import { useForm } from '../../contexts/FormContext'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
 
-const CharacterAbility = () => {
+const DescriptionParagraph = (props) => {
 
-    const { form } = useForm()
+    const { title, features } = props
 
-    return (
-        <div className='flex flex-row'>
-            {
-                form.abilities.length > 0 && <div className='flex flex-col my-2'>
-
-                    <div className="flex flex-row w-auto">
-                        <ComicTitlePanel>
-                            <h1 className='text-2xl font-bold'>
-                                Abilities:
-                            </h1>
-                        </ComicTitlePanel>
-                    </div>
-                    {
-                        form.abilities.map((ability, index) => (
-                            <p key={index} className='py-2'><b>{ability.split(':')[0]}</b>: {ability.split(':')[1]}</p>
-                        ))
-                    }
-                </div>
-            }
-        </div>
-    )
-}
-
-const CharacterWeakness = () => {
-
-    const { form } = useForm()
+    if (features.length === 0) return null
 
     return (
-        <div className='flex flex-row'>
+        <>
+            <div className='flex flex-row w-auto'>
+                <ComicTitlePanel>
+                    {title}
+                </ComicTitlePanel>
+            </div>
             {
-                form.weaknesses.length > 0 &&
-                <div className='flex flex-col my-2'>
-                    
-                    <div className="flex flex-row w-auto">
-                        <ComicTitlePanel>
-                            <h1 className='text-2xl font-bold'>
-                                Weaknesses:
-                            </h1>
-                        </ComicTitlePanel>
-                    </div>
-                    {
-                        form.weaknesses.map((weakness, index) => (
-                            <p key={index} className='py-2'><b>{weakness.split(':')[0]}</b>: {weakness.split(':')[1]}</p>
-                        ))
-                    }
-                </div>
+                features
+                    .map(feature => feature.split(':'))
+                    .map(([featureName, featureDescription], index) =>
+                        <p key={index}>
+                            <b>{`${featureName}:`}</b>
+                            {featureDescription}
+                        </p>
+                    )
             }
-        </div>
+        </>
     )
 }
 
 const CharacterAbilities = (props) => {
 
+    const { form } = useForm()
+
     return (
-        <div
-            className={clsx(
-                'flex flex-col'
-            )}
-        >
-            <CharacterAbility />
-            <CharacterWeakness />
+        <div className={clsx('flex flex-col px-4 gap-2')}>
+            <DescriptionParagraph
+                title='Abilities:'
+                features={form.abilities}
+            />
+            <DescriptionParagraph
+                title='Weaknesses:'
+                features={form.weaknesses}
+            />
         </div>
     )
 }

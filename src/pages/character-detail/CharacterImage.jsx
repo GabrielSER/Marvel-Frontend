@@ -1,6 +1,6 @@
-import clsx from "clsx"
-import { useCharacterDetail } from "../../contexts/CharacterDetailContext"
-import LazyImage from "../ui/LazyImage"
+import clsx from 'clsx'
+import { useCharacterDetail } from '../../contexts/CharacterDetailContext'
+import LazyImage from '../ui/LazyImage'
 
 const CharacterImage = () => {
     
@@ -13,12 +13,14 @@ const CharacterImage = () => {
             className={clsx(
                 'flex flex-row shrink-0',
                 'justify-center items-center',
-                'w-full md:w-1/3',
-                'h-screen',
-                'scale-95 hover:scale-100', 
-                'object-cover'
+                'h-[90vh]',
+                'hover:scale-105', 
+                'ease-in-out transition-all',
+                'object-cover',
+                'rounded-md',
+                'overflow-hidden'
             )}
-            imageClassname='w-50 h-full object-cover self-center'
+            imageClassname='p-8 sm:p-0 h-full h-full object-cover rounded-md'
         />
     )
 }

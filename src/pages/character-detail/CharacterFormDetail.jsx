@@ -22,12 +22,27 @@ const Section = (props) =>
     {...props}
   />
 
-const Column = (props) =>
-  <div className='flex flex-col gap-4'
-    {...props}
-  />
+const Column = (props) => {
 
-const CharacterFormDetail = (props) => {
+  const { className } = props
+  const properties = { ...props }
+  delete properties.className
+
+  return (
+    <div
+      className={clsx(
+        'flex flex-col',
+        'gap-4',
+        'w-full',
+        'justify-center',
+        className
+      )}
+      {...properties}
+    />
+  )
+}
+
+const CharacterFormDetail = () => {
 
   const { selectedForm } = useCharacterDetail()
   const { character } = useCharacter()
@@ -36,19 +51,19 @@ const CharacterFormDetail = (props) => {
 
   return (
     <FormProvider form={selectedForm}>
-      <div className={clsx('flex flex-col w-full justify-center p-4')}>
+      <div className={clsx('flex flex-col w-full justify-center p-4 md:p-10')}>
         <CharacterLogo />
         <Section>
-          <CharacterImage />
-          <Column>
-            <CharacterName/>
+          <Column className='w-full md:w-1/3 shrink-0'>
+            <CharacterImage />
+            <CharacterSkills />
+          </Column>
+          <Column className='items-center'>
+            <CharacterName />
             <CharacterStats />
+            <CharacterAbilities />
           </Column>
         </Section>
-
-
-
-
 
         <div className={clsx('flex flex-col p-4 w-90 h-full items-center justify-center')}>
           <div className={clsx('flex flex-col w-100 h-full sm:mx-100 my-10 self-center')}>

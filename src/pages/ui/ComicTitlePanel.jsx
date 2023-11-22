@@ -20,9 +20,10 @@ const ComicTitlePanel = (props) => {
     return (
         <h1
             className={clsx(
+                'w-max',
                 'font-bold',
                 titleClass,
-                className ?? 'bg-comic-primary'
+                className ?? 'text-2xl bg-comic-primary'
             )}
             {...properties}
         />

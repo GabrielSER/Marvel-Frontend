@@ -6,7 +6,7 @@ const CharacterPowers = () => {
 
     const { formPowers } = useForm()
 
-    if (formPowers.length === 0 )
+    if (formPowers.length === 0)
         return null
 
     return (
@@ -16,15 +16,14 @@ const CharacterPowers = () => {
                     Powers:
                 </ComicTitlePanel>
             </div>
-
             <div className='flex flex-wrap gap-4 justify-center items-center'>
                 {
-                    formPowers
-                        .map((power, index) => (
-                            <div key={index} className='flex flex-col py-2'>
-                                <CharacterPower power={power} />
-                            </div>
-                        ))
+                    formPowers.map((power, index) =>
+                        <CharacterPower
+                            key={index}
+                            power={power}
+                        />
+                    )
                 }
             </div>
         </div>

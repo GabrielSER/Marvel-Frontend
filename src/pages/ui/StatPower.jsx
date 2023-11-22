@@ -48,16 +48,16 @@ const StatPower = ({ strokeWidth, percentage, statColor }) => {
   }, [percentage, diameter])
 
   return (
-    <div className="stat-power-container ">
+    <div className='stat-power-container hover:scale-110 ease-in-out transition-all'>
       <svg
-        className="CircularProgressbar"
-        viewBox="0 0 100 100"
+        className='CircularProgressbar'
+        viewBox='0 0 100 100'
         width={80}
         height={80}
         ref={svgRef}
       >
         <path
-          className="CircularProgressbar-trail"
+          className='CircularProgressbar-trail'
           d={pathDescription}
           strokeWidth={strokeWidth}
           fillOpacity={0}
@@ -67,7 +67,7 @@ const StatPower = ({ strokeWidth, percentage, statColor }) => {
         />
 
         <path
-          className="CircularProgressbar-path"
+          className='CircularProgressbar-path'
           d={pathDescription}
           strokeWidth={strokeWidth}
           fillOpacity={0}
@@ -79,10 +79,8 @@ const StatPower = ({ strokeWidth, percentage, statColor }) => {
             transition: 'stroke-dashoffset 0.5s ease-in-out',
           }}
         />
-
-       
           <text
-            className="CircularProgressbar-text font-condensed"
+            className='CircularProgressbar-text font-condensed'
             x={50}
             y={50}
             style={{
@@ -94,7 +92,6 @@ const StatPower = ({ strokeWidth, percentage, statColor }) => {
           >
             {`${percentage}`}
           </text>
-
       </svg>
     </div>
   )

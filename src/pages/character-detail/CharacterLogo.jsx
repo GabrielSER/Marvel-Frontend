@@ -1,15 +1,21 @@
+import clsx from 'clsx'
 import { useCharacter } from '../../contexts/CharacterContext'
 import LazyImage from '../ui/LazyImage'
 
 const CharacterLogo = () => {
-    
+
     const { character } = useCharacter()
 
     return (
         <LazyImage
             src={character.logo}
             alt={character.name}
-            className='w-80 self-center sm:mx-0 mx-5 py-4 hover:scale-105'
+            className={clsx(
+                'p-8',
+                'w-full md:max-w-xl',
+                'self-center hover:scale-105',
+                'ease-in-out transition-all'
+            )}
             imageClassname='w-full'
         />
     )
