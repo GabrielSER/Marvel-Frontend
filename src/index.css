@@ -770,6 +770,10 @@ div.react-reveal{
   top: 100%;
 }
 
+.top-\[120\%\]{
+  top: 120%;
+}
+
 .z-10{
   z-index: 10;
 }
@@ -780,6 +784,10 @@ div.react-reveal{
 
 .z-50{
   z-index: 50;
+}
+
+.z-40{
+  z-index: 40;
 }
 
 .m-4{
@@ -918,8 +926,20 @@ div.react-reveal{
   height: max-content;
 }
 
+.h-\[6em\]{
+  height: 6em;
+}
+
 .max-h-104{
   max-height: 26rem;
+}
+
+.max-h-\[100px\]{
+  max-height: 100px;
+}
+
+.max-h-\[6em\]{
+  max-height: 6em;
 }
 
 .min-h-full{
@@ -928,6 +948,10 @@ div.react-reveal{
 
 .min-h-screen{
   min-height: 100vh;
+}
+
+.min-h-\[3em\]{
+  min-height: 3em;
 }
 
 .w-10{
@@ -1032,6 +1056,10 @@ div.react-reveal{
   flex-grow: 1;
 }
 
+.grow-0{
+  flex-grow: 0;
+}
+
 .-translate-x-1\/2{
   --tw-translate-x: -50%;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1089,6 +1117,10 @@ div.react-reveal{
 .select-none{
   -webkit-user-select: none;
           user-select: none;
+}
+
+.resize-y{
+  resize: vertical;
 }
 
 .flex-row{
@@ -1192,6 +1224,10 @@ div.react-reveal{
   overflow: hidden;
 }
 
+.overflow-visible{
+  overflow: visible;
+}
+
 .overflow-x-auto{
   overflow-x: auto;
 }
@@ -1258,6 +1294,11 @@ div.react-reveal{
 .border-primary{
   --tw-border-opacity: 1;
   border-color: rgb(236 29 35 / var(--tw-border-opacity));
+}
+
+.border-dark{
+  --tw-border-opacity: 1;
+  border-color: rgb(32 32 32 / var(--tw-border-opacity));
 }
 
 .border-t-light\/10{
@@ -1516,6 +1557,10 @@ div.react-reveal{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.font-montserrat{
+  font-family: Montserrat;
+}
+
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1597,6 +1642,10 @@ div.react-reveal{
   text-decoration-line: underline;
 }
 
+.caret-primary{
+  caret-color: #EC1D23;
+}
+
 .opacity-0{
   opacity: 0;
 }
@@ -1617,6 +1666,10 @@ div.react-reveal{
   opacity: 0.8;
 }
 
+.opacity-50{
+  opacity: 0.5;
+}
+
 .shadow-lg{
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -1627,6 +1680,11 @@ div.react-reveal{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.outline-none{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .filter{
@@ -1656,6 +1714,10 @@ div.react-reveal{
 
 .duration-300{
   transition-duration: 300ms;
+}
+
+.duration-500{
+  transition-duration: 500ms;
 }
 
 .ease-in-out{
@@ -1688,6 +1750,10 @@ div.react-reveal{
   --tw-scale-y: 1.25;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:bg-shadow:hover{
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .hover\:bg-gradient-to-l:hover{
@@ -1733,6 +1799,10 @@ div.react-reveal{
   opacity: 0.8;
 }
 
+.hover\:opacity-50:hover{
+  opacity: 0.5;
+}
+
 .hover\:shadow-lg:hover{
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -1744,9 +1814,17 @@ div.react-reveal{
   outline-offset: 2px;
 }
 
+.focus\:bg-shadow:focus{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .focus\:outline-none:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.disabled\:cursor-not-allowed:disabled{
+  cursor: not-allowed;
 }
 
 @media (min-width: 640px){

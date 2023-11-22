@@ -22,9 +22,12 @@ import Combat from '../combat/Combat'
 import Roleplay from '../roleplay/Roleplay'
 import Objects from '../objects/Objects'
 import { FormsProvider } from '../../contexts/FormsContext'
+import Toolbar from './Toolbar'
+import { UserProvider } from '../../contexts/UserContext'
 
 const MainBody = () => {
   return (
+    <UserProvider>
     <CharactersProvider>
       <FormsProvider>
       <PowersProvider>
@@ -32,50 +35,49 @@ const MainBody = () => {
           <BrowserRouter>
             <div
               className={clsx(
-                'flex flex-col',
+                'relative',
+                'flex flex-col flex-initial',
                 'w-full h-full',
-                'overflow-x-hidden overflow-y-hidden'
+                'overflow-x-hidden overflow-y-hidden',
+                'font-comic',
+                'bg-local'
               )}
+              style={{
+                backgroundImage: `url(https://i.ibb.co/Jqr4f35/backgound.png)`,
+                backgroundRepeat: 'repeat'
+              }}
             >
               <Navbar />
               <div
                 className={clsx(
                   'flex flex-col',
-                  'w-full h-full shrink-0',
-                  'overflow-x-hidden overflow-y-auto'
+                  'w-full h-full shrink-0 grow-0',
+                  'overflow-x-hidden overflow-y-hidden'
                 )}
               >
-
                 <Routes>
                   <Route path='/' exact element={<Home />} />
                   <Route path='/characters' exact element={<Characters />} />
+                  <Route path='/characters/:normalized' exact element={<CharacterDetail />} />
                   <Route path='/combat' exact element={<Combat />} />
                   <Route path='/roleplaying' exact element={<Roleplay />} />
                   <Route path='/objects' exact element={<Objects />} />
-                  <Route path='/characters/:normalized' exact element={<CharacterDetail />} />
                   <Route path='/not-found' exact element={<NotFound />} />
                   <Route
                     path='*'
                     element={<Navigate to='/not-found' replace={true} />}
                   />
-                  {/*
-            <Route path='/combat' exact element={<CombatMain />} />
-            <Route path='/roleplay' exact element={<AboutUs />} />
-            <Route path='/places' exact element={<Places />} />
-            <Route path='/surprise' exact element={<Classes />} />
-            <Route path='/objects' exact element={<Places />} />
-            <Route path='/characters/:_id' exact element={<CharacterDetail />} />
-            <Route path='/addpower' exact element={<AddPower />} />
-          */}
                 </Routes>
                 <Footer />
               </div>
+              <Toolbar/>
             </div>
           </BrowserRouter>
         </ContentProvider>
       </PowersProvider>
       </FormsProvider>
     </CharactersProvider>
+    </UserProvider>
   )
 }
 

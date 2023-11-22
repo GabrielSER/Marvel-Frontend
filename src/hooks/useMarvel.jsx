@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useCallback, useState } from 'react'
+import { getToken } from '../contexts/UserContext'
 
 const httpMethod = {
     GET: 'get',
@@ -34,14 +35,13 @@ const useMarvel = () => {
                 ...options.headers
             }
         }
-        /*const username = localStorage.getItem('username')
-        const password = localStorage.getItem('password') 
-        if (username && password) {
+        const token = getToken()
+        if (token) {
             axiosOptions.headers = {
                 ...axiosOptions.headers,
-                'Authorization': 'Basic ' + base64.encode(username + ':' + password)
+                'Authorization': `Bearer ${token}`
             }
-        }*/
+        }
         setLoading(true)
         try {
             const rawResponse = await axios(axiosOptions)

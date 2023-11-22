@@ -8,11 +8,12 @@ const Navbar = () => {
     return (
         <div
             className={clsx(
-                'flex flex-col',
+                ' flex flex-col',
                 'w-full',
                 'p-2',
                 'bg-dark',
-                'shadow-lg'
+                'shadow-lg',
+                'z-40'
             )}
         >
             <StateBar />
