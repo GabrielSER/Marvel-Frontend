@@ -26,6 +26,7 @@ import Popular from '../../assets/images/combat/popular.jpg'
 import MoonKnight from '../../assets/images/combat/moonknight.jpg'
 import GreenGoblin from '../../assets/images/combat/greengoblin.jpg'
 import Identity from '../../assets/images/combat/identity.jpg'
+import ComicTitlePanel from '../ui/ComicTitlePanel'
 
 
 const Roleplay = () => {
@@ -35,14 +36,27 @@ const Roleplay = () => {
 
     <div className="flex flex-col items-center justify-center min-h-screen space-y-4">
       <div className="max-w-5xl p-2 mx-auto items-center">
-        <h1 className="text-5xl font-semibold mt-4 text-center p-4">ROLEPLAYING ACTIONS</h1>
+
+        <div className='flex flex-col p-5 self-center'>
+          <div className='flex flex-row self-center'>
+            <ComicTitlePanel>
+              <h1 className="text-5xl font-semibold mt-4 text-center p-4">ROLEPLAYING ACTIONS</h1>
+            </ComicTitlePanel>
+          </div>
+        </div>
         <p className="text-gray-700 mb-6 text-center mx-auto lg:px-0 px-10">
           When roleplaying, characters can perform many kinds of actions. In this game, actions are divided in three categories. Common Actions, Special Actions and Custom Actions. Common actions are actions that can be performed by normal humans. For example, every character can lie. Some characters are better lying than others, but every character can attempt that action. Every character can also attempt to fire a gun, though some characters find it harder, but every character can attempt to do it. Special Actions are those that, despite in some cases every character can do it, superhuman abilities can create a huge difference when trying to perform said action. For example, Daredevil is not even close to being capable of lifting the same weight as the Hulk can and Hawkeye is not able to Jump as high as Jessica Jones. Custom actions are special cases in which a player comes up with different kinds of actions that cannot be described as common or special actions.
         </p>
       </div>
 
       <div className="max-w-5xl p-2 mx-auto items-center lg:px-0 px-4">
+      <div className='flex flex-col p-5 self-center'>
+          <div className='flex flex-row self-center'>
+            <ComicTitlePanel>
         <h1 className="text-4xl font-semibold mb-4 text-center">Common Actions</h1>
+            </ComicTitlePanel>
+          </div>
+        </div>
         <p className="text-gray-700 mb-6 text-center">
           A character that wants to perform any kind of action, must perform a 1d20 dice check, the number obtained in the dice will have a bonus according to the skill, stat or attribute required to perform given action. For example, hiding from another character requires the skill ‘stealth’, so the user must throw 1d20 and add the stealth skill value to the dice result. The GM will decide the check required for the action to be successful according to the circumstances, but the most basic successful action requires a result of 10.
         </p>
@@ -56,7 +70,13 @@ const Roleplay = () => {
       </div>
 
       <div className="max-w-5xl p-2 mx-auto items-center lg:px-0 px-10 ">
+      <div className='flex flex-col p-5 self-center'>
+          <div className='flex flex-row self-center'>
+            <ComicTitlePanel>
         <h1 className="text-4xl font-semibold mb-4 text-center">Special Actions</h1>
+            </ComicTitlePanel>
+          </div>
+        </div>
         <p className="text-gray-700 mb-6 text-center">
           Some actions can be completely different depending on the character you’re playing. This kind of actions will be scaled according to a range, and the capacity of certain character to perform given action will be given by the Stat, Skill or Attribute required for it to be performed. These are some examples of special actions and how do they work:
         </p>

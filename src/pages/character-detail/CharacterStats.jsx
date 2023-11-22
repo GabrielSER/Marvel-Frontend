@@ -2,13 +2,13 @@ import React from 'react'
 import { useCharacter } from '../../contexts/CharacterContext'
 import clsx from 'clsx'
 import { useForm } from '../../contexts/FormContext'
-import StatPower from '../content/StatPower'
-import StatLogo from '../content/StatLogo'
+import StatPower from '../ui/StatPower'
+import StatLogo from '../ui/StatLogo'
 import Health from '../../assets/icons/health.png'
 import Speed from '../../assets/icons/speed.png'
 import EnergyProjection from '../../assets/icons/energyprojection.png'
 import Defense from '../../assets/icons/defense.png'
-import ComicTitlePanel from '../content/ComicTitlePanel'
+import ComicTitlePanel from '../ui/ComicTitlePanel'
 
 const formatStatName = (name) => {
   // Divide el nombre en palabras usando las letras mayúsculas como separadores

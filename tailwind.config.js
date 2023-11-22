@@ -16,11 +16,20 @@ module.exports = {
         'secondary': '#3C373B',
         'light': '#B3B3B3',
         'dark': '#202020',
+        'power-0': '#d680bd',
+        'power-1': '#8eaadb',
+        'power-2': '#a8d08d',
+        'power-3': '#e9e259',
+        'power-4': '#df6f63',
+        'power-5': '#bfbfbf',
+        'comic-primary': '#f4ff00',
+        'comic-secondary': '#bfbfbf',
         'shadow': 'rgba(0, 0, 0, 0.2)'
       },
       fontFamily: {
         comic: 'ComicBook',
-        montserrat: 'Montserrat'
+        montserrat: 'Montserrat',
+        condensed: 'RobotoCondensed'
       },
       spacing: {
         '100': '25rem',

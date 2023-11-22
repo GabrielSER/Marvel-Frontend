@@ -3,8 +3,8 @@ import { PowersProvider, usePowers } from '../../contexts/PowersContext';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useRef } from 'react';
-import ComicPanel from '../content/ComicPanel';
-import ComicTitlePanel from '../content/ComicTitlePanel';
+import ComicPanel from '../ui/ComicPanel';
+import ComicTitlePanel from '../ui/ComicTitlePanel';
 
 const CharacterPower = (props) => {
 
@@ -21,147 +21,134 @@ const CharacterPower = (props) => {
   } = power
 
 
-  let color;
-  switch (level) {
-    case 0:
-      color = '#d680bd';
-      break;
-    case 1:
-      color = '#8eaadb';
-      break;
-    case 2:
-      color = '#a8d08d';
-      break;
-    case 3:
-      color = '#e9e259';
-      break;
-    case 4:
-      color = '#df6f63';
-      break;
-    case 5:
-      color = '#bfbfbf';
-      break;
-    default:
-      color = 'bg-gray-500';
-  }
+
 
   return (
-    <ComicPanel color={color}
+    <ComicPanel
+      className={clsx(
+        level === 0 && 'bg-power-0',
+        level === 1 && 'bg-power-1',
+        level === 2 && 'bg-power-2',
+        level === 3 && 'bg-power-3',
+        level === 4 && 'bg-power-4',
+        level === 5 && 'bg-power-5'
+      )}
     >
       <div
-      className={clsx(
-        'flex',
-        'relative',
-        'shadow-sm',
-        !isClicked && 'w-80',
-        !isClicked && 'h-40',
-        'overflow-hidden',
-        'rounded-md',
-        !isClicked && 'hover:scale-105',
-        isClicked && 'h-auto',
-        isClicked && 'w-full sm:w-120',
-        isClicked && 'shadow-lg',
-        'min-h-full',
-        'p-4',
-        'bg-opacity-75'
-     
-      )}
-      onClick={handleClick}
-    >
-      <div className="flex flex-col h-full">
-        <p className='text-ellipsis overflow-hidden ...'>
-          <div className='flex flex-row'>
-          <ComicTitlePanel>
-            <b>
-              {power.name}
-            </b>
-          </ComicTitlePanel>
+        className={clsx(
+          'flex',
+          'relative',
+          'overflow-hidden',
+          'rounded-md',
+          'min-h-full',
+          'p-4',
+          'bg-opacity-75',
+          isClicked && [
+            'h-auto',
+            'w-full sm:w-120',
+            'shadow-lg'
+          ],
+          !isClicked && [
+            'w-80 h-40',
+            'hover:scale-105'
+          ]
+        )}
+        onClick={handleClick}
+      >
+        <div className="flex flex-col h-full">
+          <p className='text-ellipsis overflow-hidden ...'>
+            <div className='flex flex-row'>
+              <ComicTitlePanel>
+                <b>
+                  {power.name}
+                </b>
+              </ComicTitlePanel>
 
-          </div>
-          <p>
-            <b>
-              Type:
-            </b>
-            {" "} {power.type}
-          </p>
-
-          {power.skillCheck && <p>
-            <b>
-              Skill Check:
-            </b>
-            {" "} {power.skillCheck}
-          </p>
-          }
-
-          {power.bonusDamage && <p>
-            <b>
-              Bonus Damage:
-            </b>
-            {" "} {power.bonusDamage}
-          </p>
-          }
-
-          {
-            power.module &&
+            </div>
             <p>
               <b>
-                Module:
+                Type:
               </b>
-              {" "} {power.module}
+              {" "} {power.type}
             </p>
-          }
-          {
 
-           isClicked && <div>
+            {power.skillCheck && <p>
+              <b>
+                Skill Check:
+              </b>
+              {" "} {power.skillCheck}
+            </p>
+            }
 
+            {power.bonusDamage && <p>
+              <b>
+                Bonus Damage:
+              </b>
+              {" "} {power.bonusDamage}
+            </p>
+            }
+
+            {
+              power.module &&
               <p>
                 <b>
-                  Description:
+                  Module:
                 </b>
-                {" "} {power.description}
+                {" "} {power.module}
               </p>
+            }
+            {
 
-              {
-                power.statusEffect[0] && <p>
+              isClicked && <div>
+
+                <p>
                   <b>
-                    Effect:
+                    Description:
                   </b>
-                  {" "} {power.statusEffect}
+                  {" "} {power.description}
                 </p>
-              }
-      
-            </div>
 
-          }
-          
+                {
+                  power.statusEffect[0] && <p>
+                    <b>
+                      Effect:
+                    </b>
+                    {" "} {power.statusEffect}
+                  </p>
+                }
 
-        </p>
+              </div>
 
+            }
+
+
+          </p>
+
+        </div>
       </div>
-    </div>
     </ComicPanel>
-    
+
 
   );
 }
-    /* 
-      {power.form && <p>
-                <b>
-                  Damage:
-                </b>
-                {" "} {power.form}
-              </p>
+/* 
+  {power.form && <p>
+            <b>
+              Damage:
+            </b>
+            {" "} {power.form}
+          </p>
 
-              }
-               {power.character && <p>
-                <b>
-                  Leveling:
-                </b>
-                {" "} {power.character}
-              </p>
+          }
+           {power.character && <p>
+            <b>
+              Leveling:
+            </b>
+            {" "} {power.character}
+          </p>
 
-               }
+           }
 
-              */
+          */
 
 export default CharacterPower   

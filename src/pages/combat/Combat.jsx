@@ -22,12 +22,22 @@ import ContentView from '../ui/ContentView'
 import Content from '../ui/Content'
 import { DiceType } from '../content/dice/Dice'
 import ContentScope from '../ui/ContentScope'
+import ComicTitlePanel from '../ui/ComicTitlePanel'
 
 const BigTitle = (props) =>
-  <h1
-    className='text-4xl font-semibold text-center'
-    {...props}
-  />
+
+  <div className='flex flex-col items-center'>
+    <div className='flex flex-row w-auto'>
+      <ComicTitlePanel>
+        <h1
+          className='text-4xl font-semibold text-center'
+          {...props}
+        />
+      </ComicTitlePanel>
+    </div>
+  </div>
+
+
 
 const Title = (props) =>
   <h2
@@ -59,13 +69,19 @@ const Combat = () => {
       )}
     >
       <Section>
-        <h1
-          className='text-5xl font-semibold mt-4 text-center p-8'>
-          COMBAT SYSTEM
-        </h1>
+        <div className='flex flex-row self-center'>
+          <ComicTitlePanel>
+            <h1
+              className='text-5xl font-semibold mt-4 text-center'>
+              COMBAT SYSTEM
+            </h1>
+          </ComicTitlePanel>
+        </div>
+
+
         <BigTitle>Normal Attacks</BigTitle>
       </Section>
-      
+
       <div className='flex flex-wrap w-full justify-center items-center gap-4'>
         {
           Object.values(DiceType).map((type, index) =>
@@ -261,8 +277,10 @@ const Combat = () => {
         </div>
 
         <Section>
-          <div className='flex-col items-center mb-4'>
-            <BigTitle>Damage types</BigTitle>
+          <div className='flex-col mb-4'>
+            <div className='align-center'>
+              <BigTitle>Damage types</BigTitle>
+            </div>
             <div className='flex flex-row sm:gap-40 gap-20 p-4 justify-center'>
               <div className='flex sm:flex-row flex-col sm:gap-40 gap-4'>
                 <div className='flex flex-col'>

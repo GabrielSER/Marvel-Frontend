@@ -20,7 +20,7 @@ const NavigationLink = (props) => {
             'w-min',
             'px-3 pt-2',
             'bg-dark',
-            'font-montserrat font-bold'
+            'font-condensed font-bold'
           )}
           to={to}
         >

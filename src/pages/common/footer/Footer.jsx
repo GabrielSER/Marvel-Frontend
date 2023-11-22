@@ -13,7 +13,7 @@ const Footer = () =>
             'p-4 sm:p-8',
             'bg-secondary',
             'shadow-lg',
-            'font-montserrat',
+            'font-condensed',
             'text-white'
         )}
     >

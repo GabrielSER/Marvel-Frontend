@@ -2,7 +2,7 @@ import React from 'react'
 import { useCharacter } from '../../contexts/CharacterContext'
 import clsx from 'clsx'
 import { useForm } from '../../contexts/FormContext'
-import ComicTitlePanel from '../content/ComicTitlePanel'
+import ComicTitlePanel from '../ui/ComicTitlePanel'
 
 const CharacterAbility = () => {
 

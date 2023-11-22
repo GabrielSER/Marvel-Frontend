@@ -12,7 +12,7 @@ const Banner = () => {
                 'space-y-2',
                 'text-2xl',
                 'text-white',
-                'font-bold font-montserrat'
+                'font-bold font-condensed'
             )}
         >
             <h1 className='hover:text-red-700'>ALL-NEW</h1>

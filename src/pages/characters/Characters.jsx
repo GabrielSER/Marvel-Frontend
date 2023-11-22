@@ -4,14 +4,20 @@ import { Fade } from 'react-reveal'
 import CharacterCard from './CharacterCard'
 import { useCharacters } from '../../contexts/CharactersContext'
 import { normalizeName } from '../../util/characterUtil'
+import ComicTitlePanel from '../ui/ComicTitlePanel'
 
 const Characters = () => {
 
     const { characters, loading } = useCharacters()
-
+    const [searchInput, setSearchInput] = useState()
+     
     return (
         <div>
-            <h1 className="text-5xl font-semibold m-4 text-center p-8">CHARACTERS</h1>
+                <div className='flex w-full justify-center p-4'>
+                    <ComicTitlePanel>
+                        <h1 className="text-5xl font-semibold text-center p-4">CHARACTERS</h1>
+                    </ComicTitlePanel>
+                </div>
             <div
                 className={clsx(
                     'flex flex-wrap',

@@ -9,9 +9,9 @@ import CharacterPowers from "./CharacterPowers"
 import { useState } from "react"
 import { useCharacterDetail } from "../../contexts/CharacterDetailContext"
 import CharacterSkills from "./CharacterSkills"
-import Comicbook from "../content/ComicPanel"
-import ComicPanel from "../content/ComicPanel"
-import ComicTitlePanel from "../content/ComicTitlePanel"
+import Comicbook from "../ui/ComicPanel"
+import ComicPanel from "../ui/ComicPanel"
+import ComicTitlePanel from "../ui/ComicTitlePanel"
 
 const CharacterFormDetail = (props) => {
 
