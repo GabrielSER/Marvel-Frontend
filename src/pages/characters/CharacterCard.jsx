@@ -14,7 +14,8 @@ const CharacterCard = (props) => {
                 'w-52 h-80',
                 'rounded-md',
                 'hover:scale-105',
-                'overflow-hidden'
+                'overflow-hidden',
+                'z-40'
             )}
         >
             <LazyImage

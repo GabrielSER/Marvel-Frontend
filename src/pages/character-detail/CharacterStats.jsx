@@ -117,14 +117,14 @@ const CharacterStat = (props) => {
   ];
 
   const StatComponent = ({ name, stat, color }) => (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center">
       <StatPower strokeWidth={14} percentage={stat ? stat.value : 0} statColor={color} />
       <p className='py-1 text-center'><b>{name}</b></p>
     </div>
   );
 
   const StaticonComponent = ({ name, stat, image }) => (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center">
       <StatLogo image={image} text={stat ? stat.value : 0}></StatLogo>
       <p className=' text-center'><b>{name}</b></p>
     </div>
@@ -132,7 +132,7 @@ const CharacterStat = (props) => {
 
 
   const StatsColumn = ({ data }) => (
-    <div className="flex flex-col sm:flex-row gap-10 px-0 sm:px-10">
+    <div className="flex flex-col md:flex-row gap-10 px-0 md:px-10">
       {data.map((item, index) => (
         <StatComponent key={index} name={item.name} stat={item.stat} color={item.color} />
       ))}
@@ -140,7 +140,7 @@ const CharacterStat = (props) => {
   );
 
   const StatsIconColumn = ({ data }) => (
-    <div className="flex flex-col sm:flex-row gap-0 sm:gap-20">
+    <div className="flex flex-col md:flex-row gap-0 md:gap-20">
       {data.map((item, index) => (
         <StaticonComponent key={index} name={item.name} stat={item.stat} image={item.image} />
       ))}
@@ -155,23 +155,22 @@ const CharacterStat = (props) => {
 
 
   return (
-    <div className="flex flex-row">
-      <div className="flex flex-col">
+    <div className="flex flex-col">
+
       <div className="flex flex-row w-auto">
-              <ComicTitlePanel>
-        <h1 className="text-2xl font-bold">Stats:</h1>
+        <ComicTitlePanel>
+          <h1 className="text-2xl font-bold">Stats:</h1>
         </ComicTitlePanel>
+      </div>
+
+
+
+      <div className="flex flex-row md:flex-col w-full justify-center items-center">
+        <div className="flex flex-row md:flex-col px-0 md:px-10 gap-0 md:gap-20">
+          <StatsIconColumn data={statIconData} />
         </div>
-
-
-
-        <div className="flex flex-row sm:flex-col">
-          <div className="flex flex-row sm:flex-col px-10 gap-20">
-            <StatsIconColumn data={statIconData} />
-          </div>
-          <StatsColumn data={column1} />
-          <StatsColumn data={column2} />
-        </div>
+        <StatsColumn data={column1} />
+        <StatsColumn data={column2} />
       </div>
     </div>
   )

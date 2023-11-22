@@ -33,7 +33,7 @@ const CharacterFormDetail = (props) => {
             />
           </div>
           <div className={clsx('flex flex-col sm:flex-row w-full h-full p-4 my-10 sm:ml-20')}>
-            <div className={clsx('flex flex-col w-full sm:w-1/3 h-full gap-y-3')}>
+            <div className={clsx('flex flex-col w-full sm:w-1/3 h-full gap-y-10')}>
               <div className='flex flex-row hover:scale-105'>
                 <LazyImage
                   src={selectedForm.image}
@@ -42,19 +42,19 @@ const CharacterFormDetail = (props) => {
                   imageClassname='w-50 h-full object-cover self-center'
                 />
               </div>
-              <ComicPanel color='#ded9d9'>
-                <div className="flex flex-col p-10">
-                  <CharacterSkills />
-                </div>
-              </ComicPanel>
+              <CharacterSkills />
             </div>
             <div className={clsx('flex flex-col w-full sm:w-2/3 sm:mx-20 h-full mx-2 ')}>
-              <p className='sm:self-start mb-2'> <b className='text-2xl font-bold px-2'><ComicTitlePanel>Real Name:</ComicTitlePanel>  </b>{character.alterego} </p>
+              <div className='sm:self-start mb-2'>
+                <b className='text-2xl font-bold px-2'>
+                  <ComicTitlePanel>Real Name:</ComicTitlePanel>
+                </b>
+                {character.alterego}
+              </div>
               <CharacterStats />
-                <div className="flex flex-col p-10">
+              <div className="flex flex-col p-10">
                 <CharacterAbilities />
-                </div>
-             
+              </div>
             </div>
           </div>
         </div>

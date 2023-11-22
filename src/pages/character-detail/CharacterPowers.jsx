@@ -1,14 +1,9 @@
 import { FormProvider, useForm } from "../../contexts/FormContext"
 import CharacterPower from "./CharacterPower"
 
-const CharacterPowers = (props) => {
-
-    
-    const { form } = props
+const CharacterPowers = () => {
 
     const { formPowers } = useForm()
-
-    console.log(formPowers)
 
     return (
         <div className='d-flex justify-content-center align-items-center p-5'>
@@ -22,8 +17,8 @@ const CharacterPowers = (props) => {
                         {
                             formPowers
                                 .map((power, index) => (
-                                    <div className='flex flex-col py-2'>
-                                        <CharacterPower key={index} power={power} />
+                                    <div key={index} className='flex flex-col py-2'>
+                                        <CharacterPower power={power} />
                                     </div>
                                 ))
                         }

@@ -25,7 +25,8 @@ const CharactersContext = createContext()
  */
 const initialState = {
     characters: new Map(),
-    charactersByNormalized: new Map()
+    charactersByNormalized: new Map(),
+    indexing: true
 }
 
 const CharactersProvider = (props) => {
@@ -45,7 +46,8 @@ const CharactersProvider = (props) => {
                 ))
                 setState({
                     ...state,
-                    characters
+                    characters,
+                    indexing: true
                 })
             }
             catch (error) {
@@ -56,13 +58,17 @@ const CharactersProvider = (props) => {
     }, [])
 
     useEffect(() => {
+        if (state.characters.size === 0) {
+            return
+        }
         const characters = Array.from(state.characters.values())
         const charactersByNormalized = new Map(characters.map(character =>
             [normalizeName(character.name), character]
         ))
         setState({
             ...state,
-            charactersByNormalized
+            charactersByNormalized,
+            indexing: false
         })
     }, [state.characters])
 
@@ -77,7 +83,7 @@ const CharactersProvider = (props) => {
 
     const value = useMemo(() => ({
         ...state,
-        loading,
+        loading: loading || state.indexing,
         updateCharacter
     }), [
         state,

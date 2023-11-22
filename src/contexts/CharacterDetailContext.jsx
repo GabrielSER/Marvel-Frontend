@@ -5,6 +5,7 @@ import {
     useContext,
 } from 'react'
 import { useCharacter } from './CharacterContext'
+import { useEffect } from 'react'
 
 const CharacterDetailContext = createContext()
 
@@ -12,6 +13,12 @@ const CharacterDetailProvider = (props) => {
 
     const { defaultForm } = useCharacter()
     const [selectedForm, setSelectedForm] = useState(defaultForm)
+
+    useEffect(() => {
+        if (!selectedForm) {
+            setSelectedForm(defaultForm)
+        }
+    }, [selectedForm, defaultForm, setSelectedForm])
 
     const value = useMemo(() => ({
         selectedForm,

@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         'primary': '#EC1D23',
         'secondary': '#3C373B',
+        'light-2': 'rgba(179 179 179 / 0.1)',
         'light': '#B3B3B3',
         'dark': '#202020',
         'power-0': '#d680bd',

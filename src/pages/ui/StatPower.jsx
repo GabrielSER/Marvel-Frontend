@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-  // Assuming percentage ranges from 0 to 8
-  const maxStatValue = 8
-  
+// Assuming percentage ranges from 0 to 8
+const maxStatValue = 8
+
 const StatPower = ({ strokeWidth, percentage, statColor }) => {
 
   const radius = 40 - strokeWidth / 2
@@ -15,7 +15,7 @@ const StatPower = ({ strokeWidth, percentage, statColor }) => {
   const diameter = Math.PI * 2 * radius
 
   // Initialize with diameter
-  const [offset, setOffset] = useState(diameter) 
+  const [offset, setOffset] = useState(diameter)
 
   // Ref to the SVG element
   const svgRef = useRef()
@@ -27,7 +27,7 @@ const StatPower = ({ strokeWidth, percentage, statColor }) => {
         const isSvgInView = rect.top < window.innerHeight && rect.bottom >= 0
 
         if (isSvgInView) {
-          const progress = percentage / maxStatValue 
+          const progress = percentage / maxStatValue
           const offsetValue = diameter - progress * diameter
 
           setOffset(offsetValue)
@@ -48,7 +48,7 @@ const StatPower = ({ strokeWidth, percentage, statColor }) => {
   }, [percentage, diameter])
 
   return (
-    <div className="stat-power-container">
+    <div className="stat-power-container ">
       <svg
         className="CircularProgressbar"
         viewBox="0 0 100 100"
@@ -80,19 +80,21 @@ const StatPower = ({ strokeWidth, percentage, statColor }) => {
           }}
         />
 
-        <text
-          className="CircularProgressbar-text"
-          x={50}
-          y={50}
-          style={{
-            fill: 'black',
-            fontSize: '24px',
-            dominantBaseline: 'central',
-            textAnchor: 'middle',
-          }}
-        >
-          {`${percentage}`}
-        </text>
+       
+          <text
+            className="CircularProgressbar-text font-condensed"
+            x={50}
+            y={50}
+            style={{
+              fill: 'black',
+              fontSize: '24px',
+              dominantBaseline: 'central',
+              textAnchor: 'middle',
+            }}
+          >
+            {`${percentage}`}
+          </text>
+
       </svg>
     </div>
   )

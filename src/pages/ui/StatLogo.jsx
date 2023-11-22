@@ -2,7 +2,7 @@ import React from 'react';
 
 const StatLogo = ({ image, text }) => {
   return (
-    <div>
+    <div className='hover:scale-110 ease-in-out transition-all'>
       {image && (
         <div
           style={{
@@ -25,6 +25,7 @@ const StatLogo = ({ image, text }) => {
           />
 
           <div
+          className='flex rounded-full bg-light/70 aspect-square w-6 items-center justify-center'
             style={{
               position: 'absolute',
               top: '50%',
@@ -34,7 +35,7 @@ const StatLogo = ({ image, text }) => {
               color: 'black',
             }}
           >
-            <h2>{text}</h2>
+            <label className='font-condensed'>{text}</label>
           </div>
         </div>
       )}

@@ -21,8 +21,8 @@ const CharacterAbility = () => {
                         </ComicTitlePanel>
                     </div>
                     {
-                        form.abilities.map((ability) => (
-                            <p className='py-2'><b>{ability.split(':')[0]}</b>: {ability.split(':')[1]}</p>
+                        form.abilities.map((ability, index) => (
+                            <p key={index} className='py-2'><b>{ability.split(':')[0]}</b>: {ability.split(':')[1]}</p>
                         ))
                     }
                 </div>
@@ -49,8 +49,8 @@ const CharacterWeakness = () => {
                         </ComicTitlePanel>
                     </div>
                     {
-                        form.weaknesses.map((weakness) => (
-                            <p className='py-2'><b>{weakness.split(':')[0]}</b>: {weakness.split(':')[1]}</p>
+                        form.weaknesses.map((weakness, index) => (
+                            <p key={index} className='py-2'><b>{weakness.split(':')[0]}</b>: {weakness.split(':')[1]}</p>
                         ))
                     }
                 </div>

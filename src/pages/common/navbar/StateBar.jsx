@@ -18,7 +18,8 @@ const StateBar = () => {
                     'space-x-2',
                     'p-2',
                     'bg-dark',
-                    'shadow-lg'
+                    'shadow-lg',
+                    'font-condensed'
                 )}
             >
 

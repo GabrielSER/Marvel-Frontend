@@ -8,8 +8,8 @@ import { CharacterDetailProvider } from '../../contexts/CharacterDetailContext'
 
 const CharacterDetail = () => {
 
-    const { normalized } = useParams()
     const navigate = useNavigate()
+    const { normalized } = useParams()
     const { character, loading } = useCharacterWithNormalizedName(normalized)
 
     useEffect(() => {
@@ -19,7 +19,9 @@ const CharacterDetail = () => {
         }
     }, [character, loading])
 
-    if (character == null) return null
+    if (character === null || character === undefined) {
+        return null
+    }
 
     return (
         <CharacterProvider character={character}>

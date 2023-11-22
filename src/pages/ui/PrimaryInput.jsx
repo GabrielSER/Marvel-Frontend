@@ -13,6 +13,7 @@ const PrimaryInput = (props) => {
                 'px-3 py-1',
                 'border border-primary',
                 'caret-primary',
+                'bg-transparent',
                 'hover:bg-shadow',
                 'focus:bg-shadow',
                 'rounded-l-full rounded-r-full',

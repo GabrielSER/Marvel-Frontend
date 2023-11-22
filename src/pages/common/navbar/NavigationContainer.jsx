@@ -7,7 +7,7 @@ const NavigationContainer = (props) => {
           'flex',
           'w-full',
           'bg-dark',
-          'border-t border-t-light/10',
+          'border-t border-t-light-2',
           'overflow-x-auto',
           'overflow-y-hidden',
           'hide-scroll'
