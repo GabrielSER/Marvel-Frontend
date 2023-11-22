@@ -51,7 +51,7 @@ const CharacterPower = (props) => {
       <div className="flex flex-col h-full">
         <div className='text-ellipsis overflow-hidden'>
           <div className='flex flex-row'>
-            <ComicTitlePanel>
+            <ComicTitlePanel className='text-md bg-comic-primary'>
               <b>
                 {power.name}
               </b>

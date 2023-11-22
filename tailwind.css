@@ -64,6 +64,15 @@
   box-shadow:3px 3px 0 #222;
 }
 
+.comic-box-title-straight{
+  margin:0px;
+  padding:0 0px;
+  float:left;
+  border:1px solid #222;
+  box-shadow:3px 3px 0 #222;
+}
+
+
   /* Scrollbar */
   
   ::-webkit-scrollbar {

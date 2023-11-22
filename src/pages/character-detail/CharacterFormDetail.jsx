@@ -15,6 +15,7 @@ import ComicTitlePanel from '../ui/ComicTitlePanel'
 import CharacterImage from './CharacterImage'
 import CharacterLogo from './CharacterLogo'
 import CharacterName from './CharacterName'
+import CharacterBio from './CharacterBio'
 
 
 const Section = (props) =>
@@ -34,7 +35,7 @@ const Column = (props) => {
         'flex flex-col',
         'gap-4',
         'w-full',
-        'justify-center',
+        'items-center',
         className
       )}
       {...properties}
@@ -51,7 +52,7 @@ const CharacterFormDetail = () => {
 
   return (
     <FormProvider form={selectedForm}>
-      <div className={clsx('flex flex-col w-full justify-center p-4 md:p-10')}>
+      <div className={clsx('flex flex-col w-full justify-center p-4 md:p-5')}>
         <CharacterLogo />
         <Section>
           <Column className='w-full md:w-1/3 shrink-0'>
@@ -64,54 +65,10 @@ const CharacterFormDetail = () => {
             <CharacterAbilities />
           </Column>
         </Section>
-
-        <div className={clsx('flex flex-col p-4 w-90 h-full items-center justify-center')}>
-          <div className={clsx('flex flex-col w-100 h-full sm:mx-100 my-10 self-center')}>
-            <LazyImage
-              src={character.logo}
-              alt={character.name}
-              className='w-200 h-auto self-center sm:mx-0 mx-5 py-4 hover:scale-105'
-              imageClassname='w-full h-auto'
-            />
-          </div>
-          <div className={clsx('flex flex-col sm:flex-row w-full h-full p-4 my-10 sm:ml-20')}>
-            <div className={clsx('flex flex-col w-full sm:w-1/3 h-full gap-y-10')}>
-              <CharacterImage />
-              <CharacterSkills />
-            </div>
-            <div className={clsx('flex flex-col w-full sm:w-2/3 sm:mx-20 h-full mx-2 ')}>
-              <div className='sm:self-start mb-2'>
-                <b className='text-2xl font-bold px-2'>
-                  <ComicTitlePanel>Real Name:</ComicTitlePanel>
-                </b>
-                {character.alterego}
-              </div>
-              <CharacterStats />
-              <div className='flex flex-col p-10'>
-                <CharacterAbilities />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <ComicPanel color='#bfbfbf'>
-          <div className='flex flex-col p-10'>
-
-            <div className='flex flex-row w-auto'>
-              <ComicTitlePanel>
-                <h1 className='text-2xl font-bold'>
-                  Bio:
-                </h1>
-              </ComicTitlePanel>
-
-            </div>
-            <span className='sm:self-start'>
-              {character.description}
-            </span>
-
-          </div>
-        </ComicPanel>
-        <CharacterPowers />
+        <Column className='p-5'>
+          <CharacterBio />
+          <CharacterPowers />
+        </Column>
       </div>
     </FormProvider>
   )

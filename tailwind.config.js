@@ -25,6 +25,7 @@ module.exports = {
         'power-5': '#bfbfbf',
         'comic-primary': '#f4ff00',
         'comic-secondary': '#bfbfbf',
+        'comic-primary-light': '#f1f1c2',
         'shadow': 'rgba(0, 0, 0, 0.2)'
       },
       fontFamily: {

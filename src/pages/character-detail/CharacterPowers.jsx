@@ -10,8 +10,8 @@ const CharacterPowers = () => {
         return null
 
     return (
-        <div className='d-flex justify-content-center align-items-center p-5'>
-            <div className="flex w-full justify-center">
+        <div className='d-flex justify-content-center align-items-center'>
+            <div className="flex w-full justify-center p-5">
                 <ComicTitlePanel className='w-min bg-comic-primary text-2xl'>
                     Powers:
                 </ComicTitlePanel>

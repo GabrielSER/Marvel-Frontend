@@ -60,7 +60,7 @@ const CharacterStats = () => {
       <ComicTitlePanel>
         Stats:
       </ComicTitlePanel>
-      <div className='flex md:flex-col w-full gap-6'>
+      <div className='flex md:flex-col w-full gap-6 px-10'>
         <div className='grid md:grid-cols-4 md:grid-flow-row gap-6'>
           {
             statIconData

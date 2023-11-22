@@ -12,7 +12,7 @@ const CharacterLogo = () => {
             alt={character.name}
             className={clsx(
                 'p-8',
-                'w-full md:max-w-xl',
+                'w-full md:max-w-md',
                 'self-center hover:scale-105',
                 'ease-in-out transition-all'
             )}
