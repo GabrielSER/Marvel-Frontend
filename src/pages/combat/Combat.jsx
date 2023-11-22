@@ -79,11 +79,6 @@ const Combat = () => {
       </div>
       <Section>
         <Title>Attacking and defending</Title>
-        <ContentScope>
-        <Paragraph>
-          {`No, he is ::view:{"text":"Burned","id":"burned"}:: ::roll:{"type":"d20"}::`}
-        </Paragraph>
-      </ContentScope>
         <Paragraph>
           When in combat a character can do a normal attack. For attempting a normal attack,
           the attacker throws 1d20. Normal attacks made at short range have a check bonus of Melee for hand-to-hand combat.
