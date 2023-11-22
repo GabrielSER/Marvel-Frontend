@@ -39,8 +39,9 @@ const CharacterSkills = (props) => {
     <ComicPanel
       className={clsx(
         'flex flex-col',
+        'w-full',
         'bg-comic-secondary',
-        'px-4 py-8'
+        'p-4 py-8'
       )}
     >
       <div className="flex justify-center">

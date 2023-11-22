@@ -20,7 +20,7 @@ const CharacterImage = () => {
                 'rounded-md',
                 'overflow-hidden'
             )}
-            imageClassname='p-8 sm:p-0 h-full h-full object-cover rounded-md'
+            imageClassname='sm:p-0 h-full h-full object-cover rounded-md'
         />
     )
 }

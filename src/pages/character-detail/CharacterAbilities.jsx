@@ -10,26 +10,33 @@ const DescriptionParagraph = (props) => {
     if (features.length === 0) return null
 
     return (
-        <>
+        <ComicPanel className ='bg-comic-primary-light p-8'>
             <div className='flex flex-row w-auto'>
                 <ComicTitlePanel>
                     {title}
                 </ComicTitlePanel>
             </div>
-            {
-                features
-                    .map(feature => feature.split(':'))
-                    .map(([featureName, featureDescription], index) =>
-                        <ComicPanel key={index} className='flex flex-col bg-comic-primary-light py-4 px-6'>
-                                <ComicTitlePanel className=' bg-comic-primary'>{`${featureName}:`}</ComicTitlePanel>
-                                
-                            <p>
-                                {featureDescription}
-                            </p>
-                        </ComicPanel>
-                    )
-            }
-        </>
+            <div className={clsx('flex flex-col py-4 gap-4')}>
+                {
+                    features
+                        .map(feature => feature.split(':'))
+                        .map(([featureName, featureDescription], index) =>
+                            <div
+                                key={index}
+                                className='flex flex-col'
+                            >
+                                <ComicTitlePanel className=' bg-comic-secondary'>
+                                    {`${featureName}:`}
+                                </ComicTitlePanel>
+
+                                <p>
+                                    {featureDescription}
+                                </p>
+                            </div>
+                        )
+                }
+            </div>
+        </ComicPanel>
     )
 }
 
@@ -38,7 +45,7 @@ const CharacterAbilities = (props) => {
     const { form } = useForm()
 
     return (
-        <div className={clsx('flex flex-col py-4 gap-4')}>
+        <div className={clsx('flex flex-col py-2 gap-2')}>
             <DescriptionParagraph
                 title='Abilities:'
                 features={form.abilities}

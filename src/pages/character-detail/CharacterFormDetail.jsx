@@ -34,6 +34,7 @@ const Column = (props) => {
       className={clsx(
         'flex flex-col',
         'gap-4',
+        'p-4',
         'w-full',
         'items-center',
         className
@@ -65,10 +66,8 @@ const CharacterFormDetail = () => {
             <CharacterAbilities />
           </Column>
         </Section>
-        <Column className='p-5'>
           <CharacterBio />
           <CharacterPowers />
-        </Column>
       </div>
     </FormProvider>
   )
