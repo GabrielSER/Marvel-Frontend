@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useCharacter } from '../../contexts/CharacterContext'
 import clsx from 'clsx'
 import { useForm } from '../../contexts/FormContext'
@@ -21,79 +21,79 @@ const formatStatName = (name) => {
 }
 
 const CharacterStat = (props) => {
-  const { form } = props;
-  // Función para encontrar el stat con nombre "strength"
+  const { form } = props
+  // Función para encontrar el stat con nombre 'strength'
   const findStrengthStat = () => {
-    return form.stats.find((stat) => stat.name === "strength");
-  };
+    return form.stats.find((stat) => stat.name === 'strength')
+  }
 
   const findIntelligenceStat = () => {
-    return form.stats.find((stat) => stat.name === "intelligence");
-  };
+    return form.stats.find((stat) => stat.name === 'intelligence')
+  }
 
   const findDurabilityStat = () => {
-    return form.stats.find((stat) => stat.name === "durability");
-  };
+    return form.stats.find((stat) => stat.name === 'durability')
+  }
 
   const findAgilityStat = () => {
-    return form.stats.find((stat) => stat.name === "agility");
-  };
+    return form.stats.find((stat) => stat.name === 'agility')
+  }
 
   const findWisdomStat = () => {
-    return form.stats.find((stat) => stat.name === "wisdom");
-  };
+    return form.stats.find((stat) => stat.name === 'wisdom')
+  }
 
   const findCharismaStat = () => {
-    return form.stats.find((stat) => stat.name === "charisma");
-  };
+    return form.stats.find((stat) => stat.name === 'charisma')
+  }
 
   const findPerceptionStat = () => {
-    return form.stats.find((stat) => stat.name === "perception");
-  };
+    return form.stats.find((stat) => stat.uniqueName === 'perception')
+  }
 
   const findHPStat = () => {
-    return form.stats.find((stat) => stat.name === "hp");
-  };
+    return form.stats.find((stat) => stat.name === 'hp')
+  }
 
   const findPowerStat = () => {
-    return form.stats.find((stat) => stat.name === "power");
-  };
+    return form.stats.find((stat) => stat.name === 'power')
+  }
 
   const findDefenseStat = () => {
-    return form.stats.find((stat) => stat.name === "defense");
-  };
+    return form.stats.find((stat) => stat.name === 'defense')
+  }
 
   const findMeleeStat = () => {
-    return form.stats.find((stat) => stat.name === "melee");
-  };
+    return form.stats.find((stat) => stat.name === 'melee')
+  }
 
   const findEnergyProjectionStat = () => {
-    return form.stats.find((stat) => stat.name === "energyprojection");
-  };
+    return form.stats.find((stat) => stat.name === 'energyprojection')
+  }
 
   const findSpeedStat = () => {
-    return form.stats.find((stat) => stat.name === "speed");
-  };
+    return form.stats.find((stat) => stat.name === 'speed')
+  }
 
   const findLuckStat = () => {
-    return form.stats.find((stat) => stat.name === "luck");
-  };
+    return form.stats.find((stat) => stat.name === 'luck')
+  }
 
 
-  const strengthStat = findStrengthStat();
-  const intelligenceStat = findIntelligenceStat();
-  const durabilityStat = findDurabilityStat();
-  const agilityStat = findAgilityStat();
-  const wisdomStat = findWisdomStat();
-  const charismaStat = findCharismaStat();
-  const perceptionStat = findPerceptionStat();
-  const hpStat = findHPStat();
-  const powerStat = findPowerStat();
-  const defenseStat = findDefenseStat();
-  const meleeStat = findMeleeStat();
-  const energyprojectionStat = findEnergyProjectionStat();
-  const speedStat = findSpeedStat();
-  const luckStat = findLuckStat();
+  const strengthStat = findStrengthStat()
+  const intelligenceStat = findIntelligenceStat()
+  const durabilityStat = findDurabilityStat()
+  const agilityStat = findAgilityStat()
+  const wisdomStat = findWisdomStat()
+  const charismaStat = findCharismaStat()
+  const perceptionStat = findPerceptionStat()
+  const hpStat = findHPStat()
+  const powerStat = findPowerStat()
+  const defenseStat = findDefenseStat()
+  const meleeStat = findMeleeStat()
+  const energyprojectionStat = findEnergyProjectionStat()
+  const speedStat = findSpeedStat()
+  const luckStat = findLuckStat()
 
 
   const statsData = [
@@ -107,66 +107,68 @@ const CharacterStat = (props) => {
     { name: 'Perception', stat: perceptionStat, color: 'gray' },
     { name: 'Charisma', stat: charismaStat, color: 'pink' },
     { name: 'Luck', stat: luckStat, color: 'Brown' }
-  ];
+  ]
 
   const statIconData = [
     { name: 'HP', stat: hpStat, image: Health },
     { name: 'Speed', stat: speedStat, image: Speed },
     { name: 'Defense', stat: defenseStat, image: Defense },
     { name: 'Energy Projection', stat: energyprojectionStat, image: EnergyProjection }
-  ];
+  ]
 
   const StatComponent = ({ name, stat, color }) => (
-    <div className="flex flex-col items-center">
+    <div className='flex flex-col items-center'>
       <StatPower strokeWidth={14} percentage={stat ? stat.value : 0} statColor={color} />
       <p className='py-1 text-center'><b>{name}</b></p>
     </div>
-  );
+  )
 
   const StaticonComponent = ({ name, stat, image }) => (
-    <div className="flex flex-col items-center">
+    <div className='flex flex-col items-center'>
       <StatLogo image={image} text={stat ? stat.value : 0}></StatLogo>
       <p className=' text-center'><b>{name}</b></p>
     </div>
-  );
+  )
 
 
   const StatsColumn = ({ data }) => (
-    <div className="flex flex-col md:flex-row gap-10 px-0 md:px-10">
+    <div className='flex flex-col md:flex-row gap-10 px-0 md:px-10'>
       {data.map((item, index) => (
-        <StatComponent key={index} name={item.name} stat={item.stat} color={item.color} />
+        <StatComponent
+          key={index}
+          name={item.name}
+          stat={item.stat}
+          color={item.color}
+        />
       ))}
     </div>
-  );
+  )
 
   const StatsIconColumn = ({ data }) => (
-    <div className="flex flex-col md:flex-row gap-0 md:gap-20">
+    <div className='flex flex-col md:flex-row gap-0 md:gap-20'>
       {data.map((item, index) => (
         <StaticonComponent key={index} name={item.name} stat={item.stat} image={item.image} />
       ))}
     </div>
-  );
+  )
 
   // Divide el array en dos columnas
-  const halfLength = Math.ceil(statsData.length / 2);
-  const column1 = statsData.slice(0, halfLength);
-  const column2 = statsData.slice(halfLength);
-
+  const halfLength = Math.ceil(statsData.length / 2)
+  const column1 = statsData.slice(0, halfLength)
+  const column2 = statsData.slice(halfLength)
 
 
   return (
-    <div className="flex flex-col">
+    <div className='flex flex-col'>
 
-      <div className="flex flex-row w-auto">
+      <div className='flex flex-row w-auto'>
         <ComicTitlePanel>
-          <h1 className="text-2xl font-bold">Stats:</h1>
+          <h1 className='text-2xl font-bold'>Stats:</h1>
         </ComicTitlePanel>
       </div>
 
-
-
-      <div className="flex flex-row md:flex-col w-full justify-center items-center">
-        <div className="flex flex-row md:flex-col px-0 md:px-10 gap-0 md:gap-20">
+      <div className='flex flex-row md:flex-col w-full justify-center items-center'>
+        <div className='flex flex-row md:flex-col px-0 md:px-10 gap-0 md:gap-20'>
           <StatsIconColumn data={statIconData} />
         </div>
         <StatsColumn data={column1} />
@@ -180,7 +182,12 @@ const CharacterStat = (props) => {
 const CharacterStats = (props) => {
 
   const { form } = useForm()
-  const { defaultForm } = useCharacter()
+
+  const statsMap = useMemo(() => {
+   return new Map(form.stats.map(stat => [stat.uniqueName, stat]))
+  }, [form])
+
+  console.log(statsMap)
 
   return (
     <div
@@ -188,10 +195,7 @@ const CharacterStats = (props) => {
         'flex flex-col'
       )}
     >
-      {
-        defaultForm &&
         <CharacterStat form={form} />
-      }
     </div>
   )
 }

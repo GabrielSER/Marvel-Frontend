@@ -1,17 +1,31 @@
-import clsx from "clsx"
-import { useCharacter } from "../../contexts/CharacterContext"
-import { FormProvider } from "../../contexts/FormContext"
-import FormTabBar from "./FormTabBar"
-import LazyImage from "../ui/LazyImage"
-import CharacterStats from "./CharacterStats"
-import CharacterAbilities from "./CharacterAbilities"
-import CharacterPowers from "./CharacterPowers"
-import { useState } from "react"
-import { useCharacterDetail } from "../../contexts/CharacterDetailContext"
-import CharacterSkills from "./CharacterSkills"
-import Comicbook from "../ui/ComicPanel"
-import ComicPanel from "../ui/ComicPanel"
-import ComicTitlePanel from "../ui/ComicTitlePanel"
+import clsx from 'clsx'
+import { useCharacter } from '../../contexts/CharacterContext'
+import { FormProvider } from '../../contexts/FormContext'
+import FormTabBar from './FormTabBar'
+import LazyImage from '../ui/LazyImage'
+import CharacterStats from './CharacterStats'
+import CharacterAbilities from './CharacterAbilities'
+import CharacterPowers from './CharacterPowers'
+import { useState } from 'react'
+import { useCharacterDetail } from '../../contexts/CharacterDetailContext'
+import CharacterSkills from './CharacterSkills'
+import Comicbook from '../ui/ComicPanel'
+import ComicPanel from '../ui/ComicPanel'
+import ComicTitlePanel from '../ui/ComicTitlePanel'
+import CharacterImage from './CharacterImage'
+import CharacterLogo from './CharacterLogo'
+import CharacterName from './CharacterName'
+
+
+const Section = (props) =>
+  <div className='flex flex-col md:flex-row justify-center gap-4 overflow-hidden'
+    {...props}
+  />
+
+const Column = (props) =>
+  <div className='flex flex-col gap-4'
+    {...props}
+  />
 
 const CharacterFormDetail = (props) => {
 
@@ -22,7 +36,20 @@ const CharacterFormDetail = (props) => {
 
   return (
     <FormProvider form={selectedForm}>
-      <div className={clsx('sm:p-10')}>
+      <div className={clsx('flex flex-col w-full justify-center p-4')}>
+        <CharacterLogo />
+        <Section>
+          <CharacterImage />
+          <Column>
+            <CharacterName/>
+            <CharacterStats />
+          </Column>
+        </Section>
+
+
+
+
+
         <div className={clsx('flex flex-col p-4 w-90 h-full items-center justify-center')}>
           <div className={clsx('flex flex-col w-100 h-full sm:mx-100 my-10 self-center')}>
             <LazyImage
@@ -34,14 +61,7 @@ const CharacterFormDetail = (props) => {
           </div>
           <div className={clsx('flex flex-col sm:flex-row w-full h-full p-4 my-10 sm:ml-20')}>
             <div className={clsx('flex flex-col w-full sm:w-1/3 h-full gap-y-10')}>
-              <div className='flex flex-row hover:scale-105'>
-                <LazyImage
-                  src={selectedForm.image}
-                  alt={selectedForm.name}
-                  className='w-50 h-auto mx-auto object-cover self-center'
-                  imageClassname='w-50 h-full object-cover self-center'
-                />
-              </div>
+              <CharacterImage />
               <CharacterSkills />
             </div>
             <div className={clsx('flex flex-col w-full sm:w-2/3 sm:mx-20 h-full mx-2 ')}>
@@ -52,7 +72,7 @@ const CharacterFormDetail = (props) => {
                 {character.alterego}
               </div>
               <CharacterStats />
-              <div className="flex flex-col p-10">
+              <div className='flex flex-col p-10'>
                 <CharacterAbilities />
               </div>
             </div>
@@ -60,9 +80,9 @@ const CharacterFormDetail = (props) => {
         </div>
 
         <ComicPanel color='#bfbfbf'>
-          <div className="flex flex-col p-10">
+          <div className='flex flex-col p-10'>
 
-            <div className="flex flex-row w-auto">
+            <div className='flex flex-row w-auto'>
               <ComicTitlePanel>
                 <h1 className='text-2xl font-bold'>
                   Bio:

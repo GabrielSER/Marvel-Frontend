@@ -934,6 +934,10 @@ div.react-reveal{
   height: max-content;
 }
 
+.h-screen{
+  height: 100vh;
+}
+
 .max-h-104{
   max-height: 26rem;
 }
@@ -1026,6 +1030,22 @@ div.react-reveal{
 .w-min{
   width: -webkit-min-content;
   width: min-content;
+}
+
+.w-1{
+  width: 0.25rem;
+}
+
+.w-1\/2{
+  width: 50%;
+}
+
+.w-1\/3{
+  width: 33.333333%;
+}
+
+.min-w-full{
+  min-width: 100%;
 }
 
 .max-w-5xl{
@@ -1149,6 +1169,10 @@ div.react-reveal{
 
 .items-center{
   align-items: center;
+}
+
+.justify-start{
+  justify-content: flex-start;
 }
 
 .justify-end{
@@ -1974,6 +1998,10 @@ div.react-reveal{
 
   .md\:w-72{
     width: 18rem;
+  }
+
+  .md\:w-1\/3{
+    width: 33.333333%;
   }
 
   .md\:flex-row{
