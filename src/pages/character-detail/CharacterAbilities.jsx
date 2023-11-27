@@ -10,7 +10,7 @@ const DescriptionParagraph = (props) => {
     if (features.length === 0) return null
 
     return (
-        <ComicPanel className ='bg-comic-primary-light p-8'>
+        <ComicPanel className='bg-comic-primary-light py-8 px-10'>
             <div className='flex flex-row w-auto'>
                 <ComicTitlePanel>
                     {title}

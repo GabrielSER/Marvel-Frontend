@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { useForm } from '../../contexts/FormContext'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
 import ComicPanel from '../ui/ComicPanel'
+import PowerBg from '../../assets/images/background/279.jpg'
 
 const formatStatName = (name) => {
   // Divide el nombre en palabras usando las letras mayúsculas como separadores
@@ -40,27 +41,33 @@ const CharacterSkills = (props) => {
       className={clsx(
         'flex flex-col',
         'w-full',
-        'bg-comic-secondary',
-        'p-4 py-8'
+        ' relative overflow-hidden',
       )}
+      style={{
+        backgroundImage: `url(${PowerBg})`,
+        backgroundSize: 'contain' // You can also use 'contain' if you prefer
+      }}
     >
-      <div className="flex justify-center">
-        <ComicTitlePanel>
-          <h1 className='text-2xl font-bold'>
-            Skills:
-          </h1>
-        </ComicTitlePanel>
+      <div className='flex flex-col px-5 py-10  w-full h-full p-5 sm:p-10 bg-comic-secondary bg-opacity-75'>
+        <div className="flex justify-center">
+          <ComicTitlePanel>
+            <h1 className='text-2xl font-bold'>
+              Skills:
+            </h1>
+          </ComicTitlePanel>
+        </div>
+        {
+          ([...form.skills, ...form.specialSkills])
+            .sort((skill1, skill2) => skill1.name.localeCompare(skill2.name))
+            .map((skill, index) =>
+              <SkillItem
+                key={index}
+                skill={skill}
+              />
+            )
+        }
       </div>
-      {
-        ([...form.skills, ...form.specialSkills])
-          .sort((skill1, skill2) => skill1.name.localeCompare(skill2.name))
-          .map((skill, index) =>
-            <SkillItem
-              key={index}
-              skill={skill}
-            />
-          )
-      }
+
     </ComicPanel>
   )
 }

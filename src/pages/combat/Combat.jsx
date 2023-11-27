@@ -23,6 +23,7 @@ import Content from '../ui/Content'
 import { DiceType } from '../content/dice/Dice'
 import ContentScope from '../ui/ContentScope'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
+import ComicPanel from '../ui/ComicPanel'
 
 const BigTitle = (props) =>
 
@@ -40,10 +41,12 @@ const BigTitle = (props) =>
 
 
 const Title = (props) =>
-  <h2
-    className='text-lg font-semibold text-center'
-    {...props}
-  />
+  <ComicTitlePanel className='bg-comic-secondary self-center'>
+    <h2
+      className='text-lg font-semibold text-center'
+      {...props}
+    />
+  </ComicTitlePanel>
 
 const Paragraph = (props) =>
   <div
@@ -64,8 +67,8 @@ const Combat = () => {
         'flex flex-wrap',
         'items-center',
         'justify-center',
-        'p-6',
-        'min-h-screen space-y-4'
+        'py-6 px-8',
+        'min-h-screen gap-y-20'
       )}
     >
       <Section>
@@ -77,22 +80,23 @@ const Combat = () => {
             </h1>
           </ComicTitlePanel>
         </div>
-
-
         <BigTitle>Normal Attacks</BigTitle>
       </Section>
 
-      <div className='flex flex-wrap w-full justify-center items-center gap-4'>
-        {
-          Object.values(DiceType).map((type, index) =>
-            <Content
-              key={index}
-              id='roll'
-              params={{ type }}
-            />
-          )
-        }
-      </div>
+      <ComicPanel className='p-10 bg-comic-primary-light'>
+        <div className='flex flex-wrap w-full justify-center items-center gap-4'>
+          {
+            Object.values(DiceType).map((type, index) =>
+              <Content
+                key={index}
+                id='roll'
+                params={{ type }}
+              />
+            )
+          }
+        </div>
+      </ComicPanel>
+
       <Section>
         <Title>Attacking and defending</Title>
         <Paragraph>
@@ -134,147 +138,171 @@ const Combat = () => {
         </div>
       </Section>
 
-      <Title>Combos</Title>
-      <Paragraph>
-        When a character deals a normal attack successfully, they can attempt a combo. Each three levels a character gets one more attack for his combo, meaning every character unlocks their first extra attack at level 3. The maximum number of attacks of a combo are equal to the melee stat of a character. For example, Spider-Man has 4 melee, so he can attack up to 4 times, which includes the first successful attack. However, each combo attack will have 1 point less in its attack modifier. For the second attack of the combo, Spider-Man will only have 3 points in its melee bonus modifier. Then he can attempt a third attack, which will now have 1 melee bonus modifier. If Spider-Man attempts a fourth attack, it will now have no bonus in its melee throw, which will make this last hit of the combo harder to achieve. However, if every attack of a combo is successful, the victim will have 5 ft knockback and will have 30% chance of falling prone to opportunity attacks.
-      </Paragraph>
-      <div className='flex justify-center'> {/* Added a flex container for centering */}
-        <img
-          className='lg:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-          src={Combo}
-          alt='Fighting'
-        />
-      </div>
-
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
-        <div className='max-w-xl p-2 mx-auto items-center'>
-          <Title>Dodge</Title>
-          <Paragraph>
-            You can use a normal action to put yourself in dodge, which means that, for the next round, any attack attempted against you is thrown in disadvantage.
-          </Paragraph>
-        </div>
-
-        <div className='max-w-xl p-2 mx-auto items-center'>
-          <Title>Guard</Title>
-          <Paragraph>
-            You can use a normal action to stand on an attack position, which will allow you to use a normal attack once any enemy enters your close combat area.
-          </Paragraph>
-        </div>
-      </div>
-
-      <div className='max-w-5xl p-2 mx-auto items-center'>
+      <Section>
+        <Title>Combos</Title>
+        <Paragraph>
+          When a character deals a normal attack successfully, they can attempt a combo. Each three levels a character gets one more attack for his combo, meaning every character unlocks their first extra attack at level 3. The maximum number of attacks of a combo are equal to the melee stat of a character. For example, Spider-Man has 4 melee, so he can attack up to 4 times, which includes the first successful attack. However, each combo attack will have 1 point less in its attack modifier. For the second attack of the combo, Spider-Man will only have 3 points in its melee bonus modifier. Then he can attempt a third attack, which will now have 1 melee bonus modifier. If Spider-Man attempts a fourth attack, it will now have no bonus in its melee throw, which will make this last hit of the combo harder to achieve. However, if every attack of a combo is successful, the victim will have 5 ft knockback and will have 30% chance of falling prone to opportunity attacks.
+        </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Dodge}
+            className='lg:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+            src={Combo}
             alt='Fighting'
           />
         </div>
-      </div>
+      </Section>
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
-        <div className='max-w-xl p-2 mx-auto items-center'>
-          <Title>Disengage</Title>
-          <Paragraph>
-            You can use a normal action to disengage, allowing you to move far from an enemy, without provoking opportunity attacks.
-          </Paragraph>
-        </div>
-        <div className='max-w-xl p-2 mx-auto items-center'>
-          <Title>Opportunity Attacks</Title>
-          <Paragraph>
-            When a character is not detected by another character they want to attack, they can attempt an opportunity attack, which means they will have advantage when throwing the dice. Opportunity attacks can also be done against <ContentView
-              className='text-primary underline {key:param,param}'
-              text='prone'
-              id='prone'
-              bottom
-            /> characters.
-          </Paragraph>
-        </div>
-      </div>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
-        <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Oportunity}
-            alt='Oportunity Attack'
-          />
+      <Section>
+        <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Dodge</Title>
+            <Paragraph>
+              You can use a normal action to put yourself in dodge, which means that, for the next round, any attack attempted against you is thrown in disadvantage.
+            </Paragraph>
+          </div>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Guard</Title>
+            <Paragraph>
+              You can use a normal action to stand on an attack position, which will allow you to use a normal attack once any enemy enters your close combat area.
+            </Paragraph>
+          </div>
         </div>
-      </div>
+      </Section>
+      <Section>
+        <div className='max-w-5xl p-2 mx-auto items-center'>
+          <div className='flex justify-center'> {/* Added a flex container for centering */}
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Dodge}
+              alt='Fighting'
+            />
+          </div>
+        </div>
+      </Section>
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
-        <div className='max-w-xl p-2 mx-auto items-center'>
-          <Title>Revive</Title>
-          <Paragraph>
-            Every character with first aid or medicine can use their action to revive another character, which will give the fallen character advantage when making their saving throws. The medic must stay concentrated when reviving another character.
-          </Paragraph>
-        </div>
-        <div className='max-w-xl p-2 mx-auto items-center'>
-          <Title>Dash</Title>
-          <Paragraph>
-            You can use a normal action to run at twice your speed. Speedsters can use this as a bonus action once per battle.
-          </Paragraph>
-        </div>
-      </div>
+      <Section>
+        <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Disengage</Title>
+            <Paragraph>
+              You can use a normal action to disengage, allowing you to move far from an enemy, without provoking opportunity attacks.
+            </Paragraph>
+          </div>
+          <div className='max-w-xl p-2 mx-auto items-center'>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
-        <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Dash}
-            alt='Dash'
-          />
+            <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+              <Title className>Opportunity Attacks</Title>
+            </div>
+            <Paragraph>
+              When a character is not detected by another character they want to attack, they can attempt an opportunity attack, which means they will have advantage when throwing the dice. Opportunity attacks can also be done against <ContentView
+                className='text-primary underline {key:param,param}'
+                text='prone'
+                id='prone'
+                bottom
+              /> characters.
+            </Paragraph>
+          </div>
         </div>
-      </div>
+      </Section>
+      <Section>
+        <div className='max-w-5xl p-2 mx-auto items-center'>
+          <div className='flex justify-center'> {/* Added a flex container for centering */}
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Oportunity}
+              alt='Oportunity Attack'
+            />
+          </div>
+        </div>
+      </Section>
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
-        <div className='max-w-xl p-2 mx-auto items-center'>
-          <Title>Help</Title>
-          <Paragraph>
-            You can use a normal action to aid another character when attempting an action. The character you help will gain advantage on the next check they perform, but the helping character must have the skill or ability required for the attempted check.
-          </Paragraph>
-        </div>
-        <div className='max-w-xl p-2 mx-auto items-center'>
-          <Title>Telekinetic attacks</Title>
-          <Paragraph>
-            Telekinetic attacks are usually done with powers. After the attacker throws the d20 dice, the defender can attempt an agility throw to evade being caught by telekinesis. If their agility throw is higher than the attacker’s throw (+the respective bonus) the power fails.
-          </Paragraph>
-        </div>
-      </div>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
-        <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Help}
-            alt='Help'
-          />
+      <Section>
+        <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Revive</Title>
+            <Paragraph>
+              Every character with first aid or medicine can use their action to revive another character, which will give the fallen character advantage when making their saving throws. The medic must stay concentrated when reviving another character.
+            </Paragraph>
+          </div>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Guard</Title>
+            <Paragraph>
+              You can use a normal action to run at twice your speed. Speedsters can use this as a bonus action once per battle.
+            </Paragraph>
+          </div>
         </div>
-      </div>
+      </Section>
+      <Section>
+        <div className='max-w-5xl p-2 mx-auto items-center'>
+          <div className='flex justify-center'> {/* Added a flex container for centering */}
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Dash}
+              alt='Dash'
+            />
+          </div>
+        </div>
+      </Section>
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
-        <div className='max-w-xl p-2 mx-auto items-center'>
-          <Title>Radial attacks</Title>
-          <Paragraph>
-            When a character throws a radial attack, every enemy caught within the radius must make an agility throw. If the victim’s throw is higher than the attacker’s throw, the power fails.
-          </Paragraph>
+      <Section>
+        <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Help</Title>
+            <Paragraph>
+              Every character with first aid or medicine can use their action to revive another character, which will give the fallen character advantage when making their saving throws. The medic must stay concentrated when reviving another character.
+            </Paragraph>
+          </div>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Radial attacks</Title>
+            <Paragraph>
+              When a character throws a radial attack, every enemy caught within the radius must make an agility throw. If the victim’s throw is higher than the attacker’s throw, the power fails.
+            </Paragraph>
+          </div>
         </div>
-        <div className='max-w-xl p-2 mx-auto items-center'>
-          <Title>Psychic attacks</Title>
-          <Paragraph>
-            Psychic attacks are usually done with powers. After the attacker throws the d20 dice, the defender can attempt a wisdom throw to evade being damaged or charmed by the psychic attack. If their wisdom throw is higher than the attacker’s throw (+psychic or wisdom bonus) the power fails.
-          </Paragraph>
+      </Section>
+      <Section>
+        <div className='max-w-5xl p-2 mx-auto items-center'>
+          <div className='flex justify-center'> {/* Added a flex container for centering */}
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Help}
+              alt='Help'
+            />
+          </div>
         </div>
-      </div>
+      </Section>
+
+      <Section>
+        <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Telekinetic attacks</Title>
+            <Paragraph>
+              Telekinetic attacks are usually done with powers. After the attacker throws the d20 dice, the defender can attempt an agility throw to evade being caught by telekinesis. If their agility throw is higher than the attacker’s throw (+the respective bonus) the power fails.
+            </Paragraph>
+          </div>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Psychic attacks</Title>
+            <Paragraph>
+              Psychic attacks are usually done with powers. After the attacker throws the d20 dice, the defender can attempt a wisdom throw to evade being damaged or charmed by the psychic attack. If their wisdom throw is higher than the attacker’s throw (+psychic or wisdom bonus) the power fails.
+            </Paragraph>
+          </div>
+        </div>
+      </Section>
+      <Section>
+        <div className='max-w-5xl p-2 mx-auto items-center'>
+          <div className='flex justify-center'> {/* Added a flex container for centering */}
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Psychic}
+              alt='Psychic Attacks'
+            />
+          </div>
+        </div>
+      </Section>
 
       <div className='flex flex-col'>
-        <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
-            className='lg:max-w-lg max-w-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-10'
-            src={Psychic}
-            alt='Psychic Attacks'
-          />
-        </div>
 
         <Section>
           <div className='flex-col mb-4'>
@@ -299,7 +327,7 @@ const Combat = () => {
                   </p>
                 </div>
                 <div className='flex flex-col'>
-                  <h2 className='text-xl font-semibold text-center'>Energetic</h2>
+                  <Title>Energetic</Title>
                   <p className='text-gray-700 text-center'>
                     Cold
                   </p>
@@ -325,7 +353,7 @@ const Combat = () => {
               </div>
               <div className='flex sm:flex-row flex-col sm:gap-40 gap-0'>
                 <div className='flex flex-col'>
-                  <h2 className='text-xl font-semibold text-center'>Abstract</h2>
+                  <Title>Abstract</Title>
                   <p className='text-gray-700 text-center'>
                     Magic
                   </p>
@@ -344,7 +372,7 @@ const Combat = () => {
                 </div>
 
                 <div className='flex flex-col'>
-                  <h2 className='text-xl font-semibold  text-center'>After Effect</h2>
+                  <Title>After Effect</Title>
                   <p className='text-gray-700 text-center'>
                     Potion
                   </p>

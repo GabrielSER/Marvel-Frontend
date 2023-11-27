@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { useRef } from 'react'
 import ComicPanel from '../ui/ComicPanel'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
+import PowerBg from '../../assets/images/background/images.png'
 
 const romanNumbers = ['0', 'I', 'II', 'III', 'IV', 'V']
 const romanNumber = (number) => romanNumbers?.[number] ?? '?'
@@ -28,14 +29,8 @@ const CharacterPower = (props) => {
         'relative',
         'overflow-hidden',
         'min-h-full',
-        'p-4',
-        'bg-opacity-75',
-        level === 0 && 'bg-power-0',
-        level === 1 && 'bg-power-1',
-        level === 2 && 'bg-power-2',
-        level === 3 && 'bg-power-3',
-        level === 4 && 'bg-power-4',
-        level === 5 && 'bg-power-5',
+        'ease-in-out transition-all',
+        'bg-hero-pattern',
         isClicked && [
           'h-auto',
           'w-full sm:w-120',
@@ -46,10 +41,25 @@ const CharacterPower = (props) => {
           'hover:scale-105'
         ]
       )}
+      style={{
+        backgroundImage: `url(${PowerBg})`,
+        backgroundSize: 'cover' // You can also use 'contain' if you prefer
+      }}
       onClick={handleClick}
     >
-      <div className="flex flex-col h-full">
-        <div className='text-ellipsis overflow-hidden'>
+      <div
+        className={clsx(
+          'flex flex-col h-full w-full',
+          'bg-opacity-75',
+          level === 0 && 'bg-power-0',
+          level === 1 && 'bg-power-1',
+          level === 2 && 'bg-power-2',
+          level === 3 && 'bg-power-3',
+          level === 4 && 'bg-power-4',
+          level === 5 && 'bg-power-5',
+        )}
+      >
+        <div className='text-ellipsis overflow-hidden px-4 py-2'>
           <div className='flex flex-row'>
             <ComicTitlePanel className='text-md bg-comic-primary'>
               <b>
