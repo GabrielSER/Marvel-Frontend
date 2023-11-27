@@ -31,16 +31,43 @@ import Popular from '../../assets/images/combat/popular.jpg'
 import MoonKnight from '../../assets/images/combat/moonknight.jpg'
 import GreenGoblin from '../../assets/images/combat/greengoblin.jpg'
 import Identity from '../../assets/images/combat/identity.jpg'
+import ComicTitlePanel from '../ui/ComicTitlePanel'
+
+
+const BigTitle = (props) =>
+
+  <div className='flex flex-col items-center'>
+    <div className='flex flex-row w-auto'>
+      <ComicTitlePanel>
+        <h1
+          className='text-4xl font-semibold text-center'
+          {...props}
+        />
+      </ComicTitlePanel>
+    </div>
+  </div>
+
+
+const Title = (props) =>
+  <div className='flex flex-col items-center'>
+    <ComicTitlePanel className='bg-comic-secondary'>
+      <h1
+        className='text-xl font-semibold text-center'
+        {...props}
+      />
+    </ComicTitlePanel>
+  </div>
 
 
 const Objects = () => {
   return (
 
+    
 
 
     <div className="flex flex-col items-center justify-center min-h-screen space-y-4">
       <div className="max-w-5xl p-2 mx-auto items-center">
-        <h1 className="text-5xl font-semibold mt-4 text-center p-8">OBJECTS</h1>
+        <Title>OBJECTS</Title>
       </div>
 
       <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
