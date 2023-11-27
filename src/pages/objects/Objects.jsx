@@ -71,7 +71,7 @@ const Objects = () => {
       </div>
 
       <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
-        <h1 className="text-4xl font-semibold mb-4 text-center">Firearms</h1>
+        <Title>Firearms</Title>
         <p className="text-gray-700 mb-6 text-left">
           Projectile Weapons have these attributes:
         </p>
