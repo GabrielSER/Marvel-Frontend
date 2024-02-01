@@ -1040,6 +1040,10 @@ div.react-reveal{
   max-width: 20rem;
 }
 
+.max-w-2xl{
+  max-width: 42rem;
+}
+
 .flex-initial{
   flex: 0 1 auto;
 }
@@ -1147,6 +1151,10 @@ div.react-reveal{
   flex-wrap: wrap;
 }
 
+.items-start{
+  align-items: flex-start;
+}
+
 .items-center{
   align-items: center;
 }
@@ -1230,6 +1238,10 @@ div.react-reveal{
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.self-start{
+  align-self: flex-start;
 }
 
 .self-center{
@@ -1493,6 +1505,11 @@ div.react-reveal{
   padding-right: 2.5rem;
 }
 
+.px-14{
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1533,9 +1550,19 @@ div.react-reveal{
   padding-bottom: 2.5rem;
 }
 
+.py-12{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-20{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .py-3{
@@ -1553,9 +1580,8 @@ div.react-reveal{
   padding-bottom: 1.5rem;
 }
 
-.py-8{
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.pb-10{
+  padding-bottom: 2.5rem;
 }
 
 .pb-2{
@@ -1592,6 +1618,10 @@ div.react-reveal{
 
 .pt-2{
   padding-top: 0.5rem;
+}
+
+.pt-5{
+  padding-top: 1.25rem;
 }
 
 .text-left{
@@ -1980,10 +2010,6 @@ div.react-reveal{
 
   .md\:flex-row{
     flex-direction: row;
-  }
-
-  .md\:flex-col{
-    flex-direction: column;
   }
 
   .md\:p-5{

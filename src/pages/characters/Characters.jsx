@@ -62,7 +62,7 @@ const Characters = () => {
             </div>
             <div className='flex w-full justify-center p-4 '>
                 <ComicTitlePanel>
-                    <h1 className="text-5xl font-semibold text-center p-4 z-50">CHARACTERS</h1>
+                    <h1 className="text-5xl font-semibold text-center p-4 z-50">HEROES</h1>
                 </ComicTitlePanel>
             </div>
             <div

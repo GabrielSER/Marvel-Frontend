@@ -401,14 +401,14 @@ const Combat = () => {
       </div>
 
       <Section>
-        <div className='lg:max-w-5xl max-w-xs p-2 mx-auto items-center'>
+        <div className='px-10 mx-auto items-center'>
           <BigTitle>Critical Hit</BigTitle>
           <Paragraph>
             If a character or creature gets a natural 20 when throwing the check for attacking another character or creature it deals a critical hit. A critical hit always deals double damage. After the critical hit, the attacker will throw 1d100, and according to the result, the victim will have one of different effects:
           </Paragraph>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
             <img
-              className='lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+              className='max-w-5xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
               src={Critical}
               alt='Critical Table'
             />
@@ -426,7 +426,7 @@ const Combat = () => {
       </Section>
 
       <Section>
-        <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center'>
+        <div className='px-10 mx-auto items-center'>
           <BigTitle>Failure</BigTitle>
           <Paragraph>
             If a character gets 1 in their 1d20 check for any action, not only the action fails, but it produces a negative effect on the character which will be determined by the GM according to the circumstances. However, if this action is attempted during combat against an enemy, the character who failed the action will throw 1d100, and according to the result, they will have one of different effects:
@@ -452,9 +452,9 @@ const Combat = () => {
       </Section>
 
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
+      <div className='px-10 mx-auto items-center'>
         <BigTitle>Powers</BigTitle>
-        <Paragraph>
+        <Paragraph className='py-4'>
           Powers are special abilities that are unique to each character. For using these powers, you must spend points from your power meter. When a battle starts, you can increase your power meter in 1d4. Every long rest, your power meter fully recharges. Powers are classified according to a level: LV1 powers, LV2 powers, LV3 powers, LV4 powers, special powers, and Ultimate powers.
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
@@ -469,7 +469,7 @@ const Combat = () => {
         </Paragraph>
       </div>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
+      <div className='px-0'>
         <Paragraph>
           Here’s an example of a power:
         </Paragraph>
@@ -480,32 +480,32 @@ const Combat = () => {
             alt='Powers Example'
           />
         </div>
-        <p className='text-gray-700 text-center'>
+        <p className='text-gray-700 text-left'>
           •	The blue color indicates that is a power 1 attack.
         </p>
-        <p className='text-gray-700 text-center'>
+        <p className='text-gray-700 text-left'>
           •	M indicates that it gets a +melee stat bonus damage.
         </p>
-        <p className='text-gray-700 text-center'>
+        <p className='text-gray-700 text-left'>
           •	Web Snare is the name of the power.
         </p>
-        <p className='text-gray-700 text-center'>
+        <p className='text-gray-700 text-left'>
           •	'(Projectile)' Indicates the kind of attack it is. Since it’s a projectile, it is followed by '(90ft range)' which indicates the projectile's reach.
         </p>
-        <p className='text-gray-700 text-center'>
+        <p className='text-gray-700 text-left'>
           •	'Accuracy' indicates the skill or stat check required for the attack to be successful, Not all powers require checks.
         </p>
-        <p className='text-gray-700 text-center'>
+        <p className='text-gray-700 text-left'>
           •	After that, there’s a description of the power and everything it does.
         </p>
       </div>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
+      <div className='px-10 mx-auto'>
         <Paragraph>
           If you are out of power points, you can only deal normal or weapon attacks. When defeating a normal enemy, you can recharge 1 power point, and when you defeat a boss, you can recharge 3 power points even if it exceeds your base power meter. However, when having a long rest, your power meter returns to its default value.
           Every character has a Power Stat, which determines the amount of power points available at each level.
         </Paragraph>
-        <div className='flex justify-center'> {/* Added a flex container for centering */}
+        <div className='flex justify-center py-4'> {/* Added a flex container for centering */}
           <img
             className='max-w-xL rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
             src={PowerLevel}
@@ -514,9 +514,9 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center'>
+      <div className='px-10 mx-auto items-center'>
         <BigTitle>Status Effects</BigTitle>
-        <p className='text-gray-700 mb-2 text-center'>
+        <p className='text-gray-700 mb-2 text-center py-4'>
           A character can be affected by many different kinds of status effects during combat. This is a list of different statuses and their descriptions:
         </p>
       </div>

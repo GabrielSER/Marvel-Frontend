@@ -24,6 +24,8 @@ import Objects from '../objects/Objects'
 import { FormsProvider } from '../../contexts/FormsContext'
 import Toolbar from './Toolbar'
 import { UserProvider } from '../../contexts/UserContext'
+import Places from '../places/Places'
+import Character from '../characters/Character'
 
 const MainBody = () => {
   return (
@@ -57,8 +59,10 @@ const MainBody = () => {
               >
                 <Routes>
                   <Route path='/' exact element={<Home />} />
+                  <Route path='/player' exact element={<Character />} />
                   <Route path='/characters' exact element={<Characters />} />
                   <Route path='/characters/:normalized' exact element={<CharacterDetail />} />
+                  <Route path='/places' exact element={<Places />} />
                   <Route path='/combat' exact element={<Combat />} />
                   <Route path='/roleplaying' exact element={<Roleplay />} />
                   <Route path='/objects' exact element={<Objects />} />

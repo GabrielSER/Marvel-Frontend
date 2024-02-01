@@ -16,6 +16,7 @@ import CharacterImage from './CharacterImage'
 import CharacterLogo from './CharacterLogo'
 import CharacterName from './CharacterName'
 import CharacterBio from './CharacterBio'
+import ArmorCost from './ArmorCost'
 
 
 const Section = (props) =>
@@ -62,6 +63,7 @@ const CharacterFormDetail = () => {
           </Column>
           <Column className='items-center'>
             <CharacterName />
+            <ArmorCost/>
             <CharacterStats />
             <CharacterAbilities />
           </Column>

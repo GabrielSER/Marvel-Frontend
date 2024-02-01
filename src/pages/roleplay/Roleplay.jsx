@@ -69,23 +69,23 @@ const Roleplay = () => {
 
 
 
-    <div className="flex flex-col items-center justify-center min-h-screen space-y-4">
-      <div className="max-w-5xl p-2 mx-auto items-center">
+    <div className="flex flex-col min-h-screen p-4">
+      <div className="py-2 items-center">
 
-        <div className='flex flex-col p-5 self-center'>
-          <div className='flex flex-row self-center'>
+        <div className='flex flex-col py-5 self-center'>
+          <div className='flex flex-row self-center py-10'>
             <ComicTitlePanel>
               <h1 className="text-5xl font-semibold mt-4 text-center p-4">ROLEPLAYING ACTIONS</h1>
             </ComicTitlePanel>
           </div>
         </div>
-        <p className="text-gray-700 mb-6 text-center mx-auto lg:px-0 px-10">
+        <p className="text-gray-700 mb-6 text-center">
           When roleplaying, characters can perform many kinds of actions. In this game, actions are divided in three categories. Common Actions, Special Actions and Custom Actions. Common actions are actions that can be performed by normal humans. For example, every character can lie. Some characters are better lying than others, but every character can attempt that action. Every character can also attempt to fire a gun, though some characters find it harder, but every character can attempt to do it. Special Actions are those that, despite in some cases every character can do it, superhuman abilities can create a huge difference when trying to perform said action. For example, Daredevil is not even close to being capable of lifting the same weight as the Hulk can and Hawkeye is not able to Jump as high as Jessica Jones. Custom actions are special cases in which a player comes up with different kinds of actions that cannot be described as common or special actions.
         </p>
       </div>
 
-      <div className="max-w-5xl p-2 mx-auto items-center lg:px-0 px-4">
-        <div className='flex flex-col p-5 self-center'>
+      <div className="mx-auto  lg:px-0 px-4">
+        <div className='flex flex-col p-5'>
           <div className='flex flex-row self-center'>
             <ComicTitlePanel>
               <h1 className="text-4xl font-semibold mb-4 text-center">Common Actions</h1>
@@ -97,14 +97,14 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-2xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={FirstFamily}
             alt="FF"
           />
         </div>
       </div>
 
-      <div className="max-w-5xl p-2 mx-auto items-center lg:px-0 px-10 ">
+      <div className="p-4 mx-auto items-center lg:px-0 px-10 ">
         <div className='flex flex-col p-5 self-center'>
           <div className='flex flex-row self-center'>
             <ComicTitlePanel>
@@ -117,8 +117,8 @@ const Roleplay = () => {
         </p>
       </div>
 
-      <div className='flex lg:flex-row flex-col'>
-        <div className="max-w-5xl p-2 mx-auto items-center px-20">
+      <div className='flex lg:flex-row flex-col items-center'>
+        <div className="max-w-5xl p-2 mx-auto px-20">
           <Title>Lifting Objects</Title>
           <p className="text-gray-700 mb-6 text-center">
             Just like other special actions, to lift a specific weight, a character must throw 1d20, with the bonus being the Strength stat. Since some characters are stronger than others, the strength stat indicates how much a character can lift. The Strength stat is measured in a range from 0 to 8. A character can attempt to lift something one scale higher, however, that throw is done in disadvantage. On the other side, a character that attempts to lift a weight that is one scale below will throw his dice with advantage. A character will always succeed lifting a weight that is two scales lower. A character will always fail trying to lift a weight that is two scales higher. This table indicates how much can a character lift according to its strength stat.
@@ -214,8 +214,8 @@ const Roleplay = () => {
       </div>
 
 
-      <div className='flex lg:flex-row flex-col'>
-        <div className="max-w-5xl p-2 mx-auto items-center px-20">
+      <div className='flex lg:flex-row flex-col items-center '>
+        <div className="max-w-5xl p-2 mx-auto px-20">
           <Title>Jumping</Title>
           <p className="text-gray-700 mb-6 text-center">
             Just like other special actions, to perform a vertical jump, a character must throw 1d20. Since some characters are stronger than others, the strength stat indicates how much a character can jump vertically. The Strength stat is measured in a range from 0 to 8. A character can attempt to jump a height one scale higher, however, that throw is done in disadvantage. On the other side, a character that attempts to jump a height one scale below will throw his dice with advantage. A character will always succeed jumping up a height that is two scales lower and will always fail trying to jump a height that is two scales higher. This table indicates how high a character can jump according to its strength stat.
@@ -318,8 +318,8 @@ const Roleplay = () => {
       </div>
 
 
-      <div className='flex lg:flex-row flex-col'>
-        <div className="max-w-5xl p-2 mx-auto items-center px-20">
+      <div className='flex lg:flex-row flex-col items-center'>
+        <div className="max-w-5xl p-2 mx-auto px-20">
           <Title>Flying in Combat</Title>
           <p className="text-gray-700 mb-6 text-center">
             In battle, a character that can fly can move both vertically and horizontally. Their movement speed while flying is determined by this table:
@@ -367,9 +367,9 @@ const Roleplay = () => {
         </div>
       </div>
 
-      <div className="max-w-5xl p-2 mx-auto items-center">
+      <div className="p-4 mx-auto items-center">
         <BigTitle>Custom Actions</BigTitle>
-        <p className="text-gray-700 mb-6 justify-center px-4">
+        <p className="text-gray-700 mb-6 justify-center py-4">
           During a play session, a player can come up with different kind of actions that are not described on the roleplaying actions section or as a power, skill, or ability for a certain character. These are custom actions. On these situations, the GM may or may not allow the player to perform given action, and if the custom action is permitted, he can ask for a certain dice check according to how difficult may it be to perform that specific custom action for the player’s character. If the player’s character is an already existing Marvel character, the GM may consider if that character has performed that custom action before in some media, or how hard would it be for a that character to perform this custom action. If the player’s character is a custom character, the GM may evaluate the character’s powers, stats, skills, and abilities to stablish if the character can perform given custom action and the dice check necessary for that action to be successful, according to how hard may that action be for this custom character. Custom actions can also be performed in battle, and they can also rest power points if the GM considers it would do so.
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
@@ -382,9 +382,9 @@ const Roleplay = () => {
       </div>
 
       <div className='flex lg:flex-row flex-col'>
-        <div className="max-w-5xl p-2 mx-auto items-center px-4">
+        <div className="max-w-5xl py-20 mx-auto items-center px-4">
           <Title>Popularity</Title>
-          <p className="text-gray-700 mb-6 text-center px-4">
+          <p className="text-gray-700 mb-6 text-center py-6">
             Every character has an initial amount of popularity points, representing how much the character is known by the public in the entire universe. These initial popularity points are determined by the GM, according to the campaign or the character that is going to be played. For every public action, a character can gain popularity points depending on how much attention that action creates. These points determine how civilians or certain NPCs will interact with the character. The higher these points are, the most possible is that the civilians will recognize your character, the lower these points are, the more indifferent they will become towards given character. It’s very hard to lose popularity points, but if you enter long times of inactivity, it’s possible that the public may start to forget you if your popularity points are below 400. This scale indicates the proportion of the popularity you gain with these points:
           </p>
           <div className="flex flex-col items-center">

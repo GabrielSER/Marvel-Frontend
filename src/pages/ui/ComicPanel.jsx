@@ -19,13 +19,6 @@ const ComicPanel = (props) => {
   const [boxClass, setBoxClass] = useState(randomBoxClass())
 
 
-  useEffect(() => {
-    const randomIntervalFrequency = 4000 + (Math.random() * 10000)
-    const intervalId = setInterval(() => {
-      setBoxClass(randomBoxClass())
-    }, randomIntervalFrequency)
-    return () => clearInterval(intervalId)
-  }, [])
 
   return (
     <div

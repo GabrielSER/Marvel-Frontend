@@ -59,7 +59,7 @@ const CharacterPower = (props) => {
           level === 5 && 'bg-power-5',
         )}
       >
-        <div className='text-ellipsis overflow-hidden px-4 py-2'>
+        <div className='text-ellipsis overflow-hidden px-4 pt-5 pb-10'>
           <div className='flex flex-row'>
             <ComicTitlePanel className='text-md bg-comic-primary'>
               <b>

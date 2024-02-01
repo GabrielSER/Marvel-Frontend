@@ -61,16 +61,12 @@ const Title = (props) =>
 
 const Objects = () => {
   return (
-
-    
-
-
-    <div className="flex flex-col items-center justify-center min-h-screen space-y-4">
-      <div className="max-w-5xl p-2 mx-auto items-center">
-        <Title>OBJECTS</Title>
+    <div className="flex flex-col items-center min-h-screen py-10">
+      <div className="px-10 py-2 items-center">
+        <BigTitle className='text-5xl font-semibold m-4 text-center'>OBJECTS</BigTitle>
       </div>
 
-      <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
+      <div className="px-10 mx-auto items-center">
         <Title>Firearms</Title>
         <p className="text-gray-700 mb-6 text-left">
           Projectile Weapons have these attributes:
@@ -119,7 +115,7 @@ const Objects = () => {
           alt="Deadpool"
         />
       </div>
-      <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
+      <div className="px-10 mx-auto items-center">
         <h1 className="text-xl font-semibold mb-4 text-center">Calculating final damage for firearms</h1>
         <div className="flex flex-col items-left">
           <p className="text-gray-700 mb-6 text-left">
@@ -172,10 +168,10 @@ const Objects = () => {
         </div>
       </div>
 
-      <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
+      <div className="p-10">
         <h1 className="text-xl font-semibold mb-4 text-center">Shooting long distances</h1>
-        <div className="flex flex-col items-left">
-          <p className="text-gray-700 mb-6 text-left">
+        <div className="flex flex-col ">
+          <p className="text-gray-700 mb-6">
             When the weapon is used further its first limit of distance penalty the final damage will be reduced by a weapon factor (WF). The check for these distances is marksman instead of firearms.
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
@@ -188,7 +184,7 @@ const Objects = () => {
         </div>
       </div>
 
-      <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
+      <div className="px-10 mx-auto items-center">
         <h1 className="text-xl font-semibold mb-4 text-center">Automatic and semi-automatic Firearms</h1>
         <div className="flex flex-col items-left">
           <p className="text-gray-700 mb-6 text-left">
@@ -204,7 +200,7 @@ const Objects = () => {
         </div>
       </div>
 
-      <div className="max-w-5xl p-2 mx-auto items-center lg:pr-0 pr-16 lg:pl-0 pl-6">
+      <div className="px-10 mx-auto items-center">
         <h1 className="text-xl font-semibold mb-4 text-center">Dual-Wielding Firearms</h1>
         <div className="flex flex-col items-left">
           <p className="text-gray-700 mb-6 text-left">
