@@ -4,33 +4,6 @@ import Deadpool from '../../assets/images/combat/deadpool.jpg'
 import Sniper from '../../assets/images/combat/sniper.jpg'
 import Machine from '../../assets/images/combat/machinegun.jpg'
 import Dual from '../../assets/images/combat/dualpistol.PNG'
-import Lifting from '../../assets/images/combat/Lifting.PNG'
-import Shehulk from '../../assets/images/combat/she-hulk.png'
-import Throw1 from '../../assets/images/combat/throw1.PNG'
-import Throw2 from '../../assets/images/combat/throw2.PNG'
-import Throw3 from '../../assets/images/combat/colossusthrow.jpg'
-import Crush from '../../assets/images/combat/Crush.PNG'
-import Destiny from '../../assets/images/combat/MyDestiny.png'
-import Crash from '../../assets/images/combat/carcrash.PNG'
-import CarCrash from '../../assets/images/combat/crash.PNG'
-import HulkJump from '../../assets/images/combat/jumphulk.png'
-import Jump from '../../assets/images/combat/jumpstrenght.PNG'
-import CapJump from '../../assets/images/combat/captainamericajump.jpg'
-import HorizontalJump from '../../assets/images/combat/horizontaljump.PNG'
-import AcrobatJump from '../../assets/images/combat/acrobatjump.PNG'
-import DaredevilJump from '../../assets/images/combat/daredeviljump.png'
-import Breaking from '../../assets/images/combat/breaking.PNG'
-import Serpent from '../../assets/images/combat/serpentbreaks.jpg'
-import Flying from '../../assets/images/combat/flying.jpg'
-import Flytable from '../../assets/images/combat/flytable.PNG'
-import Flycombat from '../../assets/images/combat/flycombat.jpg'
-import Speedflight from '../../assets/images/combat/speedflight.PNG'
-import Ironfly from '../../assets/images/combat/ironfly.jpg'
-import Xmen from '../../assets/images/combat/xmen.jpg'
-import Popular from '../../assets/images/combat/popular.jpg'
-import MoonKnight from '../../assets/images/combat/moonknight.jpg'
-import GreenGoblin from '../../assets/images/combat/greengoblin.jpg'
-import Identity from '../../assets/images/combat/identity.jpg'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
 
 
@@ -103,6 +76,9 @@ const Objects = () => {
               alt="Add Modifier"
             />
           </div>
+          <p className="text-gray-700 text-left mb-6">
+            The Attack to Defense Diference or ADD is calculated based on the saving throw used by the victim to protect themselves from the attack. The victim may choose to block or to dodge the attack. If the victim tries to block, they will throw a durability saving throw. It they try to dodge the attack, they must throw an agility saving throw. The ADD will be the result of the attacker's Firearms or marksman check minus the victim's agility or durability throw.
+          </p>
           <p className="text-gray-700 text-left">
             <p className="text-gray-700 font-semibold text-left">•  Static Weapon Damage:</p> Any weapon that requires some talent component of his user will have a damage output depending on the WF, for example a C4 explosive charge will always have the same damage value and it does not depend on the user that activated the device, so the WF stat of the weapon will be used as a base damage.
           </p>

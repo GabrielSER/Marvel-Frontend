@@ -15,6 +15,13 @@ const Characters = () => {
     const [searchInput, setSearchInput] = useState()
     const [filteredCharacters, setFilteredCharacters] = useState([])
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 400,
+            behavior: 'smooth', // This adds a smooth scrolling effect
+        });
+    };
+
     useEffect(() => {
         const charactersArray = Array.from(characters.values())
 
@@ -50,7 +57,7 @@ const Characters = () => {
                 )}
             >
                 <div className='flex grow relative items-center'>
-                <FaSearch className='absolute ml-3' />
+                    <FaSearch className='absolute ml-3' />
                     <PrimaryInput
                         className='w-full md:w-72 pl-8'
                         placeholder='Search character...'
@@ -78,6 +85,7 @@ const Characters = () => {
                 {
                     filteredCharacters.map(character => (
                         <Link
+                            onClick={scrollToTop}
                             key={character._id}
                             to={`/characters/${normalizeName(character.name)}`}
                         >
