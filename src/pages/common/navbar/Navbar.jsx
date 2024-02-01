@@ -36,7 +36,7 @@ const Navbar = () => {
                 />
                 <NavigationLink
                     text='Campaign Rules'
-                    to='/start'
+                    to='/rules'
                 />
                  <NavigationLink
                     text='Player Guide'

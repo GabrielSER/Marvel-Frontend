@@ -26,6 +26,7 @@ import Toolbar from './Toolbar'
 import { UserProvider } from '../../contexts/UserContext'
 import Places from '../places/Places'
 import Character from '../characters/Character'
+import Rules from '../characters/Rules'
 
 const MainBody = () => {
   return (
@@ -63,6 +64,7 @@ const MainBody = () => {
                   <Route path='/characters' exact element={<Characters />} />
                   <Route path='/characters/:normalized' exact element={<CharacterDetail />} />
                   <Route path='/places' exact element={<Places />} />
+                  <Route path='/rules' exact element={<Rules />} />
                   <Route path='/combat' exact element={<Combat />} />
                   <Route path='/roleplaying' exact element={<Roleplay />} />
                   <Route path='/objects' exact element={<Objects />} />

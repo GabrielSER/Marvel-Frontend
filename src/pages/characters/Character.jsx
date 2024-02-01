@@ -13,6 +13,13 @@ import NavigationLink from '../common/navbar/NavigationLink'
 import { Link } from 'react-router-dom'
 import documentPath from '../../assets/docs/Character-Sheet.pdf'
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth', // This adds a smooth scrolling effect
+  });
+};
+
 const BigTitle = (props) =>
 
   <div className='flex flex-col items-center'>
@@ -595,22 +602,24 @@ const Character = () => {
 
       <Section>
         <Paragraph>
-          To see how to take advantage of your character's attributes in the game, check out the <Link to="/roleplaying">Roleplaying</Link> and <Link to="/combat">Combat</Link> sections.
+          To see how to take advantage of your character's attributes in the game, check out the <Link onClick={scrollToTop} className='text-primary' to="/roleplaying">Roleplaying</Link> and <Link onClick={scrollToTop} className='text-primary' to="/combat">Combat</Link> sections.
         </Paragraph>
       </Section>
 
       <Section>
         <BigTitle>Character Sheet</BigTitle>
         <Paragraph>
-        A character sheet is a document or form used in role-playing games (RPGs) to record and track the details, attributes, abilities, and progress of a player's in-game persona, also known as their character. Character sheets are an essential tool for both players and Game Masters (GMs) to maintain consistency and keep track of the game's mechanics.
-          </Paragraph>
+          A character sheet is a document or form used in role-playing games (RPGs) to record and track the details, attributes, abilities, and progress of a player's in-game persona, also known as their character. Character sheets are an essential tool for both players and Game Masters (GMs) to maintain consistency and keep track of the game's mechanics.
+        </Paragraph>
         <Paragraph>
-       You can download the Marvel Character Sheet model below!
-          </Paragraph>
-          
-      <a href={documentPath} download="Character-Sheet.pdf">
-      <button class="self-center h-20 w-40 py-4 px-10 transform rounded-full bg-primary text-lg font-medium text-red-800 transition-all hover:scale-110 hover:bg-green-800 hover:text-white">Downlaod Character Sheet</button>
-      </a>
+          You can download the Marvel Character Sheet model below!
+        </Paragraph>
+        <div className='flex justify-center'>
+          <a href={documentPath} download="Character-Sheet.pdf">
+            <button class="self-center h-20 w-40 py-4 px-10 transform rounded-full bg-primary text-lg font-medium text-red-800 transition-all hover:scale-110 hover:bg-green-800 hover:text-white">Downlaod Character Sheet</button>
+          </a>
+        </div>
+
       </Section>
 
     </div >

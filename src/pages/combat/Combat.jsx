@@ -111,16 +111,31 @@ const Combat = () => {
             alt='Normal Attacks'
           />
         </div>
+        <Section>
         <Paragraph>
           Normal attacks made with close range weapons have a check bonus of Melee Weapons. The damage of these attacks depends on the specific weapon (Check the melee weapons section under objects for more information).
-          After throwing the d20 dice, one of two things can happen:
+          After throwing the d20 dice, the victim can decide if they want to evade or block the attack. 
+        </Paragraph>
+        <Paragraph>
+        When the victim is Blocking:
+        </Paragraph>
           <Paragraph>
             <span className="font-bold text-primary">a.</span>	If the attacker gets less than the victim’s defense, the attacker fails the attack, and the victim can attempt a counterattack. which is a normal attack that can be attempted just after a close range failed attack. It works just like a normal attack but deals half its damage. However, a counterattack against another counterattack cannot be attempted. You can’t also attempt a combo out of a counterattack.
           </Paragraph>
           <Paragraph>
-            <span className="font-bold text-primary">b.</span>	If the attacker gets more than the defense of the defender, the attack is successful and can be continued by a combo.
+            <span className="font-bold text-primary">b.</span>	If the attacker gets more than the defense of the victim, the attack is successful and can be continued by a combo.
           </Paragraph>
-        </Paragraph>
+        </Section>
+       
+          <Paragraph>
+            When the victim is Evading, they must throw an agility save:
+          </Paragraph>
+          <Paragraph>
+            <span className="font-bold text-primary">a.</span>	If the attacker gets less than the victim’s agility save, the attacker fails the attack, and the victim can attempt a counterattack.
+          </Paragraph>
+          <Paragraph>
+            <span className="font-bold text-primary">b.</span>	If the attacker gets more than the agility save of the victim, the attack is successful and can be continued by a combo.
+          </Paragraph>
       </Section>
 
 
@@ -128,6 +143,9 @@ const Combat = () => {
         <Title>Ranged Combat</Title>
         <Paragraph>
           Ranged attacks are made at long distance, which means that the objective is out of the close combat range of the attacker. These attacks can be done with powers, weapons or even throwing certain objects. After the attacker throws the d20 dice, the defender can attempt an agility throw to evade the incoming projectile. If his agility throw is higher than the attacker’s throw (+the respective bonus) the projectile fails.
+        </Paragraph>
+        <Paragraph>
+          The victim can also attempt to block the projectile. If the attacker's throw is lower than the victim's defense, the attack fails.
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
@@ -475,7 +493,7 @@ const Combat = () => {
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
-            className='max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+            className='max-w-2xl transition-all duration-300 mb-6'
             src={PowerExample}
             alt='Powers Example'
           />
@@ -507,7 +525,7 @@ const Combat = () => {
         </Paragraph>
         <div className='flex justify-center py-4'> {/* Added a flex container for centering */}
           <img
-            className='max-w-xL rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+            className='max-w-xL transition-all duration-300 mb-6'
             src={PowerLevel}
             alt='Powers Levels'
           />
