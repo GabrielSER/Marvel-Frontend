@@ -31,7 +31,7 @@ const BigTitle = (props) =>
     <div className='flex flex-row w-auto'>
       <ComicTitlePanel>
         <h1
-          className='text-4xl font-semibold text-center'
+          className='text-2xl sm:text-4xl font-semibold text-center'
           {...props}
         />
       </ComicTitlePanel>
@@ -75,7 +75,7 @@ const Combat = () => {
         <div className='flex flex-row self-center'>
           <ComicTitlePanel>
             <h1
-              className='text-5xl font-semibold mt-4 text-center'>
+              className='text-3xl sm:text-5xl font-semibold mt-4 text-center'>
               COMBAT SYSTEM
             </h1>
           </ComicTitlePanel>
@@ -106,19 +106,19 @@ const Combat = () => {
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
-            className='max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+            className='max-w-full sm:max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
             src={NormalAttack}
             alt='Normal Attacks'
           />
         </div>
         <Section>
-        <Paragraph>
-          Normal attacks made with close range weapons have a check bonus of Melee Weapons. The damage of these attacks depends on the specific weapon (Check the melee weapons section under objects for more information).
-          After throwing the d20 dice, the victim can decide if they want to evade or block the attack. 
-        </Paragraph>
-        <Paragraph>
-        When the victim is Blocking:
-        </Paragraph>
+          <Paragraph>
+            Normal attacks made with close range weapons have a check bonus of Melee Weapons. The damage of these attacks depends on the specific weapon (Check the melee weapons section under objects for more information).
+            After throwing the d20 dice, the victim can decide if they want to evade or block the attack.
+          </Paragraph>
+          <Paragraph>
+            When the victim is Blocking:
+          </Paragraph>
           <Paragraph>
             <span className="font-bold text-primary">a.</span>	If the attacker gets less than the victim’s defense, the attacker fails the attack, and the victim can attempt a counterattack. which is a normal attack that can be attempted just after a close range failed attack. It works just like a normal attack but deals half its damage. However, a counterattack against another counterattack cannot be attempted. You can’t also attempt a combo out of a counterattack.
           </Paragraph>
@@ -126,16 +126,16 @@ const Combat = () => {
             <span className="font-bold text-primary">b.</span>	If the attacker gets more than the defense of the victim, the attack is successful and can be continued by a combo.
           </Paragraph>
         </Section>
-       
-          <Paragraph>
-            When the victim is Evading, they must throw an agility save:
-          </Paragraph>
-          <Paragraph>
-            <span className="font-bold text-primary">a.</span>	If the attacker gets less than the victim’s agility save, the attacker fails the attack, and the victim can attempt a counterattack.
-          </Paragraph>
-          <Paragraph>
-            <span className="font-bold text-primary">b.</span>	If the attacker gets more than the agility save of the victim, the attack is successful and can be continued by a combo.
-          </Paragraph>
+
+        <Paragraph>
+          When the victim is Evading, they must throw an agility save:
+        </Paragraph>
+        <Paragraph>
+          <span className="font-bold text-primary">a.</span>	If the attacker gets less than the victim’s agility save, the attacker fails the attack, and the victim can attempt a counterattack.
+        </Paragraph>
+        <Paragraph>
+          <span className="font-bold text-primary">b.</span>	If the attacker gets more than the agility save of the victim, the attack is successful and can be continued by a combo.
+        </Paragraph>
       </Section>
 
 
@@ -149,7 +149,7 @@ const Combat = () => {
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
-            className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
             src={Ranged}
             alt='Hawkeye'
           />
@@ -163,7 +163,7 @@ const Combat = () => {
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
-            className='lg:max-w-lg max-w-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
             src={Combo}
             alt='Fighting'
           />
@@ -191,7 +191,7 @@ const Combat = () => {
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
             <img
-              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Dodge}
               alt='Fighting'
             />
@@ -227,7 +227,7 @@ const Combat = () => {
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
             <img
-              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Oportunity}
               alt='Oportunity Attack'
             />
@@ -256,7 +256,7 @@ const Combat = () => {
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
             <img
-              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Dash}
               alt='Dash'
             />
@@ -284,7 +284,7 @@ const Combat = () => {
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
             <img
-              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Help}
               alt='Help'
             />
@@ -312,7 +312,7 @@ const Combat = () => {
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
             <img
-              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Psychic}
               alt='Psychic Attacks'
             />
@@ -327,7 +327,7 @@ const Combat = () => {
             <div className='align-center'>
               <BigTitle>Damage types</BigTitle>
             </div>
-            <div className='flex flex-row sm:gap-40 gap-20 p-4 justify-center'>
+            <div className='flex flex-row sm:gap-40 gap-6 sm:p-4 justify-center'>
               <div className='flex sm:flex-row flex-col sm:gap-40 gap-4'>
                 <div className='flex flex-col'>
                   <Title>Contact</Title>
@@ -408,7 +408,7 @@ const Combat = () => {
           <div className='p-2 mx-auto items-center '>
             <div className='flex justify-center'> {/* Added a flex container for centering */}
               <img
-                className='max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+                className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
                 src={Venom}
                 alt='Venom'
               />
@@ -419,14 +419,14 @@ const Combat = () => {
       </div>
 
       <Section>
-        <div className='px-10 mx-auto items-center'>
+        <div className='max-w-full sm:px-10 mx-auto items-center'>
           <BigTitle>Critical Hit</BigTitle>
           <Paragraph>
             If a character or creature gets a natural 20 when throwing the check for attacking another character or creature it deals a critical hit. A critical hit always deals double damage. After the critical hit, the attacker will throw 1d100, and according to the result, the victim will have one of different effects:
           </Paragraph>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
             <img
-              className='max-w-5xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+              className='max-w-full lg:max-w-5xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
               src={Critical}
               alt='Critical Table'
             />
@@ -435,7 +435,7 @@ const Combat = () => {
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
             <img
-              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Elektra}
               alt="Elektra's Death"
             />
@@ -444,14 +444,14 @@ const Combat = () => {
       </Section>
 
       <Section>
-        <div className='px-10 mx-auto items-center'>
+        <div className='max-w-full sm:px-10 mx-auto items-center'>
           <BigTitle>Failure</BigTitle>
           <Paragraph>
             If a character gets 1 in their 1d20 check for any action, not only the action fails, but it produces a negative effect on the character which will be determined by the GM according to the circumstances. However, if this action is attempted during combat against an enemy, the character who failed the action will throw 1d100, and according to the result, they will have one of different effects:
           </Paragraph>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
             <img
-              className='lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+              className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
               src={Failure}
               alt='Failure'
             />
@@ -461,7 +461,7 @@ const Combat = () => {
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
             <img
-              className='lg:max-w-lg max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              className='max-w-full xl:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Gwen}
               alt="Spider-Man's Failure"
             />
@@ -470,14 +470,14 @@ const Combat = () => {
       </Section>
 
 
-      <div className='px-10 mx-auto items-center'>
+      <div className='sm:px-10 mx-auto items-center max-w-full'>
         <BigTitle>Powers</BigTitle>
         <Paragraph className='py-4'>
           Powers are special abilities that are unique to each character. For using these powers, you must spend points from your power meter. When a battle starts, you can increase your power meter in 1d4. Every long rest, your power meter fully recharges. Powers are classified according to a level: LV1 powers, LV2 powers, LV3 powers, LV4 powers, special powers, and Ultimate powers.
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
-            className='max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+            className='max-w-full sm:max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
             src={PowersDesc}
             alt='Powers desc'
           />
@@ -487,13 +487,13 @@ const Combat = () => {
         </Paragraph>
       </div>
 
-      <div className='px-0'>
+      <div className='px-0 max-w-full'>
         <Paragraph>
           Here’s an example of a power:
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
-            className='max-w-2xl transition-all duration-300 mb-6'
+            className='max-w-full sm:max-w-2xl transition-all duration-300 mb-6'
             src={PowerExample}
             alt='Powers Example'
           />
@@ -518,14 +518,14 @@ const Combat = () => {
         </p>
       </div>
 
-      <div className='px-10 mx-auto'>
+      <div className='sm:px-10 mx-auto'>
         <Paragraph>
           If you are out of power points, you can only deal normal or weapon attacks. When defeating a normal enemy, you can recharge 1 power point, and when you defeat a boss, you can recharge 3 power points even if it exceeds your base power meter. However, when having a long rest, your power meter returns to its default value.
           Every character has a Power Stat, which determines the amount of power points available at each level.
         </Paragraph>
         <div className='flex justify-center py-4'> {/* Added a flex container for centering */}
           <img
-            className='max-w-xL transition-all duration-300 mb-6'
+            className='max-w-full sm:max-w-xL transition-all duration-300 mb-6'
             src={PowerLevel}
             alt='Powers Levels'
           />
@@ -589,41 +589,44 @@ const Combat = () => {
 
       <Content id='telepath' />
 
-      <BigTitle>Level Up</BigTitle>
+      <div className='flex flex-col gap-8 max-w-full'>
+        <BigTitle>Level Up</BigTitle>
 
-      <div className='flex lg:flex-row flex-col lg:px-0 px-2'>
-        <div className='lg:max-w-5xl max-w-lg p-2 mx-auto items-center align-middle lg:px-24 my-auto px-0'>
-          <Paragraph>
-            Every battle gives experience to all characters in a party. With enough experience the whole party can level up. Every time a character levels up, it gains 10 hp and wins an specific amount of Skill Points that can be spent on unlocking different powers or improve stats and skills. On levels 10 and 20 it gains 20 hp. The amount of skill points won on each level up can be seen on the following table:
-          </Paragraph>
-          <img
-            className='lg:max-w-lg max-w-xs mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
-            src={Skilllvl}
-            alt='Skill up points per level'
-          />
-        </div>
-        <div className='lg:max-w-5xl max-w-xs p-2 mx-auto items-center align-middle lg:px-24 px-0'>
-          <Paragraph>
-            Powers can be unlocked using skill points once you have the level required for unlocking that given power. The skill point cost for unlocking powers can be seen in this table:
-          </Paragraph>
-          <img
-            className='lg:max-w-md max-w-xs mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
-            src={Powerlvl}
-            alt='Power skill points per level'
-          />
-          <Paragraph>
-            Skills can also be improved using the skill points. The following table shows how many skill points does it cost to increase your skill to a certain level:
-          </Paragraph>
-          <img
-            className='lg:max-w-sm max-w-xs mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
-            src={Skilvl}
-            alt='Skill cost per level'
-          />
-          <Paragraph>
-            Increasing negative stats or skills have the same cost that their positive counterparts
-          </Paragraph>
+        <div className='flex xl:flex-row flex-col lg:px-0 px-2'>
+          <div className='lg:max-w-5xl max-w-full mx-auto items-center align-middle lg:px-24 my-auto px-0'>
+            <Paragraph>
+              Every battle gives experience to all characters in a party. With enough experience the whole party can level up. Every time a character levels up, it gains 10 hp and wins an specific amount of Skill Points that can be spent on unlocking different powers or improve stats and skills. On levels 10 and 20 it gains 20 hp. The amount of skill points won on each level up can be seen on the following table:
+            </Paragraph>
+            <img
+              className='lg:max-w-lg max-w-full mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+              src={Skilllvl}
+              alt='Skill up points per level'
+            />
+          </div>
+          <div className='lg:max-w-5xl max-w-full p-2 mx-auto items-center align-middle lg:px-24 px-0'>
+            <Paragraph>
+              Powers can be unlocked using skill points once you have the level required for unlocking that given power. The skill point cost for unlocking powers can be seen in this table:
+            </Paragraph>
+            <img
+              className='lg:max-w-md max-w-full mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+              src={Powerlvl}
+              alt='Power skill points per level'
+            />
+            <Paragraph>
+              Skills can also be improved using the skill points. The following table shows how many skill points does it cost to increase your skill to a certain level:
+            </Paragraph>
+            <img
+              className='lg:max-w-sm max-w-full mx-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+              src={Skilvl}
+              alt='Skill cost per level'
+            />
+            <Paragraph>
+              Increasing negative stats or skills have the same cost that their positive counterparts
+            </Paragraph>
+          </div>
         </div>
       </div>
+
 
     </div >
 

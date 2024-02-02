@@ -95,7 +95,7 @@ const Places = () => {
 
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
-            className='max-w-3xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+            className='max-w-xs md:max-w-xl lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
             src={EarthXXXX}
             alt='Earth-XXXX'
           />

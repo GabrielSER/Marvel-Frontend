@@ -15,11 +15,11 @@ import documentPath from '../../assets/docs/Character-Sheet.pdf'
 
 const BigTitle = (props) =>
 
-  <div className='flex flex-col items-center'>
+  <div className='flex flex-col items-center max-w-full'>
     <div className='flex flex-row w-auto'>
       <ComicTitlePanel>
         <h1
-          className='text-4xl font-semibold text-center'
+          className='text-lg sm:text-4xl font-semibold text-center'
           {...props}
         />
       </ComicTitlePanel>
@@ -29,9 +29,9 @@ const BigTitle = (props) =>
 
 
 const Title = (props) =>
-  <ComicTitlePanel className='bg-comic-secondary'>
+  <ComicTitlePanel className='bg-comic-secondary self-center max-w-full'>
     <h2
-      className='text-lg font-semibold text-center'
+      className='text-sm sm:text-lg font-semibold text-center'
       {...props}
     />
   </ComicTitlePanel>
@@ -66,16 +66,21 @@ const Rules = () => {
         'min-h-screen gap-y-20'
       )}
     >
-      <Section>
-        <div className='flex flex-row self-center'>
+      <Section className='flex flex-col max-w-full gap-4'>
+        <div className='flex flex-row self-center gap-4 max-w-full'>
           <ComicTitlePanel>
             <h1
-              className='text-5xl font-semibold mt-4 text-center'>
+              className='text-3xl sm:text-5xl font-semibold m-4 text-center'>
               GAME MASTER'S GUIDE
             </h1>
           </ComicTitlePanel>
         </div>
-        <BigTitle>The One Above All</BigTitle>
+        <div className='flex flex-row self-center max-w-full'>
+          <BigTitle>
+    
+              The One Above All
+          </BigTitle>
+        </div>
       </Section>
 
 
@@ -91,7 +96,7 @@ const Rules = () => {
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
-            className='max-w-3xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
             src={TOAA}
             alt='The One Above All'
           />
@@ -153,7 +158,7 @@ const Rules = () => {
 
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
-            className='lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 '
+            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 '
             src={Whatif}
             alt='What If?'
           />

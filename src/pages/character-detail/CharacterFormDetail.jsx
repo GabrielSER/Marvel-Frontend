@@ -61,7 +61,7 @@ const CharacterFormDetail = () => {
             <CharacterImage />
             <CharacterSkills />
           </Column>
-          <Column className='items-center'>
+          <Column>
             <CharacterName />
             <ArmorCost/>
             <CharacterStats />

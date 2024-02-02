@@ -34,7 +34,7 @@ const BigTitle = (props) =>
     <div className='flex flex-row w-auto'>
       <ComicTitlePanel>
         <h1
-          className='text-4xl font-semibold text-center'
+          className='text-xl sm:text-4xl font-semibold text-center'
           {...props}
         />
       </ComicTitlePanel>
@@ -73,9 +73,9 @@ const Roleplay = () => {
       <div className="py-2 items-center">
 
         <div className='flex flex-col py-5 self-center'>
-          <div className='flex flex-row self-center py-10'>
+          <div className='flex flex-row self-center py-10 max-w-full'>
             <ComicTitlePanel>
-              <h1 className="text-5xl font-semibold mt-4 text-center p-4">ROLEPLAYING ACTIONS</h1>
+              <h1 className="text-3xl sm:text-5xl font-semibold mt-4 text-center p-4">ROLEPLAYING ACTIONS</h1>
             </ComicTitlePanel>
           </div>
         </div>
@@ -84,11 +84,11 @@ const Roleplay = () => {
         </p>
       </div>
 
-      <div className="mx-auto  lg:px-0 px-4">
+      <div className="mx-auto lg:px-0 px-4 max-w-full">
         <div className='flex flex-col p-5'>
           <div className='flex flex-row self-center'>
             <ComicTitlePanel>
-              <h1 className="text-4xl font-semibold mb-4 text-center">Common Actions</h1>
+              <h1 className="text-2xl sm:text-4xl font-semibold mb-4 text-center">Common Actions</h1>
             </ComicTitlePanel>
           </div>
         </div>
@@ -97,18 +97,18 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-2xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={FirstFamily}
             alt="FF"
           />
         </div>
       </div>
 
-      <div className="p-4 mx-auto items-center lg:px-0 px-10 ">
-        <div className='flex flex-col p-5 self-center'>
+      <div className="p-4 mx-auto items-center lg:px-0 px-10 max-w-full">
+        <div className='flex flex-col p-0 sm:p-5 self-center'>
           <div className='flex flex-row self-center'>
             <ComicTitlePanel>
-              <h1 className="text-4xl font-semibold mb-4 text-center">Special Actions</h1>
+              <h1 className="text-2xl sm:text-4xl font-semibold mb-4 text-center">Special Actions</h1>
             </ComicTitlePanel>
           </div>
         </div>
@@ -118,14 +118,14 @@ const Roleplay = () => {
       </div>
 
       <div className='flex lg:flex-row flex-col items-center'>
-        <div className="max-w-5xl p-2 mx-auto px-20">
+        <div className="p-2 mx-auto px-2 s:px-20 max-w-full">
           <Title>Lifting Objects</Title>
           <p className="text-gray-700 mb-6 text-center">
             Just like other special actions, to lift a specific weight, a character must throw 1d20, with the bonus being the Strength stat. Since some characters are stronger than others, the strength stat indicates how much a character can lift. The Strength stat is measured in a range from 0 to 8. A character can attempt to lift something one scale higher, however, that throw is done in disadvantage. On the other side, a character that attempts to lift a weight that is one scale below will throw his dice with advantage. A character will always succeed lifting a weight that is two scales lower. A character will always fail trying to lift a weight that is two scales higher. This table indicates how much can a character lift according to its strength stat.
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-md max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="max-w-full lg:max-w-md rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
               src={Lifting}
               alt="Lift Table"
             />
@@ -133,7 +133,7 @@ const Roleplay = () => {
         </div>
         <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 py-10"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="xl:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Shehulk}
             alt="Lift Table"
           />
@@ -147,21 +147,21 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-2xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-2xl max-w-full rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Throw1}
             alt="Throw Table 1"
           />
         </div>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-2xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-2xl max-w-full rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Throw2}
             alt="Throw Table 2"
           />
         </div>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-2xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Throw3}
             alt="Colossus and Wolverine"
           />
@@ -175,14 +175,14 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-5xl max-w-full rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Crush}
             alt="Crushing Damage Table"
           />
         </div>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-4xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Destiny}
             alt="If this be my Destiny!"
           />
@@ -196,7 +196,7 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-5xl max-w-full rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={CarCrash}
             alt="Crushing Damage Table"
           />
@@ -206,7 +206,7 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-4xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Crash}
             alt="Car Crash"
           />
@@ -214,21 +214,21 @@ const Roleplay = () => {
       </div>
 
 
-      <div className='flex lg:flex-row flex-col items-center '>
-        <div className="max-w-5xl p-2 mx-auto px-20">
+      <div className='flex xl:flex-row flex-col items-center'>
+        <div className="p-2 mx-auto sm:px-20 max-w-full">
           <Title>Jumping</Title>
           <p className="text-gray-700 mb-6 text-center">
             Just like other special actions, to perform a vertical jump, a character must throw 1d20. Since some characters are stronger than others, the strength stat indicates how much a character can jump vertically. The Strength stat is measured in a range from 0 to 8. A character can attempt to jump a height one scale higher, however, that throw is done in disadvantage. On the other side, a character that attempts to jump a height one scale below will throw his dice with advantage. A character will always succeed jumping up a height that is two scales lower and will always fail trying to jump a height that is two scales higher. This table indicates how high a character can jump according to its strength stat.
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-md max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="lg:max-w-md max-w-full sm:max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
               src={Jump}
               alt="Vertical Jump Table"
             />
           </div>
         </div>
-        <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 hidden lg:block py-10"> {/* Added a flex container for centering */}
+        <div className="flex justify-center xl:pr-28 pr-0 xl:pl-16 pl-0 hidden xl:block py-10"> {/* Added a flex container for centering */}
           <img
             className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={HulkJump}
@@ -236,7 +236,7 @@ const Roleplay = () => {
           />
         </div>
       </div>
-      <div className='flex lg:flex-row flex-col'>
+      <div className='flex xl:flex-row flex-col'>
         <div className="flex justify-center lg:pl-28 pl-0 lg:pr-16 pr-0 py-10"> {/* Added a flex container for centering */}
           <img
             className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
@@ -244,27 +244,27 @@ const Roleplay = () => {
             alt="Captain America Jumping"
           />
         </div>
-        <div className="max-w-5xl p-2 mx-auto items-center px-20 my-auto">
+        <div className="p-2 mx-auto items-center sm:px-20 my-auto max-w-full">
           <p className="text-gray-700 mb-6 text-center">
             Just like with other special actions, to perform a horizontal jump, a character must throw 1d20. Since some characters are stronger than others, the strength stat indicates how much a character can jump horizontally. The Strength stat is measured in a range from 0 to 8. A character can attempt to jump a distance one scale higher, however, that throw is done in disadvantage. On the other side, a character that attempts to jump a distance one scale below will throw his dice with advantage. A character will always succeed jumping a distance that is two scales lower. A character will always fail trying to jump a distance that is two scales higher. This table indicates how long a character can jump according to its strength stat.
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-md max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="lg:max-w-md max-w-full sm:max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
               src={HorizontalJump}
               alt="Horizontal Jump Table"
             />
           </div>
         </div>
       </div>
-      <div className='flex lg:flex-row flex-col'>
-        <div className="max-w-5xl p-2 mx-auto my-auto items-center px-20">
+      <div className='flex xl:flex-row flex-col'>
+        <div className="max-w-full p-2 mx-auto my-auto items-center sm:px-20">
           <p className="text-gray-700 mb-6 text-center">
             A horizontal jump can also be attempted with acrobatics but to a lower degree. The scaling works the same than with the strength stat. This table indicates how long a character can jump according to its acrobatics skill.
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-md max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="lg:max-w-md max-w-full sm:max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
               src={AcrobatJump}
               alt="Acrobatic Jump Table"
             />
@@ -275,28 +275,28 @@ const Roleplay = () => {
         </div>
         <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 py-10"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-full h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={DaredevilJump}
             alt="Hulk Jump"
           />
         </div>
       </div>
 
-      <div className="max-w-5xl p-2 mx-auto items-center">
-        <Title>Breaking or Bending Materials</Title>
+      <div className="max-w-full p-2 mx-auto items-center">
+        <Title className='text-md'>Breaking or Bending Materials</Title>
         <p className="text-gray-700 mb-6 text-center">
           Just like with other special actions, to break or bend different kinds of materials, a character must throw 1d20. Since some characters are stronger than others, the strength stat indicates what kind of materials a character can break or bend. The Strength stat is measured in a range from 0 to 8. A character can attempt to break an object categorized one scale higher, however, that throw is done in disadvantage. On the other side, a character that attempts to break a material categorized one scale below will throw his dice with advantage. A character will always succeed breaking materials that are two scales lower. A character will always fail trying to break materials that are two scales higher. This table indicates which materials a character can break or bend according to its strength stat:
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-5xl max-w-full rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Breaking}
             alt="Breaking Table"
           />
         </div>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-4xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Serpent}
             alt="Cap's Shield Broken"
           />
@@ -310,7 +310,7 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Flying}
             alt="Falcon Flying"
           />
@@ -319,14 +319,14 @@ const Roleplay = () => {
 
 
       <div className='flex lg:flex-row flex-col items-center'>
-        <div className="max-w-5xl p-2 mx-auto px-20">
+        <div className="max-w-full p-2 mx-auto sm:px-20">
           <Title>Flying in Combat</Title>
           <p className="text-gray-700 mb-6 text-center">
             In battle, a character that can fly can move both vertically and horizontally. Their movement speed while flying is determined by this table:
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-xs max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="lg:max-w-xs max-w-full sm:max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
               src={Flytable}
               alt="Flying per turns Table"
             />
@@ -337,29 +337,29 @@ const Roleplay = () => {
         </div>
         <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 py-10"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="lg:max-w-lg max-w-full sm:max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Flycombat}
             alt="Rogue Flying"
           />
         </div>
       </div>
 
-      <div className='flex lg:flex-row flex-col'>
+      <div className='flex lg:flex-row flex-col max-w-full items-center'>
         <div className="flex justify-center lg:pl-28 pl-0 lg:pr-16 pr-0 py-10 hidden lg:block "> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Ironfly}
             alt="Iron Man Flying"
           />
         </div>
-        <div className="max-w-5xl p-2 mx-auto items-center px-20 my-auto">
+        <div className="max-w-full p-2 mx-auto items-center lg:px-20 my-auto">
           <Title>Speed Flight</Title>
           <p className="text-gray-700 mb-6 text-center">
             A character that can fly can attempt to make a speed flight, to move faster in the air both vertically and horizontally. However, Speed Flight can’t be used in battle. The flying speed will be determined by the flight skill.
           </p>
           <div className="flex justify-center"> {/* Added a flex container for centering */}
             <img
-              className="lg:max-w-md max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+              className="lg:max-w-md max-w-full sm:max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
               src={Speedflight}
               alt="Speed Flight Table"
             />
@@ -367,21 +367,21 @@ const Roleplay = () => {
         </div>
       </div>
 
-      <div className="p-4 mx-auto items-center">
+      <div className="p-4 mx-auto items-center max-w-full">
         <BigTitle>Custom Actions</BigTitle>
         <p className="text-gray-700 mb-6 justify-center py-4">
           During a play session, a player can come up with different kind of actions that are not described on the roleplaying actions section or as a power, skill, or ability for a certain character. These are custom actions. On these situations, the GM may or may not allow the player to perform given action, and if the custom action is permitted, he can ask for a certain dice check according to how difficult may it be to perform that specific custom action for the player’s character. If the player’s character is an already existing Marvel character, the GM may consider if that character has performed that custom action before in some media, or how hard would it be for a that character to perform this custom action. If the player’s character is a custom character, the GM may evaluate the character’s powers, stats, skills, and abilities to stablish if the character can perform given custom action and the dice check necessary for that action to be successful, according to how hard may that action be for this custom character. Custom actions can also be performed in battle, and they can also rest power points if the GM considers it would do so.
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Xmen}
             alt="X-Men"
           />
         </div>
       </div>
 
-      <div className='flex lg:flex-row flex-col'>
+      <div className='flex lg:flex-row flex-col items-center'>
         <div className="max-w-5xl py-20 mx-auto items-center px-4">
           <Title>Popularity</Title>
           <p className="text-gray-700 mb-6 text-center py-6">
@@ -422,7 +422,7 @@ const Roleplay = () => {
         </div>
         <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 py-10"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full lg:max-w-md xl:max-w-7xl h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Popular}
             alt="The (In)famous Iron Man"
           />
@@ -437,15 +437,15 @@ const Roleplay = () => {
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={MoonKnight}
             alt="Moon Knight has a bad reputation!"
           />
         </div>
       </div>
 
-      <div className='flex lg:flex-row flex-col mb-4'>
-        <div className="max-w-5xl mx-auto my-auto items-center px-20 p-2">
+      <div className='max-w-full flex lg:flex-row flex-col mb-4'>
+        <div className="max-w-full mx-auto my-auto items-center sm:px-20 p-2">
           <Title>Public Image</Title>
           <p className="text-gray-700 mb-6 text-center">
             Sometimes public opinion is not equal to the authorities’ opinion about a certain character, meaning that even if a character is popular among civilians, it can be considered a public menace or vice versa. A character’s public image determines how good or bad is the relationship of a specific characters with the authorities. Every character can be perceived in one of these different categories.
@@ -485,21 +485,21 @@ const Roleplay = () => {
         </div>
         <div className="flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full lg:max-w-7xl h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={GreenGoblin}
             alt="Super Villain"
           />
         </div>
       </div>
 
-      <div className="max-w-5xl p-2 mb-4 mx-auto items-center">
+      <div className="max-w-full p-2 mb-4 mx-auto items-center">
         <Title>Identity</Title>
         <p className="text-gray-700 mb-6 text-center">
           Some heroes want to keep their hero and their personal life separated, that’s why they chose to hide their government name from the public. You can have four types of identities in the game. Public Identity is when your alter ego is known by the government and the public. An Identity Known by the Authorities (KBA) is when your alter ego is known only by the government but not by the public. A Secret Identity is when your identity is not known by the government or the public. No dual identity is when you don’t have an alter ego.
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
-            className="lg:max-w-5xl max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
+            className="max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6"
             src={Identity}
             alt="Spider-Man's Identity"
           />

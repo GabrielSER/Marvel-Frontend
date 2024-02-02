@@ -23,7 +23,7 @@ const ComicTitlePanel = (props) => {
                 'w-max',
                 'font-bold',
                 titleClass,
-                className ?? 'text-2xl bg-comic-primary'
+                className ?? 'text-xl sm:text-2xl bg-comic-primary'
             )}
             {...properties}
         />
