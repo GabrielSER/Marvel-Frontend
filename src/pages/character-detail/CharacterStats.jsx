@@ -35,7 +35,7 @@ const StatComponent = (props) => {
   return (
     <div className='flex flex-col items-center gap-1'>
       {children}
-      <label className='text-center font-bold'>
+      <label className='text-center font-bold text-xs xs:text-md sm:text-lg'>
         {name}
       </label>
     </div>
@@ -61,7 +61,7 @@ const CharacterStats = () => {
         Stats:
       </ComicTitlePanel>
       <div className='flex-col w-full gap-6 px-10'>
-        <div className='grid lg:grid-cols-4 lg:grid-flow-row gap-6'>
+        <div className='grid sm:grid-cols-4 sm:grid-flow-row gap-6'>
           {
             statIconData
               .map(appendStat)
@@ -78,7 +78,7 @@ const CharacterStats = () => {
               )
           }
         </div>
-        <div className='w-full grid grid-cols-2 grid-flow-row lg:grid-cols-5 lg:grid-flow-row gap-6'>
+        <div className='w-full grid grid-cols-2 grid-flow-row sm:grid-cols-5 sm:grid-flow-row gap-6'>
           {
             statsData
               .map(appendStat)

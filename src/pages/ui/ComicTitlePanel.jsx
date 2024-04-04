@@ -20,7 +20,7 @@ const ComicTitlePanel = (props) => {
     return (
         <div
             className={clsx(
-                'w-max',
+                'w-fit',
                 'font-bold',
                 titleClass,
                 className ?? 'text-xl sm:text-2xl bg-comic-primary'
