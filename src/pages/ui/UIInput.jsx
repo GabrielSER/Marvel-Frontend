@@ -11,12 +11,12 @@ const UIInput = (props) => {
         <Input
             className={clsx(
                 'px-3 py-1',
-                'border border-primary',
+                'border border-light',
                 'caret-primary',
                 'bg-transparent',
+                'rounded-md',
                 'hover:bg-shadow',
                 'focus:bg-shadow',
-                'rounded-l-full rounded-r-full',
                 'focus:outline-none',
                 'outline-none',
                 clsx(className)

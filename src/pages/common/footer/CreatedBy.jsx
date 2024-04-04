@@ -35,6 +35,10 @@ const CreatedBy = () =>
                 name='Andrés Medina'
                 to='https://api.whatsapp.com/send?phone=573134847422'
             />
+            <CreatorLink
+                name='Federico Polo'
+                to='https://api.whatsapp.com/send?phone=573112715547'
+            />
         </ul>
     </div>
 

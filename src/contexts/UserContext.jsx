@@ -18,6 +18,7 @@ const removeToken = () => sessionStorage.removeItem(marvelToken)
 
 const UserContext = createContext()
 
+
 const UserProvider = (props) => {
 
     const navigate = useNavigate()
@@ -92,6 +93,7 @@ const UserProvider = (props) => {
             loading,
             isPlayer: jwtBody?.roles.includes(UserRole.PLAYER) ?? false,
             isAdmin: jwtBody?.roles.includes(UserRole.ADMIN) ?? false,
+            isLoggedIn: user!==undefined,
             setUser,
             register,
             login,

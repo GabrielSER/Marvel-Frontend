@@ -33,34 +33,35 @@ import Login from './Login'
 
 const MainBody = () => {
   return (
-    <Router>
-      <UserProvider>
-        <Routes>
-          <Route path='/login' exact element={<Login />} />
-          <Route
-            path='*'
-            element={
-              <ToolbarProvider>
-                <DicesProvider>
-                  <CharactersProvider>
-                    <FormsProvider>
-                      <PowersProvider>
-                        <ContentProvider>
-                          <div
-                            className={clsx(
-                              'relative',
-                              'flex flex-col flex-initial',
-                              'w-full h-full',
-                              'overflow-x-hidden overflow-y-hidden',
-                              'overscroll-none',
-                              'font-comic',
-                              'bg-local'
-                            )}
-                            style={{
-                              backgroundImage: `url(https://i.ibb.co/Jqr4f35/backgound.png)`,
-                              backgroundRepeat: 'repeat'
-                            }}
-                          >
+    <div
+      className={clsx(
+        'relative',
+        'flex flex-col flex-initial',
+        'w-full h-full',
+        'overflow-x-hidden overflow-y-hidden',
+        'overscroll-none',
+        'font-comic',
+        'bg-local'
+      )}
+      style={{
+        backgroundImage: `url(https://i.ibb.co/Jqr4f35/backgound.png)`,
+        backgroundRepeat: 'repeat'
+      }}
+    >
+      <Router>
+        <UserProvider>
+          <Routes>
+            <Route path='/login' exact element={<Login />} />
+            <Route
+              path='*'
+              element={
+                <ToolbarProvider>
+                  <DicesProvider>
+                    <CharactersProvider>
+                      <FormsProvider>
+                        <PowersProvider>
+                          <ContentProvider>
+
                             <HUD />
                             <Navbar />
                             <div
@@ -88,18 +89,19 @@ const MainBody = () => {
                               </Routes>
                               <Footer />
                             </div>
-                          </div>
-                        </ContentProvider>
-                      </PowersProvider>
-                    </FormsProvider>
-                  </CharactersProvider>
-                </DicesProvider>
-              </ToolbarProvider>
-            }
-          />
-        </Routes>
-      </UserProvider>
-    </Router>
+
+                          </ContentProvider>
+                        </PowersProvider>
+                      </FormsProvider>
+                    </CharactersProvider>
+                  </DicesProvider>
+                </ToolbarProvider>
+              }
+            />
+          </Routes>
+        </UserProvider>
+      </Router>
+    </div>
   )
 }
 

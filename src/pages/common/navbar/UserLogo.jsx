@@ -3,35 +3,20 @@ import unknownUser from '../../../assets/images/unknown_user.jpg'
 import { useUser } from '../../../contexts/UserContext'
 import Circular from '../../ui/Circular'
 import { useCallback, useState } from 'react'
-import Input from '../../ui/Input'
-import PrimaryInput from '../../ui/PrimaryInput'
-import PrimaryButton from '../../ui/PrimaryButton'
+import UIButton from '../../ui/UIButton'
+import { useNavigate } from 'react-router-dom'
 
-const initialState = {
-    email: '',
-    password: ''
-}
 
 const UserDropDown = (props) => {
 
-    const { setActive } = props
+    const { logout } = useUser()
 
-    const { login, signIn } = useUser()
+    const navigate = useNavigate()
 
-    const [state, setState] = useState(initialState)
-
-    const loginClick = useCallback(async () => {
-        const { email, password } = state
-        try {
-            await login(email, password)
-            await signIn()
-            setState(initialState)
-            setActive(false)
-        }
-        catch (error) {
-            console.error(error)
-        }
-    }, [state, login, setActive, signIn])
+    const logoutClick = useCallback(() => {
+        logout()
+        navigate('/login')
+    }, [logout, navigate])
 
     return (
         <div
@@ -41,41 +26,20 @@ const UserDropDown = (props) => {
                 'absolute',
                 'z-50',
                 'w-80',
-                'bg-light',
-                'border border-light',
+                'dark-box',
                 'shadow-lg',
-                'rounded-md',
                 'right-0 top-[120%]',
                 'transition-all duration-500',
                 'p-2',
                 'overflow-hidden',
-                'gap-2',
-                'font-montserrat'
+                'gap-2'
             )}
-            onKeyDown={event => {
-                if (event.key === 'Enter') {
-                    loginClick()
-                }
-            }}
+
         >
-            <label>E-mail</label>
-            <PrimaryInput
-                name='email'
-                className='w-full'
-                state={state}
-                setState={setState}
-            />
-            <label>Password</label>
-            <PrimaryInput
-                name='password'
-                className='w-full'
-                type='password'
-                state={state}
-                setState={setState}
-            />
-            <PrimaryButton onClick={loginClick}>
-                Log In
-            </PrimaryButton>
+
+            <UIButton onClick={logoutClick}>
+                Log Out
+            </UIButton>
         </div>
     )
 }
