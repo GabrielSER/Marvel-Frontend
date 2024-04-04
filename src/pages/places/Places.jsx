@@ -50,12 +50,12 @@ const Title = (props) =>
 
 const Paragraph = (props) =>
   <div
-    className='text-gray-700 text-justify px-10'
+    className='text-gray-700 text-justify px-5'
     {...props}
   />
 
 const Section = (props) =>
-  <div className='flex flex-col w-full space-y-4'
+  <div className='flex flex-col w-full'
     {...props}
   />
 
@@ -72,15 +72,15 @@ const Places = () => {
       )}
     >
       <Section>
-        <div className='flex flex-row self-center py-10'>
+        <div className='flex flex-row self-center py-5 max-w-full'>
           <ComicTitlePanel>
             <h1
-              className='text-5xl font-semibold mt-4 text-center'>
+              className='text-2xl sm:text-5xl font-semibold mt-4 text-center max-w-full'>
               THE MARVEL UNIVERSE
             </h1>
           </ComicTitlePanel>
         </div>
-        <BigTitle>Earth-XXXX</BigTitle>
+        <BigTitle className="className='text-xl sm:text-5xl">Earth-XXXX</BigTitle>
       </Section>
 
       <Section>

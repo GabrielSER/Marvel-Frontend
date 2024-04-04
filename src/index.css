@@ -2182,6 +2182,10 @@ div.react-reveal{
     max-width: 20rem;
   }
 
+  .sm\:max-w-md{
+    max-width: 28rem;
+  }
+
   .sm\:flex-row{
     flex-direction: row;
   }
@@ -2282,6 +2286,10 @@ div.react-reveal{
     max-width: 36rem;
   }
 
+  .md\:max-w-lg{
+    max-width: 32rem;
+  }
+
   .md\:grid-flow-row{
     grid-auto-flow: row;
   }
@@ -2318,6 +2326,10 @@ div.react-reveal{
     display: block;
   }
 
+  .lg\:w-1\/3{
+    width: 33.333333%;
+  }
+
   .lg\:max-w-2xl{
     max-width: 42rem;
   }
@@ -2350,8 +2362,24 @@ div.react-reveal{
     max-width: 20rem;
   }
 
+  .lg\:grid-flow-row{
+    grid-auto-flow: row;
+  }
+
+  .lg\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-5{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .lg\:flex-row{
     flex-direction: row;
+  }
+
+  .lg\:p-5{
+    padding: 1.25rem;
   }
 
   .lg\:px-0{

@@ -20,7 +20,7 @@ import ArmorCost from './ArmorCost'
 
 
 const Section = (props) =>
-  <div className='flex flex-col md:flex-row justify-center gap-4 overflow-hidden'
+  <div className='flex flex-col lg:flex-row justify-center gap-4 overflow-hidden'
     {...props}
   />
 
@@ -54,10 +54,10 @@ const CharacterFormDetail = () => {
 
   return (
     <FormProvider form={selectedForm}>
-      <div className={clsx('flex flex-col w-full justify-center p-4 md:p-5')}>
+      <div className={clsx('flex flex-col w-full justify-center p-4 lg:p-5')}>
         <CharacterLogo />
         <Section>
-          <Column className='w-full md:w-1/3 shrink-0'>
+          <Column className='w-full lg:w-1/3 shrink-0'>
             <CharacterImage />
             <CharacterSkills />
           </Column>

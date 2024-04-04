@@ -34,12 +34,12 @@ const Title = (props) =>
 
 const Objects = () => {
   return (
-    <div className="flex flex-col items-center min-h-screen py-10">
+    <div className="flex flex-col items-center min-h-screen max-w-full py-10">
       <div className="px-10 py-2 items-center">
         <BigTitle className='text-5xl font-semibold m-4 text-center'>OBJECTS</BigTitle>
       </div>
 
-      <div className="px-10 mx-auto items-center">
+      <div className="px-10 max-w-full items-center">
         <Title>Firearms</Title>
         <p className="text-gray-700 mb-6 text-left">
           Projectile Weapons have these attributes:
@@ -91,7 +91,7 @@ const Objects = () => {
           alt="Deadpool"
         />
       </div>
-      <div className="px-10 mx-auto items-center">
+      <div className="px-10 max-w-full items-center">
         <h1 className="text-xl font-semibold mb-4 text-center">Calculating final damage for firearms</h1>
         <div className="flex flex-col items-left">
           <p className="text-gray-700 mb-6 text-left">
@@ -160,7 +160,7 @@ const Objects = () => {
         </div>
       </div>
 
-      <div className="px-10 mx-auto items-center">
+      <div className="px-10 max-w-full items-center">
         <h1 className="text-xl font-semibold mb-4 text-center">Automatic and semi-automatic Firearms</h1>
         <div className="flex flex-col items-left">
           <p className="text-gray-700 mb-6 text-left">
@@ -176,7 +176,7 @@ const Objects = () => {
         </div>
       </div>
 
-      <div className="px-10 mx-auto items-center">
+      <div className="px-10 max-w-full items-center">
         <h1 className="text-xl font-semibold mb-4 text-center">Dual-Wielding Firearms</h1>
         <div className="flex flex-col items-left">
           <p className="text-gray-700 mb-6 text-left">
