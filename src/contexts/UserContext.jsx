@@ -1,9 +1,14 @@
-import {jwtDecode} from 'jwt-decode'
-import { createContext, useState, useEffect, useContext, useMemo } from 'react'
+import { jwtDecode } from 'jwt-decode'
+import { createContext, useState, useEffect, useContext, useMemo, useCallback } from 'react'
 import { useMarvel, httpMethod } from '../hooks/useMarvel'
+import { useNavigate } from 'react-router-dom'
+
+const UserRole = {
+    ADMIN: 'admin',
+    PLAYER: 'player'
+}
 
 const marvelToken = 'marvel_token'
-const marvelUser = 'marvel_user'
 
 const getToken = () => sessionStorage.getItem(marvelToken)
 
@@ -11,93 +16,98 @@ const setToken = (authToken) => sessionStorage.setItem(marvelToken, authToken)
 
 const removeToken = () => sessionStorage.removeItem(marvelToken)
 
-const getUserId = () => sessionStorage.getItem(marvelUser)
-
-const setUserId = (userId) => sessionStorage.setItem(marvelUser, userId)
-
-const removeUser = () => sessionStorage.removeItem(marvelUser)
-
-const parseJwt = (token) => JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString())
-
 const UserContext = createContext()
 
 const UserProvider = (props) => {
 
-    const [user, setUser] = useState()
-    const [jwtBody, setJwtBody] = useState()
+    const navigate = useNavigate()
     const { query, loading } = useMarvel()
 
-    useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                await signIn()
-            }
-            catch (error) {
+    const [user, setUser] = useState()
+    const [jwtBody, setJwtBody] = useState()
 
-            }
-        }
-        fetchUser()
-    }, [])
-
-    const register = async (user) => {
+    const register = useCallback(async (user) => {
         const createdUser = await query('/users/', {
             method: httpMethod.POST,
             body: user
         })
         setUser(createdUser)
-        setUserId(createdUser._id)
-    }
+    }, [query])
 
-    const login = async (email, password) => {
-        const { token, userId } = await query('/users/login', {
+    const login = useCallback(async (email, password) => {
+        const { token } = await query('/users/login', {
             method: httpMethod.POST,
             body: {
                 email,
                 password
             }
         })
-        const parsed = jwtDecode(token)
-        console.log(parsed)
         setToken(token)
-        setUserId(userId)
-    }
+        setJwtBody(jwtDecode(token))
+    }, [query, setJwtBody])
 
-    const signIn = async () => {
+    const logout = useCallback(() => {
+        removeToken()
+        setUser(undefined)
+        setJwtBody(undefined)
+    }, [setUser])
+
+    const signIn = useCallback(async () => {
         try {
-            if (!getToken()) {
+            const token = getToken()
+            if (!token) {
                 throw Error('Token not set')
             }
-            const userId = getUserId()
+            const jwtBody = jwtDecode(token)
+            setJwtBody(jwtBody)
+            const userId = jwtBody.id
             if (!userId) {
-                throw Error('User not set')
+                throw Error('User id not available on the jwt body')
             }
             const user = await query('/users/' + userId)
             setUser(user)
-            setUserId(user._id)
         }
         catch (error) {
             logout()
             throw error
         }
-    }
+    }, [setJwtBody, query, setUser, logout])
 
-    const logout = () => {
-        removeUser()
-        removeToken()
-        setUser(undefined)
-    }
+    // Auto signIn on page load, send to login if no user or outdated token
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                await signIn()
+            }
+            catch (error) {
+                navigate('/login')
+            }
+        }
+        fetchUser()
+    }, [signIn, navigate])
 
     const value = useMemo(() => {
         return {
             user,
             loading,
+            isPlayer: jwtBody?.roles.includes(UserRole.PLAYER) ?? false,
+            isAdmin: jwtBody?.roles.includes(UserRole.ADMIN) ?? false,
             setUser,
             register,
             login,
             signIn,
             logout
         }
-    }, [user])
+    }, [
+        user,
+        loading,
+        jwtBody,
+        setUser,
+        register,
+        login,
+        signIn,
+        logout
+    ])
 
     return <UserContext.Provider value={value} {...props} />
 

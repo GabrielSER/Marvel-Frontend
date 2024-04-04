@@ -17,7 +17,7 @@ const CharacterDetail = () => {
         if (character == null) {
             navigate('/not-found')
         }
-    }, [character, loading])
+    }, [navigate, character, loading])
 
     if (character === null || character === undefined) {
         return null

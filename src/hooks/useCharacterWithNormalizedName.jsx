@@ -8,7 +8,7 @@ const useCharacterWithNormalizedName = (normalized) => {
 
     const character = useMemo(() => {
         return charactersByNormalized.get(normalized) ?? null
-    }, [loading, normalized, charactersByNormalized])
+    }, [normalized, charactersByNormalized])
 
     return {character, loading}
 }

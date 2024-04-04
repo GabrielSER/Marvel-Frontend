@@ -18,7 +18,7 @@ const ComicTitlePanel = (props) => {
     const titleClass = useMemo(() => randomTitleClass(), [])
 
     return (
-        <h1
+        <div
             className={clsx(
                 'w-max',
                 'font-bold',

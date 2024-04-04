@@ -1145,6 +1145,10 @@ div.react-reveal{
   width: min-content;
 }
 
+.w-4{
+  width: 1rem;
+}
+
 .max-w-3xl{
   max-width: 48rem;
 }

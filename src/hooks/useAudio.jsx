@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 const useAudio = (url, autoStart = false) => {
 
@@ -14,11 +14,11 @@ const useAudio = (url, autoStart = false) => {
         return () => {
             audio.removeEventListener('ended', () => setPlaying(false))
         }
-    }, [])
+    }, [audio])
     
     useEffect(() => {
         playing ? audio.play() : audio.pause()
-    }, [playing])
+    }, [audio, playing])
 
     return [playing, toggle]
 }
