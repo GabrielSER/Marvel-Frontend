@@ -153,7 +153,14 @@ const Login = () => {
                 <div class="flex flex-col md:w-1/2 px-8 md:px-16 items-center gap-4 text-xs text-light"
                     onKeyDown={event => {
                         if (event.key === 'Enter') {
-                            loginClick()
+                            if(registerMode)
+                            {
+                                registerClick()
+                            }
+                            else{
+                                loginClick()
+                            }
+                            
                         }
                     }}>
                     <h2 class="font-bold text-2xl text-primary">{registerMode ? "Register" : "Log In"}</h2>
@@ -178,6 +185,7 @@ const Login = () => {
                         state={state}
                         setState={setState}
                     />
+                    
                     {
                         registerMode &&
                         <>
