@@ -142,7 +142,7 @@ const DiceRoller = (props) => {
                     className={clsx(
                         'focus:outline-none',
                         'hover:outline-none',
-                        rolling && 'animate-spin ease-in-out transition-all',
+                        rolling && 'animate-spin ease-in-out transition-all'
                     )}
                     onClick={() => { if (!rolling) setRolling(true) }}
                 >

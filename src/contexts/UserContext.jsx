@@ -1,3 +1,4 @@
+import {jwtDecode} from 'jwt-decode'
 import { createContext, useState, useEffect, useContext, useMemo } from 'react'
 import { useMarvel, httpMethod } from '../hooks/useMarvel'
 
@@ -16,11 +17,14 @@ const setUserId = (userId) => sessionStorage.setItem(marvelUser, userId)
 
 const removeUser = () => sessionStorage.removeItem(marvelUser)
 
+const parseJwt = (token) => JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString())
+
 const UserContext = createContext()
 
 const UserProvider = (props) => {
 
     const [user, setUser] = useState()
+    const [jwtBody, setJwtBody] = useState()
     const { query, loading } = useMarvel()
 
     useEffect(() => {
@@ -52,6 +56,8 @@ const UserProvider = (props) => {
                 password
             }
         })
+        const parsed = jwtDecode(token)
+        console.log(parsed)
         setToken(token)
         setUserId(userId)
     }

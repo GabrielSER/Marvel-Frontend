@@ -18,9 +18,9 @@ const Characters = () => {
     const scrollToTop = () => {
         window.scrollTo({
             top: 400,
-            behavior: 'smooth', // This adds a smooth scrolling effect
-        });
-    };
+            behavior: 'smooth'
+        })
+    }
 
     useEffect(() => {
         const charactersArray = Array.from(characters.values())
@@ -30,7 +30,6 @@ const Characters = () => {
             return
         }
         const lowerInput = searchInput.toLowerCase()
-        console.log(charactersArray)
         const filtered = charactersArray.filter(character => {
             return character.name.toLowerCase().includes(lowerInput) ||
                 character.alterego.toLowerCase().includes(lowerInput)

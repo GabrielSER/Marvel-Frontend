@@ -14,7 +14,7 @@ module.exports = {
       colors: {
         'primary': '#EC1D23',
         'secondary': '#3C373B',
-        'light-2': 'rgba(179 179 179 / 0.1)',
+        'light-2': '#2F2F2F',
         'light': '#B3B3B3',
         'dark': '#202020',
         'power-0': '#d680bd',
@@ -42,6 +42,12 @@ module.exports = {
         '128': '32rem',
         '136': '34rem',
         '144': '36rem'
+      },
+      zIndex: {
+        'page': '10',
+        'over-page': '20',
+        'header': '30',
+        'hud': '50'
       }
     },
   },

@@ -1,36 +1,44 @@
 import clsx from 'clsx'
 import { useForm } from '../../contexts/FormContext'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
-import ComicPanel from '../ui/ComicPanel'
 
 
-const ArmorCost = (props) => {
+const ComicLabel = (props) => {
 
-    const { form } = useForm()
+    const { title, text } = props
 
     return (
         <div className='flex gap-4 items-center w-full'>
-            {form.unlockCost && 
-            <div>
-                    <div className='flex gap-4 items-center w-full'>
-                        <ComicTitlePanel className=' bg-comic-secondary'>
-                            Unlock Cost:
-                        </ComicTitlePanel>
-                        {form.unlockCost} Skill Points
-                    </div>
-                    {form.unlockLevel && 
-                        <div className='flex gap-4 items-center w-full'>
-                            <ComicTitlePanel className=' bg-comic-secondary'>
-                                Unlock Level:
-                            </ComicTitlePanel>
-                            Level {form.unlockLevel}
-                        </div>
-                    }
-                    </div>
-            }
+            <ComicTitlePanel className=' bg-comic-secondary'>
+                {title}
+            </ComicTitlePanel>
+            {text}
         </div>
+    )
+}
 
+const ArmorCost = () => {
 
+    const { form } = useForm()
+
+    const { unlockCost, unlockLevel } = form
+
+    if (!unlockCost && !unlockLevel) return null
+
+    return (
+        <>
+            <ComicLabel
+                title='Unlock Cost:'
+                text={`${form.unlockCost} Skill Points`}
+            />
+            {
+                unlockLevel &&
+                <ComicLabel
+                    title='Unlock Level:'
+                    text={`Level ${form.unlockLevel}`}
+                />
+            }
+        </>
     )
 }
 

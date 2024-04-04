@@ -21,7 +21,6 @@ const UserDropDown = (props) => {
     const [state, setState] = useState(initialState)
 
     const loginClick = useCallback(async () => {
-        console.log(state)
         const { email, password } = state
         try {
             await login(email, password)
@@ -32,7 +31,7 @@ const UserDropDown = (props) => {
         catch (error) {
             console.error(error)
         }
-    }, [state])
+    }, [state, login, setActive, signIn])
 
     return (
         <div

@@ -80,14 +80,13 @@ const StatPower = ({ strokeWidth, percentage, statColor }) => {
           }}
         />
           <text
-            className='CircularProgressbar-text font-condensed'
+            className='CircularProgressbar-text text-3xl font-condensed'
             x={50}
             y={50}
             style={{
               fill: 'black',
-              fontSize: '24px',
               dominantBaseline: 'central',
-              textAnchor: 'middle',
+              textAnchor: 'middle'
             }}
           >
             {`${percentage}`}

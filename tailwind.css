@@ -16,6 +16,12 @@
   }
 
   @layer components {
+    .ui-box {
+      @apply bg-light-2 border border-light-2 hover:border-light
+    }
+    .dark-box {
+      @apply bg-dark border border-light-2 rounded-md shadow-lg
+    }
     div.react-reveal {
       @apply w-full h-full;
     }
@@ -74,10 +80,15 @@
 
 
   /* Scrollbar */
+
+  html, body {
+    overscroll-behavior: none;
+  }
   
   ::-webkit-scrollbar {
     width: 7px;
     height: 7px;
+    border-radius: 7px;
   }
   
   ::-webkit-scrollbar-track {
@@ -114,6 +125,6 @@
   border-radius: 0px;
 }
   
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

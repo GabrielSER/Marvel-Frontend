@@ -21,6 +21,7 @@ const NavigationTab = (props) => {
                     'border-b-4 border-primary',
                     'opacity-100'
                 ],
+                'cursor-pointer',
                 className
             )}
             {...properties}

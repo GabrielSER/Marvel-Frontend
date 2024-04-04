@@ -28,6 +28,7 @@ import { Dice, DiceType } from './dice/Dice'
 import DiceRoller from './dice/DiceRoller'
 import ContentView from '../ui/ContentView'
 import Hp from './stats/hp'
+import { toolbarMapping } from './toolbars/Toolbar'
 
 export const contentMapping = () => ({
     'view': <ContentView />,
@@ -56,12 +57,13 @@ export const contentMapping = () => ({
     'soaked': <Soaked />,
     'stunned': <Stunned />,
     'telepath': <TelepathicControl />,
-    'hp': <Hp/>,
+    'hp': <Hp />,
     'd4': <Dice type={DiceType.D4} />,
     'd6': <Dice type={DiceType.D6} />,
     'd8': <Dice type={DiceType.D8} />,
     'd10': <Dice type={DiceType.D10} />,
     'd12': <Dice type={DiceType.D12} />,
     'd20': <Dice type={DiceType.D20} />,
-    'roll': <DiceRoller />
+    'roll': <DiceRoller />,
+    ...toolbarMapping
 })
