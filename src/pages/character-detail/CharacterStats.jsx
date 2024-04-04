@@ -35,7 +35,7 @@ const StatComponent = (props) => {
   return (
     <div className='flex flex-col items-center gap-1'>
       {children}
-      <label className='text-center font-bold text-xs xs:text-md sm:text-lg'>
+      <label className='text-center font-bold text-xs xs:text-md sm:text-base'>
         {name}
       </label>
     </div>

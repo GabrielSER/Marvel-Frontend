@@ -77,7 +77,7 @@ const Character = () => {
         </div>
         <div className='flex flex-row self-center gap-4 max-w-full'>
           <BigTitle>
-              What is a character?
+            What is a character?
           </BigTitle>
         </div>
       </Section>
@@ -103,80 +103,80 @@ const Character = () => {
         <BigTitle>Stats</BigTitle>
         <Paragraph>
           Stats represent numerical values that quantitatively describe a character's inherent characteristics. These can include attributes like strength, agility, intelligence, and more. Stats provide a baseline for the character's capabilities and are often used to calculate success or failure in various actions. They serve as a foundation for determining a character's overall effectiveness in different aspects of the game. A character Stats include:
-          </Paragraph>
-          <div className='flex flex-col'>
+        </Paragraph>
+        <div className='flex flex-col'>
           <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">HP (Hit Points):</Title>
-          <p className="text-gray-700 text-left"> Represents the character's health or life force. HP points are lost every time a character recieves damage. Once the HP is down to 0 the character falls and is in danger of dying.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Speed:</Title>
-          <p className="text-gray-700 text-left"> Indicates the character's movement capability in battle. It represents the amount of distance a character can move in a turn.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Defense:</Title>
-          <p className="text-gray-700 text-left"> Reflects the character's ability to resist attacks. An attack must surpass a character's defense to succeed.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Energy Projection:</Title>
-          <p className="text-gray-700 text-left">Measures the character's proficiency in projecting energy-based attacks.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Strength:</Title>
-          <p className="text-gray-700 text-left">Represents the character's physical power.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Intelligence:</Title>
-          <p className="text-gray-700 text-left">Reflects the character's mental acuity.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Durability:</Title>
-          <p className="text-gray-700 text-left">Indicates the character's resilience to damage.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Agility:</Title>
-          <p className="text-gray-700 text-left">Represents the character's speed and dexterity.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Wisdom:</Title>
-          <p className="text-gray-700 text-left">Reflects the character's knowledge and intuition.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Power:</Title>
-          <p className="text-gray-700 text-left">Represents the amount of power points a character has depending on their level.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Melee:</Title>
-          <p className="text-gray-700 text-left"> Represents the character's effectiveness in close combat.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Perception:</Title>
-          <p className="text-gray-700 text-left"> Reflects the character's awareness and ability to notice details.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Charisma:</Title>
-          <p className="text-gray-700 text-left"> Indicates the character's charm and persuasiveness.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-          <Title className="self-start">Luck:</Title>
-          <p className="text-gray-700 text-left">Represents the character's fortune or chance.
-          </p>
-        </div>
+            <Title className="self-start">HP (Hit Points):</Title>
+            <p className="text-gray-700 text-left"> Represents the character's health or life force. HP points are lost every time a character recieves damage. Once the HP is down to 0 the character falls and is in danger of dying.
+            </p>
           </div>
-        
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Speed:</Title>
+            <p className="text-gray-700 text-left"> Indicates the character's movement capability in battle. It represents the amount of distance a character can move in a turn.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Defense:</Title>
+            <p className="text-gray-700 text-left"> Reflects the character's ability to resist attacks. An attack must surpass a character's defense to succeed.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Energy Projection:</Title>
+            <p className="text-gray-700 text-left">Measures the character's proficiency in projecting energy-based attacks.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Strength:</Title>
+            <p className="text-gray-700 text-left">Represents the character's physical power.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Intelligence:</Title>
+            <p className="text-gray-700 text-left">Reflects the character's mental acuity.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Durability:</Title>
+            <p className="text-gray-700 text-left">Indicates the character's resilience to damage.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Agility:</Title>
+            <p className="text-gray-700 text-left">Represents the character's speed and dexterity.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Wisdom:</Title>
+            <p className="text-gray-700 text-left">Reflects the character's knowledge and intuition.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Power:</Title>
+            <p className="text-gray-700 text-left">Represents the amount of power points a character has depending on their level.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Melee:</Title>
+            <p className="text-gray-700 text-left"> Represents the character's effectiveness in close combat.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Perception:</Title>
+            <p className="text-gray-700 text-left"> Reflects the character's awareness and ability to notice details.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Charisma:</Title>
+            <p className="text-gray-700 text-left"> Indicates the character's charm and persuasiveness.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+            <Title className="self-start">Luck:</Title>
+            <p className="text-gray-700 text-left">Represents the character's fortune or chance.
+            </p>
+          </div>
+        </div>
+
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img
             className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 '
@@ -620,13 +620,16 @@ const Character = () => {
           A character sheet is a document or form used in role-playing games (RPGs) to record and track the details, attributes, abilities, and progress of a player's in-game persona, also known as their character. Character sheets are an essential tool for both players and Game Masters (GMs) to maintain consistency and keep track of the game's mechanics.
         </Paragraph>
         <Paragraph>
-          You can download the Marvel Character Sheet model below!
+          Check out the Marvel Character Sheet model below!
         </Paragraph>
-        <div className='flex justify-center'>
-          <a href={documentPath} download="Character-Sheet.pdf">
-            <button class="self-center h-20 w-auto py-4 px-10 transform rounded-full bg-primary text-lg font-medium text-red-800 transition-all hover:scale-110 hover:bg-green-800 hover:text-white">Downlaod Character Sheet</button>
-          </a>
-        </div>
+        <iframe
+          width="full"
+          height="1150"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src={documentPath}>
+        </iframe>
 
       </Section>
 

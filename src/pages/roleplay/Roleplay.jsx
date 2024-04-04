@@ -143,7 +143,7 @@ const Roleplay = () => {
       <div className="max-w-5xl p-2 mx-auto items-center">
         <Title>Throwing Objects</Title>
         <p className="text-gray-700 mb-6 text-center">
-          Just like with other special actions, to throw different kinds of objects, a character must throw 1d20. For the character to be able to throw an object, he must be able to lift it. To throw an object to the exact place you want you must get at least a 17 throw in strength or marklgan. If the object weights more than half of what the character is capable of lifting, the strength stat must be used. If not, the marklgan stat can be used. For every point from the player’s throw that is below 17, the object lands 5 ft away from the desired spot, closer to the character. This table indicates the maximum distance a character can throw an object:
+          Just like with other special actions, to throw different kinds of objects, a character must throw 1d20. For the character to be able to throw an object, he must be able to lift it. To throw an object to the exact place you want you must get at least a 17 throw in strength or marksman. If the object weights more than half of what the character is capable of lifting, the strength stat must be used. If not, the marksman stat can be used. For every point from the player’s throw that is below 17, the object lands 5 ft away from the desired spot, closer to the character. This table indicates the maximum distance a character can throw an object:
         </p>
         <div className="flex justify-center"> {/* Added a flex container for centering */}
           <img
@@ -392,10 +392,10 @@ const Roleplay = () => {
               •	0/100: Barely Known
             </p>
             <p className="text-gray-700 text-left">
-              •	100/200: lgall Reputation
+              •	100/200: small Reputation
             </p>
             <p className="text-gray-700 text-left">
-              •	200/300: Known by the community (neighborhood or lgall cities)
+              •	200/300: Known by the community (neighborhood or small cities)
             </p>
             <p className="text-gray-700 text-left">
               •	300/400: Known on large cities
