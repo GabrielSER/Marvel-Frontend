@@ -46,6 +46,8 @@ const TextInput = (props) => {
     )
 }
 
+
+
 const AvatarIcon = (props) => {
 
     const { src, selected, onClick } = props
@@ -83,6 +85,8 @@ const Login = () => {
 
     const [dbError, setdbError] = useState(false);
 
+    const [dbTextError, setdbTextError] = useState("Database Error");
+
 
     useEffect(() => {
         if (isLoggedIn) {
@@ -100,6 +104,7 @@ const Login = () => {
         }
         catch (error) {
             console.error(error)
+            setdbTextError(error.message)
             setdbError(true)
         }
     }, [state, login, signIn])
@@ -128,6 +133,7 @@ const Login = () => {
         }
         catch (error) {
             console.error(error)
+            setdbTextError(error.message)
             setdbError(true)
 
         }
@@ -225,8 +231,8 @@ const Login = () => {
                             Register
                         </UIButton>
                     }
-                    {dbError && registerMode && <p className="text-red-500">{"An error occurred while registering. Please try again."}</p>}
-                    {dbError && !registerMode && <p className="text-red-500">{"An error occurred while Logging In. Please try again."}</p>}
+                    {dbError && registerMode && <p className="text-red-500">{dbTextError}</p>}
+                    {dbError && !registerMode && <p className="text-red-500">{dbTextError}</p>}
                     {
                         !registerMode &&
                         <>
