@@ -29,11 +29,13 @@ const avatars = [
 const initialState = {
     email: '',
     password: '',
+    confirmPassword: '',
     name: '',
     username: '',
     photo: avatars[0],
     birthday: ''
 }
+
 
 const TextInput = (props) => {
     return (
@@ -46,14 +48,14 @@ const TextInput = (props) => {
 
 const AvatarIcon = (props) => {
 
-    const { src, selected, onClick} = props
+    const { src, selected, onClick } = props
 
     return (
         <Circular
             className={clsx(
                 'w-10 border-2',
                 selected && 'border-primary'
-                )}
+            )}
             onClick={onClick}
         >
             <img
@@ -75,6 +77,12 @@ const Login = () => {
 
     const [registerMode, setRegisterMode] = useState(false)
 
+    const [passwordMismatch, setPasswordMismatch] = useState(false);
+
+    const [passwordError, setPasswordError] = useState(false);
+
+    const [dbError, setdbError] = useState(false);
+
 
     useEffect(() => {
         if (isLoggedIn) {
@@ -92,12 +100,27 @@ const Login = () => {
         }
         catch (error) {
             console.error(error)
+            setdbError(true)
         }
     }, [state, login, signIn])
 
     const registerClick = useCallback(async () => {
-       
+        if (state.password !== state.confirmPassword) {
+            console.log(state.confirmPassword)
+            console.log(state.password)
+            setPasswordMismatch(true);
+            return;
+        }
+
+        const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+        if (!passwordRegex.test(state.password)) {
+            setPasswordError(true);
+            return;
+        }
+
         try {
+            setPasswordError(false);
+            setPasswordMismatch(false);
             await register(state)
             await signIn()
             setState(initialState)
@@ -105,8 +128,17 @@ const Login = () => {
         }
         catch (error) {
             console.error(error)
+            setdbError(true)
+
         }
     }, [state, login, signIn])
+
+    const handleConfirmPasswordChange = useCallback((e) => {
+        const confirmPassword = e.target ? e.target.value : '';
+        setState((prevState) => ({ ...prevState, confirmPassword }));
+        setPasswordMismatch(false);
+    }, []);
+
 
 
     return (
@@ -144,12 +176,15 @@ const Login = () => {
                         registerMode &&
                         <>
                             <TextInput
-                                name='confirmpassword'
+                                name='confirmPassword'
                                 placeholder='Confirm Password'
                                 type='password'
                                 state={state}
                                 setState={setState}
+                                onChange={handleConfirmPasswordChange}
                             />
+                            {passwordMismatch && <p className="text-red-500">Passwords do not match.</p>}
+                            {passwordError && <p className="text-red-500">Passwords must be at least 8 characters and contain numbers and capital letters</p>}
                             <TextInput
                                 name='name'
                                 placeholder='Name'
@@ -173,12 +208,12 @@ const Login = () => {
                             </label>
                             <div className="flex flex-wrap gap-4 justify-center items-center">
                                 {
-                                    avatars.map((src, index) => 
-                                    <AvatarIcon 
-                                    src={src}
-                                    onClick={() => setState({...state, photo: src})}
-                                    selected={src === state.photo}
-                                    />
+                                    avatars.map((src, index) =>
+                                        <AvatarIcon
+                                            src={src}
+                                            onClick={() => setState({ ...state, photo: src })}
+                                            selected={src === state.photo}
+                                        />
                                     )
                                 }
                             </div>
@@ -190,6 +225,8 @@ const Login = () => {
                             Register
                         </UIButton>
                     }
+                    {dbError && registerMode && <p className="text-red-500">{"An error occurred while registering. Please try again."}</p>}
+                    {dbError && !registerMode && <p className="text-red-500">{"An error occurred while Logging In. Please try again."}</p>}
                     {
                         !registerMode &&
                         <>
@@ -206,7 +243,9 @@ const Login = () => {
                         !registerMode &&
                         <>
                             <p>Don't have an account?</p>
-                            <UIButton className="p-2 w-full" onClick={() => setRegisterMode(true)}>
+                            <UIButton className="p-2 w-full" onClick={() => {
+                                setRegisterMode(true) 
+                                setdbError(false)}}>
                                 Register
                             </UIButton>
                         </>
@@ -215,7 +254,9 @@ const Login = () => {
                         registerMode &&
                         <>
                             <p>Already have an account?</p>
-                            <UIButton className="p-2 w-full" onClick={() => setRegisterMode(false)}>
+                            <UIButton className="p-2 w-full" onClick={() => {
+                                setRegisterMode(false) 
+                                setdbError(false)}}>
                                 Log In
                             </UIButton>
                         </>
