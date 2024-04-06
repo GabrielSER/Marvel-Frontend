@@ -14,7 +14,10 @@ const avatar5 = 'https://i.ibb.co/sRzMSvw/emma-frost.jpg'
 const avatar6 = 'https://i.ibb.co/Rh98WBD/moon-knight.png'
 const avatar7 = 'https://i.ibb.co/4pbWXGB/venom.webp'
 const avatar8 = 'https://i.ibb.co/4p9pJWN/werewolf-by-night.webp'
-
+const avatar9 = 'https://i.ibb.co/HC3YG4Q/cap.jpg'
+const avatar10 = 'https://i.ibb.co/nQwQ7L1/daredevil.jpg'
+const avatar11 = 'https://i.ibb.co/ZJz8305/hulk.jpg'
+const avatar12 = 'https://i.ibb.co/vDxpswS/wolverine.jpg'
 
 const avatars = [
     avatar,
@@ -24,7 +27,11 @@ const avatars = [
     avatar5,
     avatar6,
     avatar7,
-    avatar8
+    avatar8,
+    avatar9,
+    avatar10,
+    avatar11,
+    avatar12
 ]
 
 const initialState = {
