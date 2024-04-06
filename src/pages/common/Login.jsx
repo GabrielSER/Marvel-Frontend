@@ -6,14 +6,15 @@ import { useUser } from "../../contexts/UserContext"
 import UIInput from "../ui/UIInput"
 import Circular from "../ui/Circular"
 
-import avatar from '../../assets/images/avatars/spiderman.jpg'
-import avatar2 from '../../assets/images/avatars/iron_man.jpg'
-import avatar3 from '../../assets/images/avatars/deadpool.jpg'
-import avatar4 from '../../assets/images/avatars/rogue.png'
-import avatar5 from '../../assets/images/avatars/emma_frost.jpg'
-import avatar6 from '../../assets/images/avatars/moon_knight.png'
-import avatar7 from '../../assets/images/avatars/venom.webp'
-import avatar8 from '../../assets/images/avatars/werewolf_by_night.webp'
+const avatar = 'https://i.ibb.co/C6mByJ7/spiderman.jpg'
+const avatar2 = 'https://i.ibb.co/dp7NJjf/iron-man.jpg'
+const avatar3 = 'https://i.ibb.co/wLmMXr1/deadpool.jpg'
+const avatar4 = 'https://i.ibb.co/8rrzsKJ/rogue.png'
+const avatar5 = 'https://i.ibb.co/sRzMSvw/emma-frost.jpg'
+const avatar6 = 'https://i.ibb.co/Rh98WBD/moon-knight.png'
+const avatar7 = 'https://i.ibb.co/4pbWXGB/venom.webp'
+const avatar8 = 'https://i.ibb.co/4p9pJWN/werewolf-by-night.webp'
+
 
 const avatars = [
     avatar,
@@ -152,8 +153,14 @@ const Login = () => {
             <div class="dark-box flex shadow-lg max-w-3xl p-5 items-center">
                 <div class="flex flex-col md:w-1/2 px-8 md:px-16 items-center gap-4 text-xs text-light"
                     onKeyDown={event => {
-                        if (event.key === 'Enter') {
-                            loginClick()
+                        if (event.key === 'Enter') 
+                        {
+                            if(!registerMode){
+                                loginClick()
+                            }
+                            else{
+                                registerClick()
+                            }
                         }
                     }}>
                     <h2 class="font-bold text-2xl text-primary">{registerMode ? "Register" : "Log In"}</h2>
