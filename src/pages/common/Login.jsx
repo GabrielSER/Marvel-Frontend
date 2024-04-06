@@ -41,9 +41,8 @@ const initialState = {
     name: '',
     username: '',
     photo: avatars[0],
-    birthday: ''
+    bithdate: ''
 }
-
 
 const TextInput = (props) => {
     return (
@@ -53,8 +52,6 @@ const TextInput = (props) => {
         />
     )
 }
-
-
 
 const AvatarIcon = (props) => {
 
@@ -108,7 +105,6 @@ const Login = () => {
             await login(email, password)
             await signIn()
             setState(initialState)
-            navigate('/')
         }
         catch (error) {
             console.error(error)
@@ -119,8 +115,6 @@ const Login = () => {
 
     const registerClick = useCallback(async () => {
         if (state.password !== state.confirmPassword) {
-            console.log(state.confirmPassword)
-            console.log(state.password)
             setPasswordMismatch(true);
             return;
         }
@@ -135,9 +129,9 @@ const Login = () => {
             setPasswordError(false);
             setPasswordMismatch(false);
             await register(state)
+            await login(state.email, state.password)
             await signIn()
             setState(initialState)
-            navigate('/')
         }
         catch (error) {
             console.error(error)
