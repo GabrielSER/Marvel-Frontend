@@ -96,7 +96,6 @@ const Login = () => {
         const { email, password } = state
         try {
             await login(email, password)
-            await signIn()
             setState(initialState)
         }
         catch (error) {
@@ -119,18 +118,15 @@ const Login = () => {
         }
 
         try {
-            setPasswordError(false);
-            setPasswordMismatch(false);
+            setPasswordError(false)
+            setPasswordMismatch(false)
             await register(state)
-            await login(state.email, state.password)
-            await signIn()
             setState(initialState)
         }
         catch (error) {
             console.error(error)
             setdbTextError(error.message)
             setdbError(true)
-
         }
     }, [state, login, signIn])
 
@@ -139,8 +135,6 @@ const Login = () => {
         setState((prevState) => ({ ...prevState, confirmPassword }));
         setPasswordMismatch(false);
     }, []);
-
-
 
     return (
         <section class="min-h-screen flex items-center justify-center">
