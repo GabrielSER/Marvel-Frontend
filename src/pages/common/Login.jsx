@@ -15,7 +15,7 @@ const avatar6 = 'https://i.ibb.co/Rh98WBD/moon-knight.png'
 const avatar7 = 'https://i.ibb.co/4pbWXGB/venom.webp'
 const avatar8 = 'https://i.ibb.co/4p9pJWN/werewolf-by-night.webp'
 const avatar9 = 'https://i.ibb.co/HC3YG4Q/cap.jpg'
-const avatar10 = 'https://i.ibb.co/nQwQ7L1/daredevil.jpg'
+const avatar10 = 'https://i.ibb.co/BVB27dZ/daredevil.jpg'
 const avatar11 = 'https://i.ibb.co/ZJz8305/hulk.jpg'
 const avatar12 = 'https://i.ibb.co/vDxpswS/wolverine.jpg'
 
