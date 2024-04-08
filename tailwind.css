@@ -25,6 +25,27 @@
     div.react-reveal {
       @apply w-full h-full;
     }
+    .comic-box-1{
+      border-width: 3px 4px 3px 5px;
+      border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
+      transform: rotate(1deg);
+    }
+    .comic-box-2{
+      border-width: 3px 3px 5px 5px;
+      border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+      transform: rotate(-1deg);
+    }
+    
+    .comic-box-3{
+      border-width: 5px 3px 3px 5px;
+      border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+      transform: rotate(0.5deg);
+    }
+    
+    .comic-box-4{
+      border-width: 5px 3px 3px 5px;
+      border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+    }
   }
 
   /* Comic box */
@@ -35,27 +56,7 @@
   float:left; 
 }
 
-.comic-box-1{
-  border-width: 3px 4px 3px 5px;
-  border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
-  transform: rotate(1deg);
-}
-.comic-box-2{
-  border-width: 3px 3px 5px 5px;
-  border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
-  transform: rotate(-1deg);
-}
 
-.comic-box-3{
-  border-width: 5px 3px 3px 5px;
-  border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
-  transform: rotate(0.5deg);
-}
-
-.comic-box-4{
-  border-width: 5px 3px 3px 5px;
-  border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
-}
 
 .comic-box-title-1{
   transform: rotate(-2deg);

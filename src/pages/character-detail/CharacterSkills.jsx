@@ -48,7 +48,7 @@ const CharacterSkills = (props) => {
         backgroundSize: 'contain' // You can also use 'contain' if you prefer
       }}
     >
-      <div className='flex flex-col px-5 py-10  w-full h-full p-5 sm:p-10 bg-comic-secondary bg-opacity-75'>
+      <div className='flex flex-col px-5 py-10  w-full h-full p-5 sm:p-10  bg-comic-secondary bg-opacity-75'>
         <div className="flex justify-center">
           <ComicTitlePanel>
             <h1 className='text-2xl font-bold'>

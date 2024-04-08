@@ -27,32 +27,6 @@ const UserProvider = (props) => {
     const [user, setUser] = useState()
     const [jwtBody, setJwtBody] = useState()
 
-    const register = useCallback(async (user) => {
-        const createdUser = await query('/users/', {
-            method: httpMethod.POST,
-            body: user
-        })
-        setUser(createdUser)
-    }, [query])
-
-    const login = useCallback(async (email, password) => {
-        const { token } = await query('/users/login', {
-            method: httpMethod.POST,
-            body: {
-                email,
-                password
-            }
-        })
-        setToken(token)
-        setJwtBody(jwtDecode(token))
-    }, [query, setJwtBody])
-
-    const logout = useCallback(() => {
-        removeToken()
-        setUser(undefined)
-        setJwtBody(undefined)
-    }, [setUser])
-
     const signIn = useCallback(async () => {
         try {
             const token = getToken()
@@ -74,6 +48,33 @@ const UserProvider = (props) => {
         }
     }, [setJwtBody, query, setUser, logout])
 
+    const login = useCallback(async (email, password) => {
+        const { token } = await query('/users/login', {
+            method: httpMethod.POST,
+            body: {
+                email,
+                password
+            }
+        })
+        setToken(token)
+        setJwtBody(jwtDecode(token))
+        await signIn()
+    }, [query, setJwtBody, signIn])
+
+    const register = useCallback(async (user) => {
+        await query('/users/', {
+            method: httpMethod.POST,
+            body: user
+        })
+        await login(user.email, user.password)
+    }, [query, login])
+
+    const logout = useCallback(() => {
+        removeToken()
+        setUser(undefined)
+        setJwtBody(undefined)
+    }, [setUser])
+
     // Auto signIn on page load, send to login if no user or outdated token
     useEffect(() => {
         const fetchUser = async () => {
@@ -93,7 +94,7 @@ const UserProvider = (props) => {
             loading,
             isPlayer: jwtBody?.roles.includes(UserRole.PLAYER) ?? false,
             isAdmin: jwtBody?.roles.includes(UserRole.ADMIN) ?? false,
-            isLoggedIn: user!==undefined,
+            isLoggedIn: getToken() !== undefined && user !== undefined,
             setUser,
             register,
             login,

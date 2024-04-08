@@ -6,14 +6,18 @@ import { useUser } from "../../contexts/UserContext"
 import UIInput from "../ui/UIInput"
 import Circular from "../ui/Circular"
 
-import avatar from '../../assets/images/avatars/spiderman.jpg'
-import avatar2 from '../../assets/images/avatars/iron_man.jpg'
-import avatar3 from '../../assets/images/avatars/deadpool.jpg'
-import avatar4 from '../../assets/images/avatars/rogue.png'
-import avatar5 from '../../assets/images/avatars/emma_frost.jpg'
-import avatar6 from '../../assets/images/avatars/moon_knight.png'
-import avatar7 from '../../assets/images/avatars/venom.webp'
-import avatar8 from '../../assets/images/avatars/werewolf_by_night.webp'
+const avatar = 'https://i.ibb.co/C6mByJ7/spiderman.jpg'
+const avatar2 = 'https://i.ibb.co/dp7NJjf/iron-man.jpg'
+const avatar3 = 'https://i.ibb.co/wLmMXr1/deadpool.jpg'
+const avatar4 = 'https://i.ibb.co/8rrzsKJ/rogue.png'
+const avatar5 = 'https://i.ibb.co/sRzMSvw/emma-frost.jpg'
+const avatar6 = 'https://i.ibb.co/Rh98WBD/moon-knight.png'
+const avatar7 = 'https://i.ibb.co/4pbWXGB/venom.webp'
+const avatar8 = 'https://i.ibb.co/4p9pJWN/werewolf-by-night.webp'
+const avatar9 = 'https://i.ibb.co/HC3YG4Q/cap.jpg'
+const avatar10 = 'https://i.ibb.co/BVB27dZ/daredevil.jpg'
+const avatar11 = 'https://i.ibb.co/ZJz8305/hulk.jpg'
+const avatar12 = 'https://i.ibb.co/vDxpswS/wolverine.jpg'
 
 const avatars = [
     avatar,
@@ -23,7 +27,11 @@ const avatars = [
     avatar5,
     avatar6,
     avatar7,
-    avatar8
+    avatar8,
+    avatar9,
+    avatar10,
+    avatar11,
+    avatar12
 ]
 
 const initialState = {
@@ -33,9 +41,8 @@ const initialState = {
     name: '',
     username: '',
     photo: avatars[0],
-    birthday: ''
+    bithdate: ''
 }
-
 
 const TextInput = (props) => {
     return (
@@ -45,8 +52,6 @@ const TextInput = (props) => {
         />
     )
 }
-
-
 
 const AvatarIcon = (props) => {
 
@@ -98,9 +103,7 @@ const Login = () => {
         const { email, password } = state
         try {
             await login(email, password)
-            await signIn()
             setState(initialState)
-            navigate('/')
         }
         catch (error) {
             console.error(error)
@@ -111,8 +114,6 @@ const Login = () => {
 
     const registerClick = useCallback(async () => {
         if (state.password !== state.confirmPassword) {
-            console.log(state.confirmPassword)
-            console.log(state.password)
             setPasswordMismatch(true);
             return;
         }
@@ -124,18 +125,15 @@ const Login = () => {
         }
 
         try {
-            setPasswordError(false);
-            setPasswordMismatch(false);
+            setPasswordError(false)
+            setPasswordMismatch(false)
             await register(state)
-            await signIn()
             setState(initialState)
-            navigate('/')
         }
         catch (error) {
             console.error(error)
             setdbTextError(error.message)
             setdbError(true)
-
         }
     }, [state, login, signIn])
 
@@ -145,22 +143,19 @@ const Login = () => {
         setPasswordMismatch(false);
     }, []);
 
-
-
     return (
         <section class="min-h-screen flex items-center justify-center">
             <div class="dark-box flex shadow-lg max-w-3xl p-5 items-center">
                 <div class="flex flex-col md:w-1/2 px-8 md:px-16 items-center gap-4 text-xs text-light"
                     onKeyDown={event => {
-                        if (event.key === 'Enter') {
-                            if(registerMode)
-                            {
-                                registerClick()
-                            }
-                            else{
+                        if (event.key === 'Enter') 
+                        {
+                            if(!registerMode){
                                 loginClick()
                             }
-                            
+                            else{
+                                registerClick()
+                            }
                         }
                     }}>
                     <h2 class="font-bold text-2xl text-primary">{registerMode ? "Register" : "Log In"}</h2>
