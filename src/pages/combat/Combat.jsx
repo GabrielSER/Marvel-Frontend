@@ -131,7 +131,7 @@ const Combat = () => {
           When the victim is Evading, they must throw an agility save:
         </Paragraph>
         <Paragraph>
-          <span className="font-bold text-primary">a.</span>	If the attacker gets less than the victim’s agility save, the attacker fails the attack, and the victim can attempt a counterattack.
+          <span className="font-bold text-primary">a.</span>	If the attacker gets less than the victim’s agility save, the attacker fails the attack, but the victim can't attempt a counterattack.
         </Paragraph>
         <Paragraph>
           <span className="font-bold text-primary">b.</span>	If the attacker gets more than the agility save of the victim, the attack is successful and can be continued by a combo.
@@ -158,8 +158,12 @@ const Combat = () => {
 
       <Section>
         <Title>Combos</Title>
-        <Paragraph>
+        <Paragraph className="pb-10">
           When a character deals a normal attack successfully, they can attempt a combo. Each three levels a character gets one more attack for his combo, meaning every character unlocks their first extra attack at level 3. The maximum number of attacks of a combo are equal to the melee stat of a character. For example, Spider-Man has 4 melee, so he can attack up to 4 times, which includes the first successful attack. However, each combo attack will have 1 point less in its attack modifier. For the second attack of the combo, Spider-Man will only have 3 points in its melee bonus modifier. Then he can attempt a third attack, which will now have 1 melee bonus modifier. If Spider-Man attempts a fourth attack, it will now have no bonus in its melee throw, which will make this last hit of the combo harder to achieve. However, if every attack of a combo is successful, the victim will have 5 ft knockback and will have 30% chance of falling prone to opportunity attacks.
+        </Paragraph>
+        <Title>Knockback</Title>
+        <Paragraph>
+          When a character deals a normal attack successfully, they can attempt to generate knockback on their opponent. This can only be attempted if the attacker's Strength is higher that the victim's and the attacker's throw surpasses the victim's defense or agility in more then 3 points. If this conditions are met, the victim will be thrown 30 ft away. However, a combo cannot be attempted.
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
           <img

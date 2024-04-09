@@ -28,13 +28,20 @@ const Footer = () =>
         >
             <div
                 className={clsx(
-                    'flex flex-wrap',
+                    'flex flex-row',
                     'gap-8'
                 )}
             >
                 <CreatedBy />
-                <ContactUs />
-                <FollowUs />
+                <div
+                    className={clsx(
+                        'flex flex-col xl:flex-row gap-10'
+                    )}
+                >
+
+                    <ContactUs />
+                    <FollowUs />
+                </div>
             </div>
         </div>
     </div>

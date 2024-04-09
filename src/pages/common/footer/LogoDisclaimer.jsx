@@ -18,9 +18,9 @@ const LogoDisclaimer = () =>
             target='_blank'
             rel='noopener noreferrer'
         >
-            <img src={logo} alt='Marvel Logo' />
+            <img src={logo} alt='Marvel Logo' className='w-auto h-20'/>
         </a>
-        <p className='hidden sm:flex'>
+        <p className='text-xs'>
             Disclaimer: This is a fan project. All logos, characters, artwork, stories,
             information, names, and other elements associated with Marvel Entertainment, LLC,
             its subsidiaries and affiliates are the sole and exclusive property of the aforementioned companies.
