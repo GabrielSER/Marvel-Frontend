@@ -27,6 +27,12 @@ const UserProvider = (props) => {
     const [user, setUser] = useState()
     const [jwtBody, setJwtBody] = useState()
 
+    const logout = useCallback(() => {
+        removeToken()
+        setUser(undefined)
+        setJwtBody(undefined)
+    }, [setUser])
+
     const signIn = useCallback(async () => {
         try {
             const token = getToken()
@@ -68,12 +74,6 @@ const UserProvider = (props) => {
         })
         await login(user.email, user.password)
     }, [query, login])
-
-    const logout = useCallback(() => {
-        removeToken()
-        setUser(undefined)
-        setJwtBody(undefined)
-    }, [setUser])
 
     // Auto signIn on page load, send to login if no user or outdated token
     useEffect(() => {
