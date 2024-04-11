@@ -35,11 +35,11 @@ function HeroHome() {
                     </div>
                 </Fade>
 
-                <Fade right duration={1500}>
+                <Fade left duration={1500}>
                     <div className="relative">
                         <img className="h-144 md:h-100 object-cover w-full" src={wakanda} alt='Wakanda' />
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <HomeContainer reverse className='px-10'>
+                            <HomeContainer className='px-10'>
                                 <Fade duration={3000}>
                                     <HomeText title='Explore new worlds and locations' className='text-white'>
                                         Imagine a city pulsating with energy, skyscrapers towering over streets filled with ordinary people and extraordinary beings. This is the world players and GM’s can create and explore, the beating heart of the Marvel Universe, where the unimaginable becomes reality. Here, you will encounter heroes and villains alike, and will be able to create your own stories based on the legendary characters you know and love.

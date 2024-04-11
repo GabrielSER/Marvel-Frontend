@@ -9,7 +9,7 @@ const HomeContainer = (props) => {
             className={clsx(
                 'flex md:flex-row gap-4',
                 !reverse && 'flex-col',
-                reverse && 'flex-col-reverse'
+                reverse && 'flex-col-reverse justify-self-end'
             )}
             {...properties}
         />

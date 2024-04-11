@@ -984,6 +984,10 @@ div.react-reveal{
   height: 3.5rem;
 }
 
+.h-144{
+  height: 36rem;
+}
+
 .h-16{
   height: 4rem;
 }
@@ -1056,18 +1060,6 @@ div.react-reveal{
 
 .h-screen{
   height: 100vh;
-}
-
-.h-112{
-  height: 28rem;
-}
-
-.h-144{
-  height: 36rem;
-}
-
-.h-120{
-  height: 30rem;
 }
 
 .max-h-104{
@@ -1409,10 +1401,16 @@ div.react-reveal{
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
-.space-y-8 > :not([hidden]) ~ :not([hidden]){
+.space-y-20 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
-  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+  margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-40 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(10rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(10rem * var(--tw-space-y-reverse));
 }
 
 .divide-x > :not([hidden]) ~ :not([hidden]){
@@ -1438,6 +1436,10 @@ div.react-reveal{
 
 .self-center{
   align-self: center;
+}
+
+.justify-self-end{
+  justify-self: end;
 }
 
 .overflow-hidden{
@@ -1664,24 +1666,16 @@ div.react-reveal{
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-opacity-75{
-  --tw-bg-opacity: 0.75;
-}
-
 .bg-opacity-10{
   --tw-bg-opacity: 0.1;
 }
 
-.bg-opacity-40{
-  --tw-bg-opacity: 0.4;
-}
-
-.bg-opacity-70{
-  --tw-bg-opacity: 0.7;
-}
-
 .bg-opacity-50{
   --tw-bg-opacity: 0.5;
+}
+
+.bg-opacity-75{
+  --tw-bg-opacity: 0.75;
 }
 
 .bg-local{
@@ -1801,6 +1795,11 @@ div.react-reveal{
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.py-96{
+  padding-top: 24rem;
+  padding-bottom: 24rem;
 }
 
 .pb-10{
@@ -1972,20 +1971,6 @@ div.react-reveal{
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-shadow{
-  color: rgba(0, 0, 0, 0.2);
-}
-
-.text-gray-900{
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.text-green-600{
-  --tw-text-opacity: 1;
-  color: rgb(22 163 74 / var(--tw-text-opacity));
-}
-
 .underline{
   text-decoration-line: underline;
 }
@@ -2036,20 +2021,9 @@ div.react-reveal{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-indigo-500\/50{
-  --tw-shadow-color: rgb(99 102 241 / 0.5);
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
 .outline-none{
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.drop-shadow-xl{
-  --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
-  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .filter{
@@ -2101,26 +2075,6 @@ div.react-reveal{
 
 .ease-in-out{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.text-shadow{
-  text-shadow: 0 2px 4px var(--tw-shadow-color);
-}
-
-.text-shadow-\[0_4px_8px_\#6366f1\]{
-  text-shadow: 0 4px 8px #6366f1;
-}
-
-.text-shadow-\[0_4px_8px_var\(--tw-shadow-color\)\]{
-  text-shadow: 0 4px 8px var(--tw-shadow-color);
-}
-
-.text-shadow-lg{
-  text-shadow: 0 8px 16px var(--tw-shadow-color);
-}
-
-.text-shadow-sm{
-  text-shadow: 0 1px 2px var(--tw-shadow-color);
 }
 
 .hover\:scale-100:hover{
@@ -2242,11 +2196,6 @@ div.react-reveal{
   color: rgb(179 179 179 / 0.5);
 }
 
-.dark .dark\:text-white{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 @media (min-width: 640px){
   .sm\:flex{
     display: flex;
@@ -2296,6 +2245,12 @@ div.react-reveal{
     gap: 10rem;
   }
 
+  .sm\:space-y-10 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+  }
+
   .sm\:self-start{
     align-self: flex-start;
   }
@@ -2333,6 +2288,11 @@ div.react-reveal{
   .sm\:px-20{
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+
+  .sm\:py-0{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .sm\:text-2xl{
@@ -2394,6 +2354,12 @@ div.react-reveal{
     flex-direction: row;
   }
 
+  .md\:space-y-10 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+  }
+
   .md\:px-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -2412,16 +2378,6 @@ div.react-reveal{
   .md\:text-sm{
     font-size: 0.875rem;
     line-height: 1.25rem;
-  }
-
-  .md\:text-2xl{
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .md\:text-xl{
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 }
 
