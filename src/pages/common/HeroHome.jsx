@@ -20,7 +20,7 @@ function HeroHome() {
             <div className="w-full mx-auto items-center space-y-10">
                 <Fade right duration={1500}>
                     <div className="relative">
-                        <img className="h-144 md:h-100 object-cover w-full" src={avengers} alt='Wakanda' />
+                        <img className="h-144 md:h-112 object-cover w-full" src={avengers} alt='Wakanda' />
                         <div className="z-20 w-full h-full bg-black">
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <HomeContainer reverse className='px-10'>
@@ -34,10 +34,11 @@ function HeroHome() {
                         </div>
                     </div>
                 </Fade>
+                
 
                 <Fade left duration={1500}>
                     <div className="relative">
-                        <img className="h-144 md:h-100 object-cover w-full" src={wakanda} alt='Wakanda' />
+                        <img className="h-144 md:h-100 lg:h-144 object-cover w-full" src={wakanda} alt='Wakanda' />
                         <div className="absolute inset-0 flex items-center justify-center">
                             <HomeContainer className='px-10'>
                                 <Fade duration={3000}>
@@ -49,6 +50,7 @@ function HeroHome() {
                         </div>
                     </div>
                 </Fade>
+
 
                 <Fade right duration={1500}>
                     <div className="relative">

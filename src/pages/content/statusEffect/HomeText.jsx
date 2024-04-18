@@ -9,7 +9,7 @@ const HomeText = (props) => {
             <ComicPanel className='flex relative overflow-hidden bg-opacity-10'
             >
                 <div className='flex flex-col  w-full h-full p-5 sm:p-10 bg-black bg-opacity-50'>
-                    <p className='text-xs sm:text-base text-white text-justify'>
+                    <p className='text-xs sm:text-base lg:text-xl text-white text-justify'>
                         {children}
                     </p>
 
