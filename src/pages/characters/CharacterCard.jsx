@@ -1,11 +1,22 @@
-import clsx from 'clsx'
-import LazyImage from '../ui/LazyImage'
+import clsx from 'clsx';
+import LazyImage from '../ui/LazyImage';
 
-const CharacterCard = (props) => {
+const CharacterCard = ({ character }) => {
+    const { name, image, logo } = character;
 
-    const { character } = props
-    const { name, image, logo } = character
+    const imagePlaceholder = (
+        <div className="w-full h-full flex items-center justify-center font-comic text-white bg-gradient-to-r from-red-600 to-red-900">
+            <span>{name}</span>
+        </div>
+    );
 
+    const logoPlaceholder = (
+        <div className="w-full h-full flex items-center text-center font-marvel text-white justify-cente">
+            <span>MARVEL</span>
+        </div>
+    );
+
+   
     return (
         <div
             className={clsx(
@@ -23,6 +34,7 @@ const CharacterCard = (props) => {
                 alt={name}
                 className='w-full h-full object-cover'
                 imageClassname='w-full h-full object-cover'
+                placeholder={imagePlaceholder}
             />
             <LazyImage
                 src={logo}
@@ -33,9 +45,11 @@ const CharacterCard = (props) => {
                     'z-20',
                     'p-2'
                 )}
+                imageClassname='w-full h-full object-cover'
+                placeholder={logoPlaceholder}
             />
         </div>
-    )
-}
+    );
+};
 
-export default CharacterCard
+export default CharacterCard;

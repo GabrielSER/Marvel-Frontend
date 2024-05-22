@@ -39,7 +39,8 @@ module.exports = {
       fontFamily: {
         comic: 'ComicBook',
         montserrat: 'Montserrat',
-        condensed: 'RobotoCondensed'
+        condensed: 'RobotoCondensed',
+        marvel: 'Marvel'
       },
       spacing: {
         '100': '25rem',

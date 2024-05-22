@@ -1,117 +1,144 @@
 @layer base {
-    @font-face {
-      font-family: 'ComicBook';
-      src: url(/src/assets/fonts/comic_book/ComicBook.otf) format('opentype');
-    }
-
-    @font-face {
-      font-family: 'Montserrat';
-      src: url(/src/assets/fonts/montserrat/Montserrat.ttf) format('truetype');
-    }
-
-    @font-face {
-      font-family: 'RobotoCondensed';
-      src: url(/src/assets/fonts/roboto_condensed/RobotoCondensed.ttf) format('truetype');
-    }
+  @font-face {
+    font-family: 'ComicBook';
+    src: url(/src/assets/fonts/comic_book/ComicBook.otf) format('opentype');
   }
 
-  @layer components {
-    .ui-box {
-      @apply bg-light-2 border border-light-2 hover:border-light
-    }
-    .dark-box {
-      @apply bg-dark border border-light-2 rounded-md shadow-lg
-    }
-    div.react-reveal {
-      @apply w-full h-full;
-    }
-    .comic-box-1{
-      border-width: 3px 4px 3px 5px;
-      border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
-      transform: rotate(1deg);
-    }
-    .comic-box-2{
-      border-width: 3px 3px 5px 5px;
-      border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
-      transform: rotate(-1deg);
-    }
-    
-    .comic-box-3{
-      border-width: 5px 3px 3px 5px;
-      border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
-      transform: rotate(0.5deg);
-    }
-    
-    .comic-box-4{
-      border-width: 5px 3px 3px 5px;
-      border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
-    }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url(/src/assets/fonts/montserrat/Montserrat.ttf) format('truetype');
   }
 
-  /* Comic box */
+  @font-face {
+    font-family: 'RobotoCondensed';
+    src: url(/src/assets/fonts/roboto_condensed/RobotoCondensed.ttf) format('truetype');
+  }
 
-.comic-box{
+  @font-face {
+    font-family: 'Marvel';
+    src: url(/src/assets/fonts/marvel/marvel.ttf) format('truetype');
+  }
+}
+
+@layer components {
+  .ui-box {
+    @apply bg-light-2 border border-light-2 hover:border-light
+  }
+
+  .dark-box {
+    @apply bg-dark border border-light-2 rounded-md shadow-lg
+  }
+
+  div.react-reveal {
+    @apply w-full h-full;
+  }
+
+  .comic-box-1 {
+    border-width: 3px 4px 3px 5px;
+    border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+    transform: rotate(1deg);
+  }
+
+  .comic-box-2 {
+    border-width: 3px 3px 5px 5px;
+    border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-1deg);
+  }
+
+  .comic-box-3 {
+    border-width: 5px 3px 3px 5px;
+    border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+    transform: rotate(0.5deg);
+  }
+
+  .comic-box-4 {
+    border-width: 5px 3px 3px 5px;
+    border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+  }
+}
+
+/* CSS file or styled component */
+@keyframes flipIn {
+  from {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+.flip-in {
+  animation: flipIn 0.6s ease-out forwards;
+}
+
+/* Comic box */
+
+.comic-box {
   border: solid black;
   border-color: black;
-  float:left; 
+  float: left;
 }
 
 
 
-.comic-box-title-1{
+.comic-box-title-1 {
   transform: rotate(-2deg);
-  margin:5px;
-  padding:0 5px;
-  float:left;
-  border:1px solid #222;
-  box-shadow:3px 3px 0 #222;
+  margin: 5px;
+  padding: 0 5px;
+  float: left;
+  border: 1px solid #222;
+  box-shadow: 3px 3px 0 #222;
 }
 
-.comic-box-title-2{
+.comic-box-title-2 {
   transform: rotate(2deg);
-  margin:5px;
-  padding:0 5px;
-  float:left;
-  border:1px solid #222;
-  box-shadow:3px 3px 0 #222;
+  margin: 5px;
+  padding: 0 5px;
+  float: left;
+  border: 1px solid #222;
+  box-shadow: 3px 3px 0 #222;
 }
 
-.comic-box-title-straight{
-  margin:0px;
-  padding:0 0px;
-  float:left;
-  border:1px solid #222;
-  box-shadow:3px 3px 0 #222;
+.comic-box-title-straight {
+  margin: 0px;
+  padding: 0 0px;
+  float: left;
+  border: 1px solid #222;
+  box-shadow: 3px 3px 0 #222;
 }
 
 
-  /* Scrollbar */
+/* Scrollbar */
 
-  html, body {
-    overscroll-behavior: none;
-  }
-  
-  ::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
-    border-radius: 7px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: rgba(0,0,0, 0.2);
-    border-radius: 7px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: rgb(120, 4, 4);
-    border-radius: 7px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(184, 0, 0);
-  }
+html,
+body {
+  overscroll-behavior: none;
+}
 
-  /** Hide scrollbar **/
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(120, 4, 4);
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(184, 0, 0);
+}
+
+/** Hide scrollbar **/
 .hide-scroll::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -130,7 +157,7 @@
   height: 0;
   border-radius: 0px;
 }
-  
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
