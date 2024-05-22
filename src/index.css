@@ -802,6 +802,18 @@ div.react-reveal {
   border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
@@ -824,6 +836,10 @@ div.react-reveal {
 
 .fixed {
   position: fixed;
+}
+
+.\!absolute {
+  position: absolute !important;
 }
 
 .absolute {
@@ -895,6 +911,14 @@ div.react-reveal {
 
 .z-hud {
   z-index: 50;
+}
+
+.z-over-page {
+  z-index: 20;
+}
+
+.\!-m-px {
+  margin: -1px !important;
 }
 
 .m-2 {
@@ -1018,6 +1042,10 @@ div.react-reveal {
   aspect-ratio: 1 / 1;
 }
 
+.\!h-px {
+  height: 1px !important;
+}
+
 .h-100 {
   height: 25rem;
 }
@@ -1126,6 +1154,10 @@ div.react-reveal {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.\!w-px {
+  width: 1px !important;
 }
 
 .w-1\/2 {
@@ -1472,6 +1504,10 @@ div.react-reveal {
   justify-self: end;
 }
 
+.\!overflow-hidden {
+  overflow: hidden !important;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1502,6 +1538,10 @@ div.react-reveal {
 
 .text-ellipsis {
   text-overflow: ellipsis;
+}
+
+.\!whitespace-nowrap {
+  white-space: nowrap !important;
 }
 
 .whitespace-nowrap {
@@ -1547,12 +1587,20 @@ div.react-reveal {
   border-bottom-right-radius: 0.5rem;
 }
 
+.\!border-0 {
+  border-width: 0px !important;
+}
+
 .border {
   border-width: 1px;
 }
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-4 {
+  border-width: 4px;
 }
 
 .border-b {
@@ -1571,8 +1619,16 @@ div.react-reveal {
   border-top-width: 2px;
 }
 
+.border-solid {
+  border-style: solid;
+}
+
 .border-dashed {
   border-style: dashed;
+}
+
+.border-current {
+  border-color: currentColor;
 }
 
 .border-dark {
@@ -1598,6 +1654,10 @@ div.react-reveal {
 .border-secondary {
   --tw-border-opacity: 1;
   border-color: rgb(60 55 59 / var(--tw-border-opacity));
+}
+
+.border-r-transparent {
+  border-right-color: transparent;
 }
 
 .border-t-light-2 {
@@ -1674,11 +1734,6 @@ div.react-reveal {
   background-color: rgb(236 29 35 / var(--tw-bg-opacity));
 }
 
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(60 55 59 / var(--tw-bg-opacity));
@@ -1699,6 +1754,11 @@ div.react-reveal {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-10 {
@@ -1731,8 +1791,20 @@ div.react-reveal {
   background-attachment: local;
 }
 
+.fill-red-600 {
+  fill: #dc2626;
+}
+
+.fill-blue-600 {
+  fill: #2563eb;
+}
+
 .object-cover {
   object-fit: cover;
+}
+
+.\!p-0 {
+  padding: 0px !important;
 }
 
 .p-0 {
@@ -1886,6 +1958,10 @@ div.react-reveal {
   padding-top: 1.25rem;
 }
 
+.pt-52 {
+  padding-top: 13rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1900,6 +1976,10 @@ div.react-reveal {
 
 .align-middle {
   vertical-align: middle;
+}
+
+.align-\[-0\.125em\] {
+  vertical-align: -0.125em;
 }
 
 .font-comic {
@@ -1935,6 +2015,11 @@ div.react-reveal {
 
 .text-5xl {
   font-size: 3rem;
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
   line-height: 1;
 }
 
@@ -1979,6 +2064,11 @@ div.react-reveal {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
@@ -2017,6 +2107,11 @@ div.react-reveal {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2123,6 +2218,10 @@ div.react-reveal {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.\!\[clip\:rect\(0\2c 0\2c 0\2c 0\)\] {
+  clip: rect(0,0,0,0) !important;
 }
 
 .hover\:scale-100:hover {
@@ -2242,6 +2341,31 @@ div.react-reveal {
 
 .disabled\:text-light\/50:disabled {
   color: rgb(179 179 179 / 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @-webkit-keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+  .motion-reduce\:animate-\[spin_1\.5s_linear_infinite\] {
+    -webkit-animation: spin 1.5s linear infinite;
+            animation: spin 1.5s linear infinite;
+  }
+}
+
+.dark .dark\:text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {

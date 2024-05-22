@@ -24,6 +24,7 @@ import { DiceType } from '../content/dice/Dice'
 import ContentScope from '../ui/ContentScope'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
 import ComicPanel from '../ui/ComicPanel'
+import LazyImage2 from '../ui/LazyImage2'
 
 const BigTitle = (props) =>
 
@@ -105,7 +106,7 @@ const Combat = () => {
           The damage of this normal attack is always physical and depends on the strength stat.
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
+          <LazyImage2
             className='max-w-full sm:max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
             src={NormalAttack}
             alt='Normal Attacks'
@@ -148,7 +149,7 @@ const Combat = () => {
           The victim can also attempt to block the projectile. If the attacker's throw is lower than the victim's defense, the attack fails.
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
+          <LazyImage2
             className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
             src={Ranged}
             alt='Hawkeye'
@@ -166,7 +167,7 @@ const Combat = () => {
           When a character deals a normal attack successfully, they can attempt to generate knockback on their opponent. This can only be attempted if the attacker's Strength is higher that the victim's and the attacker's throw surpasses the victim's defense or agility in more then 3 points. If this conditions are met, the victim will be thrown 30 ft away. However, a combo cannot be attempted.
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
+          <LazyImage2
             className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
             src={Combo}
             alt='Fighting'
@@ -194,7 +195,7 @@ const Combat = () => {
       <Section>
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
-            <img
+            <LazyImage2
               className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Dodge}
               alt='Fighting'
@@ -230,7 +231,7 @@ const Combat = () => {
       <Section>
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
-            <img
+            <LazyImage2
               className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Oportunity}
               alt='Oportunity Attack'
@@ -259,7 +260,7 @@ const Combat = () => {
       <Section>
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
-            <img
+            <LazyImage2
               className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Dash}
               alt='Dash'
@@ -287,7 +288,7 @@ const Combat = () => {
       <Section>
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
-            <img
+            <LazyImage2
               className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Help}
               alt='Help'
@@ -315,7 +316,7 @@ const Combat = () => {
       <Section>
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
-            <img
+            <LazyImage2
               className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Psychic}
               alt='Psychic Attacks'
@@ -411,7 +412,7 @@ const Combat = () => {
           </div>
           <div className='p-2 mx-auto items-center '>
             <div className='flex justify-center'> {/* Added a flex container for centering */}
-              <img
+              <LazyImage2
                 className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
                 src={Venom}
                 alt='Venom'
@@ -429,7 +430,7 @@ const Combat = () => {
             If a character or creature gets a natural 20 when throwing the check for attacking another character or creature it deals a critical hit. A critical hit always deals double damage. After the critical hit, the attacker will throw 1d100, and according to the result, the victim will have one of different effects:
           </Paragraph>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
-            <img
+            <LazyImage2
               className='max-w-full lg:max-w-5xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
               src={Critical}
               alt='Critical Table'
@@ -438,7 +439,7 @@ const Combat = () => {
         </div>
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
-            <img
+            <LazyImage2
               className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Elektra}
               alt="Elektra's Death"
@@ -454,7 +455,7 @@ const Combat = () => {
             If a character gets 1 in their 1d20 check for any action, not only the action fails, but it produces a negative effect on the character which will be determined by the GM according to the circumstances. However, if this action is attempted during combat against an enemy, the character who failed the action will throw 1d100, and according to the result, they will have one of different effects:
           </Paragraph>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
-            <img
+            <LazyImage2
               className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
               src={Failure}
               alt='Failure'
@@ -464,7 +465,7 @@ const Combat = () => {
 
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'> {/* Added a flex container for centering */}
-            <img
+            <LazyImage2
               className='max-w-full xl:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Gwen}
               alt="Spider-Man's Failure"
@@ -480,7 +481,7 @@ const Combat = () => {
           Powers are special abilities that are unique to each character. For using these powers, you must spend points from your power meter. When a battle starts, you can increase your power meter in 1d4. Every long rest, your power meter fully recharges. Powers are classified according to a level: LV1 powers, LV2 powers, LV3 powers, LV4 powers, special powers, and Ultimate powers.
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
+          <LazyImage2
             className='max-w-full sm:max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
             src={PowersDesc}
             alt='Powers desc'
@@ -496,7 +497,7 @@ const Combat = () => {
           Here’s an example of a power:
         </Paragraph>
         <div className='flex justify-center'> {/* Added a flex container for centering */}
-          <img
+          <LazyImage2
             className='max-w-full sm:max-w-2xl transition-all duration-300 mb-6'
             src={PowerExample}
             alt='Powers Example'
@@ -528,7 +529,7 @@ const Combat = () => {
           Every character has a Power Stat, which determines the amount of power points available at each level.
         </Paragraph>
         <div className='flex justify-center py-4'> {/* Added a flex container for centering */}
-          <img
+          <LazyImage2
             className='max-w-full sm:max-w-xL transition-all duration-300 mb-6'
             src={PowerLevel}
             alt='Powers Levels'

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect } from 'react';
 import clsx from 'clsx';
 import LazyLoad from 'react-lazy-load';
 
-const LazyImage = ({ src, alt = 'image', className, imageClassname, placeholder, onLoad }) => {
+const LazyImage2 = ({ src, alt = 'image', className, imageClassname, placeholder, onLoad }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -12,11 +12,7 @@ const LazyImage = ({ src, alt = 'image', className, imageClassname, placeholder,
   return (
     <LazyLoad className={clsx(className)}>
       <div className="relative w-full h-full">
-        {!isLoaded && (
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            {placeholder}
-          </div>
-        )}
+        {!isLoaded && placeholder}
         <img
           src={src}
           alt={alt}
@@ -31,4 +27,4 @@ const LazyImage = ({ src, alt = 'image', className, imageClassname, placeholder,
   );
 };
 
-export default LazyImage;
+export default LazyImage2;

@@ -5,6 +5,7 @@ import clsx from "clsx"
 import { useUser } from "../../contexts/UserContext"
 import UIInput from "../ui/UIInput"
 import Circular from "../ui/Circular"
+import LazyImage2 from "../ui/LazyImage2"
 
 const avatar = 'https://i.ibb.co/C6mByJ7/spiderman.jpg'
 const avatar2 = 'https://i.ibb.co/dp7NJjf/iron-man.jpg'
@@ -92,6 +93,11 @@ const Login = () => {
 
     const [dbTextError, setdbTextError] = useState("Database Error");
 
+    const imagePlaceholder = (
+        <div className="w-full h-full flex flex-col items-center justify-center font-marvel text-white text-7xl bg-red-600">
+            <span className='uppercase'>MARVEL RPG</span>
+        </div>
+    );
 
     useEffect(() => {
         if (isLoggedIn) {
@@ -274,7 +280,8 @@ const Login = () => {
                 </div>
 
                 <div class="md:block hidden w-1/2">
-                    <img class="rounded-2xl" src="https://i.ibb.co/0Gs0f3t/rogue.png" />
+                    <LazyImage2 class="rounded-2xl" src="https://i.ibb.co/0Gs0f3t/rogue.png" 
+        placeholder={imagePlaceholder}/>
                 </div>
             </div>
         </section>

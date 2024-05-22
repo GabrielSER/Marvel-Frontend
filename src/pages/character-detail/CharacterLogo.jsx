@@ -6,6 +6,13 @@ const CharacterLogo = () => {
 
     const { character } = useCharacter()
 
+    const imagePlaceholder = (
+        <div className="w-full h-full flex flex-col items-center justify-center font-marvel text-red-500 text-7xl bg-gradient-to-r from-red-600 to-red-900">
+            <span className='uppercase'>{character.name}</span>
+        </div>
+    );
+
+
     return (
         <LazyImage
             src={character.logo}
@@ -17,6 +24,7 @@ const CharacterLogo = () => {
                 'ease-in-out transition-all'
             )}
             imageClassname='w-full'
+            placeholder={imagePlaceholder}
         />
     )
 }
