@@ -1946,12 +1946,12 @@ div.react-reveal {
   padding-top: 0.5rem;
 }
 
-.pt-24 {
-  padding-top: 6rem;
-}
-
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
 }
 
 .text-left {
@@ -2356,6 +2356,18 @@ div.react-reveal {
 }
 
 @media (min-width: 470px) {
+  .xs\:h-80 {
+    height: 20rem;
+  }
+
+  .xs\:h-100 {
+    height: 25rem;
+  }
+
+  .xs\:h-full {
+    height: 100%;
+  }
+
   .xs\:w-80 {
     width: 20rem;
   }
@@ -2372,10 +2384,6 @@ div.react-reveal {
 
   .sm\:w-2\/3 {
     width: 66.666667%;
-  }
-
-  .sm\:w-80 {
-    width: 20rem;
   }
 
   .sm\:max-w-2xl {
@@ -2500,28 +2508,12 @@ div.react-reveal {
     width: 18rem;
   }
 
-  .md\:w-120 {
-    width: 30rem;
-  }
-
-  .md\:w-100 {
-    width: 25rem;
-  }
-
-  .md\:w-80 {
-    width: 20rem;
-  }
-
   .md\:max-w-xl {
     max-width: 36rem;
   }
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:p-10 {
-    padding: 2.5rem;
   }
 
   .md\:px-10 {
@@ -2658,10 +2650,6 @@ div.react-reveal {
 @media (min-width: 1280px) {
   .xl\:block {
     display: block;
-  }
-
-  .xl\:w-full {
-    width: 100%;
   }
 
   .xl\:max-w-7xl {
