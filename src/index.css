@@ -1128,6 +1128,22 @@ div.react-reveal {
   height: 100vh;
 }
 
+.h-2 {
+  height: 0.5rem;
+}
+
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-136 {
+  height: 34rem;
+}
+
+.h-\[90vh\] {
+  height: 90vh;
+}
+
 .max-h-104 {
   max-height: 26rem;
 }
@@ -1946,12 +1962,12 @@ div.react-reveal {
   padding-top: 0.5rem;
 }
 
-.pt-5 {
-  padding-top: 1.25rem;
-}
-
 .pt-24 {
   padding-top: 6rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .text-left {
@@ -2356,16 +2372,8 @@ div.react-reveal {
 }
 
 @media (min-width: 470px) {
-  .xs\:h-80 {
-    height: 20rem;
-  }
-
-  .xs\:h-100 {
-    height: 25rem;
-  }
-
-  .xs\:h-full {
-    height: 100%;
+  .xs\:h-\[90vh\] {
+    height: 90vh;
   }
 
   .xs\:w-80 {
@@ -2559,6 +2567,10 @@ div.react-reveal {
 
   .lg\:w-full {
     width: 100%;
+  }
+
+  .lg\:w-auto {
+    width: auto;
   }
 
   .lg\:max-w-2xl {

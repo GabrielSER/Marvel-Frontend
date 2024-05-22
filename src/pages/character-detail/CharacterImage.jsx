@@ -61,13 +61,13 @@ const CharacterImage = () => {
         className={clsx(
           'flex flex-row shrink-0',
           'justify-center items-center',
-          'h-auto',
+          'h-auto xs:h-[90vh]',
           'object-cover',
           'rounded-md',
           'overflow-hidden'
         )}
         imageClassname={clsx(
-          'p-0 w-full xs:w-80 lg:w-full object-cover rounded-md',
+          'p-0 w-auto xs:w-80 lg:w-auto object-cover rounded-md',
           { 'flip-in': isLoaded }
         )}
         placeholder={imagePlaceholder}
