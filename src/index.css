@@ -1128,22 +1128,6 @@ div.react-reveal {
   height: 100vh;
 }
 
-.h-2 {
-  height: 0.5rem;
-}
-
-.h-1 {
-  height: 0.25rem;
-}
-
-.h-136 {
-  height: 34rem;
-}
-
-.h-\[90vh\] {
-  height: 90vh;
-}
-
 .max-h-104 {
   max-height: 26rem;
 }
@@ -2372,10 +2356,6 @@ div.react-reveal {
 }
 
 @media (min-width: 470px) {
-  .xs\:h-\[90vh\] {
-    height: 90vh;
-  }
-
   .xs\:w-80 {
     width: 20rem;
   }
@@ -2384,6 +2364,14 @@ div.react-reveal {
 @media (min-width: 640px) {
   .sm\:flex {
     display: flex;
+  }
+
+  .sm\:h-\[70vh\] {
+    height: 70vh;
+  }
+
+  .sm\:h-\[80vh\] {
+    height: 80vh;
   }
 
   .sm\:w-120 {
@@ -2553,6 +2541,18 @@ div.react-reveal {
     height: 10rem;
   }
 
+  .lg\:h-auto {
+    height: auto;
+  }
+
+  .lg\:h-\[80vh\] {
+    height: 80vh;
+  }
+
+  .lg\:h-\[90vh\] {
+    height: 90vh;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -2563,10 +2563,6 @@ div.react-reveal {
 
   .lg\:w-40 {
     width: 10rem;
-  }
-
-  .lg\:w-full {
-    width: 100%;
   }
 
   .lg\:w-auto {

@@ -61,7 +61,7 @@ const CharacterImage = () => {
         className={clsx(
           'flex flex-row shrink-0',
           'justify-center items-center',
-          'h-auto xs:h-[90vh]',
+          'h-auto sm:h-[80vh] lg:h-[90vh]',
           'object-cover',
           'rounded-md',
           'overflow-hidden'
