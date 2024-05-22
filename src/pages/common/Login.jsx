@@ -152,7 +152,7 @@ const Login = () => {
     return (
         <section class="min-h-screen flex items-center justify-center">
             <div class="dark-box flex shadow-lg max-w-3xl p-5 items-center">
-                <div class="flex flex-col md:w-1/2 px-8 md:px-16 items-center gap-4 text-xs text-light"
+                <div class="flex flex-col lg:w-1/2 px-8 lg:px-16 items-center gap-4 text-xs text-light"
                     onKeyDown={event => {
                         if (event.key === 'Enter') 
                         {
@@ -279,7 +279,7 @@ const Login = () => {
 
                 </div>
 
-                <div class="md:block hidden w-1/2">
+                <div class="lg:block hidden w-1/2">
                     <LazyImage2 class="rounded-2xl" src="https://i.ibb.co/0Gs0f3t/rogue.png" 
         placeholder={imagePlaceholder}/>
                 </div>
