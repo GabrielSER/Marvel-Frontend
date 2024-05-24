@@ -10,10 +10,6 @@
   z-index: 1000;
 }
 
-body {
-  background: #D30215;
-}
-
 .bg, .pane, .rotate, .logo {
   position: absolute;
 }
@@ -23,7 +19,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28359/marvel.jpg');
+  background: url('../../assets/images/background/marvel.jpg');
   animation: fade 5s steps(15) forwards;
   z-index: 1000;
 }
