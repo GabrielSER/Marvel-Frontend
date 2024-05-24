@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 
 import Navbar from './navbar/Navbar'
-import Home from '../home/Home'
+import Home from '../home/HomePage'
 import Footer from './footer/Footer'
 import Characters from '../characters/Characters'
 
@@ -30,8 +30,10 @@ import { ToolbarProvider } from '../../contexts/ToolbarContext'
 import HUD from './hud/HUD'
 import { DicesProvider } from '../../contexts/DicesContext'
 import Login from './Login'
+import HomePage from '../home/HomePage'
 
 const MainBody = () => {
+  
   return (
     <div
       className={clsx(
@@ -72,7 +74,7 @@ const MainBody = () => {
                               )}
                             >
                               <Routes>
-                                <Route path='/' exact element={<Home />} />
+                                <Route path='/' exact element={<HomePage />} />
                                 <Route path='/player' exact element={<Character />} />
                                 <Route path='/characters' exact element={<Characters />} />
                                 <Route path='/characters/:normalized' exact element={<CharacterDetail />} />

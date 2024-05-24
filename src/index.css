@@ -2047,6 +2047,14 @@ div.react-reveal {
   font-weight: 600;
 }
 
+.font-light {
+  font-weight: 300;
+}
+
+.font-extralight {
+  font-weight: 200;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -2366,10 +2374,6 @@ div.react-reveal {
     display: flex;
   }
 
-  .sm\:h-\[70vh\] {
-    height: 70vh;
-  }
-
   .sm\:h-\[80vh\] {
     height: 80vh;
   }
@@ -2539,14 +2543,6 @@ div.react-reveal {
 
   .lg\:h-40 {
     height: 10rem;
-  }
-
-  .lg\:h-auto {
-    height: auto;
-  }
-
-  .lg\:h-\[80vh\] {
-    height: 80vh;
   }
 
   .lg\:h-\[90vh\] {
