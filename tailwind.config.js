@@ -1,10 +1,10 @@
-
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config} */
+/* prettier-ignore */
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx}"],
+  content: ['./src/**/*.{html,js,jsx}'],
   darkMode: 'class',
   theme: {
     screens: {
@@ -57,13 +57,13 @@ module.exports = {
         'header': '30',
         'hud': '50'
       }
-    },
+    }
   },
   variants: {
-    extend: {},
+    extend: {}
   },
   plugins: [
-    plugin(function ({ matchUtilities, theme }) {
+    plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {
           'text-shadow': (value) => ({
@@ -72,6 +72,6 @@ module.exports = {
         },
         { values: theme('textShadow') }
       )
-    }),
+    })
   ]
 }

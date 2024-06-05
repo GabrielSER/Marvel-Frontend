@@ -5,11 +5,7 @@ import tickSound from '../../../assets/sound/tick.mp3'
 import useSound from 'use-sound'
 
 const NavigationLink = (props) => {
-
-  const {
-    text,
-    to
-  } = props
+  const { text, to } = props
 
   const location = useLocation()
   const [playTick] = useSound(tickSound)

@@ -7,33 +7,29 @@ import CharacterFormDetail from './CharacterFormDetail'
 import { CharacterDetailProvider } from '../../contexts/CharacterDetailContext'
 
 const CharacterDetail = () => {
+  const navigate = useNavigate()
+  const { normalized } = useParams()
+  const { character, loading } = useCharacterWithNormalizedName(normalized)
 
-    const navigate = useNavigate()
-    const { normalized } = useParams()
-    const { character, loading } = useCharacterWithNormalizedName(normalized)
-
-    useEffect(() => {
-        if (loading) return
-        if (character == null) {
-            navigate('/not-found')
-        }
-    }, [navigate, character, loading])
-
-    if (character === null || character === undefined) {
-        return null
+  useEffect(() => {
+    if (loading) return
+    if (character == null) {
+      navigate('/not-found')
     }
+  }, [navigate, character, loading])
 
-    return (
-        <CharacterProvider character={character}>
-            <CharacterDetailProvider>
-                {
-                    character.forms.length !== 0 &&
-                    <FormTabBar />
-                }
-                <CharacterFormDetail />
-            </CharacterDetailProvider>
-        </CharacterProvider>
-    )
+  if (character === null || character === undefined) {
+    return null
+  }
+
+  return (
+    <CharacterProvider character={character}>
+      <CharacterDetailProvider>
+        {character.forms.length !== 0 && <FormTabBar />}
+        <CharacterFormDetail />
+      </CharacterDetailProvider>
+    </CharacterProvider>
+  )
 }
 
 export default CharacterDetail

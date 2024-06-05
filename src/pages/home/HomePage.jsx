@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import AnimationComponent from './AnimationComponent';
-import HomeComponent from './HomeComponent';
+import { useState, useEffect } from 'react'
+import AnimationComponent from './AnimationComponent'
+import HomeComponent from './HomeComponent'
 
 const HomePage = () => {
-  const [showAnimation, setShowAnimation] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false)
 
   useEffect(() => {
-    const hasPlayed = localStorage.getItem('animationPlayed');
+    const hasPlayed = sessionStorage.getItem('animationPlayed')
 
     if (!hasPlayed) {
-      setShowAnimation(true);
-      localStorage.setItem('animationPlayed', 'true');
+      setShowAnimation(true)
+      sessionStorage.setItem('animationPlayed', 'true')
     }
-  }, []);
+  }, [])
 
   return (
-    <div className="home-page">
+    <div className='home-page'>
       {showAnimation && (
         <div
           style={{
@@ -24,16 +24,16 @@ const HomePage = () => {
             left: 0,
             width: '100%',
             height: '100%',
-            background: 'red',
-            zIndex: 1000,
+            background: 'black',
+            zIndex: 1000
           }}
         >
           <AnimationComponent onComplete={() => setShowAnimation(false)} />
         </div>
       )}
-      {!showAnimation && <HomeComponent />}
+      <HomeComponent />
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

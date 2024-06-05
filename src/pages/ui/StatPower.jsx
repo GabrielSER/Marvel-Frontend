@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 // Assuming percentage ranges from 0 to 8
 const maxStatValue = 8
 
 const StatPower = ({ strokeWidth, percentage, statColor }) => {
-
   const radius = 40 - strokeWidth / 2
   const pathDescription = `
     M 50,50 m 0,-${radius}
@@ -62,7 +61,7 @@ const StatPower = ({ strokeWidth, percentage, statColor }) => {
           strokeWidth={strokeWidth}
           fillOpacity={0}
           style={{
-            stroke: '#d6d6d6',
+            stroke: '#d6d6d6'
           }}
         />
 
@@ -76,21 +75,21 @@ const StatPower = ({ strokeWidth, percentage, statColor }) => {
             strokeLinecap: 'round',
             strokeDasharray: `${diameter}px ${diameter}px`,
             strokeDashoffset: offset,
-            transition: 'stroke-dashoffset 0.5s ease-in-out',
+            transition: 'stroke-dashoffset 0.5s ease-in-out'
           }}
         />
-          <text
-            className='CircularProgressbar-text text-3xl font-condensed'
-            x={50}
-            y={50}
-            style={{
-              fill: 'black',
-              dominantBaseline: 'central',
-              textAnchor: 'middle'
-            }}
-          >
-            {`${percentage}`}
-          </text>
+        <text
+          className='CircularProgressbar-text text-3xl font-condensed'
+          x={50}
+          y={50}
+          style={{
+            fill: 'black',
+            dominantBaseline: 'central',
+            textAnchor: 'middle'
+          }}
+        >
+          {`${percentage}`}
+        </text>
       </svg>
     </div>
   )

@@ -4,27 +4,20 @@ import { useToolbar } from '../../../../contexts/ToolbarContext'
 import ToolbarWindow from './ToolbarWindow'
 
 const Toolbar = () => {
-
-  const {
-    visible,
-    toolbars,
-    currentToolbar,
-    currentToolbarData
-  } = useToolbar()
+  const { visible, toolbars, currentToolbar, currentToolbarData } = useToolbar()
 
   if (!visible || Object.values(toolbars).length === 0) return null
 
   return (
     <div
-      className={
-        clsx(
-          'flex flex-col',
-          'justify-center',
-          'w-full',
-          currentToolbarData?.maximized ? 'h-full' : 'h-max',
-          'pointer-events-auto',
-          currentToolbar && 'backdrop-blur-sm'
-        )}
+      className={clsx(
+        'flex flex-col',
+        'justify-center',
+        'w-full',
+        currentToolbarData?.maximized ? 'h-full' : 'h-max',
+        'pointer-events-auto',
+        currentToolbar && 'backdrop-blur-sm'
+      )}
     >
       <ToolbarWindow />
       <div
@@ -40,14 +33,12 @@ const Toolbar = () => {
           'hide-scroll'
         )}
       >
-        {
-          Object.values(toolbars).map((toolbar, index) =>
-            <Content
-              key={index}
-              id={toolbar.toolbar.id}
-            />
-          )
-        }
+        {Object.values(toolbars).map((toolbar, index) => (
+          <Content
+            key={index}
+            id={toolbar.toolbar.id}
+          />
+        ))}
       </div>
     </div>
   )

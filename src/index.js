@@ -1,9 +1,7 @@
 import './index.css'
-import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import MainBody from './pages/common/MainBody'
 
-ReactDOM.render(
-    <MainBody />,
-    document.getElementById('root')
-)
+const container = document.getElementById('app')
+const root = createRoot(container)
+root.render(<MainBody />)

@@ -1,31 +1,24 @@
 import clsx from 'clsx'
-import { useCharacter } from '../../contexts/CharacterContext'
 import { FormProvider } from '../../contexts/FormContext'
-import FormTabBar from './FormTabBar'
-import LazyImage from '../ui/LazyImage'
 import CharacterStats from './CharacterStats'
 import CharacterAbilities from './CharacterAbilities'
 import CharacterPowers from './CharacterPowers'
-import { useState } from 'react'
 import { useCharacterDetail } from '../../contexts/CharacterDetailContext'
 import CharacterSkills from './CharacterSkills'
-import Comicbook from '../ui/ComicPanel'
-import ComicPanel from '../ui/ComicPanel'
-import ComicTitlePanel from '../ui/ComicTitlePanel'
 import CharacterImage from './CharacterImage'
 import CharacterLogo from './CharacterLogo'
 import CharacterName from './CharacterName'
 import CharacterBio from './CharacterBio'
 import ArmorCost from './ArmorCost'
 
-
-const Section = (props) =>
-  <div className='flex flex-col lg:flex-row justify-center gap-4 overflow-hidden'
+const Section = (props) => (
+  <div
+    className='flex flex-col lg:flex-row justify-center gap-4 overflow-hidden'
     {...props}
   />
+)
 
 const Column = (props) => {
-
   const { className } = props
   const properties = { ...props }
   delete properties.className
@@ -46,9 +39,7 @@ const Column = (props) => {
 }
 
 const CharacterFormDetail = () => {
-
   const { selectedForm } = useCharacterDetail()
-  const { character } = useCharacter()
 
   if (selectedForm == null) return null
 
@@ -63,13 +54,13 @@ const CharacterFormDetail = () => {
           </Column>
           <Column>
             <CharacterName />
-            <ArmorCost/>
+            <ArmorCost />
             <CharacterStats />
             <CharacterAbilities />
           </Column>
         </Section>
-          <CharacterBio />
-          <CharacterPowers />
+        <CharacterBio />
+        <CharacterPowers />
       </div>
     </FormProvider>
   )
