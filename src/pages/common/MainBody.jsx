@@ -1,4 +1,3 @@
-
 import {
   Routes,
   Route,
@@ -7,7 +6,6 @@ import {
 } from 'react-router-dom'
 
 import Navbar from './navbar/Navbar'
-import Home from '../home/HomePage'
 import Footer from './footer/Footer'
 import Characters from '../characters/Characters'
 
@@ -33,7 +31,6 @@ import Login from './Login'
 import HomePage from '../home/HomePage'
 
 const MainBody = () => {
-  
   return (
     <div
       className={clsx(
@@ -53,7 +50,11 @@ const MainBody = () => {
       <Router>
         <UserProvider>
           <Routes>
-            <Route path='/login' exact element={<Login />} />
+            <Route
+              path='/login'
+              exact
+              element={<Login />}
+            />
             <Route
               path='*'
               element={
@@ -63,7 +64,6 @@ const MainBody = () => {
                       <FormsProvider>
                         <PowersProvider>
                           <ContentProvider>
-
                             <HUD />
                             <Navbar />
                             <div
@@ -74,24 +74,68 @@ const MainBody = () => {
                               )}
                             >
                               <Routes>
-                                <Route path='/' exact element={<HomePage />} />
-                                <Route path='/player' exact element={<Character />} />
-                                <Route path='/characters' exact element={<Characters />} />
-                                <Route path='/characters/:normalized' exact element={<CharacterDetail />} />
-                                <Route path='/places' exact element={<Places />} />
-                                <Route path='/rules' exact element={<Rules />} />
-                                <Route path='/combat' exact element={<Combat />} />
-                                <Route path='/roleplaying' exact element={<Roleplay />} />
-                                <Route path='/objects' exact element={<Objects />} />
-                                <Route path='/not-found' exact element={<NotFound />} />
+                                <Route
+                                  path='/'
+                                  exact
+                                  element={<HomePage />}
+                                />
+                                <Route
+                                  path='/player'
+                                  exact
+                                  element={<Character />}
+                                />
+                                <Route
+                                  path='/characters'
+                                  exact
+                                  element={<Characters />}
+                                />
+                                <Route
+                                  path='/characters/:normalized'
+                                  exact
+                                  element={<CharacterDetail />}
+                                />
+                                <Route
+                                  path='/places'
+                                  exact
+                                  element={<Places />}
+                                />
+                                <Route
+                                  path='/rules'
+                                  exact
+                                  element={<Rules />}
+                                />
+                                <Route
+                                  path='/combat'
+                                  exact
+                                  element={<Combat />}
+                                />
+                                <Route
+                                  path='/roleplaying'
+                                  exact
+                                  element={<Roleplay />}
+                                />
+                                <Route
+                                  path='/objects'
+                                  exact
+                                  element={<Objects />}
+                                />
+                                <Route
+                                  path='/not-found'
+                                  exact
+                                  element={<NotFound />}
+                                />
                                 <Route
                                   path='*'
-                                  element={<Navigate to='/not-found' replace={true} />}
+                                  element={
+                                    <Navigate
+                                      to='/not-found'
+                                      replace={true}
+                                    />
+                                  }
                                 />
                               </Routes>
                               <Footer />
                             </div>
-
                           </ContentProvider>
                         </PowersProvider>
                       </FormsProvider>

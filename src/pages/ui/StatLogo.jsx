@@ -1,11 +1,7 @@
 import clsx from 'clsx'
 
 const StatLogo = (props) => {
-
-  const {
-    image,
-    text
-  } = props
+  const { image, text } = props
 
   return (
     <div
@@ -33,7 +29,7 @@ const StatLogo = (props) => {
           'text-xl font-bold font-condensed'
         )}
       >
-          {text}
+        {text}
       </span>
     </div>
   )

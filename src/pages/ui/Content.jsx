@@ -4,37 +4,32 @@ import { useContent } from '../../contexts/ContentContext'
 const ContentRegex = /^(?<id>.*?)(:(?<params>{.*?}))?$/
 
 const parseContentQuery = (query) => {
+  let parsedQuery = {
+    id: query,
+    params: {}
+  }
 
-    let parsedQuery = {
-        id: query,
-        params: {}
-    }
+  const exec = ContentRegex.exec(query)
 
-    const exec = ContentRegex.exec(query)
+  if (!exec) return parsedQuery
 
-    if (!exec) return parsedQuery
+  parsedQuery = exec.groups
 
-    parsedQuery = exec.groups
+  if (parsedQuery.params) {
+    parsedQuery.params = JSON.parse(parsedQuery.params)
+  }
 
-    if (parsedQuery.params) {
-        parsedQuery.params = JSON.parse(parsedQuery.params)
-    }
-
-    return parsedQuery
+  return parsedQuery
 }
 
 const Content = (props) => {
+  const { id, params = {} } = props
 
-    const {
-        id,
-        params = {}
-    } = props
+  const { getContent } = useContent()
 
-    const { getContent } = useContent()
+  const parsedQuery = useMemo(() => parseContentQuery(id), [id])
 
-    const parsedQuery = useMemo(() => parseContentQuery(id), [id])
-
-    return getContent(parsedQuery.id, { ...params, ...parsedQuery.params })
+  return getContent(parsedQuery.id, { ...params, ...parsedQuery.params })
 }
 
 export default Content

@@ -1,10 +1,10 @@
 import {
-    createContext,
-    useState,
-    useEffect,
-    useMemo,
-    useContext,
-    useCallback
+  createContext,
+  useState,
+  useEffect,
+  useMemo,
+  useContext,
+  useCallback
 } from 'react'
 import { useMarvel, httpMethod } from '../hooks/useMarvel'
 import { normalizeName } from '../util/characterUtil'
@@ -24,83 +24,89 @@ const CharactersContext = createContext()
  * @property {Map<string, Character>} charactersByNormalized
  */
 const initialState = {
-    characters: new Map(),
-    charactersByNormalized: new Map(),
-    indexing: true
+  characters: new Map(),
+  charactersByNormalized: new Map(),
+  indexing: true
 }
 
 const CharactersProvider = (props) => {
+  /**
+   * @type {[ state: CharactersState ]}
+   */
+  const [state, setState] = useState(initialState)
+  const { query, loading } = useMarvel()
 
-    /**
-     * @type {[ state: CharactersState ]}
-     */
-    const [state, setState] = useState(initialState)
-    const { query, loading } = useMarvel()
-
-    useEffect(() => {
-        const loadCharacters = async () => {
-            try {
-                const charactersArray = await query('/characters')
-                const characters = new Map(charactersArray.map(character =>
-                    [character._id, character]
-                ))
-                setState({
-                    ...state,
-                    characters,
-                    indexing: true
-                })
-            }
-            catch (error) {
-                console.error('Error loading characters')
-            }
-        }
-        loadCharacters()
-    }, [])
-
-    useEffect(() => {
-        if (state.characters.size === 0) {
-            return
-        }
-        const characters = Array.from(state.characters.values())
-        const charactersByNormalized = new Map(characters.map(character =>
-            [normalizeName(character.name), character]
-        ))
+  useEffect(() => {
+    const loadCharacters = async () => {
+      try {
+        const charactersArray = await query('/characters')
+        const characters = new Map(
+          charactersArray.map((character) => [character._id, character])
+        )
         setState({
-            ...state,
-            charactersByNormalized,
-            indexing: false
+          ...state,
+          characters,
+          indexing: true
         })
-    }, [state.characters])
+      } catch (error) {
+        console.error('Error loading characters')
+      }
+    }
+    loadCharacters()
+  }, [query, state])
 
-    const updateCharacter = useCallback(async (character) => {
-        const updatedCharacter = await query(`/characters/${character._id}`, {
-            method: httpMethod.PUT,
-            body: character
-        })
-        state.characters.set(updatedCharacter._id, updatedCharacter)
-        setState({ ...state })
-    }, [query, state.characters])
+  useEffect(() => {
+    if (state.characters.size === 0) {
+      return
+    }
+    const characters = Array.from(state.characters.values())
+    const charactersByNormalized = new Map(
+      characters.map((character) => [normalizeName(character.name), character])
+    )
+    setState({
+      ...state,
+      charactersByNormalized,
+      indexing: false
+    })
+  }, [state.characters])
 
-    const value = useMemo(() => ({
-        ...state,
-        loading: loading || state.indexing,
-        updateCharacter
-    }), [
-        state,
-        loading,
-        updateCharacter
-    ])
+  const updateCharacter = useCallback(
+    async (character) => {
+      const updatedCharacter = await query(`/characters/${character._id}`, {
+        method: httpMethod.PUT,
+        body: character
+      })
+      state.characters.set(updatedCharacter._id, updatedCharacter)
+      setState({ ...state })
+    },
+    [query, state.characters]
+  )
 
-    return <CharactersContext.Provider value={value} {...props} />
+  const value = useMemo(
+    () => ({
+      ...state,
+      loading: loading || state.indexing,
+      updateCharacter
+    }),
+    [state, loading, updateCharacter]
+  )
+
+  return (
+    <CharactersContext.Provider
+      value={value}
+      {...props}
+    />
+  )
 }
 
 const useCharacters = () => {
-    const context = useContext(CharactersContext)
-    if (!context) {
-        throw new Error('Invalid use of useCharacters, CharactersProvider must be defined in parent hierarchy')
-    }
-    return context
+  const context = useContext(CharactersContext)
+  if (!context) {
+    throw new Error(
+      'Invalid use of useCharacters, CharactersProvider must be defined in parent hierarchy'
+    )
+  }
+  return context
 }
-
 
 export { CharactersProvider, useCharacters }

@@ -12,72 +12,72 @@ import { GiDiceTwentyFacesTwenty } from 'react-icons/gi'
 import { MdPlace } from 'react-icons/md'
 import { useEffect, useState } from 'react'
 
-
 const sections = [
-    {
-        title: 'Play as your favorite Marvel characters',
-        image: marvelHeroes,
-        icon: <GoPerson />
-    },
-    {
-        title: 'Create your own stories',
-        image: marvelStories,
-        icon: <GiDiceTwentyFacesTwenty />
-    },
-    {
-        title: 'Explore new worlds and locations',
-        image: marvelLocations,
-        icon: <MdPlace />
-    }
+  {
+    title: 'Play as your favorite Marvel characters',
+    image: marvelHeroes,
+    icon: <GoPerson />
+  },
+  {
+    title: 'Create your own stories',
+    image: marvelStories,
+    icon: <GiDiceTwentyFacesTwenty />
+  },
+  {
+    title: 'Explore new worlds and locations',
+    image: marvelLocations,
+    icon: <MdPlace />
+  }
 ]
 
-const IndicatorIcon = (current, index) =>
-    <span
-        className={clsx(
-            current && [
-                'flex',
-                'justify-center items-center',
-                'p-1',
-                'bg-shadow',
-                'rounded-full',
-                'border-2',
-                'scale-x-110'
-            ],
-            !current && 'opacity-60'
-        )}
-    >
-        {sections[index].icon}
-    </span>
+const IndicatorIcon = (current, index) => (
+  <span
+    className={clsx(
+      current && [
+        'flex',
+        'justify-center items-center',
+        'p-1',
+        'bg-shadow',
+        'rounded-full',
+        'border-2',
+        'scale-x-110'
+      ],
+      !current && 'opacity-60'
+    )}
+  >
+    {sections[index].icon}
+  </span>
+)
 
 const initialSlide = 1000
 const finalSlide = 10000
 
 const HomeCarousell = () => {
+  const [slideTime, setSlideTime] = useState(initialSlide)
 
-    const [slideTime, setSlideTime] = useState(initialSlide)
+  useEffect(() => {
+    const timeOutId = setTimeout(() => {
+      setSlideTime(finalSlide)
+    }, sections.length * initialSlide)
+    return () => clearTimeout(timeOutId)
+  }, [])
 
-    useEffect(() => {
-        const timeOutId = setTimeout(() => {
-            setSlideTime(finalSlide)
-        }, sections.length * initialSlide)
-        return () => clearTimeout(timeOutId)
-    }, [])
-
-    return (
-        <Carousel
-            className={clsx('flex h-96 w-full text-white shadow-lg')}
-            slideTime={slideTime}
-            indicatorIcon={IndicatorIcon}
+  return (
+    <Carousel
+      className={clsx('flex h-96 w-full text-white shadow-lg')}
+      slideTime={slideTime}
+      indicatorIcon={IndicatorIcon}
+    >
+      {sections.map((section, index) => (
+        <Slide
+          right
+          key={index}
         >
-            {
-                sections.map((section, index) =>
-                    <Slide right key={index}>
-                        <CarouselImage section={section} />
-                    </Slide>
-                )
-            }
-        </Carousel>
-    )
+          <CarouselImage section={section} />
+        </Slide>
+      ))}
+    </Carousel>
+  )
 }
 
 export default HomeCarousell

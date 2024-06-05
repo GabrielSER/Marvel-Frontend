@@ -1,7 +1,6 @@
-import React from 'react';
-import clsx from 'clsx';
-import HomeCarousell from './HomeCarousell';
-import HeroHome from '../common/HeroHome';
+import clsx from 'clsx'
+import HomeCarousell from './HomeCarousell'
+import HeroHome from '../common/HeroHome'
 
 const HomeComponent = () => {
   return (
@@ -9,7 +8,7 @@ const HomeComponent = () => {
       <HomeCarousell />
       <HeroHome />
     </div>
-  );
-};
+  )
+}
 
-export default HomeComponent; // Make sure to export the component
+export default HomeComponent // Make sure to export the component

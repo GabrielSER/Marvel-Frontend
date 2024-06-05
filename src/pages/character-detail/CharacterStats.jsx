@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { useForm } from '../../contexts/FormContext'
 import StatPower from '../ui/StatPower'
 import StatLogo from '../ui/StatLogo'
@@ -12,7 +12,11 @@ const statIconData = [
   { uniqueName: 'hp', name: 'HP', image: Health },
   { uniqueName: 'speed', name: 'Speed', image: Speed },
   { uniqueName: 'defense', name: 'Defense', image: Defense },
-  { uniqueName: 'energyprojection', name: 'Energy Projection', image: EnergyProjection }
+  {
+    uniqueName: 'energyprojection',
+    name: 'Energy Projection',
+    image: EnergyProjection
+  }
 ]
 
 const statsData = [
@@ -29,7 +33,6 @@ const statsData = [
 ]
 
 const StatComponent = (props) => {
-
   const { name, children } = props
 
   return (
@@ -43,11 +46,10 @@ const StatComponent = (props) => {
 }
 
 const CharacterStats = () => {
-
   const { form } = useForm()
 
   const statsMap = useMemo(() => {
-    return new Map(form.stats.map(stat => [stat.uniqueName, stat]))
+    return new Map(form.stats.map((stat) => [stat.uniqueName, stat]))
   }, [form])
 
   const appendStat = (data) => ({
@@ -57,44 +59,34 @@ const CharacterStats = () => {
 
   return (
     <div className='flex flex-col max-w-6xl w-full'>
-      <ComicTitlePanel>
-        Stats:
-      </ComicTitlePanel>
+      <ComicTitlePanel>Stats:</ComicTitlePanel>
       <div className='flex-col w-full gap-6 md:px-10'>
         <div className='grid sm:grid-cols-4 sm:grid-flow-row gap-6'>
-          {
-            statIconData
-              .map(appendStat)
-              .map((data, index) =>
-                <StatComponent
-                  key={index}
-                  name={data.name ?? data.stat?.name}
-                >
-                  <StatLogo
-                    image={data.image}
-                    text={data.stat?.value ?? 0}
-                  />
-                </StatComponent>
-              )
-          }
+          {statIconData.map(appendStat).map((data, index) => (
+            <StatComponent
+              key={index}
+              name={data.name ?? data.stat?.name}
+            >
+              <StatLogo
+                image={data.image}
+                text={data.stat?.value ?? 0}
+              />
+            </StatComponent>
+          ))}
         </div>
         <div className='w-full grid grid-cols-2 grid-flow-row sm:grid-cols-5 sm:grid-flow-row gap-6'>
-          {
-            statsData
-              .map(appendStat)
-              .map((data, index) =>
-                <StatComponent
-                  key={index}
-                  name={data.name ?? data.stat?.name}
-                >
-                  <StatPower
-                    strokeWidth={14}
-                    percentage={data.stat?.value ?? 0}
-                    statColor={data.color}
-                  />
-                </StatComponent>
-              )
-          }
+          {statsData.map(appendStat).map((data, index) => (
+            <StatComponent
+              key={index}
+              name={data.name ?? data.stat?.name}
+            >
+              <StatPower
+                strokeWidth={14}
+                percentage={data.stat?.value ?? 0}
+                statColor={data.color}
+              />
+            </StatComponent>
+          ))}
         </div>
       </div>
     </div>

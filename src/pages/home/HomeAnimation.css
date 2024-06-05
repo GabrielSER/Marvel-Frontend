@@ -4,7 +4,6 @@ body.animation-active {
   overflow: hidden;
 }
 
-
 .bg {
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28359/marvel.jpg');
   animation: fade 5s steps(10) forwards;
@@ -34,14 +33,17 @@ body.animation-active {
   transform-style: preserve-3d;
   font-size: 9em;
   letter-spacing: -0.06em;
-  animation: hide 5s linear forwards, change 5s steps(15) forwards;
+  animation:
+    hide 5s linear forwards,
+    change 5s steps(15) forwards;
   padding: 0 0.2em;
   line-height: 1;
   border: 0.02em solid black;
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28359/marvel.jpg');
   background-size: 2000px auto;
   -webkit-background-clip: text;
-  -webkit-filter: drop-shadow(0 -1px 0 black) drop-shadow(0 1px 0 black) drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black);
+  -webkit-filter: drop-shadow(0 -1px 0 black) drop-shadow(0 1px 0 black)
+    drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black);
   color: transparent;
   z-index: 1002;
 }
@@ -88,19 +90,22 @@ body.animation-active {
   0% {
     background-position: 0 0;
     color: rgba(150, 150, 0, 0.4);
-    -webkit-filter: drop-shadow(0 -1px 0 black) drop-shadow(0 1px 0 black) drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black);
+    -webkit-filter: drop-shadow(0 -1px 0 black) drop-shadow(0 1px 0 black)
+      drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black);
     border-color: black;
   }
   50% {
     background-position: 200% 200%;
     color: rgba(150, 150, 0, 0.4);
-    -webkit-filter: drop-shadow(0 -1px 0 black) drop-shadow(0 1px 0 black) drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black);
+    -webkit-filter: drop-shadow(0 -1px 0 black) drop-shadow(0 1px 0 black)
+      drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black);
     border-color: white;
   }
   100% {
     background-position: -200% -200%;
     color: white;
-    -webkit-filter: drop-shadow(0 0 0 white) drop-shadow(0 0 0 white) drop-shadow(0 0 0 white) drop-shadow(0 0 0 white);
+    -webkit-filter: drop-shadow(0 0 0 white) drop-shadow(0 0 0 white)
+      drop-shadow(0 0 0 white) drop-shadow(0 0 0 white);
     border-color: white;
   }
 }

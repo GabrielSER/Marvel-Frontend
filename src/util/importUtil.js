@@ -1,6 +1,3 @@
-const importAll = (context) =>
-    context
-        .keys()
-        .map(element => context(element))
+const importAll = (context) => context.keys().map((element) => context(element))
 
 export { importAll }

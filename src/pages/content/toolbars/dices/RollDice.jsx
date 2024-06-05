@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDices } from '../../../../contexts/DicesContext'
 import DiceButton from './DiceButton'
 
@@ -12,9 +12,7 @@ const ROLL_VARIANCE = 200
 const ROLL_DURATION = 1000
 const ROLL_DURATION_EXTRA = 2000
 
-
 const Bubble = (props) => {
-
   const { className } = props
   const properties = { ...props }
   delete properties.className
@@ -40,20 +38,13 @@ const Bubble = (props) => {
 }
 
 const RollDice = (props) => {
-
   const { key, diceType } = props
   const properties = { ...props }
 
   const [rolling, setRolling] = useState(false)
   const [rollValue, setRollValue] = useState(null)
-  const [hovered, setHovered] = useState(false)
 
-  const {
-    updateTotal,
-    removeRoll,
-    rollingDices,
-    resetDices
-  } = useDices()
+  const { updateTotal, removeRoll, rollingDices, resetDices } = useDices()
 
   const [playRoll] = useSound(rollFile)
   const [playMinRoll] = useSound(minRolFile)
@@ -84,7 +75,6 @@ const RollDice = (props) => {
     const timeoutIds = []
 
     const roll = async () => {
-
       await new Promise((resolve) => {
         timeoutIds.push(
           setTimeout(() => {
@@ -92,9 +82,12 @@ const RollDice = (props) => {
           }, Math.random() * ROLL_VARIANCE)
         )
         timeoutIds.push(
-          setTimeout(() => {
-            resolve()
-          }, ROLL_DURATION + (Math.random() * ROLL_DURATION_EXTRA))
+          setTimeout(
+            () => {
+              resolve()
+            },
+            ROLL_DURATION + Math.random() * ROLL_DURATION_EXTRA
+          )
         )
       })
 
@@ -124,22 +117,10 @@ const RollDice = (props) => {
   }, [rolling, playRoll, playMinRoll, playMaxRoll])
 
   return (
-    <div
-      className={clsx(
-        'relative',
-        'flex justify-center items-center'
-      )}
-    >
-      {
-        rollValue &&
-        <Bubble className='bg-white'>
-          {rollValue}
-        </Bubble>
-      }
+    <div className={clsx('relative', 'flex justify-center items-center')}>
+      {rollValue && <Bubble className='bg-white'>{rollValue}</Bubble>}
       <DiceButton
-        className={clsx(
-          rolling && 'animate-spin ease-in-out transition-all'
-        )}
+        className={clsx(rolling && 'animate-spin ease-in-out transition-all')}
         onClick={() => removeRoll(key)}
         {...properties}
       />

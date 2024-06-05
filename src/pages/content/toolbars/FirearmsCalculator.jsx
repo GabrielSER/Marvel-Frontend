@@ -37,7 +37,6 @@ const initialState = {
 }
 
 const FirearmsCalculator = () => {
-
   const [state, setState] = useState(initialState)
 
   const shoot = useCallback(() => {
@@ -49,9 +48,12 @@ const FirearmsCalculator = () => {
     }
 
     const defense = state.targetDefense
-    const agility = Math.ceil(Math.random() * 20)  + state.targetAgility
+    //const agility = Math.ceil(Math.random() * 20) + state.targetAgility
     const add = attack - defense
-    const damage = Math.max(0, (add * state.weapon.weaponFactor) - state.targetBulletproof)
+    const damage = Math.max(
+      0,
+      add * state.weapon.weaponFactor - state.targetBulletproof
+    )
     console.log(damage)
     setState({
       ...state,
@@ -94,12 +96,8 @@ const FirearmsCalculator = () => {
         </div>
         <div className='flex flex-col w-1/3 h-full pl-2 divide-y divide-light-2'>
           <span className='flex flex-col w-full gap-2'>
-            <UIButton onClick={shoot}>
-              Shoot
-            </UIButton>
-            <span className='w-full text-center justify-center'>
-              Damage
-            </span>
+            <UIButton onClick={shoot}>Shoot</UIButton>
+            <span className='w-full text-center justify-center'>Damage</span>
           </span>
           <span
             className={clsx(
