@@ -1,11 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Passion+One);
+@import url('https://fonts.googleapis.com/css?family=Passion+One');
 
 .animation-container {
   position: fixed;
-  top: 25%;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 100%;
   overflow: hidden;
   z-index: 1000;
 }
@@ -45,7 +45,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transform-style: preserve-3d;
-  font-size: 9em;
+  font-size: 25em;
   letter-spacing: 0em;
   animation: hide 1000s linear forwards, change 5s steps(15) forwards;
   padding: 0 0.2em;
@@ -123,4 +123,29 @@
   position: absolute;
   left: -5em;
   opacity: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .logo {
+    font-size: 20em;
+  }
+}
+
+@media (max-width: 992px) {
+  .logo {
+    font-size: 15em;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 10em;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    font-size: 5em;
+  }
 }

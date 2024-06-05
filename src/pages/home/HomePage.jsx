@@ -6,29 +6,32 @@ const HomePage = () => {
   const [showAnimation, setShowAnimation] = useState(false);
 
   useEffect(() => {
-    const hasPlayed = sessionStorage.getItem('animationPlayed');
+    const hasPlayed = localStorage.getItem('animationPlayed');
 
     if (!hasPlayed) {
       setShowAnimation(true);
-      sessionStorage.setItem('animationPlayed', 'true');
+      localStorage.setItem('animationPlayed', 'true');
     }
   }, []);
 
   return (
     <div className="home-page">
-      {showAnimation && <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        background: 'black',
-        zIndex: 1000,
-      }}
-      >
-        <AnimationComponent onComplete={() => setShowAnimation(false)} />
-      </div>}
-      <HomeComponent />
+      {showAnimation && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'red',
+            zIndex: 1000,
+          }}
+        >
+          <AnimationComponent onComplete={() => setShowAnimation(false)} />
+        </div>
+      )}
+      {!showAnimation && <HomeComponent />}
     </div>
   );
 };

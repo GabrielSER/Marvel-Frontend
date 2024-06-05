@@ -103,6 +103,7 @@ const Login = () => {
         if (isLoggedIn) {
             navigate('/')
         }
+        localStorage.removeItem('animationPlayed');
     }, [isLoggedIn])
 
     const loginClick = useCallback(async () => {
