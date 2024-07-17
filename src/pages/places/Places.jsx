@@ -151,6 +151,29 @@ const Places = () => {
           />
         </div>
       </Section>
+      <Section>
+        <BigTitle>New York City</BigTitle>
+        <Paragraph>
+          New York City is the largest city and largest metropolitan area, by
+          population, in the United States. It is an international center for
+          politics, finance, theater, music, fashion, and culture. New York City
+          is a global city that houses the United Nations. The city is home to
+          many landmarks including the Statue of Liberty, Empire State Building,
+          Flatiron Building, Chrysler Building, and Saint Patrick's Cathedral.
+          Another world famous landmark, the World Trade Center, also known as
+          the Twin Towers, adorned the skyline until the September 11th
+          terrorist attacks. Explore New York City within this interactive map:
+        </Paragraph>
+        <div className='flex justify-center'>
+          <iframe
+            className='w-full h-144 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+            src='https://app.kanka.io/w/earth-2205/maps/85261/explore'
+            title='Marvel Universe Map'
+            frameBorder='0'
+            allowFullScreen
+          />
+        </div>
+      </Section>
     </div>
   )
 }
