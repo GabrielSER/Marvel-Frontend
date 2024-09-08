@@ -43,17 +43,17 @@ const CharactersProvider = (props) => {
         const characters = new Map(
           charactersArray.map((character) => [character._id, character])
         )
-        setState({
-          ...state,
+        setState((previous) => ({
+          ...previous,
           characters,
           indexing: true
-        })
+        }))
       } catch (error) {
         console.error('Error loading characters')
       }
     }
     loadCharacters()
-  }, [query, state])
+  }, [query])
 
   useEffect(() => {
     if (state.characters.size === 0) {

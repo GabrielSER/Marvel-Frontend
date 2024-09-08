@@ -1,3 +1,7 @@
+:root {
+  --marvel-red: rgb(184, 0, 0);
+}
+
 /* CSS file or styled component */
 
 @keyframes flipIn {
@@ -74,7 +78,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(184, 0, 0);
+  background: var(--marvel-red);
 }
 
 /** Hide scrollbar **/
@@ -1988,6 +1992,10 @@ div.react-reveal {
 .text-light-2 {
   --tw-text-opacity: 1;
   color: rgb(47 47 47 / var(--tw-text-opacity));
+}
+
+.text-marvel-red {
+  color: var(--marvel-red);
 }
 
 .text-power-4 {

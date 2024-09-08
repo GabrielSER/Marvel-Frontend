@@ -24,6 +24,7 @@ module.exports = {
         'light-2': '#2F2F2F',
         'light': '#B3B3B3',
         'dark': '#202020',
+        'marvel-red': 'var(--marvel-red)',
         'power-0': '#d680bd',
         'power-1': '#8eaadb',
         'power-2': '#a8d08d',

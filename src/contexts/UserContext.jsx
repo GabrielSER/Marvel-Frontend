@@ -25,38 +25,58 @@ const removeToken = () => sessionStorage.removeItem(marvelToken)
 
 const UserContext = createContext()
 
+const initialState = {
+  user: undefined,
+  showAnimation: undefined,
+  isLoggedIn: false,
+  isAdmin: undefined,
+  isPlayer: undefined
+}
+
 const UserProvider = (props) => {
   const navigate = useNavigate()
   const { query, loading } = useMarvel()
 
-  const [user, setUser] = useState()
+  const [state, setState] = useState(initialState)
   const [jwtBody, setJwtBody] = useState()
 
   const logout = useCallback(() => {
     removeToken()
-    setUser(undefined)
+    setState(initialState)
     setJwtBody(undefined)
-  }, [setUser])
+  }, [setState, setJwtBody])
 
-  const signIn = useCallback(async () => {
-    try {
-      const token = getToken()
-      if (!token) {
-        throw Error('Token not set')
+  const signIn = useCallback(
+    async (asLogin) => {
+      try {
+        const token = getToken()
+        if (!token) {
+          throw Error('Token not set')
+        }
+        const jwtBody = jwtDecode(token)
+        setJwtBody(jwtBody)
+        const userId = jwtBody.id
+        if (!userId) {
+          throw Error('User id not available on the jwt body')
+        }
+        const user = await query('/users/' + userId)
+        const isPlayer = jwtBody.roles.includes(UserRole.PLAYER) ?? false
+        const isAdmin = jwtBody.roles.includes(UserRole.ADMIN) ?? false
+        setState((previous) => ({
+          ...previous,
+          showAnimation: asLogin ? true : previous.showAnimation,
+          isLoggedIn: true,
+          isAdmin,
+          isPlayer,
+          user
+        }))
+      } catch (error) {
+        logout()
+        throw error
       }
-      const jwtBody = jwtDecode(token)
-      setJwtBody(jwtBody)
-      const userId = jwtBody.id
-      if (!userId) {
-        throw Error('User id not available on the jwt body')
-      }
-      const user = await query('/users/' + userId)
-      setUser(user)
-    } catch (error) {
-      logout()
-      throw error
-    }
-  }, [setJwtBody, query, setUser, logout])
+    },
+    [setJwtBody, query, setState, logout]
+  )
 
   const login = useCallback(
     async (email, password) => {
@@ -69,7 +89,7 @@ const UserProvider = (props) => {
       })
       setToken(token)
       setJwtBody(jwtDecode(token))
-      await signIn()
+      await signIn(true)
     },
     [query, setJwtBody, signIn]
   )
@@ -83,6 +103,13 @@ const UserProvider = (props) => {
       await login(user.email, user.password)
     },
     [query, login]
+  )
+
+  const setShowAnimation = useCallback(
+    (showAnimation) => {
+      setState((previous) => ({ ...previous, showAnimation }))
+    },
+    [setState]
   )
 
   // Auto signIn on page load, send to login if no user or outdated token
@@ -99,18 +126,24 @@ const UserProvider = (props) => {
 
   const value = useMemo(() => {
     return {
-      user,
+      ...state,
       loading,
-      isPlayer: jwtBody?.roles.includes(UserRole.PLAYER) ?? false,
-      isAdmin: jwtBody?.roles.includes(UserRole.ADMIN) ?? false,
-      isLoggedIn: getToken() !== undefined && user !== undefined,
-      setUser,
-      register,
-      login,
+      logout,
       signIn,
-      logout
+      login,
+      register,
+      setShowAnimation
     }
-  }, [user, loading, jwtBody, setUser, register, login, signIn, logout])
+  }, [
+    state,
+    loading,
+    jwtBody,
+    logout,
+    signIn,
+    login,
+    register,
+    setShowAnimation
+  ])
 
   return (
     <UserContext.Provider

@@ -1,7 +1,7 @@
 import './index.css'
 import { createRoot } from 'react-dom/client'
-import MainBody from './pages/common/MainBody'
+import Main from './pages/main/Main'
 
 const container = document.getElementById('app')
 const root = createRoot(container)
-root.render(<MainBody />)
+root.render(<Main />)

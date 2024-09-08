@@ -1,3 +1,7 @@
+:root {
+  --marvel-red: rgb(184, 0, 0);
+}
+
 @layer base {
   @font-face {
     font-family: 'ComicBook';
@@ -21,6 +25,7 @@
 }
 
 @layer components {
+
   .ui-box {
     @apply bg-light-2 border border-light-2 hover:border-light;
   }
@@ -132,7 +137,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(184, 0, 0);
+  background: var(--marvel-red);
 }
 
 /** Hide scrollbar **/

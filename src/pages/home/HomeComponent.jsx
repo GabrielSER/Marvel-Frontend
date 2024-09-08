@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import HomeCarousell from './HomeCarousell'
-import HeroHome from '../common/HeroHome'
+import HeroHome from './HeroHome'
 
 const HomeComponent = () => {
   return (
@@ -11,4 +11,4 @@ const HomeComponent = () => {
   )
 }
 
-export default HomeComponent // Make sure to export the component
+export default HomeComponent
