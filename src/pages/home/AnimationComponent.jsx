@@ -9,25 +9,12 @@ const AnimationComponent = ({ onComplete }) => {
   }, [onComplete])
 
   return (
-    <div className='bg-red-600'>
+    <div className='bg-red-600 font-marvel'>
       <div className='animation-container  text-white'>
-        <input
-          className='retrigger'
-          type='radio'
-          name='rerun'
-          id='retrigger--1'
-        />
-        <input
-          className='retrigger'
-          type='radio'
-          name='rerun'
-          id='retrigger--2'
-          checked='checked'
-        />
         <div className='bg'></div>
         <div className='pane'>
           <div className='rotate'>
-            <div className='logo font-marvel font-extralight'>MARVEL</div>
+            <div className='logo font-extralight'>MARVEL</div>
           </div>
         </div>
       </div>
