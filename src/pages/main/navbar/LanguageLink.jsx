@@ -1,7 +1,13 @@
 import clsx from 'clsx'
+import { useLanguage } from '@hooks/useLanguage'
 
 const LanguageLink = (props) => {
-  const { label, active } = props
+
+  const { language } = props
+
+  const { currentLanguage, setLanguage } = useLanguage()
+
+  const active = language == currentLanguage
 
   return (
     <button
@@ -12,8 +18,9 @@ const LanguageLink = (props) => {
         active && ['underline', 'scale-105'],
         !active && ['opacity-70']
       )}
+      onClick={() => setLanguage(language)}
     >
-      {label}
+      {language.toUpperCase()}
     </button>
   )
 }

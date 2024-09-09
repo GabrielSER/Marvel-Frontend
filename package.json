@@ -7,10 +7,11 @@
     "start": "concurrently npm:start:*",
     "start:js": "react-app-rewired start",
     "start:css": "npx tailwindcss -i ./tailwind.css -o ./src/index.css --jit -w",
+    "start:lang":"nodemon --watch src --ext json --exec 'node language-extractor.js'",
     "-start:lint": "nodemon --watch src --ext js,jsx --exec 'concurrently npm:lint:*'",
     "lint:eslint": "eslint --fix 'src/**/*.{js,jsx}'",
     "lint:prettier": "npx prettier 'src/**/*.{js,jsx}' --write --log-level silent",
-    "build": "react-app-rewired build && npx tailwindcss -i ./tailwind.css -o ./src/index.css"
+    "build": "react-app-rewired build && npm run start:css && node language-extractor.js"
   },
   "eslintConfig": {
     "extends": [
@@ -35,11 +36,17 @@
     "axios": "^1.2.3",
     "bootstrap": "^5.1.3",
     "clsx": "^1.2.1",
+    "fs": "^0.0.1-security",
+    "i18next": "^23.14.0",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-http-backend": "^2.6.1",
     "jwt-decode": "^4.0.0",
     "ldrs": "^1.0.2",
     "os": "^0.1.2",
+    "path": "^0.12.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-i18next": "^15.0.1",
     "react-icons": "^4.7.1",
     "react-intl": "^5.24.6",
     "react-lazy-load": "^4.0.1",

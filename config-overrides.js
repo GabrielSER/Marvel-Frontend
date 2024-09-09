@@ -3,6 +3,7 @@ const path = require('path')
 const mapping = [
     ['ui', 'pages/ui'],
     ['sound', 'assets/sound'],
+    ['images', 'assets/images'],
     ['svg', 'assets/svg'],
     ['content', 'pages/content'],
     'assets',

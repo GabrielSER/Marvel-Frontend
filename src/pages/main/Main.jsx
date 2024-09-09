@@ -14,33 +14,33 @@ import MainBody from './MainBody'
 const Main = () => {
   return (
     <Router>
-      <UserProvider>
-        <Routes>
-          <Route
-            path='/login'
-            exact
-            element={<Login />}
-          />
-          <Route
-            path='*'
-            element={
-              <ToolbarProvider>
-                <DicesProvider>
-                  <CharactersProvider>
-                    <FormsProvider>
-                      <PowersProvider>
-                        <ContentProvider>
-                          <MainBody />
-                        </ContentProvider>
-                      </PowersProvider>
-                    </FormsProvider>
-                  </CharactersProvider>
-                </DicesProvider>
-              </ToolbarProvider>
-            }
-          />
-        </Routes>
-      </UserProvider>
+        <UserProvider>
+          <Routes>
+            <Route
+              path='/login'
+              exact
+              element={<Login />}
+            />
+            <Route
+              path='*'
+              element={
+                <ToolbarProvider>
+                  <DicesProvider>
+                    <CharactersProvider>
+                      <FormsProvider>
+                        <PowersProvider>
+                          <ContentProvider>
+                            <MainBody />
+                          </ContentProvider>
+                        </PowersProvider>
+                      </FormsProvider>
+                    </CharactersProvider>
+                  </DicesProvider>
+                </ToolbarProvider>
+              }
+            />
+          </Routes>
+        </UserProvider>
     </Router>
   )
 }

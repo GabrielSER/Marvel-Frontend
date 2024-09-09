@@ -2391,10 +2391,6 @@ div.react-reveal {
 }
 
 @media (min-width: 768px) {
-  .md\:h-100 {
-    height: 25rem;
-  }
-
   .md\:h-112 {
     height: 28rem;
   }
@@ -2442,10 +2438,6 @@ div.react-reveal {
 @media (min-width: 1024px) {
   .lg\:block {
     display: block;
-  }
-
-  .lg\:h-144 {
-    height: 36rem;
   }
 
   .lg\:h-40 {

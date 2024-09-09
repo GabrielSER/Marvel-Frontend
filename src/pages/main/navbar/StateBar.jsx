@@ -20,11 +20,8 @@ const StateBar = () => {
           'font-condensed'
         )}
       >
-        <LanguageLink
-          label='EN'
-          active={true}
-        />
-        <LanguageLink label='ES' />
+        <LanguageLink language='en'/>
+        <LanguageLink language='es'/>
         {user && (
           <label className='text-light font-bold'>{user.username}</label>
         )}

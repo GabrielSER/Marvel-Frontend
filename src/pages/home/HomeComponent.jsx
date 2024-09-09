@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import HomeCarousell from './HomeCarousell'
-import HeroHome from './HeroHome'
+import HeroHome from './hero/HeroHome'
 
 const HomeComponent = () => {
   return (

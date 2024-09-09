@@ -11,15 +11,14 @@ const animationDuration = 6000
 
 const AnimationComponent = () => {
   const { setShowAnimation } = useUser()
-  const [_, toogle] = useAudio(introPagesFile, true)
+  useAudio(introPagesFile, true)
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowAnimation(false)
-      toogle()
     }, animationDuration)
     return () => clearTimeout(timeoutId)
-  }, [setShowAnimation, toogle])
+  }, [setShowAnimation])
 
   return (
     <div className='fixed inset-0 w-full h-full bg-red-600'>

@@ -9,6 +9,8 @@ build
 node_modules
 /node_modules
 
+/public/locales
+
 # Optional npm cache directory
 .npm
 
