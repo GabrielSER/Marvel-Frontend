@@ -24,6 +24,3 @@ node_modules
 # Misc
 .idea/
 .DS_store
-
-# Generated
-src/index.css
