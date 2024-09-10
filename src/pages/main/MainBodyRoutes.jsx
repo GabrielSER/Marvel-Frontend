@@ -14,7 +14,7 @@ const MainBodyRoutes = () => {
   return (
     <Routes>
       <Route
-        path='/'
+        path='/*'
         exact
         element={<HomeComponent />}
       />
@@ -34,28 +34,23 @@ const MainBodyRoutes = () => {
         element={<CharacterDetail />}
       />
       <Route
-        path='/places'
-        exact
+        path='/places/*'
         element={<Places />}
       />
       <Route
-        path='/rules'
-        exact
+        path='/rules/*'
         element={<Rules />}
       />
       <Route
-        path='/combat'
-        exact
+        path='/combat/*'
         element={<Combat />}
       />
       <Route
-        path='/roleplaying'
-        exact
+        path='/roleplaying/*'
         element={<Roleplay />}
       />
       <Route
-        path='/objects'
-        exact
+        path='/objects/*'
         element={<Objects />}
       />
       <Route

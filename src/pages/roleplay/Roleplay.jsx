@@ -1,4 +1,4 @@
-import FirstFamily from '../../assets/images/combat/firstfamily.jpg'
+
 import Lifting from '../../assets/images/combat/Lifting.PNG'
 import Shehulk from '../../assets/images/combat/she-hulk.png'
 import Throw1 from '../../assets/images/combat/throw1.PNG'
@@ -21,27 +21,17 @@ import Flytable from '../../assets/images/combat/flytable.PNG'
 import Flycombat from '../../assets/images/combat/flycombat.jpg'
 import Speedflight from '../../assets/images/combat/speedflight.PNG'
 import Ironfly from '../../assets/images/combat/ironfly.jpg'
-import Xmen from '../../assets/images/combat/xmen.jpg'
 import Popular from '../../assets/images/combat/popular.jpg'
 import MoonKnight from '../../assets/images/combat/moonknight.jpg'
 import GreenGoblin from '../../assets/images/combat/greengoblin.jpg'
 import Identity from '../../assets/images/combat/identity.jpg'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
 import LazyImage2 from '../ui/LazyImage2'
-import LazyImage from '../ui/LazyImage'
-
-const BigTitle = (props) => (
-  <div className='flex flex-col items-center'>
-    <div className='flex flex-row w-auto'>
-      <ComicTitlePanel>
-        <h1
-          className='text-xl sm:text-4xl font-semibold text-center'
-          {...props}
-        />
-      </ComicTitlePanel>
-    </div>
-  </div>
-)
+import Section from '../ui/Section'
+import CommonActions from './sections/CommonActions'
+import CustomActions from './sections/CustomActions'
+import SpecialActions from './sections/SpecialActions'
+import RoleplayingActions from './sections/RoleplayingActions'
 
 const Title = (props) => (
   <div className='flex flex-col items-center'>
@@ -54,92 +44,24 @@ const Title = (props) => (
   </div>
 )
 
+const Separator = () => <hr className='border-2 border-light-1' />
+
 const Roleplay = () => {
   return (
     <div className='flex flex-col min-h-screen p-4'>
-      <div className='py-2 items-center'>
-        <div className='flex flex-col py-5 self-center'>
-          <div className='flex flex-row self-center py-10 max-w-full'>
-            <ComicTitlePanel>
-              <h1 className='text-3xl sm:text-5xl font-semibold mt-4 text-center p-4'>
-                ROLEPLAYING ACTIONS
-              </h1>
-            </ComicTitlePanel>
-          </div>
-        </div>
-        <p className='text-gray-700 mb-6 text-center'>
-          When roleplaying, characters can perform many kinds of actions. In
-          this game, actions are divided in three categories. Common Actions,
-          Special Actions and Custom Actions. Common actions are actions that
-          can be performed by normal humans. For example, every character can
-          lie. Some characters are better lying than others, but every character
-          can attempt that action. Every character can also attempt to fire a
-          gun, though some characters find it harder, but every character can
-          attempt to do it. Special Actions are those that, despite in some
-          cases every character can do it, superhuman abilities can create a
-          huge difference when trying to perform said action. For example,
-          Daredevil is not even close to being capable of lifting the same
-          weight as the Hulk can and Hawkeye is not able to Jump as high as
-          Jessica Jones. Custom actions are special cases in which a player
-          comes up with different kinds of actions that cannot be described as
-          common or special actions.
-        </p>
-      </div>
-
-      <div className='mx-auto lg:px-0 px-4 max-w-full'>
-        <div className='flex flex-col p-5'>
-          <div className='flex flex-row self-center'>
-            <ComicTitlePanel>
-              <h1 className='text-2xl sm:text-4xl font-semibold mb-4 text-center'>
-                Common Actions
-              </h1>
-            </ComicTitlePanel>
-          </div>
-        </div>
-        <p className='text-gray-700 mb-6 text-center'>
-          A character that wants to perform any kind of action, must perform a
-          1d20 dice check, the number obtained in the dice will have a bonus
-          according to the skill, stat or attribute required to perform given
-          action. For example, hiding from another character requires the skill
-          ‘stealth’, so the user must throw 1d20 and add the stealth skill value
-          to the dice result. The GM will decide the check required for the
-          action to be successful according to the circumstances, but the most
-          basic successful action requires a result of 10.
-        </p>
-        <div className='flex justify-center'>
-          {' '}
-          {/* Added a flex container for centering */}
-          <LazyImage
-            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={FirstFamily}
-            alt='FF'
-          />
-        </div>
-      </div>
-
-      <div className='p-4 mx-auto items-center lg:px-0 px-10 max-w-full'>
-        <div className='flex flex-col p-0 sm:p-5 self-center'>
-          <div className='flex flex-row self-center'>
-            <ComicTitlePanel>
-              <h1 className='text-2xl sm:text-4xl font-semibold mb-4 text-center'>
-                Special Actions
-              </h1>
-            </ComicTitlePanel>
-          </div>
-        </div>
-        <p className='text-gray-700 mb-6 text-center'>
-          Some actions can be completely different depending on the character
-          you’re playing. This kind of actions will be scaled according to a
-          range, and the capacity of certain character to perform given action
-          will be given by the Stat, Skill or Attribute required for it to be
-          performed. These are some examples of special actions and how do they
-          work:
-        </p>
-      </div>
+      <RoleplayingActions />
+      <Separator />
+      <CommonActions />
+      <Separator />
+      <CustomActions />
+      <Separator />
+      <SpecialActions />
 
       <div className='flex lg:flex-row flex-col items-center'>
         <div className='p-2 mx-auto px-2 s:px-20 max-w-full'>
-          <Title>Lifting Objects</Title>
+          <Section name='lifting-objects'>
+            <Title>Lifting Objects</Title>
+          </Section>
           <p className='text-gray-700 mb-6 text-center'>
             Just like other special actions, to lift a specific weight, a
             character must throw 1d20, with the bonus being the Strength stat.
@@ -176,37 +98,40 @@ const Roleplay = () => {
       </div>
 
       <div className='max-w-5xl p-2 mx-auto items-center'>
-        <Title>Throwing Objects</Title>
-        <p className='text-gray-700 mb-6 text-center'>
-          Just like with other special actions, to throw different kinds of
-          objects, a character must throw 1d20. For the character to be able to
-          throw an object, he must be able to lift it. To throw an object to the
-          exact place you want you must get at least a 17 throw in strength or
-          marksman. If the object weights more than half of what the character
-          is capable of lifting, the strength stat must be used. If not, the
-          marksman stat can be used. For every point from the player’s throw
-          that is below 17, the object lands 5 ft away from the desired spot,
-          closer to the character. This table indicates the maximum distance a
-          character can throw an object:
-        </p>
-        <div className='flex justify-center'>
-          {' '}
-          {/* Added a flex container for centering */}
-          <LazyImage2
-            className='lg:max-w-2xl max-w-full rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Throw1}
-            alt='Throw Table 1'
-          />
-        </div>
-        <div className='flex justify-center'>
-          {' '}
-          {/* Added a flex container for centering */}
-          <LazyImage2
-            className='lg:max-w-2xl max-w-full rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Throw2}
-            alt='Throw Table 2'
-          />
-        </div>
+        <Section name='throwing-objects'>
+          <Title>Throwing Objects</Title>
+
+          <p className='text-gray-700 mb-6 text-center'>
+            Just like with other special actions, to throw different kinds of
+            objects, a character must throw 1d20. For the character to be able to
+            throw an object, he must be able to lift it. To throw an object to the
+            exact place you want you must get at least a 17 throw in strength or
+            marksman. If the object weights more than half of what the character
+            is capable of lifting, the strength stat must be used. If not, the
+            marksman stat can be used. For every point from the player’s throw
+            that is below 17, the object lands 5 ft away from the desired spot,
+            closer to the character. This table indicates the maximum distance a
+            character can throw an object:
+          </p>
+          <div className='flex justify-center'>
+            {' '}
+            {/* Added a flex container for centering */}
+            <LazyImage2
+              className='lg:max-w-2xl max-w-full rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Throw1}
+              alt='Throw Table 1'
+            />
+          </div>
+          <div className='flex justify-center'>
+            {' '}
+            {/* Added a flex container for centering */}
+            <LazyImage2
+              className='lg:max-w-2xl max-w-full rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Throw2}
+              alt='Throw Table 2'
+            />
+          </div>
+        </Section>
         <div className='flex justify-center'>
           {' '}
           {/* Added a flex container for centering */}
@@ -527,38 +452,6 @@ const Roleplay = () => {
               alt='Speed Flight Table'
             />
           </div>
-        </div>
-      </div>
-
-      <div className='p-4 mx-auto items-center max-w-full'>
-        <BigTitle>Custom Actions</BigTitle>
-        <p className='text-gray-700 mb-6 justify-center py-4'>
-          During a play session, a player can come up with different kind of
-          actions that are not described on the roleplaying actions section or
-          as a power, skill, or ability for a certain character. These are
-          custom actions. On these situations, the GM may or may not allow the
-          player to perform given action, and if the custom action is permitted,
-          he can ask for a certain dice check according to how difficult may it
-          be to perform that specific custom action for the player’s character.
-          If the player’s character is an already existing Marvel character, the
-          GM may consider if that character has performed that custom action
-          before in some media, or how hard would it be for a that character to
-          perform this custom action. If the player’s character is a custom
-          character, the GM may evaluate the character’s powers, stats, skills,
-          and abilities to stablish if the character can perform given custom
-          action and the dice check necessary for that action to be successful,
-          according to how hard may that action be for this custom character.
-          Custom actions can also be performed in battle, and they can also rest
-          power points if the GM considers it would do so.
-        </p>
-        <div className='flex justify-center'>
-          {' '}
-          {/* Added a flex container for centering */}
-          <LazyImage2
-            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Xmen}
-            alt='X-Men'
-          />
         </div>
       </div>
 

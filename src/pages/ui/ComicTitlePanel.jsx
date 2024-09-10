@@ -7,9 +7,7 @@ const randomTitleClass = () =>
   titleClasses[Math.floor(Math.random() * titleClasses.length)]
 
 const ComicTitlePanel = (props) => {
-  const { className } = props
-  const properties = { ...props }
-  delete properties.className
+  const { className, ...otherProps } = props
 
   const titleClass = useMemo(() => randomTitleClass(), [])
 
@@ -21,7 +19,7 @@ const ComicTitlePanel = (props) => {
         titleClass,
         className ?? 'text-xl sm:text-2xl bg-comic-primary'
       )}
-      {...properties}
+      {...otherProps}
     />
   )
 }

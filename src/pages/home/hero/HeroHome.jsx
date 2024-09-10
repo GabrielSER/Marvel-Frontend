@@ -3,6 +3,7 @@ import wakanda from '@images/home/wakanda.webp'
 import avengers from '@images/home/avengers.jpg'
 import { useLanguage } from '@hooks/useLanguage'
 import HeroFade from './HeroFade'
+import Section from '@ui/Section'
 
 const HeroHome = () => {
 
@@ -11,27 +12,33 @@ const HeroHome = () => {
   return (
     <div className='text-center py-12 md:py-16 w-full'>
       <div className='w-full mx-auto items-center space-y-10'>
-        <HeroFade
-          right
-          src={avengers}
-          alt='Avengers'
-          title={t('avengers.title')}
-          description={t('avengers.description')}
-        />
-        <HeroFade
-          left
-          src={wakanda}
-          alt='Wakanda'
-          title={t('worlds.title')}
-          description={t('worlds.description')}
-        />
-        <HeroFade
-          right
-          src={heroes}
-          alt='Create'
-          title={t('create.title')}
-          description={t('create.description')}
-        />
+        <Section name='play'>
+          <HeroFade
+            right
+            src={avengers}
+            alt='Avengers'
+            title={t('avengers.title')}
+            description={t('avengers.description')}
+          />
+        </Section>
+        <Section name='explore'>
+          <HeroFade
+            left
+            src={wakanda}
+            alt='Wakanda'
+            title={t('worlds.title')}
+            description={t('worlds.description')}
+          />
+        </Section>
+        <Section name='create'>
+          <HeroFade
+            right
+            src={heroes}
+            alt='Create'
+            title={t('create.title')}
+            description={t('create.description')}
+          />
+        </Section>
       </div>
     </div>
   )
