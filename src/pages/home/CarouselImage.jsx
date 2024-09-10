@@ -1,9 +1,11 @@
 import clsx from 'clsx'
 import Slide from 'react-reveal/Slide'
+import { useLanguage } from '@hooks/useLanguage'
 
 const CarouselImage = (props) => {
   const { section } = props
   const { image, title } = section
+  const { t } = useLanguage('home')
 
   return (
     <div
@@ -25,13 +27,13 @@ const CarouselImage = (props) => {
             'bg-shadow'
           )}
         >
-          {title}
+          {t(title)}
         </h1>
       </Slide>
       <img
         className='flex w-full h-full object-cover'
         src={image}
-        alt={title}
+        alt={t(title)}
       />
     </div>
   )

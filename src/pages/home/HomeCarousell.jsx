@@ -12,19 +12,19 @@ import { GiDiceTwentyFacesTwenty } from 'react-icons/gi'
 import { MdPlace } from 'react-icons/md'
 import { useEffect, useState } from 'react'
 
-const sections = [
+const sections = [  
   {
-    title: 'Play as your favorite Marvel characters',
+    title: 'carousell.characters.title',
     image: marvelHeroes,
     icon: <GoPerson />
   },
   {
-    title: 'Create your own stories',
+    title: 'carousell.characters.stories',
     image: marvelStories,
     icon: <GiDiceTwentyFacesTwenty />
   },
   {
-    title: 'Explore new worlds and locations',
+    title: 'carousell.characters.locations',
     image: marvelLocations,
     icon: <MdPlace />
   }
