@@ -1,11 +1,11 @@
 import clsx from 'clsx'
-import Carousel from '../ui/Carousell'
+import Carousel from '@ui/Carousell'
 import CarouselImage from './CarouselImage'
 import Slide from 'react-reveal/Slide'
 
-import marvelHeroes from '../../assets/images/homeCarousell/marvelHeroes.jpg'
-import marvelStories from '../../assets/images/homeCarousell/marvelStories.jpg'
-import marvelLocations from '../../assets/images/homeCarousell/marvelLocations.jpg'
+import marvelHeroes from '@images/homeCarousell/marvelHeroes.jpg'
+import marvelStories from '@images/homeCarousell/marvelStories.jpg'
+import marvelLocations from '@images/homeCarousell/marvelLocations.jpg'
 
 import { GoPerson } from 'react-icons/go'
 import { GiDiceTwentyFacesTwenty } from 'react-icons/gi'
