@@ -1,0 +1,24 @@
+{
+  "en": {
+    "avengers.title": "Play as your favorite Marvel characters",
+    "avengers.description": "Welcome to a world where the pages of Marvel Comics come alive, where heroes and villains clash in epic battles that defy imagination. In the All-New Marvel Roleplaying Game, you are not just a player; you are a hero, a champion, a force of nature in a universe brimming with excitement and danger.",
+    "worlds.title": "Explore new worlds and locations",
+    "worlds.description": "Imagine a city pulsating with energy, skyscrapers towering over streets filled with ordinary people and extraordinary beings. This is the world players and GM’s can create and explore, the beating heart of the Marvel Universe, where the unimaginable becomes reality. Here, you will encounter heroes and villains alike, and will be able to create your own stories based on the legendary characters you know and love.",
+    "create.title": "Create your own stories",
+    "create.description": "Assemble your team, harness your powers, and embark on quests that will test your courage, wit, and determination. The fate of your Marvel Universe rests in your hands. Are you ready to become a legend?",
+    "carousell.characters.title": "Play as your favorite Marvel characters",
+    "carousell.characters.stories": "Create your own stories",
+    "carousell.characters.locations": "Explore new worlds and locations"
+  },
+  "es": {
+    "avengers.title": "Juega como tus personajes favoritos de Marvel",
+    "avengers.description": "Bienvenido a un mundo donde las páginas de los cómics de Marvel cobran vida, donde héroes y villanos se enfrentan en batallas épicas que desafían la imaginación. En el Juego de Rol de Marvel totalmente nuevo, no eres solo un jugador; eres un héroe, un campeón, una fuerza de la naturaleza en un universo lleno de emoción y peligro.",
+    "worlds.title": "Explora nuevos mundos y ubicaciones",
+    "worlds.description": "Imagina una ciudad vibrante con energía, rascacielos que se alzan sobre calles llenas de personas comunes y seres extraordinarios. Este es el mundo que los jugadores y el GM pueden crear y explorar, el corazón palpitante del Universo Marvel, donde lo inimaginable se convierte en realidad. Aquí te encontrarás con héroes y villanos por igual, y podrás crear tus propias historias basadas en los personajes legendarios que conoces y amas.",
+    "create.title": "Crea tus propias historias",
+    "create.description": "Reúne a tu equipo, aprovecha tus poderes y emprende misiones que pondrán a prueba tu coraje, ingenio y determinación. El destino de tu Universo Marvel está en tus manos. ¿Estás listo para convertirte en una leyenda?",
+    "carousell.characters.title": "Juega como tus personajes favoritos de Marvel",
+    "carousell.characters.stories": "Crea tus propias historias",
+    "carousell.characters.locations": "Explora nuevos mundos y ubicaciones"
+  }
+}

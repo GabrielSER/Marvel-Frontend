@@ -1,0 +1,158 @@
+.animation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.bg,
+.pane,
+.rotate,
+.logo {
+  position: absolute;
+}
+
+.bg {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('../../assets/images/background/marvel.jpg');
+  animation: fade 5s steps(15) forwards;
+  z-index: 1000;
+}
+
+.pane {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(1.3);
+  perspective: 700px;
+  z-index: 1001;
+}
+
+.rotate {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate3d(1, -1, 0, 40deg) scale(2);
+  transform-style: preserve-3d;
+  animation: rotate 5s forwards;
+}
+
+.logo {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  font-size: 25em;
+  letter-spacing: 0em;
+  animation:
+    hide 1000s linear forwards,
+    change 5s steps(15) forwards;
+  padding: 0 0.2em;
+  line-height: 1;
+  border: 0.02em solid black;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28359/marvel.jpg');
+  background-size: 2000px auto;
+  -webkit-background-clip: text;
+  -webkit-filter: drop-shadow(0 -1px 0 black) drop-shadow(0 1px 0 black)
+    drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black);
+  color: transparent;
+  z-index: 1002;
+}
+
+@keyframes fade {
+  0% {
+    background-position: 0 0;
+    opacity: 1;
+  }
+  50% {
+    background-position: 2000% 2000%;
+    opacity: 0.6;
+  }
+  100% {
+    background-position: -2000% -2000%;
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate3d(1, -1, 0, 40deg) scale(2);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate3d(0, 0, 0, 0deg) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate3d(0, 0, 0, 0deg) scale(1);
+  }
+}
+
+@keyframes hide {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes change {
+  0% {
+    background-position: 0 0;
+    color: rgba(150, 150, 0, 0.4);
+    -webkit-filter: drop-shadow(0 -1px 0 black) drop-shadow(0 1px 0 black)
+      drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black);
+    border-color: black;
+  }
+  50% {
+    background-position: 200% 200%;
+    color: rgba(150, 150, 0, 0.4);
+    -webkit-filter: drop-shadow(0 -1px 0 black) drop-shadow(0 1px 0 black)
+      drop-shadow(1px 0 0 black) drop-shadow(-1px 0 0 black);
+    border-color: white;
+  }
+  100% {
+    background-position: -200% -200%;
+    color: white;
+    -webkit-filter: drop-shadow(0 0 0 white) drop-shadow(0 0 0 white)
+      drop-shadow(0 0 0 white) drop-shadow(0 0 0 white);
+    border-color: white;
+  }
+}
+
+/* hide the radios that allow us to retrigger the animation */
+.retrigger {
+  position: absolute;
+  left: -5em;
+  opacity: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .logo {
+    font-size: 20em;
+  }
+}
+
+@media (max-width: 992px) {
+  .logo {
+    font-size: 15em;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 10em;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    font-size: 5em;
+  }
+}
