@@ -56,7 +56,8 @@ module.exports = {
         'page': '10',
         'over-page': '20',
         'header': '30',
-        'hud': '50'
+        'hud': '50',
+        'max': '60'
       }
     }
   },

@@ -46,49 +46,49 @@ const Objects = () => {
         </p>
         <div className='flex flex-col items-left'>
           <p className='text-gray-700 text-left'>
-            <p className='text-gray-700 font-semibold text-left'>
+            <span className='text-gray-700 font-semibold text-left'>
               • Weapon type (WT):
-            </p>{' '}
+            </span>{' '}
             sets some common behavior between weapons of the same type.
           </p>
           <p className='text-gray-700 text-left'>
-            <p className='text-gray-700 font-semibold text-left'>
+            <span className='text-gray-700 font-semibold text-left'>
               • Weapon range (WR):
-            </p>{' '}
+            </span>{' '}
             The maximum range in feet of a specific weapon.
           </p>
           <p className='text-gray-700 text-left'>
-            <p className='text-gray-700 font-semibold text-left'>
+            <span className='text-gray-700 font-semibold text-left'>
               • Weapon damage factor (WF):
-            </p>{' '}
+            </span>{' '}
             A portion of damage that is applied proportionally to the final
             damage made by a weapon attack, see Weapon damage/Modifier by
             performance.
           </p>
           <p className='text-gray-700 text-left'>
-            <p className='text-gray-700 font-semibold text-left'>
+            <span className='text-gray-700 font-semibold text-left'>
               • Weapon distance penalty (WDP):
-            </p>{' '}
+            </span>{' '}
             Describes how much the weapon damage is affected depending on the
             distance, for a projectile is the distance from shooter to target.
           </p>
           <p className='text-gray-700 text-left'>
-            <p className='text-gray-700 font-semibold text-left'>
+            <span className='text-gray-700 font-semibold text-left'>
               • Weapon Capacity (WC):
-            </p>{' '}
+            </span>{' '}
             The amount of ammo or charges that the weapon can hold at once.
           </p>
           <p className='text-gray-700 text-left'>
-            <p className='text-gray-700 font-semibold text-left'>
+            <span className='text-gray-700 font-semibold text-left'>
               • Weapon Reload (WRE):
-            </p>{' '}
+            </span>{' '}
             The number of actions required to reload a magazine or return the
             weapon to a loaded state.
           </p>
           <p className='text-gray-700 text-left'>
-            <p className='text-gray-700 font-semibold text-left'>
+            <span className='text-gray-700 font-semibold text-left'>
               • Weapon Modifier (WM):
-            </p>{' '}
+            </span>{' '}
             Weapons require some skill to be used efficiently, for instance a
             pistol will be used with firearms skill. To abbreviate, the skills
             Handguns, Shotguns, Rifles are under the Firearms skill, that means
@@ -97,9 +97,9 @@ const Objects = () => {
             modifier will be applied to the hit roll and the final damage.
           </p>
           <p className='text-gray-700 text-left'>
-            <p className='text-gray-700 font-semibold text-left'>
+            <span className='text-gray-700 font-semibold text-left'>
               • Modifier by performance:
-            </p>{' '}
+            </span>{' '}
             The damage delt by a weapon depends on the performance of his user
             in that attack (1d20), in other words: Is not the same to attack the
             same target that has a 12 agility with a roll of 13 than with a 19
@@ -125,9 +125,9 @@ const Objects = () => {
             or marksman check minus the victim's agility or durability throw.
           </p>
           <p className='text-gray-700 text-left'>
-            <p className='text-gray-700 font-semibold text-left'>
+            <span className='text-gray-700 font-semibold text-left'>
               • Static Weapon Damage:
-            </p>{' '}
+            </span>{' '}
             Any weapon that requires some talent component of his user will have
             a damage output depending on the WF, for example a C4 explosive
             charge will always have the same damage value and it does not depend

@@ -1,13 +1,13 @@
 import clsx from 'clsx'
-import { Link } from 'react-router-dom'
-import { Fade } from 'react-reveal'
-import CharacterCard from './CharacterCard'
-import { useCharacters } from '../../contexts/CharactersContext'
-import { normalizeName } from '../../util/characterUtil'
-import ComicTitlePanel from '../ui/ComicTitlePanel'
-import PrimaryInput from '../ui/PrimaryInput'
 import { useState, useEffect } from 'react'
 import { FaSearch } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { Fade } from 'react-reveal'
+import { useCharacters } from '@contexts/CharactersContext'
+import { normalizeString } from '@util/stringUtil'
+import ComicTitlePanel from '@ui/ComicTitlePanel'
+import PrimaryInput from '@ui/PrimaryInput'
+import CharacterCard from './CharacterCard'
 
 const Characters = () => {
   const { characters } = useCharacters()
@@ -23,7 +23,6 @@ const Characters = () => {
 
   useEffect(() => {
     const charactersArray = Array.from(characters.values())
-
     if (!searchInput) {
       setFilteredCharacters(charactersArray)
       return
@@ -85,7 +84,7 @@ const Characters = () => {
           <Link
             onClick={scrollToTop}
             key={character._id}
-            to={`/characters/${normalizeName(character.name)}`}
+            to={`/characters/${normalizeString(character.name)}`}
           >
             <Fade down>
               <CharacterCard character={character} />

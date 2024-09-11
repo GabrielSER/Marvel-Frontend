@@ -1,5 +1,6 @@
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'
 
+import { ApplicationProvider } from '@contexts/ApplicationContext'
 import { UserProvider } from '@contexts/UserContext'
 import { ToolbarProvider } from '@contexts/ToolbarContext'
 import { DicesProvider } from '@contexts/DicesContext'
@@ -13,7 +14,8 @@ import MainBody from './MainBody'
 
 const Main = () => {
   return (
-    <Router>
+    <ApplicationProvider>
+      <Router>
         <UserProvider>
           <Routes>
             <Route
@@ -41,7 +43,8 @@ const Main = () => {
             />
           </Routes>
         </UserProvider>
-    </Router>
+      </Router>
+    </ApplicationProvider>
   )
 }
 

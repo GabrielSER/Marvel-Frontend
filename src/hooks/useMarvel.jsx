@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useCallback, useState } from 'react'
-import { getToken } from '../contexts/UserContext'
+import { getToken } from '@contexts/UserContext'
 
 const httpMethod = {
   GET: 'get',

@@ -1,10 +1,13 @@
 import { createContext, useState, useEffect, useMemo, useContext } from 'react'
-import { useMarvel } from '../hooks/useMarvel'
+import { useMarvel } from '@hooks/useMarvel'
+import { normalizeString } from '@util/stringUtil'
 
 const FormsContext = createContext()
 
 const initialState = {
-  forms: new Map()
+  forms: new Map(),
+  formsByNormalized: new Map(),
+  indexing: true
 }
 
 const FormsProvider = (props) => {
@@ -16,21 +19,38 @@ const FormsProvider = (props) => {
       try {
         const formsArray = await query('/forms')
         const forms = new Map(formsArray.map((form) => [form._id, form]))
-        setState({
-          ...state,
-          forms
-        })
+        setState((previous) => ({
+          ...previous,
+          forms,
+          indexing: true
+        }))
       } catch (error) {
         console.error('Error loading forms')
       }
     }
     loadForms()
-  }, [])
+  }, [setState])
+
+  useEffect(() => {
+    if (state.forms.size === 0) {
+      return
+    }
+    const forms = Array.from(state.forms.values())
+    const formsByNormalized = new Map(
+      forms.map((form) => [normalizeString(form.name), form])
+    )
+    
+    setState((previous) => ({
+      ...previous,
+      formsByNormalized,
+      indexing: false
+    }))
+  }, [state.forms])
 
   const value = useMemo(
     () => ({
       ...state,
-      loading
+      loading: loading || state.indexing
     }),
     [state, loading]
   )

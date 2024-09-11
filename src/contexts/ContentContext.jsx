@@ -7,7 +7,7 @@ import {
   useCallback
 } from 'react'
 
-import { contentMapping } from '../pages/content/mapping'
+import { contentMapping } from '@content/mapping'
 
 const ContentContext = createContext()
 

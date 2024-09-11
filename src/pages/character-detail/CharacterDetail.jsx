@@ -1,15 +1,21 @@
-import { useParams, useNavigate } from 'react-router-dom'
-import { CharacterProvider } from '../../contexts/CharacterContext'
-import { useCharacterWithNormalizedName } from '../../hooks/useCharacterWithNormalizedName'
 import { useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import { useApplication } from '@contexts/ApplicationContext'
+import { CharacterProvider } from '@contexts/CharacterContext'
+import { CharacterDetailProvider } from '@contexts/CharacterDetailContext'
+import { useCharacterWithNormalizedName } from '@hooks/useCharacterWithNormalizedName'
 import FormTabBar from './FormTabBar'
 import CharacterFormDetail from './CharacterFormDetail'
-import { CharacterDetailProvider } from '../../contexts/CharacterDetailContext'
 
 const CharacterDetail = () => {
   const navigate = useNavigate()
-  const { normalized } = useParams()
-  const { character, loading } = useCharacterWithNormalizedName(normalized)
+  const { characterNormalized } = useParams()
+  const { character, loading } = useCharacterWithNormalizedName(characterNormalized)
+  const { setLoading } = useApplication()
+
+  useEffect(() => {
+    setLoading(true)
+  }, [])
 
   useEffect(() => {
     if (loading) return

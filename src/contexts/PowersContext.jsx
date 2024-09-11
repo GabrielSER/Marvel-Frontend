@@ -6,7 +6,7 @@ import {
   useContext,
   useCallback
 } from 'react'
-import { useMarvel, httpMethod } from '../hooks/useMarvel'
+import { useMarvel, httpMethod } from '@hooks/useMarvel'
 import { useCharacters } from './CharactersContext'
 
 const PowersContext = createContext()

@@ -5,6 +5,7 @@ import LazyImage2 from '../ui/LazyImage2' // Importing LazyImage2
 import Bulletproof from '../../assets/icons/bulletproof.png'
 import StatLogo from '../ui/StatLogo'
 import Tooltip from '../ui/Tooltip'
+import { useApplication } from '@contexts/ApplicationContext'
 
 const StatComponent = ({ children }) => {
   return (
@@ -17,6 +18,7 @@ const StatComponent = ({ children }) => {
 const CharacterImage = () => {
   const { selectedForm } = useCharacterDetail()
   const [isLoaded, setIsLoaded] = useState(false)
+  const { setLoading } = useApplication()
 
   const bulletproofStat = selectedForm.stats.find(
     (stat) => stat.uniqueName === 'bulletproof'
@@ -89,7 +91,10 @@ const CharacterImage = () => {
           { 'flip-in': isLoaded }
         )}
         placeholder={imagePlaceholder}
-        onLoad={() => setIsLoaded(true)}
+        onLoad={() => {
+          setLoading(false)
+          setIsLoaded(true)
+        }}
       />
     </div>
   )

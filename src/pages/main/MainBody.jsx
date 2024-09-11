@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 
+import { useApplication } from '@contexts/ApplicationContext'
 import { useUser } from '@contexts/UserContext'
 
 import MarvelLoader from '@ui/MarvelLoader'
@@ -9,13 +10,16 @@ import HUD from './hud/HUD'
 import Navbar from './navbar/Navbar'
 import MainBodyRoutes from './MainBodyRoutes'
 import Footer from './footer/Footer'
+import { useEffect } from 'react'
 
 const MainBody = () => {
+
+  const { loading } = useApplication()
   const { isLoggedIn, showAnimation } = useUser()
 
-  if (!isLoggedIn) {
-    return <MarvelLoader />
-  }
+  useEffect(() => {
+    //setLoading(true)
+  }, [])
 
   if (showAnimation) {
     return <AnimationComponent />
@@ -23,6 +27,7 @@ const MainBody = () => {
 
   return (
     <ComicBackground>
+      {(!isLoggedIn || loading) && <MarvelLoader />}
       <HUD />
       <Navbar />
       <div

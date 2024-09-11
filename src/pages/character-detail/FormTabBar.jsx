@@ -1,18 +1,31 @@
-import { useCharacter } from '../../contexts/CharacterContext'
 import clsx from 'clsx'
-import { useMemo } from 'react'
-import NavigationTab from '../ui/NavigationTab'
-import Title from '../ui/Title'
-import { useCharacterDetail } from '../../contexts/CharacterDetailContext'
+import { useCallback, useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useCharacter } from '@contexts/CharacterContext'
+import { useCharacterDetail } from '@contexts/CharacterDetailContext'
+import { normalizeString } from '@util/stringUtil'
+import NavigationTab from '@ui/NavigationTab'
+import Title from '@ui/Title'
 
 const FormTab = (props) => {
+  const { character, defaultForm } = useCharacter()
   const { form } = props
-  const { selectedForm, setSelectedForm } = useCharacterDetail()
+  const { selectedForm } = useCharacterDetail()
+  const navigate = useNavigate()
+
+  const navigateToForm = useCallback(() => {
+    const characterRoute = `/characters/${normalizeString(character.name)}`
+    if (form._id == character.defaultForm) {
+      navigate(`${characterRoute}`)
+    } else {
+      navigate(`${characterRoute}/${normalizeString(form.name)}`)
+    }
+  }, [character, defaultForm, form])
 
   return (
     <NavigationTab
       active={form._id === selectedForm?._id}
-      onClick={() => setSelectedForm(form)}
+      onClick={navigateToForm}
     >
       {form.name.toUpperCase()}
     </NavigationTab>

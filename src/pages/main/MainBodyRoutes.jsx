@@ -1,10 +1,10 @@
 import { Route, Navigate, Routes } from 'react-router-dom'
 import HomeComponent from '../home/HomeComponent'
 import Character from '../characters/Character'
+import Rules from '../characters/Rules'
 import Characters from '../characters/Characters'
 import CharacterDetail from '../character-detail/CharacterDetail'
 import Places from '../places/Places'
-import Rules from '../characters/Rules'
 import Combat from '../combat/Combat'
 import Roleplay from '../roleplay/Roleplay'
 import Objects from '../objects/Objects'
@@ -13,11 +13,6 @@ import NotFound from '../not-found/NotFound'
 const MainBodyRoutes = () => {
   return (
     <Routes>
-      <Route
-        path='/*'
-        exact
-        element={<HomeComponent />}
-      />
       <Route
         path='/player'
         exact
@@ -29,8 +24,7 @@ const MainBodyRoutes = () => {
         element={<Characters />}
       />
       <Route
-        path='/characters/:normalized'
-        exact
+        path='/characters/:characterNormalized/:formNormalized?'
         element={<CharacterDetail />}
       />
       <Route
@@ -52,6 +46,11 @@ const MainBodyRoutes = () => {
       <Route
         path='/objects/*'
         element={<Objects />}
+      />
+      <Route
+        path='/'
+        exact
+        element={<HomeComponent />}
       />
       <Route
         path='/not-found'

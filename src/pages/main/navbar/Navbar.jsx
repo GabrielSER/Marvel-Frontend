@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div
       className={clsx(
-        ' flex flex-col',
+        'flex flex-col',
         'w-full',
         'p-2',
         'bg-dark',

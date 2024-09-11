@@ -6,8 +6,8 @@ import {
   useContext,
   useCallback
 } from 'react'
-import { useMarvel, httpMethod } from '../hooks/useMarvel'
-import { normalizeName } from '../util/characterUtil'
+import { useMarvel, httpMethod } from '@hooks/useMarvel'
+import { normalizeString } from '@util/stringUtil'
 
 const CharactersContext = createContext()
 
@@ -61,13 +61,13 @@ const CharactersProvider = (props) => {
     }
     const characters = Array.from(state.characters.values())
     const charactersByNormalized = new Map(
-      characters.map((character) => [normalizeName(character.name), character])
+      characters.map((character) => [normalizeString(character.name), character])
     )
-    setState({
-      ...state,
+    setState((previous) => ({
+      ...previous,
       charactersByNormalized,
       indexing: false
-    })
+    }))
   }, [state.characters])
 
   const updateCharacter = useCallback(

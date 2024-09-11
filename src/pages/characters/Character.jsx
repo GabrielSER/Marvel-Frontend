@@ -846,10 +846,9 @@ const Character = () => {
         </Paragraph>
         <Paragraph>Check out the Marvel Character Sheet model below!</Paragraph>
         <iframe
-          width='full'
-          height='1150'
+          className='w-full h-[90vh]'
           loading='lazy'
-          allowfullscreen
+          allowFullScreen
           referrerPolicy='no-referrer-when-downgrade'
           src={documentPath}
         ></iframe>

@@ -7,7 +7,7 @@ import {
   useMemo,
   useCallback
 } from 'react'
-import { useMarvel, httpMethod } from '../hooks/useMarvel'
+import { useMarvel, httpMethod } from '@hooks/useMarvel'
 import { useNavigate } from 'react-router-dom'
 
 const UserRole = {

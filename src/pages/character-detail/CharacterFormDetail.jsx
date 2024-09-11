@@ -1,9 +1,13 @@
 import clsx from 'clsx'
-import { FormProvider } from '../../contexts/FormContext'
+import { useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { FormProvider } from '@contexts/FormContext'
+import { useCharacterDetail } from '@contexts/CharacterDetailContext'
+import { useFormWithNormalizedName } from '@hooks/useFormWithNormalizedName'
+import { useCharacter } from '@contexts/CharacterContext'
 import CharacterStats from './CharacterStats'
 import CharacterAbilities from './CharacterAbilities'
 import CharacterPowers from './CharacterPowers'
-import { useCharacterDetail } from '../../contexts/CharacterDetailContext'
 import CharacterSkills from './CharacterSkills'
 import CharacterImage from './CharacterImage'
 import CharacterLogo from './CharacterLogo'
@@ -39,7 +43,25 @@ const Column = (props) => {
 }
 
 const CharacterFormDetail = () => {
-  const { selectedForm } = useCharacterDetail()
+
+  const navigate = useNavigate()
+  const { formNormalized } = useParams()
+  const { form, loading } = useFormWithNormalizedName(formNormalized)
+  const { defaultForm } = useCharacter()
+  const { selectedForm, setSelectedForm } = useCharacterDetail()
+
+  useEffect(() => {
+    if (loading) return
+    if (!formNormalized) {
+      setSelectedForm(defaultForm)
+    } else {
+      if (form != null) {
+        setSelectedForm(form)
+      } else {
+        navigate('/not-found')
+      }
+    }
+  }, [loading, formNormalized, form, defaultForm, selectedForm, setSelectedForm, navigate])
 
   if (selectedForm == null) return null
 
