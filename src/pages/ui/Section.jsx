@@ -1,29 +1,22 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
-const fixedIntersectionHeight = 300
+const fixedIntersectionHeight = 20
 
 const Section = (props) => {
 
     const { name, ...otherProps } = props
 
     const ref = useRef(null)
+    const [tracking, setTracking] = useState(undefined)
     const [isIntersecting, setIsIntersecting] = useState(false)
+    const [navigateTo, setNavigateTo] = useState()
     const navigate = useNavigate()
     const location = useLocation()
 
     const nameHash = useMemo(() => `#${name}`, [name])
 
-    useEffect(() => {
-        if (!isIntersecting && location.hash === nameHash) {
-            const element = ref.current
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' })
-            }
-        }
-    }, [isIntersecting, location, nameHash])
-
-    const handleScroll = useCallback(() => {
+    const checkIntersection = useCallback(() => {
         if (!ref.current) {
             setIsIntersecting(false)
             return
@@ -34,27 +27,62 @@ const Section = (props) => {
         if (refBottom < 0) {
             intersects = false
         } else {
-            intersects = fixedIntersectionHeight >= refTop && fixedIntersectionHeight <= refBottom
+            intersects = fixedIntersectionHeight >= refTop &&
+                fixedIntersectionHeight <= refBottom
         }
         setIsIntersecting((intersected) => {
+            const clearPath = location.pathname.endsWith('/') ? location.pathname.slice(0, -1) : location.pathname
             if (!intersected && intersects) {
-                navigate(`${location.pathname}${nameHash}`)
+                setNavigateTo(`${clearPath}${nameHash}`)
             } else if (intersected && !intersects) {
-                navigate(`${location.pathname}`)
+                setNavigateTo(`${clearPath}`)
             }
             return intersects
         })
-    }, [ref, location, nameHash, navigate, setIsIntersecting])
+    }, [ref, location, nameHash, setNavigateTo, setIsIntersecting])
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
+        checkIntersection()
+        window.addEventListener('scroll', checkIntersection)
+        return () => window.removeEventListener('scroll', checkIntersection)
+    }, [])
+
+    useEffect(() => {
+        if (navigateTo) {
+            navigate(navigateTo)
         }
-    }, [handleScroll])
+    }, [navigateTo, setNavigateTo, navigate])
+
+    useEffect(() => {
+        if (tracking === undefined) {
+            if (location.hash === nameHash) {
+                document.body.style.overflow = 'hidden'
+                setTracking(true)
+            } else {
+                setTracking(false)
+            }
+        }
+    }, [tracking, location, nameHash, setTracking, checkIntersection])
+
+    useEffect(() => {
+        if (!tracking) return
+        if (!ref.current) return
+        const intervalId = setInterval(() => {
+            const element = ref.current
+            if (!isIntersecting) {
+                window.scrollTo({
+                    top: element.offsetTop - fixedIntersectionHeight,
+                    behavior: 'smooth'
+                })
+            } else {
+                document.body.style.overflow = ''
+                setTracking(false)
+            }
+        }, [500])
+        return () => clearInterval(intervalId)
+    }, [tracking, isIntersecting])
 
     return <section id={name} ref={ref} {...otherProps} />
-
 }
 
 export default Section

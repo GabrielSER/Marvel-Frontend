@@ -10,6 +10,7 @@ const HUD = () => {
         'fixed inset-0',
         'w-full',
         'h-screen',
+        'overflow-x-hidden overflow-y-hidden',
         'pointer-events-none'
       )}
     >
@@ -19,6 +20,7 @@ const HUD = () => {
           'flex flex-col',
           'justify-end',
           'w-full h-full',
+          'overflow-x-hidden overflow-y-hidden',
           'pointer-events-none'
         )}
       >

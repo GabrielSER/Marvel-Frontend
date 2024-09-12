@@ -1,7 +1,14 @@
 import clsx from 'clsx'
 import LineLoader from './LineLoader'
+import { useEffect } from 'react'
 
 const MarvelLoader = () => {
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => document.body.style.overflow = ''
+  }, [])
+
   return (
     <div
       className={clsx(

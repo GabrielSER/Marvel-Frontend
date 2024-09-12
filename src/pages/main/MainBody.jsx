@@ -10,16 +10,11 @@ import HUD from './hud/HUD'
 import Navbar from './navbar/Navbar'
 import MainBodyRoutes from './MainBodyRoutes'
 import Footer from './footer/Footer'
-import { useEffect } from 'react'
 
 const MainBody = () => {
 
   const { loading } = useApplication()
   const { isLoggedIn, showAnimation } = useUser()
-
-  useEffect(() => {
-    //setLoading(true)
-  }, [])
 
   if (showAnimation) {
     return <AnimationComponent />
@@ -33,7 +28,7 @@ const MainBody = () => {
       <div
         className={clsx(
           'flex flex-col',
-          'w-full h-full shrink-0 grow-0',
+          'inset-0 w-full h-full shrink-0 grow-0',
           'overflow-x-hidden overflow-y-hidden'
         )}
       >
