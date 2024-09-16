@@ -1,10 +1,8 @@
 import clsx from 'clsx'
 
 const Circular = (props) => {
-  const { className } = props
-  const properties = { ...props }
-  delete properties.className
-
+  const { className, ...otherProps } = props
+  
   return (
     <div
       className={clsx(
@@ -19,7 +17,7 @@ const Circular = (props) => {
         'overflow-y-hidden',
         className
       )}
-      {...properties}
+      {...otherProps}
     />
   )
 }

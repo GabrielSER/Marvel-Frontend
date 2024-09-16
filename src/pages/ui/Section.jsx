@@ -43,9 +43,10 @@ const Section = (props) => {
 
     useEffect(() => {
         checkIntersection()
+        setTracking(undefined)
         window.addEventListener('scroll', checkIntersection)
         return () => window.removeEventListener('scroll', checkIntersection)
-    }, [])
+    }, [setTracking])
 
     useEffect(() => {
         if (navigateTo) {

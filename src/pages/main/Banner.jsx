@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import logo from '../../assets/logos/marvel.png'
+import logo from '@assets/logos/marvel.png'
 
 const Banner = () => {
   return (
@@ -8,7 +8,7 @@ const Banner = () => {
         'flex',
         'flex-col',
         'justify-center items-center',
-        'p-2',
+        'p-2 pt-16',
         'space-y-2',
         'text-2xl',
         'text-white',

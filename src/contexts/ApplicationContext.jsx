@@ -3,7 +3,8 @@ import { createContext, useState, useMemo, useContext, useCallback } from 'react
 const ApplicationContext = createContext()
 
 const initialState = {
-  loading: false
+  loading: false,
+  editMode: false
 }
 
 const ApplicationProvider = (props) => {
@@ -16,12 +17,20 @@ const ApplicationProvider = (props) => {
     }))
   }, [setState])
 
+  const setEditMode = useCallback((editMode) => {
+    setState((previous) => ({
+      ...previous, 
+      editMode
+    }))
+  }, [setState])
+
   const value = useMemo(
     () => ({
       ...state,
-      setLoading
+      setLoading, 
+      setEditMode
     }),
-    [state, setLoading]
+    [state, setLoading, setEditMode]
   )
 
   return (

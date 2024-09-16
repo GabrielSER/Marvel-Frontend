@@ -7,7 +7,7 @@
     "start": "concurrently npm:start:*",
     "start:js": "react-app-rewired start",
     "start:css": "npx tailwindcss -i ./tailwind.css -o ./src/index.css --jit -w",
-    "start:lang":"nodemon --watch src --ext json --exec 'node language-extractor.js'",
+    "start:lang":"nodemon --watch src --ext json language-extractor.js",
     "-start:lint": "nodemon --watch src --ext js,jsx --exec 'concurrently npm:lint:*'",
     "lint:eslint": "eslint --fix 'src/**/*.{js,jsx}'",
     "lint:prettier": "npx prettier 'src/**/*.{js,jsx}' --write --log-level silent",

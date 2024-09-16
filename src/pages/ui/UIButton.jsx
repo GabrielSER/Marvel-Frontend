@@ -1,12 +1,13 @@
 import useSound from 'use-sound'
-import tickSound from '../../assets/sound/tick.mp3'
+import tickSound from '@sound/tick.mp3'
 import clsx from 'clsx'
 
 const UIButton = (props) => {
-  const { className } = props
-
-  const properties = { ...props }
-  delete properties.className
+  const { 
+    className,
+    centered = true,
+     ...otherProps 
+    } = props
 
   const [playTick] = useSound(tickSound)
 
@@ -14,7 +15,8 @@ const UIButton = (props) => {
     <button
       className={clsx(
         'flex',
-        'justify-center items-center',
+        'items-center',
+        centered && 'justify-center',
         'ui-box',
         'rounded-md',
         'hover:scale-105',
@@ -23,7 +25,7 @@ const UIButton = (props) => {
         className
       )}
       onMouseEnter={playTick}
-      {...properties}
+      {...otherProps}
     />
   )
 }

@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import NavigationContainer from './NavigationContainer'
 import NavigationLink from './NavigationLink'
 import StateBar from './StateBar'
+import Banner from '../Banner'
 
 const Navbar = () => {
   return (
@@ -9,13 +10,13 @@ const Navbar = () => {
       className={clsx(
         'flex flex-col',
         'w-full',
-        'p-2',
         'bg-dark',
         'shadow-lg',
-        'z-40'
+        'z-over-page'
       )}
     >
       <StateBar />
+      <Banner />
       <NavigationContainer>
         <NavigationLink
           text='Home'
@@ -53,9 +54,5 @@ const Navbar = () => {
     </div>
   )
 }
-
-/**
- *
- */
 
 export default Navbar
