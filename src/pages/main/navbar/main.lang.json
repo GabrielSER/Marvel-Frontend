@@ -1,0 +1,26 @@
+{
+  "en": {
+    "header.all-new": "ALL NEW",
+    "header.roleplaying-game": "ROLEPLAYING GAME",
+    "nav.home": "Home",
+    "nav.characters": "Characters",
+    "nav.universe": "Marvel Universe",
+    "nav.objects": "Objects",
+    "nav.rules": "Campaign Rules",
+    "nav.guide": "Player Guide",
+    "nav.combat": "Combat",
+    "nav.roleplaying": "Roleplaying"
+  },
+  "es": {
+    "header.all-new": "EL NUEVO",
+    "header.roleplaying-game": "JUEGO DE ROL",
+    "nav.home": "Inicio",
+    "nav.characters": "Personajes",
+    "nav.universe": "Universo Marvel",
+    "nav.objects": "Objetos",
+    "nav.rules": "Reglas de Campaña",
+    "nav.guide": "Guía de Jugadores",
+    "nav.combat": "Combate",
+    "nav.roleplaying": "Roleando"
+  }
+}

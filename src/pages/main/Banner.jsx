@@ -3,7 +3,7 @@ import { useLanguage } from '@hooks/useLanguage'
 import MarvelLogo from '@ui/MarvelLogo'
 
 const Banner = () => {
-  const { t } = useLanguage()
+  const { t } = useLanguage('main')
   return (
     <div
       className={clsx(

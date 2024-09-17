@@ -3,7 +3,12 @@ import NavigationContainer from './NavigationContainer'
 import NavigationLink from './NavigationLink'
 import Banner from '../Banner'
 
+import { useLanguage } from '@hooks/useLanguage'
+
 const Navbar = () => {
+
+  const { t } = useLanguage('main')
+
   return (
     <div
       className={clsx(
@@ -17,35 +22,35 @@ const Navbar = () => {
       <Banner />
       <NavigationContainer>
         <NavigationLink
-          text='Home'
+          text={t('nav.home')}
           to='/'
         />
         <NavigationLink
-          text='Characters'
+          text={t('nav.characters')}
           to='/characters'
         />
         <NavigationLink
-          text='Marvel Universe'
+          text={t('nav.universe')}
           to='/places'
         />
         <NavigationLink
-          text='Objects'
+          text={t('nav.objects')}
           to='/objects'
         />
         <NavigationLink
-          text='Campaign Rules'
+          text={t('nav.rules')}
           to='/rules'
         />
         <NavigationLink
-          text='Player Guide'
+          text={t('nav.guide')}
           to='/player'
         />
         <NavigationLink
-          text='Combat'
+          text={t('nav.combat')}
           to='/combat'
         />
         <NavigationLink
-          text='Roleplaying'
+          text={t('nav.roleplaying')}
           to='/roleplaying'
         />
       </NavigationContainer>
