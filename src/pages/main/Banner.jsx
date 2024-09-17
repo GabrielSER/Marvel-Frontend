@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import logo from '@assets/logos/marvel.png'
+import MarvelLogo from '@ui/MarvelLogo'
 
 const Banner = () => {
   return (
@@ -15,11 +15,10 @@ const Banner = () => {
         'font-bold font-condensed'
       )}
     >
-      <h1 className='hover:text-red-700'>ALL-NEW</h1>
-      <img
-        src={logo}
-        alt='Marvel Logo'
-      />
+      <h1 className='hover:text-red-700'>
+        ALL-NEW
+      </h1>
+      <MarvelLogo className='h-[150px]' />
       <h1>Roleplaying Game</h1>
     </div>
   )

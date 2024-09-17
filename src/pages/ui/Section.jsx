@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
-const fixedIntersectionHeight = 20
+// Statebar 16 twu = 4rem = 64px
+const fixedIntersectionHeight = 64
 
 const Section = (props) => {
 
@@ -83,7 +84,13 @@ const Section = (props) => {
         return () => clearInterval(intervalId)
     }, [tracking, isIntersecting])
 
-    return <section id={name} ref={ref} {...otherProps} />
+    return (
+        <section
+            id={name}
+            ref={ref}
+            {...otherProps}
+        />
+    )
 }
 
 export default Section

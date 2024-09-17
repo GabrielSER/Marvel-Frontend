@@ -1,7 +1,6 @@
 import clsx from 'clsx'
 import NavigationContainer from './NavigationContainer'
 import NavigationLink from './NavigationLink'
-import StateBar from './StateBar'
 import Banner from '../Banner'
 
 const Navbar = () => {
@@ -15,7 +14,6 @@ const Navbar = () => {
         'z-over-page'
       )}
     >
-      <StateBar />
       <Banner />
       <NavigationContainer>
         <NavigationLink

@@ -7,6 +7,7 @@ import MarvelLoader from '@ui/MarvelLoader'
 import ComicBackground from '@ui/ComicBackground'
 import AnimationComponent from './AnimationComponent'
 import HUD from './hud/HUD'
+import StateBar from './navbar/StateBar'
 import Navbar from './navbar/Navbar'
 import MainBodyRoutes from './MainBodyRoutes'
 import Footer from './footer/Footer'
@@ -21,21 +22,30 @@ const MainBody = () => {
   }
 
   return (
-    <ComicBackground>
-      {(!isLoggedIn || loading) && <MarvelLoader />}
-      <HUD />
-      <Navbar />
+    <div
+      className={clsx(
+        'relative flex flex-col flex-initial',
+        'inset-0 w-full h-full',
+        'overflow-x-hidden overflow-y-hidden'
+      )}
+    >
+      <StateBar />
       <div
         className={clsx(
           'flex flex-col',
           'inset-0 w-full h-full shrink-0 grow-0',
-          'overflow-x-hidden overflow-y-hidden'
+          'overflow-x-hidden overflow-y-auto'
         )}
       >
-        <MainBodyRoutes />
-        <Footer />
+        <ComicBackground>
+          {(!isLoggedIn || loading) && <MarvelLoader />}
+          <HUD />
+          <Navbar />
+          <MainBodyRoutes />
+          <Footer />
+        </ComicBackground>
       </div>
-    </ComicBackground>
+    </div>
   )
 }
 

@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import logo from '../../../assets/logos/marvel.png'
+import MarvelLogo from '@ui/MarvelLogo'
 
 const LogoDisclaimer = () => (
   <div
@@ -18,11 +18,7 @@ const LogoDisclaimer = () => (
       target='_blank'
       rel='noopener noreferrer'
     >
-      <img
-        src={logo}
-        alt='Marvel Logo'
-        className='w-auto h-20'
-      />
+      <MarvelLogo className='h-32' />
     </a>
     <p className='text-xs'>
       Disclaimer: This is a fan project. All logos, characters, artwork,

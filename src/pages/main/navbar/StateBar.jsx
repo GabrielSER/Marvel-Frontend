@@ -8,13 +8,12 @@ const StateBar = () => {
   return (
     <div
       className={clsx(
-        'fixed',
-        'flex shrink-0',
+        'fixed flex shrink-0',
         'w-full',
         'justify-end items-center',
         'space-x-2',
         'p-2',
-        'z-over-page',
+        'z-header',
         'bg-dark',
         'border-b border-b-light-2',
         'shadow-lg',
