@@ -15,7 +15,7 @@ i18n
         },
         backend: {
             loadPath: (lng, namespace) => {
-                if (namespace === undefined || namespace === null) {
+                if (namespace == 'translation') {
                     return `locales/${lng}.json`
                 }
                 return `locales/${namespace}/${lng}.json`

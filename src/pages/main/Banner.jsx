@@ -1,7 +1,9 @@
 import clsx from 'clsx'
+import { useLanguage } from '@hooks/useLanguage'
 import MarvelLogo from '@ui/MarvelLogo'
 
 const Banner = () => {
+  const { t } = useLanguage()
   return (
     <div
       className={clsx(
@@ -16,10 +18,10 @@ const Banner = () => {
       )}
     >
       <h1 className='hover:text-red-700'>
-        ALL-NEW
+        {t('header.all-new')}
       </h1>
       <MarvelLogo className='h-[150px]' />
-      <h1>Roleplaying Game</h1>
+      <h1>{t('header.roleplaying-game')}</h1>
     </div>
   )
 }
