@@ -1,30 +1,30 @@
 
-import Lifting from '../../assets/images/combat/Lifting.PNG'
-import Shehulk from '../../assets/images/combat/she-hulk.png'
-import Throw1 from '../../assets/images/combat/throw1.PNG'
-import Throw2 from '../../assets/images/combat/throw2.PNG'
-import Throw3 from '../../assets/images/combat/colossusthrow.jpg'
-import Crush from '../../assets/images/combat/Crush.PNG'
-import Destiny from '../../assets/images/combat/MyDestiny.png'
-import Crash from '../../assets/images/combat/carcrash.PNG'
-import CarCrash from '../../assets/images/combat/crash.PNG'
-import HulkJump from '../../assets/images/combat/jumphulk.png'
-import Jump from '../../assets/images/combat/jumpstrenght.PNG'
-import CapJump from '../../assets/images/combat/captainamericajump.jpg'
-import HorizontalJump from '../../assets/images/combat/horizontaljump.PNG'
-import AcrobatJump from '../../assets/images/combat/acrobatjump.PNG'
-import DaredevilJump from '../../assets/images/combat/daredeviljump.png'
-import Breaking from '../../assets/images/combat/breaking.PNG'
-import Serpent from '../../assets/images/combat/serpentbreaks.jpg'
-import Flying from '../../assets/images/combat/flying.jpg'
-import Flytable from '../../assets/images/combat/flytable.PNG'
-import Flycombat from '../../assets/images/combat/flycombat.jpg'
-import Speedflight from '../../assets/images/combat/speedflight.PNG'
-import Ironfly from '../../assets/images/combat/ironfly.jpg'
-import Popular from '../../assets/images/combat/popular.jpg'
-import MoonKnight from '../../assets/images/combat/moonknight.jpg'
-import GreenGoblin from '../../assets/images/combat/greengoblin.jpg'
-import Identity from '../../assets/images/combat/identity.jpg'
+import Lifting from '@assets/images/combat/Lifting.PNG'
+import Shehulk from '@assets/images/combat/she-hulk.png'
+import Throw1 from '@assets/images/combat/throw1.PNG'
+import Throw2 from '@assets/images/combat/throw2.PNG'
+import Throw3 from '@assets/images/combat/colossusthrow.jpg'
+import Crush from '@assets/images/combat/Crush.PNG'
+import Destiny from '@assets/images/combat/MyDestiny.png'
+import Crash from '@assets/images/combat/carcrash.PNG'
+import CarCrash from '@assets/images/combat/crash.PNG'
+import HulkJump from '@assets/images/combat/jumphulk.png'
+import Jump from '@assets/images/combat/jumpstrenght.PNG'
+import CapJump from '@assets/images/combat/captainamericajump.jpg'
+import HorizontalJump from '@assets/images/combat/horizontaljump.PNG'
+import AcrobatJump from '@assets/images/combat/acrobatjump.PNG'
+import DaredevilJump from '@assets/images/combat/daredeviljump.png'
+import Breaking from '@assets/images/combat/breaking.PNG'
+import Serpent from '@assets/images/combat/serpentbreaks.jpg'
+import Flying from '@assets/images/combat/flying.jpg'
+import Flytable from '@assets/images/combat/flytable.PNG'
+import Flycombat from '@assets/images/combat/flycombat.jpg'
+import Speedflight from '@assets/images/combat/speedflight.PNG'
+import Ironfly from '@assets/images/combat/ironfly.jpg'
+import Popular from '@assets/images/combat/popular.jpg'
+import MoonKnight from '@assets/images/combat/moonknight.jpg'
+import GreenGoblin from '@assets/images/combat/greengoblin.jpg'
+import Identity from '@assets/images/combat/identity.jpg'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
 import LazyImage2 from '../ui/LazyImage2'
 import Section from '../ui/Section'
@@ -57,45 +57,45 @@ const Roleplay = () => {
       <Separator />
       <SpecialActions />
 
-      <div className='flex lg:flex-row flex-col items-center'>
-        <div className='p-2 mx-auto px-2 s:px-20 max-w-full'>
-          <Section name='lifting-objects'>
+      <Section name='lifting-objects'>
+        <div className='flex lg:flex-row flex-col items-center'>
+          <div className='p-2 mx-auto px-2 s:px-20 max-w-full'>
             <Title>Lifting Objects</Title>
-          </Section>
-          <p className='text-gray-700 mb-6 text-center'>
-            Just like other special actions, to lift a specific weight, a
-            character must throw 1d20, with the bonus being the Strength stat.
-            Since some characters are stronger than others, the strength stat
-            indicates how much a character can lift. The Strength stat is
-            measured in a range from 0 to 8. A character can attempt to lift
-            something one scale higher, however, that throw is done in
-            disadvantage. On the other side, a character that attempts to lift a
-            weight that is one scale below will throw his dice with advantage. A
-            character will always succeed lifting a weight that is two scales
-            lower. A character will always fail trying to lift a weight that is
-            two scales higher. This table indicates how much can a character
-            lift according to its strength stat.
-          </p>
-          <div className='flex justify-center'>
+            <p className='text-gray-700 mb-6 text-center'>
+              Just like other special actions, to lift a specific weight, a
+              character must throw 1d20, with the bonus being the Strength stat.
+              Since some characters are stronger than others, the strength stat
+              indicates how much a character can lift. The Strength stat is
+              measured in a range from 0 to 8. A character can attempt to lift
+              something one scale higher, however, that throw is done in
+              disadvantage. On the other side, a character that attempts to lift a
+              weight that is one scale below will throw his dice with advantage. A
+              character will always succeed lifting a weight that is two scales
+              lower. A character will always fail trying to lift a weight that is
+              two scales higher. This table indicates how much can a character
+              lift according to its strength stat.
+            </p>
+            <div className='flex justify-center'>
+              {' '}
+              {/* Added a flex container for centering */}
+              <LazyImage2
+                className='max-w-full lg:max-w-md rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+                src={Lifting}
+                alt='Lift Table'
+              />
+            </div>
+          </div>
+          <div className='flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 py-10'>
             {' '}
             {/* Added a flex container for centering */}
-            <LazyImage2
-              className='max-w-full lg:max-w-md rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-              src={Lifting}
+            <img
+              className='xl:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Shehulk}
               alt='Lift Table'
             />
           </div>
         </div>
-        <div className='flex justify-center lg:pr-28 pr-0 lg:pl-16 pl-0 py-10'>
-          {' '}
-          {/* Added a flex container for centering */}
-          <img
-            className='xl:max-w-lg max-w-xs h-max rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Shehulk}
-            alt='Lift Table'
-          />
-        </div>
-      </div>
+      </Section>
 
       <div className='max-w-5xl p-2 mx-auto items-center'>
         <Section name='throwing-objects'>
