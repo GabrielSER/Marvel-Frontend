@@ -77,6 +77,7 @@ const SmartSearchButton = () => {
 
 const EditModeButton = () => {
 
+  const { isAdmin } = useUser()
   const { t } = useLanguage('main')
 
   const {
@@ -85,8 +86,10 @@ const EditModeButton = () => {
   } = useApplication()
 
   useKeyboardShortcut('Control+E', () => {
-    setEditMode(!editMode)
-  }, [editMode, setEditMode])
+    if (isAdmin) {
+      setEditMode(!editMode)
+    }
+  }, [isAdmin, editMode, setEditMode])
 
   return (
     <BarButton
