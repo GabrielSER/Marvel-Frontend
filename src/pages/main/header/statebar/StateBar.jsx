@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { useUser } from '@contexts/UserContext'
 import { useApplication } from '@contexts/ApplicationContext'
 import { useLanguage } from '@hooks/useLanguage'
+import useKeyboardShortcut from '@hooks/useKeyboardShortcut'
 import UIButton from '@ui/UIButton'
 import Tooltip from '@ui/Tooltip'
 import LanguageLink from './LanguageLink'
@@ -14,11 +15,18 @@ import { FaSearch } from 'react-icons/fa'
 import { MdModeEdit, MdEditOff } from 'react-icons/md'
 
 const BarButton = (props) => {
-  const { tooltip, ...otherProps } = props
+  const { tooltip, shortCut, ...otherProps } = props
   return (
     <Tooltip
       bottom
-      content={tooltip}
+      content={
+        <div className='flex flex-col justify-center text-center text-light gap-1'>
+          {tooltip}
+          <label className='text-primary'>
+            {shortCut}
+          </label>
+        </div>
+      }
     >
       <UIButton className='p-2' {...otherProps} />
     </Tooltip>
@@ -34,9 +42,14 @@ const SideBarButton = () => {
     setSideDrawer
   } = useApplication()
 
+  useKeyboardShortcut('Control+D', () => {
+    setSideDrawer(!sideDrawer)
+  }, [sideDrawer, setSideDrawer])
+
   return (
     <BarButton
       tooltip={t(sideDrawer ? 'statebar.drawer-close' : 'statebar.drawer-open')}
+      shortCut='Ctrl+D'
       onClick={() => setSideDrawer(!sideDrawer)}
     >
       <GiHamburgerMenu />
@@ -48,9 +61,14 @@ const SmartSearchButton = () => {
 
   const { t } = useLanguage('main')
 
+  useKeyboardShortcut('Shift+Shift', () => {
+    console.log('Smart search')
+  }, [])
+
   return (
     <BarButton
       tooltip={t('statebar.smart-search')}
+      shortCut='Shift+Shift'
     >
       <FaSearch />
     </BarButton>
@@ -66,9 +84,14 @@ const EditModeButton = () => {
     setEditMode,
   } = useApplication()
 
+  useKeyboardShortcut('Control+E', () => {
+    setEditMode(!editMode)
+  }, [editMode, setEditMode])
+
   return (
     <BarButton
       tooltip={t(editMode ? 'statebar.turn-edit-off' : 'statebar.turn-edit-on')}
+      shortCut='Ctrl+E'
       onClick={() => setEditMode(!editMode)}
     >
       {editMode ? <MdEditOff /> : <MdModeEdit />}
