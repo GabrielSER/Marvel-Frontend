@@ -96,9 +96,9 @@ const Roleplay = () => {
           </div>
         </div>
       </Section>
+      <Section name='throwing-objects'>
+        <div className='max-w-5xl p-2 mx-auto items-center'>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
-        <Section name='throwing-objects'>
           <Title>Throwing Objects</Title>
 
           <p className='text-gray-700 mb-6 text-center'>
@@ -131,17 +131,17 @@ const Roleplay = () => {
               alt='Throw Table 2'
             />
           </div>
-        </Section>
-        <div className='flex justify-center'>
-          {' '}
-          {/* Added a flex container for centering */}
-          <LazyImage2
-            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={Throw3}
-            alt='Colossus and Wolverine'
-          />
+          <div className='flex justify-center'>
+            {' '}
+            {/* Added a flex container for centering */}
+            <LazyImage2
+              className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Throw3}
+              alt='Colossus and Wolverine'
+            />
+          </div>
         </div>
-      </div>
+      </Section>
 
       <div className='max-w-5xl p-2 mx-auto items-center'>
         <Title>Crushing Damage</Title>
