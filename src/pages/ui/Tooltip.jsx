@@ -9,18 +9,9 @@ const Tooltip = (props) => {
     top = false,
     bottom = false,
     left = false,
-    right = false
+    right = false,
+    ...otherProps
   } = props
-
-  const properties = { ...props }
-
-  delete properties.children
-  delete properties.content
-  delete properties.top
-  delete properties.bottom
-  delete properties.left
-  delete properties.right
-  delete properties.className
 
   const [hovered, setHovered] = useState(false)
 
@@ -51,7 +42,7 @@ const Tooltip = (props) => {
           'pointer-events-none',
           className
         )}
-        {...properties}
+        {...otherProps}
       >
         <div
           className={clsx(

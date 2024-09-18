@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 import LogOutButton from './LogOutButton'
-import EditModeButton from './EditModeButton'
 import PreferencesButton from './PreferencesButton'
 
 const UserDropDown = () => {
@@ -23,7 +22,6 @@ const UserDropDown = () => {
             )}
         >
             <LogOutButton />
-            <EditModeButton />
             <PreferencesButton />
         </div>
     )

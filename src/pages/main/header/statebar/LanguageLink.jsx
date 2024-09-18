@@ -12,7 +12,6 @@ const LanguageLink = (props) => {
   return (
     <button
       className={clsx(
-        'text-light',
         'text-sm hover:scale-110',
         'hover:opacity-80',
         active && ['underline', 'scale-105'],

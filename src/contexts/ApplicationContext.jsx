@@ -4,7 +4,8 @@ const ApplicationContext = createContext()
 
 const initialState = {
   loading: false,
-  editMode: false
+  editMode: false,
+  sideDrawer: false
 }
 
 const ApplicationProvider = (props) => {
@@ -24,13 +25,21 @@ const ApplicationProvider = (props) => {
     }))
   }, [setState])
 
+  const setSideDrawer = useCallback((sideDrawer) => {
+    setState((previous) => ({
+      ...previous, 
+      sideDrawer
+    }))
+  }, [setState])
+
   const value = useMemo(
     () => ({
       ...state,
       setLoading, 
-      setEditMode
+      setEditMode,
+      setSideDrawer
     }),
-    [state, setLoading, setEditMode]
+    [state, setLoading, setEditMode, setSideDrawer]
   )
 
   return (

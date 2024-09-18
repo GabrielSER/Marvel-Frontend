@@ -1,7 +1,5 @@
 {
   "en": {
-    "header.all-new": "ALL NEW",
-    "header.roleplaying-game": "ROLEPLAYING GAME",
     "nav.home": "Home",
     "nav.characters": "Characters",
     "nav.universe": "Marvel Universe",
@@ -12,8 +10,6 @@
     "nav.roleplaying": "Roleplaying"
   },
   "es": {
-    "header.all-new": "EL NUEVO",
-    "header.roleplaying-game": "JUEGO DE ROL",
     "nav.home": "Inicio",
     "nav.characters": "Personajes",
     "nav.universe": "Universo Marvel",

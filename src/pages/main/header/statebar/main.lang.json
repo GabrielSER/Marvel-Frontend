@@ -1,0 +1,20 @@
+{
+  "en": {
+    "statebar.drawer-open": "Open drawer",
+    "statebar.drawer-close": "Close drawer",
+    "statebar.smart-search": "Smart search",
+    "statebar.turn-edit-on": "Turn ON Edit",
+    "statebar.turn-edit-off": "Turn OFF Edit",
+    "statebar.lang-en": "English",
+    "statebar.lang-es": "Spanish"
+  },
+  "es": {
+    "statebar.drawer-open": "Abrir desplegable",
+    "statebar.drawer-close": "Cerrar desplegable",
+    "statebar.smart-search": "Búsqueda inteligente",
+    "statebar.turn-edit-on": "Encender modo Edit",
+    "statebar.turn-edit-off": "Apagar modo Edit",
+    "statebar.lang-en": "Inglés",
+    "statebar.lang-es": "Español"
+  }
+}

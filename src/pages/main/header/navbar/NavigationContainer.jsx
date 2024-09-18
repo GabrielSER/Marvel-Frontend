@@ -5,8 +5,8 @@ const NavigationContainer = (props) => {
     <div
       className={clsx(
         'flex',
+        'justify-center',
         'w-full',
-        'bg-dark',
         'border-t border-t-light-2',
         'overflow-x-auto',
         'overflow-y-hidden',

@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { Link, useLocation } from 'react-router-dom'
-import NavigationTab from '../../ui/NavigationTab'
-import tickSound from '../../../assets/sound/tick.mp3'
+import NavigationTab from '@ui/NavigationTab'
+import tickSound from '@assets/sound/tick.mp3'
 import useSound from 'use-sound'
 
 const NavigationLink = (props) => {

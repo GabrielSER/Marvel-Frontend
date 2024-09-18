@@ -18,10 +18,10 @@ const Banner = () => {
       )}
     >
       <h1 className='hover:text-red-700'>
-        {t('header.all-new')}
+        {t('banner.all-new')}
       </h1>
       <MarvelLogo className='h-[150px]' />
-      <h1>{t('header.roleplaying-game')}</h1>
+      <h1>{t('banner.roleplaying-game')}</h1>
     </div>
   )
 }
