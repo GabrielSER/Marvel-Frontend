@@ -11,6 +11,7 @@ const Footer = () => (
       'w-full',
       'justify-center sm:justify-between items-center',
       'p-4 sm:p-8',
+      'snap-end',
       'bg-secondary',
       'shadow-lg',
       'font-condensed',

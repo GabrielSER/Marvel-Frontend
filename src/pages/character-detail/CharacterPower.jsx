@@ -84,7 +84,7 @@ const CharacterPower = (props) => {
                   <b>Effect:</b> {power.statusEffect}
                 </p>
               )}
-              <hr className='mt-2 bg-black' />
+              <hr className='mt-2 border-black' />
               <span className='font-condensed font-bold'>
                 {`Level ${romanNumber(power.level)}`}
               </span>

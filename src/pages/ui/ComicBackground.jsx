@@ -2,17 +2,15 @@ import clsx from 'clsx'
 import { useState } from 'react'
 
 const ComicBackground = (props) => {
-  const {className, children, ...otherProps} = props
+  const { className, children, ...otherProps } = props
   const [isLoaded, setIsLoaded] = useState(false)
 
   return (
     <div
       className={clsx(
-        'flex flex-col flex-initial',
+        'flex flex-col',
         'w-full h-full',
-        'overflow-x-hidden overflow-y-hidden',
         'overscroll-none',
-        'font-comic',
         isLoaded && 'bg-cover bg-no-repeat',
         className
       )}

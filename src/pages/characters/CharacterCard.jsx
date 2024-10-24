@@ -33,7 +33,8 @@ const CharacterCard = ({ character }) => {
         'rounded-md',
         'hover:scale-105',
         'overflow-hidden',
-        'z-40'
+        'snap-center',
+        'z-page'
       )}
     >
       <LazyImage

@@ -64,7 +64,7 @@ const HomeCarousell = () => {
 
   return (
     <Carousel
-      className={clsx('flex h-96 w-full text-white shadow-lg')}
+      className={clsx('flex h-96 w-full snap-center text-white shadow-lg')}
       slideTime={slideTime}
       indicatorIcon={IndicatorIcon}
     >

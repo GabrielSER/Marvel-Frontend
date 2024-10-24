@@ -1,5 +1,5 @@
 import { Route, Navigate, Routes } from 'react-router-dom'
-import HomeComponent from '../home/HomeComponent'
+import Home from '../home/Home'
 import Character from '../characters/Character'
 import Rules from '../characters/Rules'
 import Characters from '../characters/Characters'
@@ -50,7 +50,7 @@ const MainBodyRoutes = () => {
       <Route
         path='/'
         exact
-        element={<HomeComponent />}
+        element={<Home />}
       />
       <Route
         path='/not-found'

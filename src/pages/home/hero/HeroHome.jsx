@@ -10,8 +10,8 @@ const HeroHome = () => {
   const { t } = useLanguage('home')
 
   return (
-    <div className='text-center py-12 md:py-16 w-full'>
-      <div className='w-full mx-auto items-center space-y-10'>
+    
+      <div className='text-center py-12 w-full mx-auto items-center space-y-10'>
         <Section name='play'>
           <HeroFade
             right
@@ -40,7 +40,6 @@ const HeroHome = () => {
           />
         </Section>
       </div>
-    </div>
   )
 }
 

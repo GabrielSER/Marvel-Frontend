@@ -89,7 +89,7 @@ const useKeyboardShortcut = (shortcuts, callback, dependencies = []) => {
 
     useEffect(() => {
         if (!matched) return
-        callback()
+        (async () => { await callback() })()
         setMatched(false)
     }, [matched, setMatched, dependencies])
 

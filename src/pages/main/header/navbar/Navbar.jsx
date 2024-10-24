@@ -12,8 +12,9 @@ const Navbar = () => {
   return (
     <div
       className={clsx(
-        'flex flex-col',
+        'flex flex-col pt-16',
         'w-full',
+        'snap-start',
         'bg-dark',
         'shadow-lg',
         'z-over-page'

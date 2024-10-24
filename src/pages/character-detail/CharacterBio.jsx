@@ -1,20 +1,30 @@
-import { useCharacter } from '../../contexts/CharacterContext'
-import ComicPanel from '../ui/ComicPanel'
-import ComicTitlePanel from '../ui/ComicTitlePanel'
+import { useCharacterDetail } from '@contexts/CharacterDetailContext'
+import ComicTitlePanel from '@ui/ComicTitlePanel'
+import ComicPanel from '@ui/ComicPanel'
+import EditButton from '@ui/edit/EditButton'
+import TextEdit from '@ui/edit/TextEdit'
 
 const CharacterBio = () => {
-  const { character } = useCharacter()
+
+  const { character, update } = useCharacterDetail()
 
   return (
-    <ComicPanel className='flex relative overflow-hidden bg-opacity-75'>
-      <div className='flex flex-col  w-full h-full p-5 sm:p-10 bg-comic-primary-light'>
-        <div className='flex flex-row w-auto'>
-          <ComicTitlePanel>
-            <h1 className='text-2xl font-bold'>Bio:</h1>
-          </ComicTitlePanel>
-        </div>
-        <span className='sm:self-start'>{character.description}</span>
-      </div>
+    <ComicPanel className='flex relative flex-col w-full h-full overflow-hidden bg-opacity-75 bg-comic-primary-light p-5 sm:p-10'>
+      <ComicTitlePanel>
+        <h1 className='text-2xl font-bold'>Bio:</h1>
+      </ComicTitlePanel>
+      <span className='sm:self-start'>
+        {character.description}
+      </span>
+      <EditButton
+        absolute
+        absoluteClassName='m-10'
+        title='Edit character bio'
+        name='description'
+        state={character}
+        bodyComponent={TextEdit}
+        summitFunction={update}
+      />
     </ComicPanel>
   )
 }

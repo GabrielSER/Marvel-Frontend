@@ -74,11 +74,10 @@ const Characters = () => {
       <div
         className={clsx(
           'flex flex-wrap',
-          'w-full h-full',
+          'w-full',
           'gap-8',
           'p-4',
-          'justify-center items-center',
-          'z-40'
+          'justify-center items-center'
         )}
       >
         {filteredCharacters.map((character) => (

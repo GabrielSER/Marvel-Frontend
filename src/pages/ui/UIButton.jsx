@@ -6,6 +6,7 @@ const UIButton = (props) => {
   const { 
     className,
     centered = true,
+    uppercase = true,
      ...otherProps 
     } = props
 
@@ -21,7 +22,8 @@ const UIButton = (props) => {
         'rounded-md',
         'hover:scale-105',
         'text-white',
-        'font-condensed uppercase',
+        'font-condensed',
+        uppercase && 'uppercase',
         className
       )}
       onMouseEnter={playTick}

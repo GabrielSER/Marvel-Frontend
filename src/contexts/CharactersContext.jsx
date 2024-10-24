@@ -70,17 +70,18 @@ const CharactersProvider = (props) => {
     }))
   }, [state.characters])
 
-  const updateCharacter = useCallback(
-    async (character) => {
-      const updatedCharacter = await query(`/characters/${character._id}`, {
-        method: httpMethod.PUT,
-        body: character
-      })
-      state.characters.set(updatedCharacter._id, updatedCharacter)
-      setState({ ...state })
-    },
-    [query, state.characters]
-  )
+  const updateCharacter = useCallback(async (character) => {
+    const updatedCharacter = await query(`/characters/${character._id}`, {
+      method: httpMethod.PUT,
+      body: character
+    })
+    const characters = new Map(state.characters)
+    characters.set(updatedCharacter._id, updatedCharacter)
+    setState(previous => ({
+      ...previous,
+      characters
+    }))
+  }, [query, state, setState])
 
   const value = useMemo(
     () => ({

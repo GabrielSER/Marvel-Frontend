@@ -10,7 +10,7 @@ const Banner = () => {
         'flex',
         'flex-col',
         'justify-center items-center',
-        'p-2 pt-16',
+        'p-2',
         'space-y-2',
         'text-2xl',
         'text-white',
@@ -20,7 +20,7 @@ const Banner = () => {
       <h1 className='hover:text-red-700'>
         {t('banner.all-new')}
       </h1>
-      <MarvelLogo className='h-[150px]' />
+      <MarvelLogo className='h-[20vh]' />
       <h1>{t('banner.roleplaying-game')}</h1>
     </div>
   )

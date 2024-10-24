@@ -1,5 +1,5 @@
-import { useForm } from '../../contexts/FormContext'
-import ComicTitlePanel from '../ui/ComicTitlePanel'
+import { useForm } from '@contexts/FormContext'
+import ComicTitlePanel from '@ui/ComicTitlePanel'
 import CharacterPower from './CharacterPower'
 
 const CharacterPowers = () => {
@@ -15,9 +15,9 @@ const CharacterPowers = () => {
         </ComicTitlePanel>
       </div>
       <div className='flex flex-wrap gap-4 justify-center items-center'>
-        {formPowers.map((power, index) => (
+        {formPowers.map((power) => (
           <CharacterPower
-            key={index}
+            key={power._id}
             power={power}
           />
         ))}

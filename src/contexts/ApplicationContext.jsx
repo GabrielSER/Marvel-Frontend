@@ -1,11 +1,14 @@
 import { createContext, useState, useMemo, useContext, useCallback } from 'react'
 
+const editModeKey = 'editMode'
+
 const ApplicationContext = createContext()
 
 const initialState = {
   loading: false,
-  editMode: false,
-  sideDrawer: false
+  editMode: localStorage.getItem(editModeKey),
+  sideDrawer: false,
+  modalComponent: undefined
 }
 
 const ApplicationProvider = (props) => {
@@ -13,33 +16,48 @@ const ApplicationProvider = (props) => {
 
   const setLoading = useCallback((loading) => {
     setState((previous) => ({
-      ...previous, 
+      ...previous,
       loading
     }))
   }, [setState])
 
   const setEditMode = useCallback((editMode) => {
+    localStorage.setItem(editModeKey, editMode)
     setState((previous) => ({
-      ...previous, 
+      ...previous,
       editMode
     }))
   }, [setState])
 
   const setSideDrawer = useCallback((sideDrawer) => {
     setState((previous) => ({
-      ...previous, 
+      ...previous,
       sideDrawer
+    }))
+  }, [setState])
+
+  const setModalComponent = useCallback((modalComponent) => {
+    setState((previous) => ({
+      ...previous,
+      modalComponent
     }))
   }, [setState])
 
   const value = useMemo(
     () => ({
       ...state,
-      setLoading, 
+      setLoading,
       setEditMode,
-      setSideDrawer
+      setSideDrawer,
+      setModalComponent
     }),
-    [state, setLoading, setEditMode, setSideDrawer]
+    [
+      state,
+      setLoading,
+      setEditMode,
+      setSideDrawer,
+      setModalComponent
+    ]
   )
 
   return (

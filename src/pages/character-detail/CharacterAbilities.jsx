@@ -1,7 +1,9 @@
 import clsx from 'clsx'
-import { useForm } from '../../contexts/FormContext'
-import ComicTitlePanel from '../ui/ComicTitlePanel'
-import ComicPanel from '../ui/ComicPanel'
+import { useForm } from '@contexts/FormContext'
+import ComicTitlePanel from '@ui/ComicTitlePanel'
+import ComicPanel from '@ui/ComicPanel'
+import EditButton from '@ui/edit/EditButton'
+import TextEdit from '@ui/edit/TextEdit'
 
 const DescriptionParagraph = (props) => {
   const { title, features } = props
@@ -15,17 +17,29 @@ const DescriptionParagraph = (props) => {
       </div>
       <div className={clsx('flex flex-col py-4 gap-4')}>
         {features
-          .map((feature) => feature.split(':'))
-          .map(([featureName, featureDescription], index) => (
+          .map((feature, index) => {
+            const featureParts = feature.split(':')
+            const featureName = featureParts?.[0] ??  `Feature #${index + 1}`
+            const colonIndex = feature.indexOf(':') 
+            const featureDescription = (featureParts.length > 0 && colonIndex !== feature.length) ? feature.substring(colonIndex + 1) : feature
+            return [feature, featureName, featureDescription]
+          })
+          .map(([feature, featureName, featureDescription], index) => (
             <div
               key={index}
-              className='flex flex-col'
+              className='relative flex flex-col'
             >
               <ComicTitlePanel className=' bg-comic-secondary'>
                 {`${featureName}:`}
               </ComicTitlePanel>
-
               <p>{featureDescription}</p>
+              <EditButton
+                absolute
+                title={`Edit feature "${featureName}":`}
+                initialValue={feature}
+                bodyComponent={TextEdit}
+                summitFunction={() => {}}
+              />
             </div>
           ))}
       </div>

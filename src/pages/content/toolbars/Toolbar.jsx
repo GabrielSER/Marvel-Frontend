@@ -20,12 +20,13 @@ const Toolbar = {
   }
 }
 
-const toolbarMapping = Object.values(Toolbar).reduce(
-  (mapping, { id, component }) => {
-    mapping[id] = component
-    return mapping
-  },
-  {}
-)
+const toolbarMapping =
+  Object
+    .values(Toolbar)
+    .reduce(
+      (mapping, { id, component }) => {
+        mapping[id] = component
+        return mapping
+      }, {})
 
 export { Toolbar, toolbarMapping }

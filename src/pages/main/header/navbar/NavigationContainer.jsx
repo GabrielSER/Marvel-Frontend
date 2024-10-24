@@ -5,11 +5,12 @@ const NavigationContainer = (props) => {
     <div
       className={clsx(
         'flex',
-        'justify-center',
+        'justify-around',
         'w-full',
         'border-t border-t-light-2',
-        'overflow-x-auto',
+        'overflow-x-scroll',
         'overflow-y-hidden',
+        'snap-x snap-proximity',
         'hide-scroll'
       )}
     >

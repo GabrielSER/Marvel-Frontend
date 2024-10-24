@@ -1,16 +1,31 @@
-import { createContext, useState, useMemo, useContext } from 'react'
+import { createContext, useState, useMemo, useContext, useCallback } from 'react'
+import { useCharacter } from '@contexts/CharacterContext'
+import { useCharacters } from '@contexts/CharactersContext'
 
 const CharacterDetailContext = createContext()
 
 const CharacterDetailProvider = (props) => {
+  const { character } = useCharacter()
+  const { updateCharacter } = useCharacters()
   const [selectedForm, setSelectedForm] = useState()
+
+  const update = useCallback((changes) => {
+    updateCharacter({ _id: character._id, ...changes })
+  }, [character, updateCharacter])
 
   const value = useMemo(
     () => ({
+      character,
       selectedForm,
-      setSelectedForm
+      setSelectedForm,
+      update
     }),
-    [selectedForm, setSelectedForm]
+    [
+      character,
+      selectedForm,
+      setSelectedForm,
+      update
+    ]
   )
 
   return (

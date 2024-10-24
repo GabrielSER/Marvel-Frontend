@@ -24,6 +24,7 @@ const FormTab = (props) => {
 
   return (
     <NavigationTab
+      className='snap-start whitespace-nowrap'
       active={form._id === selectedForm?._id}
       onClick={navigateToForm}
     >
@@ -45,21 +46,37 @@ const FormTabBar = () => {
   return (
     <div
       className={clsx(
-        'flex flex-wrap',
-        'gap-x-5 gap-y-2',
+        'flex flex-col',
+        'w-full',
+        'shrink-0',
         'px-4',
         'bg-secondary'
       )}
     >
-      <div className='flex w-full h-16 justify-center items-center'>
-        <Title className='text-primary'>{`${character.name}'s forms`}</Title>
+      <div className='hidden md:flex w-full h-16 justify-center items-center'>
+        <Title className='text-primary'>
+          {`${character.name}'s forms`}
+        </Title>
       </div>
-      {forms.map((form, index) => (
-        <FormTab
-          key={index}
-          form={form}
-        />
-      ))}
+      <div
+        className={clsx(
+          'flex md:flex-wrap',
+          'w-full',
+          'justify-around',
+          'h-12 md:h-max',
+          'gap-x-5 gap-y-2',
+          'overflow-x-auto overflow-y-hidden',
+          'snap-x snap-proximity',
+          'hide-scroll'
+        )}
+      >
+        {forms.map((form) => (
+          <FormTab
+            key={form._id}
+            form={form}
+          />
+        ))}
+      </div>
     </div>
   )
 }

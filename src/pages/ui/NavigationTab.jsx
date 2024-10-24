@@ -1,11 +1,8 @@
 import clsx from 'clsx'
 
 const NavigationTab = (props) => {
-  const { className, active } = props
 
-  const properties = { ...props }
-  delete properties.className
-  delete properties.active
+  const { className, active, ...otherProps } = props
 
   return (
     <span
@@ -17,10 +14,12 @@ const NavigationTab = (props) => {
         'hover:scale-105',
         'opacity-80 hover:opacity-100',
         active && ['border-b-4 border-primary', 'opacity-100'],
+        'text-center',
         'cursor-pointer',
+        'font-condensed',
         className
       )}
-      {...properties}
+      {...otherProps}
     />
   )
 }

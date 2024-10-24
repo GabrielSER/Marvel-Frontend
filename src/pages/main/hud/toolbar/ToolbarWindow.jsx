@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { useToolbar } from '../../../../contexts/ToolbarContext'
+import { useToolbar } from '@contexts/ToolbarContext'
 import {
   FaWindowMinimize,
   FaWindowMaximize,

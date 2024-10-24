@@ -22,30 +22,30 @@ const MainBody = () => {
   }
 
   return (
-    <div
+    <ComicBackground
       className={clsx(
         'relative flex flex-col flex-initial',
-        'inset-0 w-full h-full',
-        'overflow-x-hidden overflow-y-hidden'
+        'inset-0 min-h-screen',
+        'overflow-x-hidden overflow-y-hidden',
+        'snap-y snap-mandatory',
+        'font-comic'
       )}
     >
       <StateBar />
+      {(!isLoggedIn || loading) && <MarvelLoader />}
+      <HUD />
+      <Navbar />
       <div
         className={clsx(
-          'flex flex-col',
-          'inset-0 w-full h-full shrink-0 grow-0',
-          'overflow-x-hidden overflow-y-auto'
+          'flex flex-col flex-grow',
+          'w-full',
+          'overflow-x-hidden overflow-y-hidden'
         )}
       >
-        <ComicBackground>
-          {(!isLoggedIn || loading) && <MarvelLoader />}
-          <HUD />
-          <Navbar />
-          <MainBodyRoutes />
-          <Footer />
-        </ComicBackground>
+        <MainBodyRoutes />
       </div>
-    </div>
+      <Footer />
+    </ComicBackground>
   )
 }
 

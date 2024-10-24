@@ -13,7 +13,7 @@ const HeroFade = (props) => {
         >
             <div className='relative'>
                 <img
-                    className='h-144 md:h-112 object-cover w-full'
+                    className='h-screen object-cover w-full'
                     src={src}
                     alt={alt}
                 />
