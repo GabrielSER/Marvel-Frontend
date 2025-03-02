@@ -6,7 +6,6 @@ import { useLanguage } from '@hooks/useLanguage'
 import useKeyboardShortcut from '@hooks/useKeyboardShortcut'
 import UIButton from '@ui/UIButton'
 import Tooltip from '@ui/Tooltip'
-import LanguageLink from './LanguageLink'
 import LoggedUsername from './LoggedUsername'
 import UserMenu from './usermenu/UserMenu'
 
@@ -102,21 +101,6 @@ const EditModeButton = () => {
   )
 }
 
-const LanguageButton = (props) => {
-
-  const { locale } = props
-
-  const { t } = useLanguage('main')
-
-  return (
-    <Tooltip
-      bottom
-      content={t(`statebar.lang-${locale}`)}
-    >
-      <LanguageLink language={locale} />
-    </Tooltip>
-  )
-}
 
 const StateBar = () => {
 
@@ -146,8 +130,6 @@ const StateBar = () => {
         isAdmin &&
         <EditModeButton />
       }
-      <LanguageButton locale='en' />
-      <LanguageButton locale='es' />
       <LoggedUsername />
       <UserMenu />
     </div>

@@ -3,11 +3,9 @@ import NavigationContainer from './NavigationContainer'
 import NavigationLink from './NavigationLink'
 import Banner from '../Banner'
 
-import { useLanguage } from '@hooks/useLanguage'
 
 const Navbar = () => {
 
-  const { t } = useLanguage('main')
 
   return (
     <div
@@ -17,41 +15,42 @@ const Navbar = () => {
         'snap-start',
         'bg-dark',
         'shadow-lg',
-        'z-over-page'
+        'z-over-page',
+        'overflow-y-auto max-h-screen'
       )}
     >
       <Banner />
       <NavigationContainer>
         <NavigationLink
-          text={t('nav.home')}
+          text={"Home"}
           to='/'
         />
         <NavigationLink
-          text={t('nav.characters')}
+          text={"Characters"}
           to='/characters'
         />
         <NavigationLink
-          text={t('nav.universe')}
+          text={"Marvel Universe"}
           to='/places'
         />
         <NavigationLink
-          text={t('nav.objects')}
+          text={"Objects"}
           to='/objects'
         />
         <NavigationLink
-          text={t('nav.rules')}
+          text={"Campaign Rules"}
           to='/rules'
         />
         <NavigationLink
-          text={t('nav.guide')}
+          text={"Player Guide"}
           to='/player'
         />
         <NavigationLink
-          text={t('nav.combat')}
+          text={"Combat"}
           to='/combat'
         />
         <NavigationLink
-          text={t('nav.roleplaying')}
+          text={"Roleplaying"}
           to='/roleplaying'
         />
       </NavigationContainer>

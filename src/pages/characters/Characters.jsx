@@ -80,7 +80,7 @@ const Characters = () => {
           'justify-center items-center'
         )}
       >
-        {filteredCharacters.map((character) => (
+        {filteredCharacters.sort((a, b) => a.order - b.order).map((character) => (
           <Link
             onClick={scrollToTop}
             key={character._id}

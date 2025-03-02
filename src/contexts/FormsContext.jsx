@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useMemo, useContext } from 'react'
+import { getAttributes } from '@util/attribute.parser'
 import { useMarvel } from '@hooks/useMarvel'
 import { normalizeString } from '@util/stringUtil'
 
@@ -18,7 +19,13 @@ const FormsProvider = (props) => {
     const loadForms = async () => {
       try {
         const formsArray = await query('/forms')
-        const forms = new Map(formsArray.map((form) => [form._id, form]))
+        const forms = new Map(formsArray.map((form) => {
+          const skills = getAttributes(form.skills)
+          const specialSkills = getAttributes(form.specialSkills)
+          const stats = getAttributes(form.stats)
+          console.log({...form, stats, skills, specialSkills})
+          return [form._id, {...form, stats, skills, specialSkills}]
+        }))
         setState((previous) => ({
           ...previous,
           forms,

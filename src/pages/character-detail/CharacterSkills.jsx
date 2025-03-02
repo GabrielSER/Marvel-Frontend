@@ -21,7 +21,7 @@ const formatStatName = (name) => {
 const SkillItem = (props) => {
   const { skill } = props
 
-  return (
+  return skill.value === 0?"": (
     <div className='flex justify-between w-full border-b border-dashed border-secondary'>
       <span className='flex gap-2'>
         <EditButton
@@ -34,7 +34,7 @@ const SkillItem = (props) => {
       </span>
       <label className='font-condensed font-bold text-power-4'>
           {skill.value}
-        </label>
+      </label>
     </div>
   )
 }

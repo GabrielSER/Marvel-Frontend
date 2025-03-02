@@ -46,7 +46,6 @@ const CharacterImage = () => {
   const { selectedForm } = useCharacterDetail()
   const [isLoaded, setIsLoaded] = useState(false)
   const { setLoading } = useApplication()
-
   const bulletproofStat = selectedForm.stats.find(
     (stat) => stat.uniqueName === 'bulletproof'
   )

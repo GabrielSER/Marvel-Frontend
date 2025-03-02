@@ -1,14 +1,12 @@
 import clsx from 'clsx'
 import Slide from 'react-reveal/Slide'
-import { useLanguage } from '@hooks/useLanguage'
 import { useMemo } from 'react'
 
 const CarouselImage = (props) => {
   const { section } = props
   const { image, title } = section
-  const { t } = useLanguage('home')
 
-  const titleTranslated = useMemo(() => t(title), [title])
+  const titleTranslated = useMemo(() => (title), [title])
 
   return (
     <div
