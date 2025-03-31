@@ -21,20 +21,16 @@ const CreatedBy = () => (
         to='https://github.com/GabrielSER'
       />
       <CreatorLink
-        name='Marco Acosta'
-        to='https://github.com/PowerEngine98'
-      />
-      <CreatorLink
-        name='Susana Sarmiento'
-        to='https://api.whatsapp.com/send?phone=573125505966'
-      />
-      <CreatorLink
         name='Daniel Peña'
         to='https://api.whatsapp.com/send?phone=16475503902'
       />
       <CreatorLink
         name='Andrés Medina'
         to='https://api.whatsapp.com/send?phone=573134847422'
+      />
+      <CreatorLink
+        name='Susana Sarmiento'
+        to='https://api.whatsapp.com/send?phone=573125505966'
       />
       <CreatorLink
         name='Federico Polo'

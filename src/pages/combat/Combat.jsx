@@ -9,6 +9,7 @@ import Dash from '../../assets/images/combat/dash.jpg'
 import Help from '../../assets/images/combat/help.jpg'
 import Psychic from '../../assets/images/combat/psychic.jpg'
 import Critical from '../../assets/images/combat/Critical.PNG'
+import CombatImage from '../../assets/images/combat/conbat.png'
 import Failure from '../../assets/images/combat/Failure.PNG'
 import Elektra from '../../assets/images/combat/elektradeath.jpg'
 import Gwen from '../../assets/images/combat/spiderfailure.png'
@@ -18,7 +19,6 @@ import PowerLevel from '../../assets/images/combat/powerLevel.PNG'
 import Skilllvl from '../../assets/images/combat/Levelup.PNG'
 import Powerlvl from '../../assets/images/combat/powerlevelskill.PNG'
 import Skilvl from '../../assets/images/combat/skillskill.PNG'
-import ContentView from '../ui/ContentView'
 import Content from '../ui/Content'
 import { DiceType } from '../content/dice/Dice'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
@@ -81,23 +81,83 @@ const Combat = () => {
             </h1>
           </ComicTitlePanel>
         </div>
-        <BigTitle>Normal Attacks</BigTitle>
+        <ComicPanel className='p-10 bg-comic-primary-light'>
+          <div className='flex flex-wrap w-full justify-center items-center gap-4'>
+            {Object.values(DiceType).map((type, index) => (
+              <Content
+                key={index}
+                id='roll'
+                params={{ type }}
+              />
+            ))}
+          </div>
+        </ComicPanel>
+        <BigTitle>Actions in Battle</BigTitle>
+        <Section>
+          <Paragraph>
+            When in combat a character can attempt different types of actions during his turn. Speciffically,
+            a character can attempt one of the following:
+          </Paragraph>
+          <Section>
+            <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
+              <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+                <Title>Normal Action</Title>
+                <Paragraph>
+                  A normal action is any kind of action that is not a combat action.
+                  For example, A normal action is any standard action a character can take during their turn. It can include interacting with objects, using abilities, or performing tasks that require focus. Examples include: Searching a room for clues, Using an item or Performing a skill check (e.g., unlocking a door)
+                </Paragraph>
+              </div>
+              <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+                <Title>Combat Action</Title>
+                <Paragraph>
+                  A combat action is an offensive or defensive action used in battle. This include normal attacks, most of the powers, using weapons and the different actions explained in the combat actions section of this page.
+                </Paragraph>
+              </div>
+            </div>
+          </Section>
+
+          <Section>
+            <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
+              <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+                <Title>Bonus Action</Title>
+                <Paragraph>
+                  A bonus action is a quick additional action that a character can take on their turn, usually granted by abilities, skills or certain powers.
+                </Paragraph>
+              </div>
+              <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+                <Title>Free Action</Title>
+                <Paragraph>
+                  A free action is a minor action that does not require much effort and can be done alongside other actions. Free actions include: Speaking or shouting, dropping an item or making a quick gesture (e.g., signaling a teammate).
+                </Paragraph>
+              </div>
+            </div>
+          </Section>
+
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+
+            <Title>Movement</Title>
+            <Paragraph>
+              A character can move a certain distance during their turn, based on their speed. Movement can be used to: Approach or escape from enemies, take cover behind objects or maneuver around obstacles
+            </Paragraph>
+
+
+          </div>
+
+        </Section>
+
+        <div className='flex justify-center'>
+          <LazyImage2
+            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+            src={CombatImage}
+            alt='Heroes Battle'
+          />
+        </div>
+
       </Section>
 
-      <ComicPanel className='p-10 bg-comic-primary-light'>
-        <div className='flex flex-wrap w-full justify-center items-center gap-4'>
-          {Object.values(DiceType).map((type, index) => (
-            <Content
-              key={index}
-              id='roll'
-              params={{ type }}
-            />
-          ))}
-        </div>
-      </ComicPanel>
-
       <Section>
-        <Title>Attacking and defending</Title>
+        <BigTitle>Combat Actions</BigTitle>
+        <Title>Normal Attacks</Title>
         <Paragraph>
           When in combat a character can do a normal attack. For attempting a
           normal attack, the attacker throws 1d20. Normal attacks made at short
@@ -145,7 +205,7 @@ const Combat = () => {
         <Paragraph>
           <span className='font-bold text-primary'>a.</span> If the attacker
           gets less than the victim’s agility save, the attacker fails the
-          attack, but the victim can't attempt a counterattack.
+          attack, and the victim can attempt a counterattack
         </Paragraph>
         <Paragraph>
           <span className='font-bold text-primary'>b.</span> If the attacker
@@ -195,6 +255,7 @@ const Combat = () => {
           attack, which will now have 1 melee bonus modifier. If Spider-Man
           attempts a fourth attack, it will now have no bonus in its melee
           throw, which will make this last hit of the combo harder to achieve.
+          Once any of the melee throws fail, the combo is stopped.
           However, if every attack of a combo is successful, the victim will
           have 5 ft knockback and will have 30% chance of falling prone to
           opportunity attacks.
@@ -224,7 +285,7 @@ const Combat = () => {
           <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
             <Title>Dodge</Title>
             <Paragraph>
-              You can use a normal action to put yourself in dodge, which means
+              You can use a Combat Action to put yourself in dodge, which means
               that, for the next round, any attack attempted against you is
               thrown in disadvantage.
             </Paragraph>
@@ -232,7 +293,7 @@ const Combat = () => {
           <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
             <Title>Guard</Title>
             <Paragraph>
-              You can use a normal action to stand on an attack position, which
+              You can use a Combat Action to stand on an attack position, which
               will allow you to use a normal attack once any enemy enters your
               close combat area.
             </Paragraph>
@@ -258,7 +319,7 @@ const Combat = () => {
           <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
             <Title>Disengage</Title>
             <Paragraph>
-              You can use a normal action to disengage, allowing you to move far
+              You can use a Combat Action to disengage, allowing you to move far
               from an enemy, without provoking opportunity attacks.
             </Paragraph>
           </div>
@@ -267,17 +328,7 @@ const Combat = () => {
               <Title className>Opportunity Attacks</Title>
             </div>
             <Paragraph>
-              When a character is not detected by another character they want to
-              attack, they can attempt an opportunity attack, which means they
-              will have advantage when throwing the dice. Opportunity attacks
-              can also be done against{' '}
-              <ContentView
-                className='text-primary underline {key:param,param}'
-                text='prone'
-                id='prone'
-                bottom
-              />{' '}
-              characters.
+              Any character prone or that moves out of an enemy's reach without taking the desingage action is vulnerable to an opportunity attack, which is a normal attack threw in advantage.
             </Paragraph>
           </div>
         </div>
@@ -308,9 +359,9 @@ const Combat = () => {
             </Paragraph>
           </div>
           <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
-            <Title>Guard</Title>
+            <Title>Dash</Title>
             <Paragraph>
-              You can use a normal action to run at twice your speed. Speedsters
+              You can use a Combat Action to run at twice your speed. Speedsters
               can use this as a bonus action once per battle.
             </Paragraph>
           </div>
