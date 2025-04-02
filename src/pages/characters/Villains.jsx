@@ -10,7 +10,7 @@ import ComicTitlePanel from '@ui/ComicTitlePanel'
 import PrimaryInput from '@ui/PrimaryInput'
 import CharacterCard from './CharacterCard'
 
-const Characters = () => {
+const Villains = () => {
   const { characters } = useCharacters()
   const [searchInput, setSearchInput] = useState()
   const [filteredCharacters, setFilteredCharacters] = useState([])
@@ -67,7 +67,7 @@ const Characters = () => {
       <div className='flex w-full justify-center p-4 '>
         <ComicTitlePanel>
           <h1 className='text-5xl font-semibold text-center p-4 z-50'>
-            HEROES
+            VILLAINS
           </h1>
         </ComicTitlePanel>
       </div>
@@ -81,7 +81,7 @@ const Characters = () => {
         )}
       >
         {filteredCharacters
-          .filter((character) => character.types.includes("hero")) // Filtra solo los que tienen "Hero"
+          .filter((character) => character.types.includes("villain")) // Filtra solo los que tienen "Hero"
           .sort((a, b) => a.order - b.order) // Ordena por el campo order
           .map((character) => (
             <Link
@@ -99,4 +99,4 @@ const Characters = () => {
   )
 }
 
-export default Characters
+export default Villains

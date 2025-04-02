@@ -27,7 +27,7 @@ const Navbar = () => {
         />
         <NavigationLink
           text={"Characters"}
-          to='/characters'
+          to='/types'
         />
         <NavigationLink
           text={"Marvel Universe"}

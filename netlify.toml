@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+ REACT_APP_BACKEND_PROXY = "https://marvelroleplay.it.com:443/api"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200

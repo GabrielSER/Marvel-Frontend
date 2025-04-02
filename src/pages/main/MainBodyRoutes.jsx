@@ -9,6 +9,8 @@ import Combat from '../combat/Combat'
 import Roleplay from '../roleplay/Roleplay'
 import Objects from '../objects/Objects'
 import NotFound from '../not-found/NotFound'
+import Types from '../characters/Types'
+import Villains from '../characters/Villains'
 
 const MainBodyRoutes = () => {
   return (
@@ -19,9 +21,19 @@ const MainBodyRoutes = () => {
         element={<Character />}
       />
       <Route
-        path='/characters'
+        path='/heroes'
         exact
         element={<Characters />}
+      />
+      <Route
+        path='/villains'
+        exact
+        element={<Villains />}
+      />
+      <Route
+        path='/types'
+        exact
+        element={<Types />}
       />
       <Route
         path='/characters/:characterNormalized/:formNormalized?'

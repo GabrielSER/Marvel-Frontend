@@ -20,6 +20,10 @@ const avatar9 = 'https://i.ibb.co/HC3YG4Q/cap.jpg'
 const avatar10 = 'https://i.ibb.co/BVB27dZ/daredevil.jpg'
 const avatar11 = 'https://i.ibb.co/ZJz8305/hulk.jpg'
 const avatar12 = 'https://i.ibb.co/vDxpswS/wolverine.jpg'
+const avatar13 = 'https://i.ibb.co/W46dBY5G/id0-c42792-u1.webp'
+const avatar14 = 'https://i.ibb.co/5X5c5ktf/s-l225.jpg'
+const avatar15 = 'https://i.ibb.co/zTw0fvr9/legobp.jpg'
+const avatar16 = 'https://i.ibb.co/3yW7bHnM/Lego-Fortnite-Cable.webp'
 
 const avatars = [
   avatar,
@@ -33,7 +37,11 @@ const avatars = [
   avatar9,
   avatar10,
   avatar11,
-  avatar12
+  avatar12,
+  avatar13,
+  avatar14,
+  avatar15,
+  avatar16
 ]
 
 const initialState = {

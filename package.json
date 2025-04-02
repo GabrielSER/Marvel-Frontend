@@ -10,7 +10,8 @@
     "-start:lint": "nodemon --watch src --ext js,jsx --exec 'concurrently npm:lint:*'",
     "lint:eslint": "eslint --fix 'src/**/*.{js,jsx}'",
     "lint:prettier": "npx prettier 'src/**/*.{js,jsx}' --write --log-level silent",
-    "build": "npm run start:css && node language-extractor.js && react-app-rewired build"
+    "build": "npm run start:css && node language-extractor.js && set CI=false && react-app-rewired build",
+    "build:test": "set CI=false && react-app-rewired build"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +43,7 @@
     "i18next-http-backend": "^2.6.1",
     "jwt-decode": "^4.0.0",
     "ldrs": "^1.0.2",
+    "next-progressbar": "^1.0.0",
     "os": "^0.1.2",
     "path": "^0.12.7",
     "react": "^18.3.1",
