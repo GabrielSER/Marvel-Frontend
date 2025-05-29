@@ -26,7 +26,7 @@ const statsData = [
   { uniqueName: 'agility', name: 'Agility', color: 'blue' },
   { uniqueName: 'wisdom', name: 'Wisdom', color: 'orange' },
   { uniqueName: 'power', name: 'Power', color: 'purple' },
-  { uniqueName: 'melee', name: 'Melee', color: 'teal' },
+  { uniqueName: 'melee', name: 'Combo', color: 'teal' },
   { uniqueName: 'perception', name: 'Perception', color: 'gray' },
   { uniqueName: 'charisma', name: 'Charisma', color: 'pink' },
   { uniqueName: 'luck', name: 'Luck', color: 'Brown' }

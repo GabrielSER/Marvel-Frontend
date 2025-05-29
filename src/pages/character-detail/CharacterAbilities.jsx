@@ -19,8 +19,8 @@ const DescriptionParagraph = (props) => {
         {features
           .map((feature, index) => {
             const featureParts = feature.split(':')
-            const featureName = featureParts?.[0] ??  `Feature #${index + 1}`
-            const colonIndex = feature.indexOf(':') 
+            const featureName = featureParts?.[0] ?? `Feature #${index + 1}`
+            const colonIndex = feature.indexOf(':')
             const featureDescription = (featureParts.length > 0 && colonIndex !== feature.length) ? feature.substring(colonIndex + 1) : feature
             return [feature, featureName, featureDescription]
           })
@@ -38,7 +38,7 @@ const DescriptionParagraph = (props) => {
                 title={`Edit feature "${featureName}":`}
                 initialValue={feature}
                 bodyComponent={TextEdit}
-                summitFunction={() => {}}
+                summitFunction={() => { }}
               />
             </div>
           ))}

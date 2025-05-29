@@ -29,11 +29,19 @@ const CreatedBy = () => (
         to='https://api.whatsapp.com/send?phone=573134847422'
       />
       <CreatorLink
+        name='Juan Pablo Romero'
+        to='https://api.whatsapp.com/send?phone=573112715547'
+      />
+      <CreatorLink
         name='Susana Sarmiento'
         to='https://api.whatsapp.com/send?phone=573125505966'
       />
       <CreatorLink
         name='Federico Polo'
+        to='https://api.whatsapp.com/send?phone=573112715547'
+      />
+      <CreatorLink
+        name='Mateo Contreras'
         to='https://api.whatsapp.com/send?phone=573112715547'
       />
     </ul>

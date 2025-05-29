@@ -244,11 +244,8 @@ const Combat = () => {
         <Title>Combos</Title>
         <Paragraph className='pb-10'>
           When a character deals a normal attack successfully, they can attempt
-          a combo. Each three levels a character gets one more attack for his
-          combo, meaning every character unlocks their first extra attack at
-          level 3. The maximum number of attacks of a combo are equal to the
-          melee stat of a character. For example, Spider-Man has 4 melee, so he
-          can attack up to 4 times, which includes the first successful attack.
+          a combo. The amount of attacks that comprises a Combo is determined by
+          the Combo stat, which includes the first successful attack.
           However, each combo attack will have 1 point less in its attack
           modifier. For the second attack of the combo, Spider-Man will only
           have 3 points in its melee bonus modifier. Then he can attempt a third
@@ -422,16 +419,16 @@ const Combat = () => {
             <Title>Telekinetic attacks</Title>
             <Paragraph>
               Telekinetic attacks are usually done with powers. After the
-              attacker throws the d20 dice, the defender can attempt an agility
-              throw to evade being caught by telekinesis. If their agility throw
+              attacker throws the d20 dice, the defender can attempt an Strength
+              throw to evade being caught by telekinesis. If their Strength throw
               is higher than the attacker’s throw (+the respective bonus) the
               power fails.
             </Paragraph>
           </div>
           <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
-            <Title>Psychic attacks</Title>
+            <Title>Psychic or Telepathic attacks</Title>
             <Paragraph>
-              Psychic attacks are usually done with powers. After the attacker
+              Psychic or Telepathic attacks are usually done with powers. After the attacker
               throws the d20 dice, the defender can attempt a wisdom throw to
               evade being damaged or charmed by the psychic attack. If their
               wisdom throw is higher than the attacker’s throw (+psychic or
