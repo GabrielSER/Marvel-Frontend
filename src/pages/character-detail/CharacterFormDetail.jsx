@@ -14,6 +14,7 @@ import CharacterLogo from './CharacterLogo'
 import CharacterName from './CharacterName'
 import CharacterBio from './CharacterBio'
 import ArmorCost from './ArmorCost'
+import CharacterProgression from './CharacterProgression'
 
 const Section = (props) => (
   <div
@@ -79,6 +80,7 @@ const CharacterFormDetail = () => {
             <ArmorCost />
             <CharacterStats />
             <CharacterAbilities />
+            <CharacterProgression />
           </Column>
         </Section>
         <CharacterBio />

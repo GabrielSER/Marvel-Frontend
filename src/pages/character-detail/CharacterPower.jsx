@@ -81,7 +81,7 @@ const CharacterPower = (props) => {
               </p>
               {power.statusEffect[0] && (
                 <p>
-                  <b>Effect:</b> {power.statusEffect}
+                  <b>Tecno Organic Virus Spread:</b> {power.statusEffect}
                 </p>
               )}
               <hr className='mt-2 border-black' />

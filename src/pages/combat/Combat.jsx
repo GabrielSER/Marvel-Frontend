@@ -263,7 +263,7 @@ const Combat = () => {
           to generate knockback on their opponent. This can only be attempted if
           the attacker's Strength is higher that the victim's and the attacker's
           throw surpasses the victim's defense or agility in more then 3 points.
-          If this conditions are met, the victim will be thrown 30 ft away.
+          If this conditions are met, the victim will be thrown 15 ft away.
           However, a combo cannot be attempted.
         </Paragraph>
         <div className='flex justify-center'>
@@ -325,7 +325,7 @@ const Combat = () => {
               <Title className>Opportunity Attacks</Title>
             </div>
             <Paragraph>
-              Any character prone or that moves out of an enemy's reach without taking the desingage action is vulnerable to an opportunity attack, which is a normal attack threw in advantage.
+              An opportunity attack is posssible when a hostile creature that you can see moves out of your reach. You can use your reaction to make a melee attack against the provoking creature. If the attack hits, it deals damage.
             </Paragraph>
           </div>
         </div>
