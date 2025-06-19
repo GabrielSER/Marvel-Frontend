@@ -21,7 +21,7 @@ const formatStatName = (name) => {
 const SkillItem = (props) => {
   const { skill } = props
 
-  return skill.value === 0?"": (
+  return skill.value === 0 ? "" : (
     <div className='flex justify-between w-full border-b border-dashed border-secondary'>
       <span className='flex gap-2'>
         <EditButton
@@ -30,10 +30,10 @@ const SkillItem = (props) => {
           bodyComponent={NumberEdit}
           summitFunction={() => { }}
         />
-         <b>{`${formatStatName(skill.name)}:`}</b>
+        <b>{`${formatStatName(skill.name)}:`}</b>
       </span>
       <label className='font-condensed font-bold text-power-4'>
-          {skill.value}
+        {skill.value}
       </label>
     </div>
   )
@@ -61,7 +61,7 @@ const CharacterSkills = () => {
             <h1 className='text-2xl font-bold'>Skills:</h1>
           </ComicTitlePanel>
         </div>
-        {[...form.skills, ...form.specialSkills]
+        {[...form.skills, ...form.specialSkills.filter(skill => skill.name.toLowerCase() !== 'flight')]
           .sort((skill1, skill2) => skill1.name.localeCompare(skill2.name))
           .map((skill, index) => (
             <SkillItem

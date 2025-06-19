@@ -8,10 +8,19 @@ import Tooltip from '@ui/Tooltip'
 import EditButton from '@ui/edit/EditButton'
 import TextEdit from '@ui/edit/TextEdit'
 import Bulletproof from '@assets/icons/bulletproof.png'
+import Flight from '@assets/icons/flight.png'
 
 const StatComponent = ({ children }) => {
   return (
     <div className='absolute z-over-page top-0 left-0 p-4 text-white'>
+      {children}
+    </div>
+  )
+}
+
+const StatComponent2 = ({ children }) => {
+  return (
+    <div className='absolute z-over-page top-0 right-0 p-4 text-white'>
       {children}
     </div>
   )
@@ -45,10 +54,16 @@ const imagePlaceholder = (
 const CharacterImage = () => {
   const { selectedForm } = useCharacterDetail()
   const [isLoaded, setIsLoaded] = useState(false)
+
   const { setLoading } = useApplication()
   const bulletproofStat = selectedForm.stats.find(
     (stat) => stat.uniqueName === 'bulletproof'
   )
+
+  const flightSkill = selectedForm.specialSkills.find(
+    (specialSkill) => specialSkill.uniqueName === 'flight'
+  )
+
 
   useEffect(() => {
     setIsLoaded(false) // Reset the loading state on form change
@@ -75,6 +90,23 @@ const CharacterImage = () => {
           </Tooltip>
         </StatComponent>
       )}
+
+      {flightSkill.value != 0 && isLoaded && (
+        <StatComponent2>
+          <Tooltip
+            bottom
+            content='Flight'
+          >
+            <StatLogo
+              image={Flight}
+              text={flightSkill.value}
+            />
+          </Tooltip>
+        </StatComponent2>
+      )}
+
+
+
       <LazyImage2 // Using LazyImage2 component
         key={selectedForm.image}
         src={selectedForm.image}

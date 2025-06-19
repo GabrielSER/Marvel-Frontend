@@ -74,6 +74,13 @@ const CharacterPower = (props) => {
               <b>Module:</b> {power.module}
             </p>
           )}
+
+
+          {power.chance && (
+            <p>
+              <b>Cast:</b> {power.chance}
+            </p>
+          )}
           {isClicked && (
             <div>
               <p>
