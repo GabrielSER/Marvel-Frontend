@@ -9,8 +9,7 @@
 .card.flipped {
     margin:110px;
   transform: scale(3);
-  height: full;
-  margin-left:200px/* or however tall the description needs to be */
+  height: full;/* or however tall the description needs to be */
 }
 
 .card-inner {

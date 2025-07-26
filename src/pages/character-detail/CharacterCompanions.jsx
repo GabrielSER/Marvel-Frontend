@@ -49,7 +49,7 @@ const CharacterCompanions = () => {
       <div className="flex flex-row max-w-full">
         <ComicTitlePanel>Companions:</ComicTitlePanel>
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-x-24 py-4">
+      <div className="flex flex-wrap justify-center items-center gap-x-48 py-4">
         {companions.map((companion, index) => {
           const key = companion.toUpperCase().replace(/\s+/g, '')
           const isFlipped = toggledIndexes[index]
@@ -81,7 +81,7 @@ const CharacterCompanions = () => {
                     <img
                       src={description}
                       alt={`${companion} Description`}
-                      className="object-contain w-full h-full"
+                      className="object-contain w-full h-auto"
                     />
                   ) : (
                     <div className="text-center text-xs text-white">Description Not Found</div>
