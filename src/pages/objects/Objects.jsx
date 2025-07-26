@@ -327,7 +327,7 @@ const Objects = () => {
       <div className='px-10 max-w-full items-center'>
         <Title>Explosives</Title>
         <p className='text-gray-700 mb-6 text-left'>
-          When using melee weapons, instead of using the damage dice of your strength stat, use the damage dice indicated by the weapon you’re using and for the skill check you use melee weapons. For being able to use the weapon you need to be able to meet the requirements, otherwise your attacks with that weapon are done at disadvantage and you can't use the weapon quirks.
+          Explosives can be used as traps, can be thrown or can befired from weapons depending on their properties.
         </p>
       </div>
 

@@ -2,7 +2,6 @@ import { useState } from 'react'
 import clsx from 'clsx'
 import { useForm } from '@contexts/FormContext'
 import ComicTitlePanel from '@ui/ComicTitlePanel'
-import ComicPanel from '@ui/ComicPanel'
 
 // Load logos (.png or .PNG)
 const contextLogos = require.context(
@@ -48,7 +47,7 @@ const CharacterWeapons = () => {
   if (weapons.length === 0) return null
 
   return (
-    <ComicPanel className="bg-comic-primary-light py-12 px-5 sm:px-14">
+    <div className="flex flex-col max-w-full p-10">
       <div className="flex flex-row max-w-full">
         <ComicTitlePanel>Basic Equipment:</ComicTitlePanel>
       </div>
@@ -89,7 +88,7 @@ const CharacterWeapons = () => {
           )
         })}
       </div>
-    </ComicPanel>
+    </div>
   )
 }
 
