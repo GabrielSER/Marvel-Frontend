@@ -75,7 +75,7 @@ const CharacterWeapons = () => {
                     alt={weapon}
                     className={clsx(
                       'object-contain transition-transform duration-200',
-                      isToggled ? 'max-w-full h-auto' : 'w-16 h-16 hover:scale-110'
+                      isToggled ? 'max-w-full h-auto' : 'w-24 h-24 hover:scale-110'
                     )}
                   />
                 ) : (
