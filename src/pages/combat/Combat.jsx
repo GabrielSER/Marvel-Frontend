@@ -737,9 +737,9 @@ const Combat = () => {
             <Paragraph>
               Every battle gives experience to all characters in a party. With
               enough experience the whole party can level up. Every time a
-              character levels up, it gains 10 hp and wins an specific amount of
+              character levels up, it gains 5 hp and wins an specific amount of
               Skill Points that can be spent on unlocking different powers or
-              improve stats and skills. On levels 10 and 20 it gains 20 hp. The
+              improve stats and skills. On levels 10 and 20 it gains 10 hp. The
               amount of skill points won on each level up can be seen on the
               following table:
             </Paragraph>

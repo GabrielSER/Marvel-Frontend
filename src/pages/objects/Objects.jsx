@@ -8,14 +8,14 @@ import SUBMACHINE from '../../assets/images/combat/SUBMACHINE.png'
 import PLASMA from '../../assets/images/combat/PLASMARIFLE.png'
 import SNIPERRIFLE from '../../assets/images/combat/SNIPER.png'
 import MACHINEGUN from '../../assets/images/combat/MACHINE.png'
+import BLASTER from '../../assets/images/combat/BLASTER.png'
 
-
-import KATANA from '../../assets/images/combat/KATANA.png'
-import KNIFE from '../../assets/images/combat/Knife.png'
+import KATANA from '../../assets/images/combat/KATANA.PNG'
+import KNIFE from '../../assets/images/combat/KNIFE.png'
 import SHORTSWORD from '../../assets/images/combat/SHORTSWORD.png'
 import LONGSWORD from '../../assets/images/combat/LONGSWORD.png'
 import BATONS from '../../assets/images/combat/BATONS.png'
-import WARHAMMER from '../../assets/images/combat/WAR-HAMMER.png'
+import WARHAMMER from '../../assets/images/combat/WARHAMMER.png'
 import GREATHAMMER from '../../assets/images/combat/GREATHAMMER.png'
 import SAI from '../../assets/images/combat/SAI.png'
 import SHURIKEN from '../../assets/images/combat/SHURIKEN.png'
@@ -24,7 +24,17 @@ import QUARTERSTAFF from '../../assets/images/combat/QUARTERSTAFF.png'
 import TRIDENT from '../../assets/images/combat/TRIDENT.png'
 import GREATSWORD from '../../assets/images/combat/GREATSWORD.png'
 import SPEAR from '../../assets/images/combat/SPEAR.png'
+import HANDAXE from '../../assets/images/combat/handaxe.png'
+import AXE from '../../assets/images/combat/AXE.png'
+import GREATAXE from '../../assets/images/combat/GREATAXE.png'
+import LIGHTSABER from '../../assets/images/combat/LIGHTSABER.png'
 
+import GRENADE from '../../assets/images/combat/GRENADE.png'
+import FLASHBANG from '../../assets/images/combat/FLASHBANG.png'
+import INCENDIARY from '../../assets/images/combat/INCENDIARY.png'
+import C4 from '../../assets/images/combat/C4.png'
+import RPG from '../../assets/images/combat/RPG.png'
+import MINE from '../../assets/images/combat/MINE.png'
 import Dual from '../../assets/images/combat/dualpistol.PNG'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
 
@@ -165,6 +175,11 @@ const Objects = () => {
               src={MACHINEGUN}
               alt='Machine Gun'
             />
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4'
+              src={BLASTER}
+              alt='Blaster'
+            />
           </div>
         </div>
       </div>
@@ -274,6 +289,31 @@ const Objects = () => {
             />
           </div>
 
+          <div className='flex flex-col md:flex-row items-center'>
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4'
+              src={HANDAXE}
+              alt='Handaxe'
+            />
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4'
+              src={AXE}
+              alt='Axe'
+            />
+          </div>
+
+          <div className='flex flex-col md:flex-row items-center'>
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4'
+              src={GREATAXE}
+              alt='Great-axe'
+            />
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4'
+              src={LIGHTSABER}
+              alt='lightsaber'
+            />
+          </div>
 
 
 
@@ -284,6 +324,66 @@ const Objects = () => {
 
 
 
+      <div className='px-10 max-w-full items-center'>
+        <Title>Explosives</Title>
+        <p className='text-gray-700 mb-6 text-left'>
+          When using melee weapons, instead of using the damage dice of your strength stat, use the damage dice indicated by the weapon you’re using and for the skill check you use melee weapons. For being able to use the weapon you need to be able to meet the requirements, otherwise your attacks with that weapon are done at disadvantage and you can't use the weapon quirks.
+        </p>
+      </div>
+
+
+
+
+
+      <div className='px-10 max-w-full items-center'>
+        <h1 className='text-xl font-semibold mb-4 text-center'>
+          List of Explosives
+        </h1>
+        <div className='flex flex-col items-left'>
+          <p className='text-gray-700 mb-6 text-left'>
+            Here is a list of common explosives:
+          </p>
+          <div className='flex flex-col md:flex-row items-center'>
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4'
+              src={GRENADE}
+              alt='Grenade'
+            />
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4'
+              src={FLASHBANG}
+              alt='Flashbang'
+            />
+          </div>
+          <div className='flex flex-col md:flex-row items-center'>
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4'
+              src={INCENDIARY}
+              alt='Incendiary Grenade'
+            />
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4'
+              src={C4}
+              alt='C4'
+            />
+          </div>
+          <div className='flex flex-col md:flex-row items-center'>
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4'
+              src={RPG}
+              alt='RPG'
+            />
+            <img
+              className='lg:max-w-lg max-w-xs rounded-lg shadow-lg hover:shadow-lg transition-all duration-300 m-4'
+              src={MINE}
+              alt='Anti-personnel Mine'
+            />
+          </div>
+
+
+
+        </div>
+      </div>
 
 
       <div className='px-10 max-w-full items-center'>
