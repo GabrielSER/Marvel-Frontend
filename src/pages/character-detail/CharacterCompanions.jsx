@@ -2,22 +2,20 @@ import { useState } from 'react'
 import clsx from 'clsx'
 import { useForm } from '@contexts/FormContext'
 import ComicTitlePanel from '@ui/ComicTitlePanel'
+import '../../styles/CardFlip.css'
 
-// Load logos (.png or .PNG)
+// Load images
 const contextLogos = require.context(
   '../../assets/images/companions/icon',
   false,
   /\.(png|PNG)$/
 )
-
-// Load description images (.png or .PNG)
 const contextDescriptions = require.context(
   '../../assets/images/companions',
   false,
   /\.(png|PNG)$/
 )
 
-// Normalize and store in maps
 const companionLogos = {}
 const companionDescriptions = {}
 
@@ -47,51 +45,49 @@ const CharacterCompanions = () => {
   if (companions.length === 0) return null
 
   return (
-    <div className="flex flex-col max-w-full p-10">
+    <div className="flex flex-col max-w-full p-20">
       <div className="flex flex-row max-w-full">
         <ComicTitlePanel>Companions:</ComicTitlePanel>
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-6 py-4">
+      <div className="flex flex-wrap justify-center items-center gap-x-24 py-4">
         {companions.map((companion, index) => {
-          const upperKey = companion.toUpperCase().replace(/\s+/g, '')
-          const isToggled = toggledIndexes[index]
-          const imagePath = isToggled
-            ? companionDescriptions[upperKey]
-            : companionLogos[upperKey]
+          const key = companion.toUpperCase().replace(/\s+/g, '')
+          const isFlipped = toggledIndexes[index]
+          const icon = companionLogos[key]
+          const description = companionDescriptions[key]
 
           return (
             <div
               key={index}
-              className="flex flex-col items-center max-w-full"
+              className={clsx('card', isFlipped && 'flipped')}
+              onClick={() => handleToggle(index)}
+              title={companion}
             >
-              <button
-                onClick={() => handleToggle(index)}
-                title={companion}
-                className="focus:outline-none"
-              >
-                {!isToggled && (
-                  <div className="flex flex-row max-w-full py-4">
-                    <ComicTitlePanel className='bg-comic-secondary'>
-                      {`${companion}:`}
-                    </ComicTitlePanel>
-                  </div>
-                )}
+              <div className={clsx('card-inner', isFlipped && 'flipped')}>
+                <div className="card-front">
+                  {icon ? (
+                    <img
+                      src={icon}
+                      alt={companion}
+                      className="object-contain w-full h-full"
+                    />
+                  ) : (
+                    <div className="text-center text-xs">Icon Not Found</div>
+                  )}
+                </div>
 
-                {imagePath ? (
-                  <img
-                    src={imagePath}
-                    alt={companion}
-                    className={clsx(
-                      'object-contain transition-transform duration-200',
-                      isToggled ? 'max-w-full h-auto' : 'w-40 h-auto hover:scale-110'
-                    )}
-                  />
-                ) : (
-                  <div className="w-16 h-16 bg-gray-300 text-center flex items-center justify-center text-xs rounded">
-                    Image<br />Not<br />Found
-                  </div>
-                )}
-              </button>
+                <div className="card-back">
+                  {description ? (
+                    <img
+                      src={description}
+                      alt={`${companion} Description`}
+                      className="object-contain w-full h-full"
+                    />
+                  ) : (
+                    <div className="text-center text-xs text-white">Description Not Found</div>
+                  )}
+                </div>
+              </div>
             </div>
           )
         })}
