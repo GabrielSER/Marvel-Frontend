@@ -6,10 +6,21 @@
   transition: transform 0.6s ease, height 0.6s ease;
 }
 
+@media only screen and (max-width: 400px) {
+    .card.flipped {
+    margin-left: 40px;
+    margin-right: 40px;
+  transform: scale(3);
+  height: full;/* or however tall the description needs to be */
+}
+}
+
+@media only screen and (min-width: 400px) {
 .card.flipped {
     margin:110px;
   transform: scale(3);
   height: full;/* or however tall the description needs to be */
+}
 }
 
 .card-inner {
@@ -42,6 +53,6 @@
 }
 
 .card-back {
-
+padding:0;
   transform: rotateY(180deg);
 }
