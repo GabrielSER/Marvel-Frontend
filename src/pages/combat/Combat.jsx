@@ -4,9 +4,11 @@ import Venom from '../../assets/images/combat/Venom.png'
 import Ranged from '../../assets/images/combat/hawkeye.jpg'
 import Combo from '../../assets/images/combat/combat.jpg'
 import Dodge from '../../assets/images/combat/dodge.jpg'
+import Grab from '../../assets/images/combat/grab.jpeg'
 import Oportunity from '../../assets/images/combat/oportunity.jpg'
 import Dash from '../../assets/images/combat/dash.jpg'
 import Help from '../../assets/images/combat/help.jpg'
+import Mounted from '../../assets/images/combat/mounted.jpg'
 import Psychic from '../../assets/images/combat/psychic.jpg'
 import Critical from '../../assets/images/combat/Critical.PNG'
 import CombatImage from '../../assets/images/combat/conbat.png'
@@ -95,22 +97,20 @@ const Combat = () => {
         <BigTitle>Actions in Battle</BigTitle>
         <Section>
           <Paragraph>
-            When in combat a character can attempt different types of actions during his turn. Speciffically,
-            a character can attempt one of the following:
+            When in combat a character has an Action, a Bonus Action and a Free Action during his turn, they might also do a reaction once per round, once done he can't do another reaction until a new round of combat starts.
           </Paragraph>
           <Section>
             <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
               <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
-                <Title>Normal Action</Title>
+                <Title>Combat Action</Title>
                 <Paragraph>
-                  A normal action is any kind of action that is not a combat action.
-                  For example, A normal action is any standard action a character can take during their turn. It can include interacting with objects, using abilities, or performing tasks that require focus. Examples include: Searching a room for clues, Using an item or Performing a skill check (e.g., unlocking a door)
+                  An action is any significant task a character performs on their turn that requires focus and time. In combat, examples include initiating a combo, using a power, firing a weapon, or grappling an opponent. Noncombat actions might involve driving a vehicle, reloading a weapon, or hacking a computer.
                 </Paragraph>
               </div>
               <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
-                <Title>Combat Action</Title>
+                <Title>Bonus Action</Title>
                 <Paragraph>
-                  A combat action is an offensive or defensive action used in battle. This include normal attacks, most of the powers, using weapons and the different actions explained in the combat actions section of this page.
+                  An action is any significant task a character performs on their turn that requires focus and time. In combat, examples include initiating a combo, using a power, firing a weapon, or grappling an opponent. Noncombat actions might involve driving a vehicle, reloading a weapon, or hacking a computer.
                 </Paragraph>
               </div>
             </div>
@@ -119,15 +119,15 @@ const Combat = () => {
           <Section>
             <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
               <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
-                <Title>Bonus Action</Title>
+                <Title>Free Action</Title>
                 <Paragraph>
-                  A bonus action is a quick additional action that a character can take on their turn, usually granted by abilities, skills or certain powers.
+                  Free actions are minor tasks that require virtually no effort and can be performed alongside other actions. These include speaking or shouting, dropping an item, or making a quick gesture—such as signaling a teammate.
                 </Paragraph>
               </div>
               <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
-                <Title>Free Action</Title>
+                <Title>Reaction</Title>
                 <Paragraph>
-                  A free action is a minor action that does not require much effort and can be done alongside other actions. Free actions include: Speaking or shouting, dropping an item or making a quick gesture (e.g., signaling a teammate).
+                  A reaction is a special action taken outside of a character's turn in response to a trigger or condition, usually provided by abilities or powers. The most common reactions include counterattacks and opportunity attacks.
                 </Paragraph>
               </div>
             </div>
@@ -314,22 +314,59 @@ const Combat = () => {
       <Section>
         <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
           <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
-            <Title>Disengage</Title>
+            <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+              <Title className>Grappling</Title>
+            </div>
             <Paragraph>
-              You can use a Combat Action to disengage, allowing you to move far
-              from an enemy, without provoking opportunity attacks.
+              As an action any character can attempt to grapple another character, for this the grappler needs to have one free arm part of their body that would be able to be used for grappling. When a grapple gets declared the grappler must do a strength check against the defender agility or strength check (The choice of the defender), if successful the target gets the grapple status and can only attempt to get free at the end of his turns. When grappling the grappler can move up to half his speed dragging the grappled creature.
             </Paragraph>
+
           </div>
           <div className='max-w-xl p-2 mx-auto items-center'>
             <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
               <Title className>Opportunity Attacks</Title>
             </div>
             <Paragraph>
-              An opportunity attack is posssible when a hostile creature that you can see moves out of your reach. You can use your reaction to make a melee attack against the provoking creature. If the attack hits, it deals damage.
+              An opportunity attack is posssible when a hostile character that you can see moves out of your reach. You can use your reaction to make a melee attack against the provoking character. If the attack hits, it deals damage.
             </Paragraph>
           </div>
         </div>
       </Section>
+
+      <Section>
+        <div className='max-w-5xl p-2 mx-auto items-center'>
+          <div className='flex justify-center'>
+            {' '}
+            {/* Added a flex container for centering */}
+            <LazyImage2
+              className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Grab}
+              alt='Grappling'
+            />
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Ambush Strike</Title>
+            <Paragraph>
+              When you strike a distracted or vulnerable opponent, you have advantage in your attack throw exploiting their lack of awareness.
+            </Paragraph>
+          </div>
+          <div className='max-w-xl p-2 mx-auto items-center'>
+            <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+              <Title>Disengage</Title>
+            </div>
+            <Paragraph>
+              You can use a Combat Action to disengage, allowing you to move far
+              from an enemy, without provoking opportunity attacks.
+            </Paragraph>
+          </div>
+        </div>
+      </Section>
+
       <Section>
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'>
@@ -383,18 +420,25 @@ const Combat = () => {
           <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
             <Title>Help</Title>
             <Paragraph>
-              Every character with first aid or medicine can use their action to
-              revive another character, which will give the fallen character
-              advantage when making their saving throws. The medic must stay
-              concentrated when reviving another character.
+              When you take the Help action, you assist another character in completing a task. The character you aid gains advantage on the next ability check it makes to perform the task you are helping with, provided it makes the check before the start of your next turn.
+
+              Alternatively, you can use the Help action to aid an ally in attacking a character within 5 feet of you. If you do so, the first attack roll that ally makes against the target before the start of your next turn is made with advantage.
+
+              You must be able to see the character you are helping, and it must be able to understand or sense your assistance.
             </Paragraph>
           </div>
           <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
             <Title>Radial attacks</Title>
             <Paragraph>
-              When a character throws a radial attack, every enemy caught within
-              the radius must make an agility throw. If the victim’s throw is
-              higher than the attacker’s throw, the power fails.
+              When a character performs a radial attack, all other characters within the affected area must make either an Agility or Durability check.
+
+              If a character's Agility check exceeds the attacker’s skill check, they successfully evade the area of effect and take no damage.
+
+              If a character's Durability check exceeds the attacker’s skill check, they withstand the attack, blocking all damage.
+
+              Radial attacks do not involve a dice roll for the attacker's skill check. Instead, the required value is calculated as 10 + the relevant skill modifier.
+
+
             </Paragraph>
           </div>
         </div>
@@ -446,6 +490,47 @@ const Combat = () => {
               className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
               src={Psychic}
               alt='Psychic Attacks'
+            />
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Mounted Combat</Title>
+            <Paragraph>
+              While mounted on a willing creature that could normally support the weight of the rider without problem, the following rules apply:
+            </Paragraph>
+            <Paragraph>
+              - They will now share turns in the initiative and move together, if dismounted and the rider already used his action, he will have the next turn on their initiative order of the next turn.
+
+            </Paragraph>
+            <Paragraph>
+              - The mount dictates the movement, using their speed or flight for that, if the rider dismounts after the movement, his speed for the rest of that turn is halved.
+            </Paragraph>
+            <Paragraph>
+              - When forced to check if the rider gets dismounted by any action or the environment the rider can try an agility or animal handling check (Depending on the mount or whichever is higher) to avoid falling off the mount.
+
+            </Paragraph>
+          </div>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Use Objects</Title>
+            <Paragraph>
+              While in combat, you can use an object as part of your actions. The type of action (Combat Action, Bonus Action, Free Action, Reaction) will vary depending on the object properties.
+            </Paragraph>
+          </div>
+        </div>
+      </Section>
+      <Section>
+        <div className='max-w-5xl p-2 mx-auto items-center'>
+          <div className='flex justify-center'>
+            {' '}
+            {/* Added a flex container for centering */}
+            <LazyImage2
+              className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={Mounted}
+              alt='Mounted Combat'
             />
           </div>
         </div>
@@ -584,8 +669,7 @@ const Combat = () => {
         <BigTitle>Powers</BigTitle>
         <Paragraph className='py-4'>
           Powers are special abilities that are unique to each character. For
-          using these powers, you must spend points from your power meter. When
-          a battle starts, you can increase your power meter in 1d4. Every long
+          using these powers, you must spend points from your power meter. Every long
           rest, your power meter fully recharges. Powers are classified
           according to a level: LV1 powers, LV2 powers, LV3 powers, LV4 powers,
           special powers, and Ultimate powers.
@@ -599,19 +683,6 @@ const Combat = () => {
             alt='Powers desc'
           />
         </div>
-        <Paragraph>
-          Powers can also vary in Psychic, Melee, Magic, or Energy. This
-          indicates the damage bonus. All damage done by psychic attacks will
-          have + Wisdom damage. However, some Psychic powers don’t do any
-          damage. All damage done by melee attacks will have + Strength damage
-          (not to be confused with the melee stat). All damage done by energy
-          attacks will have + Energy Projection damage. All damage done by Magic
-          attacks will have + magic damage. There are also Unique powers which
-          bonus is determined on the power’s description. Support powers don’t
-          do any damage but have special effects that will aid in battle.
-          Psychic, Melee, Energy, Magic, Unique and Support powers have a P, M,
-          E, MG, U and S marked before the name of the power, respectively.
-        </Paragraph>
       </div>
 
       <div className='px-0 max-w-full'>
@@ -629,23 +700,21 @@ const Combat = () => {
           • The blue color indicates that is a power 1 attack.
         </p>
         <p className='text-gray-700 text-left'>
-          • M indicates that it gets a +melee stat bonus damage.
+          • "Sneak Attack" is the name of the power.
         </p>
         <p className='text-gray-700 text-left'>
-          • Web Snare is the name of the power.
+          • "Type" indicates the kind of attack it is. In this case, it is a close range attack, but it can also be a range, radial or projectile attack. For these kind of attacks, the type also indicates the range of the attack.
         </p>
         <p className='text-gray-700 text-left'>
-          • '(Projectile)' Indicates the kind of attack it is. Since it’s a
-          projectile, it is followed by '(90ft range)' which indicates the
-          projectile's reach.
+          • The "Skill Check" indicates the skill used for the attack to be succesfull.  Not all powers require checks.
+        </p>
+
+
+        <p className='text-gray-700 text-left'>
+          • Cast indicates the type of action required for the power to be used. In this case it is an Action, but it could also be used as a Reaction, Bonus Action or Free Action.
         </p>
         <p className='text-gray-700 text-left'>
-          • 'Accuracy' indicates the skill or stat check required for the attack
-          to be successful, Not all powers require checks.
-        </p>
-        <p className='text-gray-700 text-left'>
-          • After that, there’s a description of the power and everything it
-          does.
+          • After that, there’s a description of the power that specifies everything it does.
         </p>
       </div>
 
@@ -653,7 +722,7 @@ const Combat = () => {
         <Paragraph>
           If you are out of power points, you can only deal normal or weapon
           attacks. When defeating a normal enemy, you can recharge 1 power
-          point, and when you defeat a boss, you can recharge 3 power points
+          point, and when you defeat a boss, you can recharge 2 power points
           even if it exceeds your base power meter. However, when having a long
           rest, your power meter returns to its default value. Every character
           has a Power Stat, which determines the amount of power points

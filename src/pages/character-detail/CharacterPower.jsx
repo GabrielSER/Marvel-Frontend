@@ -3,6 +3,10 @@ import { useState } from 'react'
 import ComicPanel from '../ui/ComicPanel'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
 import PowerBg from '../../assets/images/background/images.png'
+import FireAuraEffect from '../ui/FireAuraEffect'
+import RadiationAuraEffect from '../ui/RadiationAuraEffect'
+import RadiationAuraEffect2 from '../ui/RadiationAuraEffect2'
+
 
 const romanNumbers = ['0', 'I', 'II', 'III', 'IV', 'V']
 const romanNumber = (number) => romanNumbers?.[number] ?? '?'
@@ -36,6 +40,12 @@ const CharacterPower = (props) => {
       }}
       onClick={handleClick}
     >
+      {power.fury && <FireAuraEffect />}
+      {power.rage && <RadiationAuraEffect />}
+      {power.hulk && <RadiationAuraEffect />}
+
+      {power.hulk2 && <RadiationAuraEffect2 />}
+
       <div
         className={clsx(
           'flex flex-col h-full w-full',
@@ -53,6 +63,21 @@ const CharacterPower = (props) => {
             <ComicTitlePanel className='text-md bg-comic-primary'>
               <b>{power.name}</b>
             </ComicTitlePanel>
+            {(power.rage && <ComicTitlePanel className='text-md bg-green-500'>
+
+              <p>
+                <b>{power.rage}</b>
+              </p>
+
+            </ComicTitlePanel>)}
+            {(power.fury && <ComicTitlePanel className='text-md bg-red-500'>
+
+              <p>
+                <b>{power.fury}</b>
+              </p>
+
+            </ComicTitlePanel>)}
+
           </div>
           <p>
             <b>Type:</b> {power.type}
@@ -81,6 +106,7 @@ const CharacterPower = (props) => {
               <b>Cast:</b> {power.chance}
             </p>
           )}
+
           {isClicked && (
             <div>
               <p>
@@ -91,13 +117,21 @@ const CharacterPower = (props) => {
                   <b>Tecno Organic Virus Spread:</b> {power.statusEffect}
                 </p>
               )}
+              {power.web && (
+                <p>
+                  <b className='Text-Red'>Web Charges:</b> {power.web}
+                </p>
+              )}
               <hr className='mt-2 border-black' />
               <span className='font-condensed font-bold'>
                 {`Level ${romanNumber(power.level)}`}
               </span>
             </div>
           )}
+
+
         </div>
+
       </div>
     </ComicPanel>
   )

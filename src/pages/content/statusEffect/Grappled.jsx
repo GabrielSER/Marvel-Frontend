@@ -7,11 +7,7 @@ const Grappled = () => {
   return (
     <StatusContainer>
       <StatusText title='Grappled'>
-        A grappled character is trapped, and its speed is now 0. All attacks
-        made while in this status are thrown in disadvantage. All attacks
-        against this character are thrown in advantage. If not specified, the
-        player must save to 15 Strength to break free from a grappling object or
-        win a strength duel against the grappler.
+        A grappled character is trapped, and its speed is now 0. All attacks made while in this status are thrown in disadvantage. All attacks against this character are thrown in advantage. At the end of each of its turns the grappled character can attempt to break free, for this they must succeed a strength check of 14 or higher in the case of being grappled by projectiles that do not specify the check. In the case of the grappler keeping the grapple with his own body this is a strength duel.
       </StatusText>
       <StatusImage
         src={image}

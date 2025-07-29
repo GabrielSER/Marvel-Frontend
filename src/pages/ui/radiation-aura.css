@@ -1,0 +1,64 @@
+.radiation {
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  transform: translateX(0%);
+  width: 1px;
+  height: 1px;
+  background: #00ff00;
+  border-radius: 50%;
+  box-shadow:
+    0 0 5px 5px rgba(0, 255, 0, 0.3),
+    0 0 15px 15px rgba(0, 200, 0, 0.2),
+    0 0 20px 20px rgba(0, 150, 0, 0.15);
+  animation: radiation-pulse 4s infinite ease-in-out;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.radiation2 {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  transform: translateX(0%);
+  width: 1px;
+  height: 1px;
+  background: #00ff00;
+  border-radius: 50%;
+  box-shadow:
+    0 0 5px 5px rgba(0, 255, 0, 0.3),
+    0 0 15px 15px rgba(0, 200, 0, 0.2),
+    0 0 20px 20px rgba(0, 150, 0, 0.15);
+  animation: radiation2-pulse 4s infinite ease-in-out;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes radiation-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 5px 5px rgba(0, 255, 0, 0.3),
+      0 0 15px 15px rgba(0, 200, 0, 0.2),
+      0 0 20px 20px rgba(0, 150, 0, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 100px 100px rgba(0, 255, 0, 0.5),
+      0 0 140px 140px rgba(0, 200, 0, 0.3),
+      0 0 180px 180px rgba(0, 150, 0, 0.2);
+  }
+}
+@keyframes radiation2-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 5px 5px rgba(0, 255, 0, 0.3),
+      0 0 15px 15px rgba(0, 200, 0, 0.2),
+      0 0 20px 20px rgba(0, 150, 0, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 50px 50px rgba(0, 255, 0, 0.5),
+      0 0 70px 70px rgba(0, 200, 0, 0.3),
+      0 0 90px 90px rgba(0, 150, 0, 0.2);
+  }
+}

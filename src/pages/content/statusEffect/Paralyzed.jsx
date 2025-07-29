@@ -8,8 +8,7 @@ const Paralyzed = () => {
     <StatusContainer>
       <StatusText title='Paralyzed'>
         A paralyzed character has his speed reduced in half and every turn has a
-        50% chance of not being able to perform any action. After three turns,
-        the player must save Durability to 15 to remove the effect.
+        50% chance of not being able to perform any action. If not specified, it lasts for 3 turns.
       </StatusText>
       <StatusImage
         src={image}

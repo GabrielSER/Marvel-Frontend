@@ -16,6 +16,7 @@ const Frozen = () => {
         break free, the player must save to 17 Strength or cast a fire attack.
         All attacks against this character are thrown in advantage, but they
         have a 50% chance of letting the frozen character free.
+        Any character who is set free from the frozen status will get soaked.
       </StatusText>
     </StatusContainer>
   )
