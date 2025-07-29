@@ -14,6 +14,7 @@ const Villains = () => {
   const { characters } = useCharacters()
   const [searchInput, setSearchInput] = useState()
   const [filteredCharacters, setFilteredCharacters] = useState([])
+  const [showDevelopmentStatus, setShowDevelopmentStatus] = useState(false)
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -63,6 +64,18 @@ const Villains = () => {
             onChange={(change) => setSearchInput(change.value)}
           />
         </div>
+        <div className='flex grow relative items-center justify-end'>
+          <input
+            type="checkbox"
+            id="showStatus"
+            checked={showDevelopmentStatus}
+            onChange={(e) => setShowDevelopmentStatus(e.target.checked)}
+            className="accent-green-500 w-4 h-4"
+          />
+          <label htmlFor="showStatus" className="select-none">
+            Show Development Status
+          </label>
+        </div>
       </div>
       <div className='flex w-full justify-center p-4 '>
         <ComicTitlePanel>
@@ -90,7 +103,7 @@ const Villains = () => {
               to={`/characters/${normalizeString(character.name)}`}
             >
               <Fade down>
-                <CharacterCard character={character} />
+                <CharacterCard character={character} showStatus={showDevelopmentStatus} />
               </Fade>
             </Link>
           ))}
