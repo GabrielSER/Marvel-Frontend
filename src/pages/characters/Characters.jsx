@@ -49,16 +49,19 @@ const Characters = () => {
             onChange={(change) => setSearchInput(change.value)}
           />
         </div>
-        <input
-          type="checkbox"
-          id="showStatus"
-          checked={showDevelopmentStatus}
-          onChange={(e) => setShowDevelopmentStatus(e.target.checked)}
-          className="accent-green-500 w-4 h-4"
-        />
-        <label htmlFor="showStatus" className="select-none">
-          Show Development Status
-        </label>
+        <div className='flex grow relative items-center'>
+          <input
+            type="checkbox"
+            id="showStatus"
+            checked={showDevelopmentStatus}
+            onChange={(e) => setShowDevelopmentStatus(e.target.checked)}
+            className="accent-green-500 w-4 h-4"
+          />
+          <label htmlFor="showStatus" className="select-none">
+            Show Development Status
+          </label>
+        </div>
+
       </div>
 
 
