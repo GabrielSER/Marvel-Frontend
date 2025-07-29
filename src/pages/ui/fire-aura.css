@@ -1,17 +1,17 @@
 .flame {
   position: absolute;
-  bottom: 4px;
+  bottom: 0px;
   left: 50%;
-  transform: translateX(-5%);
+  transform: translateX(-10%);
   width: 2px;
   height: 2px;
   background: #ff9800;
   border-radius: 50%;
   box-shadow:
-    0 0 60px 30px rgba(255, 165, 0, 0.4),
-    0 0 100px 60px rgba(255, 69, 0, 0.3),
-    0 0 140px 90px rgba(255, 0, 0, 0.2);
-  animation: flame-pulse 2s infinite ease-in-out;
+    0 0 10px 10px rgba(255, 165, 0, 0.4),
+    0 0 15px 15px rgba(255, 69, 0, 0.3),
+    0 0 20px 20px rgba(255, 0, 0, 0.2);
+  animation: flame-pulse 5s infinite ease-in-out;
   z-index: 0;
   pointer-events: none;
 }
@@ -19,9 +19,9 @@
 @keyframes flame-pulse {
   0%, 100% {
     box-shadow:
-      0 0 60px 30px rgba(255, 165, 0, 0.4),
-      0 0 100px 60px rgba(255, 69, 0, 0.3),
-      0 0 140px 90px rgba(255, 0, 0, 0.2);
+      0 0 10px 10px rgba(255, 165, 0, 0.4),
+      0 0 15px 15px rgba(255, 69, 0, 0.3),
+      0 0 20px 20px rgba(255, 0, 0, 0.2);
   }
   50% {
     box-shadow:

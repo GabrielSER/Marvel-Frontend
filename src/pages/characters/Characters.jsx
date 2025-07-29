@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+
 import { useState, useEffect } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
@@ -14,12 +14,10 @@ const Characters = () => {
   const { characters } = useCharacters()
   const [searchInput, setSearchInput] = useState()
   const [filteredCharacters, setFilteredCharacters] = useState([])
+  const [showDevelopmentStatus, setShowDevelopmentStatus] = useState(false)
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 400,
-      behavior: 'smooth'
-    })
+    window.scrollTo({ top: 400, behavior: 'smooth' })
   }
 
   useEffect(() => {
@@ -36,24 +34,12 @@ const Characters = () => {
       )
     })
     setFilteredCharacters(filtered)
-  }, [searchInput, characters, setFilteredCharacters])
+  }, [searchInput, characters])
 
   return (
     <div>
-      <div
-        className={clsx(
-          'flex',
-          'w-full',
-          'bg-dark',
-          'font-condensed',
-          'text-primary',
-          'border-t border-t-light-2',
-          'shadow-xl',
-          'rounded-bl-lg',
-          'rounded-br-lg',
-          'p-4'
-        )}
-      >
+
+      <div className='flex w-full bg-dark text-primary border-t border-light-2 shadow-xl rounded-bl-lg rounded-br-lg p-4'>
         <div className='flex grow relative items-center'>
           <FaSearch className='absolute ml-3' />
           <PrimaryInput
@@ -63,26 +49,31 @@ const Characters = () => {
             onChange={(change) => setSearchInput(change.value)}
           />
         </div>
+        <input
+          type="checkbox"
+          id="showStatus"
+          checked={showDevelopmentStatus}
+          onChange={(e) => setShowDevelopmentStatus(e.target.checked)}
+          className="accent-green-500 w-4 h-4"
+        />
+        <label htmlFor="showStatus" className="select-none">
+          Show Development Status
+        </label>
       </div>
-      <div className='flex w-full justify-center p-4 '>
+
+
+
+      <div className='flex w-full justify-center p-4'>
         <ComicTitlePanel>
-          <h1 className='text-5xl font-semibold text-center p-4 z-50'>
-            HEROES
-          </h1>
+          <h1 className='text-5xl font-semibold text-center p-4 z-50'>HEROES</h1>
         </ComicTitlePanel>
       </div>
-      <div
-        className={clsx(
-          'flex flex-wrap',
-          'w-full',
-          'gap-8',
-          'p-4',
-          'justify-center items-center'
-        )}
-      >
+
+
+      <div className='flex flex-wrap w-full gap-8 p-4 justify-center items-center'>
         {filteredCharacters
-          .filter((character) => character.types.includes("hero")) // Filtra solo los que tienen "Hero"
-          .sort((a, b) => a.order - b.order) // Ordena por el campo order
+          .filter((character) => character.types.includes('hero'))
+          .sort((a, b) => a.order - b.order)
           .map((character) => (
             <Link
               onClick={scrollToTop}
@@ -90,7 +81,7 @@ const Characters = () => {
               to={`/characters/${normalizeString(character.name)}`}
             >
               <Fade down>
-                <CharacterCard character={character} />
+                <CharacterCard character={character} showStatus={showDevelopmentStatus} />
               </Fade>
             </Link>
           ))}
