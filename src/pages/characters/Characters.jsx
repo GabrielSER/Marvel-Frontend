@@ -49,7 +49,7 @@ const Characters = () => {
             onChange={(change) => setSearchInput(change.value)}
           />
         </div>
-        <div className='flex grow relative items-center'>
+        <div className='flex grow relative items-center justify-end'>
           <input
             type="checkbox"
             id="showStatus"
