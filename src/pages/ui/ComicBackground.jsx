@@ -9,22 +9,23 @@ const ComicBackground = (props) => {
     <div
       className={clsx(
         'flex flex-col',
-        'w-full h-full',
-        'overscroll-none',
-        isLoaded && 'bg-cover bg-no-repeat',
+        'w-full min-h-screen',
+        isLoaded && 'bg-repeat',
         className
       )}
       style={{
         backgroundImage: isLoaded
           ? 'url(https://i.ibb.co/Jqr4f35/backgound.png)'
-          : 'none'
+          : 'none',
+        backgroundSize: 'auto', // important to avoid scaling/stretching
+        backgroundPosition: 'top left' // or 'center' if you want it aligned
       }}
       {...otherProps}
     >
       <img
-        className='hidden'
-        src='https://i.ibb.co/Jqr4f35/backgound.png'
-        alt='background'
+        className="hidden"
+        src="https://i.ibb.co/Jqr4f35/backgound.png"
+        alt="background"
         onLoad={() => setIsLoaded(true)}
       />
       {children}

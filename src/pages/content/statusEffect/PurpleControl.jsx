@@ -5,7 +5,12 @@ import StatusText from './StatusText'
 
 const PurpleControl = () => {
   return (
-    <StatusContainer>
+    <StatusContainer reverse>
+
+      <StatusImage
+        src={image}
+        alt='Purple Man'
+      />
       <StatusText title='Purple Control'>
         A character controlled by Purple Man, when receiving a verbal command
         from him, will stop doing whatever action they were attempting, and they
@@ -15,10 +20,6 @@ const PurpleControl = () => {
         actions, but once they wake up, they will start trying to do again
         whatever purple man ordered them.
       </StatusText>
-      <StatusImage
-        src={image}
-        alt='Purple Man'
-      />
     </StatusContainer>
   )
 }

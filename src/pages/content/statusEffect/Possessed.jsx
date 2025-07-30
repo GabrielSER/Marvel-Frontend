@@ -5,17 +5,18 @@ import StatusText from './StatusText'
 
 const Possessed = () => {
   return (
-    <StatusContainer>
+    <StatusContainer reverse>
+
+      <StatusImage
+        src={image}
+        alt='Ghost Rider'
+      />
       <StatusText title='Possessed'>
         A possessed character has the possessor’s consciousness inside their body.
         The possessor can control its victim to do any kind of action
         they want. Each turn, the possessed character must save to 20 Wisdom to
         free himself.
       </StatusText>
-      <StatusImage
-        src={image}
-        alt='Ghost Rider'
-      />
     </StatusContainer>
   )
 }

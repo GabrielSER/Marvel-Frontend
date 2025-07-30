@@ -334,7 +334,7 @@ const Combat = () => {
 
           </div>
           <div className='max-w-xl p-2 mx-auto items-center'>
-            <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <div className='flex flex-col max-w-xl p-2 mx-auto items-center justify-center'>
               <Title className>Opportunity Attacks</Title>
             </div>
             <Paragraph>
@@ -525,7 +525,7 @@ const Combat = () => {
 
             </Paragraph>
           </div>
-          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center justify-center'>
             <Title>Use Objects</Title>
             <Paragraph>
               While in combat, you can use an object as part of your actions. The type of action (Combat Action, Bonus Action, Free Action, Reaction) will vary depending on the object properties.
@@ -546,6 +546,8 @@ const Combat = () => {
           </div>
         </div>
       </Section>
+
+      <Content id='concentrated' />
 
       <div className='flex flex-col'>
         <Section>
@@ -677,7 +679,12 @@ const Combat = () => {
         </div>
       </Section>
 
-      <div className='sm:px-10 mx-auto items-center max-w-full'>
+
+
+
+
+
+      <Section>
         <BigTitle>Powers</BigTitle>
         <Paragraph className='py-4'>
           Powers are special abilities that are unique to each character. For
@@ -686,28 +693,43 @@ const Combat = () => {
           according to a level: LV1 powers, LV2 powers, LV3 powers, LV4 powers,
           special powers, and Ultimate powers.
         </Paragraph>
-        <div className='flex justify-center'>
-          {' '}
-          {/* Added a flex container for centering */}
-          <LazyImage2
-            className='max-w-full sm:max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
-            src={PowersDesc}
-            alt='Powers desc'
-          />
-        </div>
-      </div>
+        <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
 
-      <div className='px-0 max-w-full'>
-        <Paragraph>Here’s an example of a power:</Paragraph>
-        <div className='flex justify-center'>
-          {' '}
-          {/* Added a flex container for centering */}
-          <LazyImage2
-            className='max-w-full sm:max-w-2xl transition-all duration-300 mb-6'
-            src={PowerExample}
-            alt='Powers Example'
-          />
+
+
+            <div className='flex justify-center'>
+              {' '}
+              {/* Added a flex container for centering */}
+              <LazyImage2
+                className='max-w-full sm:max-w-xs rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+                src={PowersDesc}
+                alt='Powers desc'
+              />
+            </div>
+
+          </div>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center justify-center'>
+
+            <Paragraph>Here’s an example of a power:</Paragraph>
+            <div className='flex justify-center'>
+              {' '}
+              {/* Added a flex container for centering */}
+              <LazyImage2
+                className='max-w-full sm:max-w-2xl transition-all duration-300 mb-6'
+                src={PowerExample}
+                alt='Powers Example'
+              />
+            </div>
+          </div>
         </div>
+      </Section>
+
+
+
+
+      <div className='sm:px-10 mx-auto'>
+
         <p className='text-gray-700 text-left'>
           • The blue color indicates that is a power 1 attack.
         </p>
@@ -751,64 +773,6 @@ const Combat = () => {
         </div>
       </div>
 
-      <div className='px-10 mx-auto items-center'>
-        <BigTitle>Status Effects</BigTitle>
-        <p className='text-gray-700 mb-2 text-center py-4'>
-          A character can be affected by many different kinds of status effects
-          during combat. This is a list of different statuses and their
-          descriptions:
-        </p>
-      </div>
-
-      <Content id='bleeding' />
-
-      <Content id='blinded' />
-
-      <Content id='burned' />
-
-      <Content id='charmed' />
-
-      <Content id='comatose' />
-
-      <Content id='confused' />
-
-      <Content id='concentrated' />
-
-      <Content id='deafened' />
-
-      <Content id='drugged' />
-
-      <Content id='drunk' />
-
-      <Content id='frightened' />
-
-      <Content id='frozen' />
-
-      <Content id='grappled' />
-
-      <Content id='irradiated' />
-
-      <Content id='prone' />
-
-      <Content id='invisible' />
-
-      <Content id='paralyzed' />
-
-      <Content id='petrified' />
-
-      <Content id='possessed' />
-
-      <Content id='poisoned' />
-
-      <Content id='purple' />
-
-      <Content id='sleeping' />
-
-      <Content id='soaked' />
-
-      <Content id='stunned' />
-
-      <Content id='telepath' />
 
       <div className='flex flex-col gap-8 max-w-full'>
         <BigTitle>Level Up</BigTitle>
@@ -858,6 +822,63 @@ const Combat = () => {
           </div>
         </div>
       </div>
+
+      <div className='px-10 mx-auto items-center'>
+        <BigTitle>Status Effects</BigTitle>
+        <p className='text-gray-700 mb-2 text-center py-4'>
+          A character can be affected by many different kinds of status effects
+          during combat. This is a list of different statuses and their
+          descriptions:
+        </p>
+      </div>
+
+      <Content id='bleeding' />
+
+      <Content id='blinded' />
+
+      <Content id='burned' />
+
+      <Content id='charmed' />
+
+      <Content id='comatose' />
+
+      <Content id='confused' />
+
+      <Content id='deafened' />
+
+      <Content id='drugged' />
+
+      <Content id='drunk' />
+
+      <Content id='frightened' />
+
+      <Content id='frozen' />
+
+      <Content id='grappled' />
+
+      <Content id='invisible' />
+
+      <Content id='irradiated' />
+
+      <Content id='paralyzed' />
+
+      <Content id='petrified' />
+
+      <Content id='poisoned' />
+
+      <Content id='possessed' />
+
+      <Content id='prone' />
+
+      <Content id='purple' />
+
+      <Content id='sleeping' />
+
+      <Content id='soaked' />
+
+      <Content id='stunned' />
+
+      <Content id='telepath' />
     </div>
   )
 }

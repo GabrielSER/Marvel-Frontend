@@ -5,17 +5,18 @@ import StatusText from './StatusText'
 
 const TelepathicControl = () => {
   return (
-    <StatusContainer>
+    <StatusContainer reverse>
+      <StatusImage
+        src={image}
+        alt='Jean Grey'
+      />
       <StatusText title='Telepathic Control'>
         A telepath can use their powers to control any actions or movement of another character.
         Each turn, the controlled character must save to 18 Wisdom to
         free themselves. If the victim receives damage,
         the telepath must save to 15 telepathy to keep controlling their victim.
       </StatusText>
-      <StatusImage
-        src={image}
-        alt='Jean Grey'
-      />
+
     </StatusContainer>
   )
 }

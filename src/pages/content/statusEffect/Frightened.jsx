@@ -5,7 +5,11 @@ import StatusText from './StatusText'
 
 const Frightened = () => {
   return (
-    <StatusContainer>
+    <StatusContainer reverse>
+      <StatusImage
+        src={image}
+        alt='Frightened Ms Marvel'
+      />
       <StatusText title='Frightened'>
         When frightened, a character must make a wisdom check of 12 at the beginning of their turns
         or it will try to run away from the enemy that caused this status. If the wisdom
@@ -17,10 +21,7 @@ const Frightened = () => {
         chance of getting stunned because of fear every turn this status lasts.
         If the duration is not specified, frightening lasts for 3 turns.
       </StatusText>
-      <StatusImage
-        src={image}
-        alt='Frightened Ms Marvel'
-      />
+
     </StatusContainer>
   )
 }

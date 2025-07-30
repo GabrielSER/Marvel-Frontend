@@ -5,11 +5,7 @@ import StatusText from './StatusText'
 
 const Invisible = () => {
   return (
-    <StatusContainer reverse>
-      <StatusImage
-        src={image}
-        alt='Invisible Woman'
-      />
+    <StatusContainer>
       <StatusText title='Invisible'>
         An invisible character cannot be seen by any other character. For
         attempting an attack on an invisible character, the attacker must make a
@@ -21,6 +17,11 @@ const Invisible = () => {
         detect an estimated location, but their attacks are still thrown in
         disadvantage.
       </StatusText>
+
+      <StatusImage
+        src={image}
+        alt='Invisible Woman'
+      />
     </StatusContainer>
   )
 }

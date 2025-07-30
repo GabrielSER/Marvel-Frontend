@@ -5,11 +5,8 @@ import StatusText from './StatusText'
 
 const Frozen = () => {
   return (
-    <StatusContainer reverse>
-      <StatusImage
-        src={image}
-        alt='Frozen Captain America'
-      />
+    <StatusContainer>
+
       <StatusText title='Frozen'>
         While frozen, a character can’t attempt any action, and its Speed is 0.
         Every turn on this status, the character takes 1d12 cold damage. To
@@ -18,6 +15,10 @@ const Frozen = () => {
         have a 50% chance of letting the frozen character free.
         Any character who is set free from the frozen status will get soaked.
       </StatusText>
+      <StatusImage
+        src={image}
+        alt='Frozen Captain America'
+      />
     </StatusContainer>
   )
 }
