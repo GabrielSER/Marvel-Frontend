@@ -15,9 +15,9 @@ const Charmed = () => {
         harmful Abilities or effects. The charmer has advantage on any ability
         check to interact socially with the character and can convince the
         charmed character to do any kind of action he wants if it doesn’t
-        involve self-harm. Each turn, the player must save to 15 Intelligence or
-        18 Wisdom to uncharm the character. If the victim receives more than 12
-        HP damage, the controller must save to 18 charilga to keep charming its
+        involve self-harm. Each turn, the player must save to
+        15 Wisdom to uncharm the character. If the victim receives more than 12
+        HP damage, the controller must save to 18 Charisma to keep charming its
         victim.
       </StatusText>
     </StatusContainer>

@@ -11,9 +11,8 @@ const Confused = () => {
         alt='Confused Spider-Men'
       />
       <StatusText title='Confused'>
-        Attacks made by a confused character are thrown in disadvantage. It
-        lasts for until the affected character saves to 15 wisdom, but the throw
-        can only be attempted after 1 turns after getting confused.
+        When attacking, a confused character will select a random target. In case of radial attack
+        it will center the attack on a random target. It lasts for until the affected character saves to 15 wisdom at the end of their turn.
       </StatusText>
     </StatusContainer>
   )

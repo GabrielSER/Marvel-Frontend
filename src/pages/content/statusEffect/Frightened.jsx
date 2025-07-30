@@ -7,8 +7,8 @@ const Frightened = () => {
   return (
     <StatusContainer>
       <StatusText title='Frightened'>
-        When frightened, a character must make a wisdom check of 12 or it will
-        try to run away from the enemy that caused this status. If the wisdom
+        When frightened, a character must make a wisdom check of 12 at the beginning of their turns
+        or it will try to run away from the enemy that caused this status. If the wisdom
         check is succeded, the victim can attempt an attack against the
         character that caused him the frightened effect. However, all attacks
         attempted by the victim against this character will be thrown in

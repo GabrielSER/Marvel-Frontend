@@ -11,9 +11,8 @@ const Sleeping = () => {
         alt='Sleeping Spider-Man'
       />
       <StatusText title='Sleeping'>
-        A sleeping induced character will stay asleep util it is awaked by loud
-        sounds, or by being hit. It can also attempt a perception check of 13 to
-        wake up.
+        A sleeping induced character will stay asleep until another character uses their action to wake them up, is awaked by loud
+        sounds, or by being hit.
       </StatusText>
     </StatusContainer>
   )

@@ -11,13 +11,13 @@ const Petrified = () => {
         alt='Petrified Avengers'
       />
       <StatusText title='Petrified'>
-        While petrified, a character can’t attempt any action, and its Speed is
-        0. He cannot either see anything. To break free, the player must save to
-        19 Strength. All attacks against this character are thrown in advantage,
+        While petrified, a character can’t attempt any action, its Speed is
+        0 and cannot see anything either. To break free, the player must save to
+        19 Strength at the end of their turn. All attacks against this character are thrown in advantage,
         but they have a 50% chance of letting the petrified character free.
-        However, there is 5% chance that an attack will break the rock and kill
+        However, there is 5% chance of an attack breaking the rock, killing
         the petrified character. If a character stay petrified for more than 10
-        turns, it dies.
+        turns, they die by suffocation.
       </StatusText>
     </StatusContainer>
   )

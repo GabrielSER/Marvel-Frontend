@@ -99,13 +99,13 @@ const Objects = () => {
             <span className='text-blue-500 font-bold text-left'>
               -  Semi-automatic:
             </span>{' '}
-            This weapon can add one more damage dice per 2 points of difference in the skilchecks.
+            This weapon can add one more damage dice per 2 points of difference in the skill checks.
           </p>
           <p className='text-black text-left pl-10'>
             <span className='text-blue-500 font-bold text-left'>
               -  Automatic:
             </span>{' '}
-            This weapon can add one more damage dice per point of difference in the skilchecks.
+            This weapon can add one more damage dice per point of difference in the skill checks.
           </p>
           <p className='text-gray-700 text-left'>
             <span className='text-gray-700 font-semibold text-left'>

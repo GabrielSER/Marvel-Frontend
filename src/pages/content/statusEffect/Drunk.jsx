@@ -11,11 +11,10 @@ const Drunk = () => {
         alt='Drunk Iron Man'
       />
       <StatusText title='Drunk'>
-        When consuming a high number of alcoholic drinks, a character gets
-        drunk, so its intelligence gets reduced in 2 points, and its wisdom and
-        perception gets reduced to 0. A character will stay drunk until it
-        rests. However, after resting, it will have a hangover which will reduce
-        its defense and perception in 2 points.
+        When consuming a high number of alcoholic drinks at the OAA discretion, a character gets
+        drunk, so its intelligence gets reduced in 2 points, its wisdom and perception is reduced in 4 points, and its agility is reduced in 3 points.
+        A character will stay drunk until it rests.
+        However, after resting the character must achieve a durability check of 16. If failed, it will have a hangover which will reduce its defense and perception in 2 points.
       </StatusText>
     </StatusContainer>
   )

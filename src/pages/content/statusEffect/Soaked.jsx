@@ -7,10 +7,10 @@ const Soaked = () => {
   return (
     <StatusContainer>
       <StatusText title='Soaked'>
-        A soaked character received double damage from cold and electric attacks
+        A soaked character receives double damage from cold and electric attacks
         and half damage by fire attacks. When dashing or jumping they must
-        succeed an agility throw of 13 or they will fall prone to opportunity
-        attacks.
+        succeed an acrobatics throw of 13 or they will slip and fall prone.
+        It lasts until the end of the battle or until it receives fire damage.
       </StatusText>
       <StatusImage
         src={image}

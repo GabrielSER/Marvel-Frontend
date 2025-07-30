@@ -186,11 +186,7 @@ const Combat = () => {
           <Paragraph>
             <span className='font-bold text-primary'>a.</span> If the attacker
             gets less than the victim’s defense, the attacker fails the attack,
-            and the victim can attempt a counterattack. which is a normal attack
-            that can be attempted just after a close range failed attack. It
-            works just like a normal attack but deals half its damage. However,
-            a counterattack against another counterattack cannot be attempted.
-            You can’t also attempt a combo out of a counterattack.
+            and the victim can attempt a counterattack.
           </Paragraph>
           <Paragraph>
             <span className='font-bold text-primary'>b.</span> If the attacker
@@ -257,15 +253,29 @@ const Combat = () => {
           have 5 ft knockback and will have 30% chance of falling prone to
           opportunity attacks.
         </Paragraph>
-        <Title>Knockback</Title>
-        <Paragraph>
-          When a character deals a normal attack successfully, they can attempt
-          to generate knockback on their opponent. This can only be attempted if
-          the attacker's Strength is higher that the victim's and the attacker's
-          throw surpasses the victim's defense or agility in more then 3 points.
-          If this conditions are met, the victim will be thrown 15 ft away.
-          However, a combo cannot be attempted.
-        </Paragraph>
+
+
+        <div className='flex lg:flex-row flex-col lg:px-0 px-2 gap-10'>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Counterattack</Title>
+            <Paragraph>
+              A    A counter attack is a normal attack
+              that can be attempted just after a close range failed attack. It
+              works just like a normal attack but deals half its damage. However,
+              a counterattack against another counterattack cannot be attempted.
+              You can’t also attempt a combo out of a counterattack.
+            </Paragraph>
+          </div>
+          <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
+            <Title>Knockback</Title>
+            <Paragraph>
+              When a character deals a normal attack successfully, instead of a combo they can attempt
+              to generate knockback on their opponent. This cannot be attempted if
+              the attacker's Strength is 3 points lower that the victim's.
+              If this conditions are met, the victim will be thrown 10 ft away.
+            </Paragraph>
+          </div>
+        </div>
         <div className='flex justify-center'>
           {' '}
           {/* Added a flex container for centering */}
@@ -288,11 +298,9 @@ const Combat = () => {
             </Paragraph>
           </div>
           <div className='flex flex-col max-w-xl p-2 mx-auto items-center'>
-            <Title>Guard</Title>
+            <Title>Ready</Title>
             <Paragraph>
-              You can use a Combat Action to stand on an attack position, which
-              will allow you to use a normal attack once any enemy enters your
-              close combat area.
+              A ready action is a special action that allows you to prepare for a specific event or trigger. You can use your action to ready a response to a specific condition, such as "If an enemy comes within 5 feet of me, I will attack." When the condition is met, you can use your reaction to execute the prepared action.
             </Paragraph>
           </div>
         </div>
@@ -318,7 +326,10 @@ const Combat = () => {
               <Title className>Grappling</Title>
             </div>
             <Paragraph>
-              As an action any character can attempt to grapple another character, for this the grappler needs to have one free arm part of their body that would be able to be used for grappling. When a grapple gets declared the grappler must do a strength check against the defender agility or strength check (The choice of the defender), if successful the target gets the grapple status and can only attempt to get free at the end of his turns. When grappling the grappler can move up to half his speed dragging the grappled creature.
+              As an action any character can attempt to grapple another character,
+              for this the grappler needs to have one free arm part of their body that would be able to be used for grappling.
+              When a grapple gets declared the grappler must do a strength check against the defender agility or strength check (The choice of the defender), if successful the target gets the grapple status and can only attempt to get free at the end of his turns. When grappling the grappler can move up to half his speed dragging the grappled character.  This cannot be attempted if
+              the attacker's Strength is 3 points lower that the victim's.
             </Paragraph>
 
           </div>
@@ -545,11 +556,10 @@ const Combat = () => {
             <div className='flex flex-row sm:gap-40 gap-6 sm:p-4 justify-center'>
               <div className='flex sm:flex-row flex-col sm:gap-40 gap-4'>
                 <div className='flex flex-col'>
-                  <Title>Contact</Title>
+                  <Title>Physical</Title>
                   <p className='text-gray-700 text-center'>Bludgeoning</p>
                   <p className='text-gray-700 text-center'>Piercing</p>
                   <p className='text-gray-700 text-center'>Slashing</p>
-                  <p className='text-gray-700 mb-6 text-center'>Physical</p>
                 </div>
                 <div className='flex flex-col'>
                   <Title>Energetic</Title>
@@ -568,13 +578,15 @@ const Combat = () => {
                   <p className='text-gray-700 text-center'>Magic</p>
                   <p className='text-gray-700 text-center'>Necrotic</p>
                   <p className='text-gray-700 text-center'>Psychic</p>
-                  <p className='text-gray-700 text-center'>Holly</p>
+                  <p className='text-gray-700 text-center'>Lightforce</p>
+                  <p className='text-gray-700 text-center'>Darkforce</p>
+                  <p className='text-gray-700 text-center'>Holy</p>
                   <p className='text-gray-700 mb-6 text-center'>Demonic</p>
                 </div>
 
                 <div className='flex flex-col'>
                   <Title>After Effect</Title>
-                  <p className='text-gray-700 text-center'>Potion</p>
+                  <p className='text-gray-700 text-center'>Poison</p>
                   <p className='text-gray-700 text-center'>Acid</p>
                 </div>
               </div>

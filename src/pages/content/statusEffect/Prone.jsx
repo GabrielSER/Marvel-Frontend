@@ -11,7 +11,7 @@ const Prone = () => {
         All attacks against this
         character are thrown in advantage. A prone character can only stand up
         in their turn by using half of their movement speed for that turn. If
-        succeding in an agility check of 18, the fallen character can get up
+        succeding in an acrobatics check of 18, the fallen character can get up
         keeping all their movement speed.
       </StatusText>
       <StatusImage
