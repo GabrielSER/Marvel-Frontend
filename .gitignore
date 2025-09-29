@@ -27,3 +27,4 @@ node_modules
 
 # Generated
 src/index.css
+env
