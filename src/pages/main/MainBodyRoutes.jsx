@@ -11,6 +11,8 @@ import Objects from '../objects/Objects'
 import NotFound from '../not-found/NotFound'
 import Types from '../characters/Types'
 import Villains from '../characters/Villains'
+import MyCharacters from '../user-characters/MyCharacters'
+import Sheet from '../user-characters/Sheet'
 
 const MainBodyRoutes = () => {
   return (
@@ -58,6 +60,14 @@ const MainBodyRoutes = () => {
       <Route
         path='/objects/*'
         element={<Objects />}
+      />
+      <Route
+        path="/my-characters"
+        element={<MyCharacters />}
+      />
+      <Route
+        path="/my-characters/:id"
+        element={<Sheet />}
       />
       <Route
         path='/'

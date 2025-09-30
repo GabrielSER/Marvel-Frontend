@@ -8,7 +8,7 @@ import { CharactersProvider } from '@contexts/CharactersContext'
 import { FormsProvider } from '@contexts/FormsContext'
 import { PowersProvider } from '@contexts/PowersContext'
 import { ContentProvider } from '@contexts/ContentContext'
-
+import { UserCharactersProvider } from '../../contexts/UserCharactersContext'
 import Login from './Login'
 import MainBody from './MainBody'
 
@@ -32,7 +32,9 @@ const Main = () => {
                       <FormsProvider>
                         <PowersProvider>
                           <ContentProvider>
-                            <MainBody />
+                            <UserCharactersProvider>
+                              <MainBody />
+                            </UserCharactersProvider>
                           </ContentProvider>
                         </PowersProvider>
                       </FormsProvider>
