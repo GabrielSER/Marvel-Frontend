@@ -185,10 +185,10 @@ const Character = () => {
             </p>
           </div>
           <div className='flex flex-col md:flex-row gap-4 items-center w-full'>
-            <Title className='self-start'>Melee:</Title>
+            <Title className='self-start'>Combo:</Title>
             <p className='text-gray-700 text-left'>
               {' '}
-              Represents the character's effectiveness in close combat.
+              Represents the amount of times a character can perform a normal attack in a combo.
             </p>
           </div>
           <div className='flex flex-col md:flex-row gap-4 items-center w-full'>
@@ -487,6 +487,13 @@ const Character = () => {
           </p>
         </div>
 
+        <div className='flex flex-col md:flex-row gap-4 items-center w-full'>
+          <Title className='self-start'>Melee:</Title>
+          <p className='text-gray-700 text-left'>
+            {' '}
+            Represents the character's effectiveness in close combat.
+          </p>
+        </div>
         <div className='flex flex-col md:flex-row gap-4 items-center w-full'>
           <Title className='self-start'>Melee Weapons:</Title>
           <p className='text-gray-700 text-left'>
