@@ -37,6 +37,7 @@ import RPG from '../../assets/images/combat/RPG.png'
 import MINE from '../../assets/images/combat/MINE.png'
 import Dual from '../../assets/images/combat/dualpistol.PNG'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
+import ObjectList from './ObjectList'
 
 const BigTitle = (props) => (
   <div className='flex flex-col items-center'>
@@ -405,6 +406,7 @@ const Objects = () => {
           </div>
         </div>
       </div>
+      <ObjectList></ObjectList>
     </div>
   )
 }

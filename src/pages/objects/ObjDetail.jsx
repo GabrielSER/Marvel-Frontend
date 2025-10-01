@@ -5,10 +5,9 @@ import { CharacterProvider } from '@contexts/CharacterContext'
 import { CharacterDetailProvider } from '@contexts/CharacterDetailContext'
 import { useCharacterWithNormalizedName } from '@hooks/useCharacterWithNormalizedName'
 import FormTabBar from './FormTabBar'
-import CharacterFormDetail from './CharacterFormDetail'
-import ObjectDetail from '../objects/ObjectDetail'
+import ObjectDetail from './CharacterFormDetail'
 
-const CharacterDetail = () => {
+const ObjDetail = () => {
   const navigate = useNavigate()
   const { characterNormalized } = useParams()
   const { character, loading } = useCharacterWithNormalizedName(characterNormalized)
@@ -24,21 +23,10 @@ const CharacterDetail = () => {
       navigate('/not-found')
     }
   }, [navigate, character, loading])
+
   if (character === null || character === undefined) {
     return null
   }
-
-  if (character.types[0] == 'object') {
-    return (
-      <CharacterProvider character={character}>
-        <CharacterDetailProvider>
-          {character.forms.length !== 0 && <FormTabBar />}
-          <ObjectDetail />
-        </CharacterDetailProvider>
-      </CharacterProvider>
-    )
-  }
-
 
   return (
     <CharacterProvider character={character}>
@@ -50,4 +38,4 @@ const CharacterDetail = () => {
   )
 }
 
-export default CharacterDetail
+export default ObjDetail
