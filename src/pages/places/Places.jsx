@@ -164,9 +164,9 @@ const Places = () => {
           the Twin Towers, adorned the skyline until the September 11th
           terrorist attacks. Explore New York City within this interactive map:
         </Paragraph>
-        <div className='flex justify-center'>
+        <div className='flex justify-center w-full h-full'>
           <iframe
-            className='w-full h-144 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+            className='w-3/4 min-h-[1000px] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
             src='https://app.kanka.io/w/earth-2205/maps/85261/explore'
             title='Marvel Universe Map'
             frameBorder='0'
@@ -174,6 +174,7 @@ const Places = () => {
           />
         </div>
       </Section>
+
     </div>
   )
 }

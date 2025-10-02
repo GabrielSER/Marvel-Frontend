@@ -27,6 +27,11 @@ const DiceType = {
     value: 10,
     logo: <D10 />
   },
+  D100: {
+    id: 'd100',
+    value: 100,
+    logo: <D10 />
+  },
   D12: {
     id: 'd12',
     value: 12,

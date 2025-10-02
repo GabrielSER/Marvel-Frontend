@@ -38,6 +38,7 @@ import MINE from '../../assets/images/combat/MINE.png'
 import Dual from '../../assets/images/combat/dualpistol.PNG'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
 import ObjectList from './ObjectList'
+import ISO8Generator from './ISO8Generator'
 
 const BigTitle = (props) => (
   <div className='flex flex-col items-center'>
@@ -407,6 +408,7 @@ const Objects = () => {
         </div>
       </div>
       <ObjectList></ObjectList>
+      <ISO8Generator></ISO8Generator>
     </div>
   )
 }

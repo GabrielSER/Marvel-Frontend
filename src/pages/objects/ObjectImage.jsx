@@ -28,12 +28,12 @@ const StatComponent2 = ({ children }) => {
 
 const imagePlaceholder = (
   <div
-    className='flex flex-col pt-24 lg:pt-52'
+    className='flex flex-col pt-2 lg:pt-52'
     role='status'
   >
     <svg
       aria-hidden='true'
-      className='w-32 lg:w-40 h-32 lg:h-40 text-gray-400 animate-spin dark:text-gray-600 fill-red-600'
+      className='w-full lg:w-40 h-32 lg:h-40 text-gray-400 animate-spin dark:text-gray-600 fill-red-600'
       viewBox='0 0 100 101'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
@@ -119,7 +119,7 @@ const ObjectImage = () => {
           'overflow-hidden'
         )}
         imageClassname={clsx(
-          'p-0 w-auto xs:w-80 lg:w-auto h-[80vh] lg:h-[90vh] object-cover rounded-md',
+          'p-0 w-auto xs:w-auto lg:w-auto h-[80vh] lg:h-[90vh] object-cover rounded-md',
           { 'flip-in': isLoaded }
         )}
         placeholder={imagePlaceholder}

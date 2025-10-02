@@ -62,6 +62,7 @@ export const contentMapping = () => ({
   d6: <Dice type={DiceType.D6} />,
   d8: <Dice type={DiceType.D8} />,
   d10: <Dice type={DiceType.D10} />,
+  d100: <Dice type={DiceType.D100} />,
   d12: <Dice type={DiceType.D12} />,
   d20: <Dice type={DiceType.D20} />,
   roll: <DiceRoller />,

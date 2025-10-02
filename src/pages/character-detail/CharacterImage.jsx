@@ -119,7 +119,7 @@ const CharacterImage = () => {
           'overflow-hidden'
         )}
         imageClassname={clsx(
-          'p-0 w-auto xs:w-80 lg:w-auto h-[80vh] lg:h-[90vh] object-cover rounded-md',
+          'p-0 w-auto xs:w-auto lg:w-auto h-[80vh] lg:h-[90vh] object-cover rounded-md',
           { 'flip-in': isLoaded }
         )}
         placeholder={imagePlaceholder}

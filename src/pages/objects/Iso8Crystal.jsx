@@ -1,0 +1,321 @@
+// src/pages/objects/Iso8Crystal.jsx
+import clsx from "clsx";
+
+/**
+ * Props:
+ *  - grade: "F" | "E" | "D" | "C" | "B" | "A" | "S" | "S+"
+ *  - colorKey?: "red"|"blue"|"green"|"yellow"|"orange"|"purple"|"rainbow"
+ *  - colors?: string[]    // e.g. ["Blue","Red"] for rainbow
+ *  - emphasize?: boolean
+ *  - className?: string
+ *  - fluid?: boolean
+ *  - showPill?: boolean
+ *  - radiate?: boolean    // toggle outer glow/radiation (default true)
+ *  - animate?: boolean    // toggle animation (default true)
+ */
+
+const SIZE = { F: 110, E: 125, D: 140, C: 155, B: 170, A: 190, S: 212, "S+": 228 };
+
+// ---- Base PNGs (tus assets) ----
+import F_base from "../../assets/iso8/baseF.png";
+import E_base from "../../assets/iso8/baseE.png";
+import D_base from "../../assets/iso8/baseD.png";
+import C_base from "../../assets/iso8/baseC.png";
+import B_base from "../../assets/iso8/baseB.png";
+import A_base from "../../assets/iso8/baseA.png";
+import S_base from "../../assets/iso8/baseS.png";
+import Splus_base from "../../assets/iso8/baseSPlus.png";
+
+const IMG = {
+    F: { base: F_base },
+    E: { base: E_base },
+    D: { base: D_base },
+    C: { base: C_base },
+    B: { base: B_base },
+    A: { base: A_base },
+    S: { base: S_base },
+    "S+": { base: Splus_base },
+};
+
+const HEX = {
+    red: "#E53935",
+    blue: "#3A86FF",
+    green: "#22C55E",
+    yellow: "#d9ff00ff",
+    orange: "#FB8C00",
+    purple: "#9B5DE5",
+};
+
+// Intensidad por grade (escala animaciones y brillo)
+const GLOW = {
+    F: { blur: 5, opacity: 0.05, scale: 0.4, layers: 1, speed: 8.0 },
+    E: { blur: 8, opacity: 0.10, scale: 1.0, layers: 1, speed: 7.6 },
+    D: { blur: 10, opacity: 0.15, scale: 1.02, layers: 2, speed: 7.2 },
+    C: { blur: 12, opacity: 0.20, scale: 1.05, layers: 2, speed: 6.8 },
+    B: { blur: 24, opacity: 0.25, scale: 1.10, layers: 3, speed: 6.2 },
+    A: { blur: 16, opacity: 0.30, scale: 1.12, layers: 3, speed: 5.6 },
+    S: { blur: 18, opacity: 0.35, scale: 1.15, layers: 4, speed: 5.0 },
+    "S+": { blur: 20, opacity: 0.40, scale: 1.18, layers: 5, speed: 4.4 },
+};
+
+function resolveSrc(grade) {
+    const entry = IMG[grade] || IMG.C;
+    return entry.base;
+}
+
+function toRGBA(hex, a = 1) {
+    const s = String(hex).replace("#", "");
+    const r = parseInt(s.length === 3 ? s[0] + s[0] : s.slice(0, 2), 16);
+    const g = parseInt(s.length === 3 ? s[1] + s[1] : s.slice(2, 4), 16);
+    const b = parseInt(s.length === 3 ? s[2] + s[2] : s.slice(4, 6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${a})`;
+}
+
+function getColors({ colorKey, colors }) {
+    if (Array.isArray(colors) && colors.length) {
+        return colors.map(c => HEX[String(c).toLowerCase()]).filter(Boolean);
+    }
+    if (colorKey === "rainbow") {
+        return ["blue", "purple", "green", "yellow", "orange", "red"].map(k => HEX[k]);
+    }
+    if (colorKey) {
+        return [HEX[String(colorKey).toLowerCase()]].filter(Boolean);
+    }
+    return [];
+}
+
+// Fondo de glow (multicapa radial) — SIEMPRE visible sobre blanco
+function buildGlowBackground(hexes, baseOpacity) {
+    if (!hexes.length) return null;
+    const layers = hexes.map(h => {
+        const c1 = toRGBA(h, Math.min(baseOpacity, 0.95));
+        const c2 = toRGBA(h, Math.max(baseOpacity * 0.55, 0.18));
+        const c3 = toRGBA(h, Math.max(baseOpacity * 0.25, 0.10));
+        return `radial-gradient(circle at 50% 45%, ${c1} 0%, ${c2} 38%, ${c3} 60%, transparent 78%)`;
+    });
+    return layers.join(", ");
+}
+
+// Tint interno (enmascarado al alfa del PNG)
+function buildTintBackground({ colorKey, colors }) {
+    const list = getColors({ colorKey, colors });
+    if (!list.length) return null;
+    if (list.length === 1) return list[0];
+    const stops = list
+        .map((h, i) => `${h} ${Math.round((i * 100) / (list.length - 1))}%`)
+        .join(", ");
+    return `linear-gradient(135deg, ${stops})`;
+}
+
+// Sombra coloreada como fallback (si nada más se ve, esto sí)
+function buildDropShadow(hexes, gradeCfg) {
+    if (!hexes.length) return "none";
+    const spread = Math.round(gradeCfg.blur * 0.85);
+    const steps = Math.max(gradeCfg.layers, 2);
+    const parts = [];
+    for (let i = 1; i <= steps; i++) {
+        const t = i / steps;
+        const blur = Math.round(spread * (0.4 + 0.6 * t));
+        const alpha = gradeCfg.opacity * (0.5 + 0.5 * t);
+        for (const h of hexes) {
+            parts.push(`drop-shadow(0 0 ${blur}px ${toRGBA(h, alpha)})`);
+        }
+    }
+    return parts.join(" ");
+}
+
+// Gradiente cónico para “rayos” (rotación)
+function buildRaysGradient(hexes, baseOpacity) {
+    if (!hexes.length) return null;
+    if (hexes.length === 1) {
+        const c = toRGBA(hexes[0], baseOpacity * 0.45);
+        return `repeating-conic-gradient(from 0deg, ${c} 0deg 6deg, transparent 6deg 22deg)`;
+    }
+    // Arcoíris: mezcla de colores en sectores
+    const step = 360 / hexes.length;
+    const stops = hexes
+        .map((h, i) => `${toRGBA(h, baseOpacity * 0.35)} ${i * step}deg ${(i + 1) * step}deg`)
+        .join(", ");
+    return `conic-gradient(${stops})`;
+}
+
+export default function Iso8Crystal({
+    grade,
+    colorKey,
+    colors,
+    emphasize,
+    className,
+    fluid = false,
+    showPill = true,
+    radiate = true,
+    animate = true,
+}) {
+    const g = grade || "F";
+    const src = resolveSrc(g);
+    const glowCfg = GLOW[g] || GLOW.F;
+
+    const colorList = getColors({ colorKey, colors }); // hex[]
+    const glowBg = radiate ? buildGlowBackground(colorList, glowCfg.opacity) : null;
+    const raysBg = radiate ? buildRaysGradient(colorList, glowCfg.opacity) : null;
+    const dropShadow = buildDropShadow(colorList, glowCfg);
+    const tint = buildTintBackground({ colorKey, colors });
+
+    const boxStyle = fluid
+        ? { width: "100%", position: "relative", isolation: "isolate", overflow: "visible" }
+        : { width: SIZE[g] || 150, height: Math.round((SIZE[g] || 150) * 1.25), position: "relative", isolation: "isolate", overflow: "visible" };
+
+    const maskStyles = {
+        WebkitMaskImage: `url(${src})`,
+        maskImage: `url(${src})`,
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskPosition: "center",
+        maskPosition: "center",
+    };
+
+    // Duraciones animadas por grade (más alto = más vivo/rápido)
+    const spinSec = Math.max(3.2, glowCfg.speed);     // rotación rayos
+    const pulseSec = Math.max(2.2, glowCfg.speed * 0.55);
+    const waveSec = Math.max(2.6, glowCfg.speed * 0.7);
+    const shimmerSec = Math.max(2.0, glowCfg.speed * 0.5);
+
+    return (
+        <div className={clsx("relative", className)} style={boxStyle}>
+            {fluid && <div style={{ paddingTop: "125%" }} />}
+
+            {/* ---- Capa de Rayos (rotación lenta) ---- */}
+            {raysBg && (
+                <div
+                    aria-hidden
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                        zIndex: 0,
+                        transform: `scale(${glowCfg.scale * 1.08})`,
+                        filter: `blur(${Math.round(glowCfg.blur * 0.6)}px)`,
+                        background: raysBg,
+                        opacity: Math.min(glowCfg.opacity * 0.85, 0.9),
+                        borderRadius: "50%",
+                        animation: animate ? `iso8Spin ${spinSec}s linear infinite` : "none",
+                        mixBlendMode: "screen",
+                    }}
+                />
+            )}
+
+            {/* ---- Glow base (pulso) ---- */}
+            {radiate && glowBg && (
+                <div
+                    aria-hidden
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                        zIndex: 0,
+                        transform: `scale(${glowCfg.scale})`,
+                        filter: `blur(${glowCfg.blur}px)`,
+                        background: glowBg,
+                        animation: animate ? `iso8Pulse ${pulseSec}s ease-in-out infinite alternate` : "none",
+                    }}
+                />
+            )}
+
+            {/* ---- Ondas expansivas (2 anillos) ---- */}
+            {radiate && colorList.length > 0 && (
+                <>
+                    {[0, 1].map(i => {
+                        const c = colorList[i % colorList.length];
+                        const base = toRGBA(c, Math.min(0.28 + i * 0.07, 0.45));
+                        return (
+                            <div
+                                key={i}
+                                aria-hidden
+                                className="absolute inset-0 pointer-events-none"
+                                style={{
+                                    zIndex: 0,
+                                    background: `radial-gradient(circle at 50% 48%, transparent 0%, transparent 55%, ${base} 65%, transparent 78%)`,
+                                    filter: `blur(${Math.round(glowCfg.blur * 0.7)}px)`,
+                                    transform: `scale(${1 + i * 0.08})`,
+                                    animation: animate ? `iso8Wave ${waveSec + i * 0.6}s ease-out ${i * (waveSec * 0.25)}s infinite` : "none",
+                                }}
+                            />
+                        );
+                    })}
+                </>
+            )}
+
+            {/* ---- PNG con fallback drop-shadow coloreado ---- */}
+            <img
+                src={src}
+                alt={`ISO-8 grade ${g}`}
+                draggable={false}
+                decoding="async"
+                loading="lazy"
+                className="absolute inset-0"
+                style={{
+                    zIndex: 2,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    imageRendering: "auto",
+                    filter: `${emphasize ? "drop-shadow(0 6px 18px rgba(0,0,0,.35)) " : ""}${dropShadow}`,
+                    pointerEvents: "none",
+                    userSelect: "none",
+                    willChange: "transform, filter, opacity",
+                }}
+            />
+
+            {/* ---- Tint interno (enmascarado) + shimmer suave ---- */}
+            {tint && (
+                <>
+                    <div
+                        aria-hidden
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                            zIndex: 3,
+                            ...maskStyles,
+                            background: tint,
+                            mixBlendMode: "color",
+                            opacity: 1,
+                            animation: animate ? `iso8Shimmer ${shimmerSec}s ease-in-out infinite alternate` : "none",
+                        }}
+                    />
+                    <div
+                        aria-hidden
+                        className="absolute inset-0 pointer-events-none"
+                        style={{ zIndex: 3, ...maskStyles, background: tint, mixBlendMode: "multiply", opacity: 0.35 }}
+                    />
+                </>
+            )}
+
+            {/* Etiqueta Grade */}
+            {showPill && grade && (
+                <div
+                    className="absolute left-1/2 -translate-x-1/2 text-[11px] px-2 py-[2px] rounded-full bg-black/70 text-white font-semibold"
+                    style={{ bottom: -8, zIndex: 4 }}
+                >
+                    Grade {g}
+                </div>
+            )}
+
+            {/* Keyframes locales (no colisionan) */}
+            <style>{`
+        @keyframes iso8Spin {
+          from { transform: rotate(0deg) scale(${(GLOW[g]?.scale * 1.08) || 1.1}); }
+          to   { transform: rotate(360deg) scale(${(GLOW[g]?.scale * 1.08) || 1.1}); }
+        }
+        @keyframes iso8Pulse {
+          0%   { opacity: 0.85; transform: scale(${(GLOW[g]?.scale) || 1.1}); }
+          100% { opacity: 1.00; transform: scale(${(((GLOW[g]?.scale || 1.1) * 1.05)).toFixed(3)}); }
+        }
+        @keyframes iso8Wave {
+          0%   { opacity: 0.00; transform: scale(0.90); }
+          35%  { opacity: 0.55; }
+          100% { opacity: 0.00; transform: scale(1.25); }
+        }
+        @keyframes iso8Shimmer {
+          0%   { opacity: 0.28; }
+          100% { opacity: 0.44; }
+        }
+      `}</style>
+        </div>
+    );
+}
