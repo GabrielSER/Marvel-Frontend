@@ -407,8 +407,9 @@ const Objects = () => {
           </div>
         </div>
       </div>
-      <ObjectList></ObjectList>
+
       <ISO8Generator></ISO8Generator>
+      <ObjectList></ObjectList>
     </div>
   )
 }

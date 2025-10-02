@@ -12,11 +12,12 @@ import clsx from "clsx";
  *  - showPill?: boolean
  *  - radiate?: boolean
  *  - animate?: boolean
+ *  - float?: boolean      // NEW: enable/disable floating motion (default: true)
  */
 
 const SIZE = { F: 110, E: 125, D: 140, C: 155, B: 170, A: 190, S: 212, "S+": 228 };
 
-// ---- Base PNGs (tus assets) ----
+// ---- Base PNGs (your assets) ----
 import F_base from "../../assets/iso8/baseF.png";
 import E_base from "../../assets/iso8/baseE.png";
 import D_base from "../../assets/iso8/baseD.png";
@@ -46,16 +47,28 @@ const HEX = {
     purple: "#9B5DE5",
 };
 
-// Intensidad por grade
+// Glow strength per grade
 const GLOW = {
-    F: { blur: 5, opacity: 0.05, scale: 0.4, layers: 1, speed: 8.0 },
-    E: { blur: 8, opacity: 0.10, scale: 1.0, layers: 1, speed: 7.6 },
-    D: { blur: 10, opacity: 0.15, scale: 1.02, layers: 2, speed: 7.2 },
-    C: { blur: 12, opacity: 0.20, scale: 1.05, layers: 2, speed: 6.8 },
-    B: { blur: 24, opacity: 0.25, scale: 1.10, layers: 3, speed: 6.2 },
+    F: { blur: 5, opacity: 0.08, scale: 0.42, layers: 1, speed: 8.0 },
+    E: { blur: 8, opacity: 0.12, scale: 1.02, layers: 1, speed: 7.6 },
+    D: { blur: 10, opacity: 0.16, scale: 1.04, layers: 2, speed: 7.2 },
+    C: { blur: 12, opacity: 0.20, scale: 1.07, layers: 2, speed: 6.8 },
+    B: { blur: 14, opacity: 0.25, scale: 1.10, layers: 3, speed: 6.2 },
     A: { blur: 16, opacity: 0.30, scale: 1.12, layers: 3, speed: 5.6 },
     S: { blur: 18, opacity: 0.35, scale: 1.15, layers: 4, speed: 5.0 },
-    "S+": { blur: 90, opacity: 0.40, scale: 1.18, layers: 5, speed: 4.4 },
+    "S+": { blur: 20, opacity: 0.40, scale: 1.18, layers: 5, speed: 4.4 },
+};
+
+// NEW: Float strength (amp/rot/sec) per grade — lower grades = stronger float
+const FLOAT = {
+    F: { amp: 14, rot: 2.2, sec: 3.0 },
+    E: { amp: 12, rot: 2.0, sec: 3.2 },
+    D: { amp: 10, rot: 1.8, sec: 3.4 },
+    C: { amp: 8, rot: 1.5, sec: 3.6 },
+    B: { amp: 6, rot: 1.3, sec: 3.9 },
+    A: { amp: 5, rot: 1.1, sec: 4.1 },
+    S: { amp: 4, rot: 0.9, sec: 4.3 },
+    "S+": { amp: 3, rot: 0.8, sec: 4.5 },
 };
 
 function resolveSrc(grade) {
@@ -84,7 +97,7 @@ function getColors({ colorKey, colors }) {
     return [];
 }
 
-// Fondos
+// ---- Background builders ----
 function buildGlowBackground(hexes, baseOpacity) {
     if (!hexes.length) return null;
     const layers = hexes.map(h => {
@@ -122,10 +135,9 @@ function buildDropShadow(hexes, gradeCfg) {
     return parts.join(" ");
 }
 
-// Rayos (conic)
+// Rays (single-color repeating conic for animation)
 function buildRaysGradient(hexes, baseOpacity) {
     if (!hexes.length) return null;
-    // For animation we will pass a SINGLE color array → repeating-conic look
     const c = toRGBA(hexes[0], baseOpacity * 0.45);
     return `repeating-conic-gradient(from 0deg, ${c} 0deg 6deg, transparent 6deg 22deg)`;
 }
@@ -140,26 +152,24 @@ export default function Iso8Crystal({
     showPill = true,
     radiate = true,
     animate = true,
+    float = true, // NEW default
 }) {
     const g = grade || "F";
     const src = resolveSrc(g);
     const glowCfg = GLOW[g] || GLOW.F;
+    const floatCfg = FLOAT[g] || FLOAT.C;
 
-    // Full list (used for TINT only)
+    // Full list (tint can blend)
     const fullColorList = getColors({ colorKey, colors });
 
-    // *** Animation color: ONLY ONE (first provided, else first of rainbow set, else none) ***
+    // Animation color: only ONE (first provided; for rainbow fallback to blue)
     const animColorList =
-        fullColorList.length > 0
-            ? [fullColorList[0]]
-            : colorKey === "rainbow"
-                ? [HEX.blue] // fallback if no colors array was passed
-                : [];
+        fullColorList.length > 0 ? [fullColorList[0]] : colorKey === "rainbow" ? [HEX.blue] : [];
 
     const glowBg = radiate ? buildGlowBackground(animColorList, glowCfg.opacity) : null;
     const raysBg = radiate ? buildRaysGradient(animColorList, glowCfg.opacity) : null;
     const dropShadow = buildDropShadow(animColorList, glowCfg);
-    const tint = buildTintBackground({ colorKey, colors }); // can show multi-color blend
+    const tint = buildTintBackground({ colorKey, colors });
 
     const boxStyle = fluid
         ? { width: "100%", position: "relative", isolation: "isolate", overflow: "visible" }
@@ -176,143 +186,169 @@ export default function Iso8Crystal({
         maskPosition: "center",
     };
 
-    // Duraciones
-    const spinSec = Math.max(3.2, glowCfg.speed);
-    const pulseSec = Math.max(2.2, glowCfg.speed * 0.55);
-    const waveSec = Math.max(2.6, glowCfg.speed * 0.7);
-    const shimmerSec = Math.max(2.0, glowCfg.speed * 0.5);
+    // Animation timings
+    const spinSec = Math.max(3.0, glowCfg.speed);
+    const pulseSec = Math.max(2.0, glowCfg.speed * 0.52);
+    const waveSec = Math.max(2.4, glowCfg.speed * 0.68);
+    const shimmerSec = Math.max(1.9, glowCfg.speed * 0.48);
+
+    // Float strength (now clearly visible, esp. on low grades)
+    const floatAmpPx = floatCfg.amp;
+    const floatRotDeg = floatCfg.rot;
+    const floatSec = floatCfg.sec;
 
     return (
         <div className={clsx("relative", className)} style={boxStyle}>
             {fluid && <div style={{ paddingTop: "125%" }} />}
 
-            {/* Rayos */}
-            {raysBg && (
-                <div
-                    aria-hidden
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                        zIndex: 0,
-                        transform: `scale(${glowCfg.scale * 1.08})`,
-                        filter: `blur(${Math.round(glowCfg.blur * 0.6)}px)`,
-                        background: raysBg,
-                        opacity: Math.min(glowCfg.opacity * 0.85, 0.9),
-                        borderRadius: "50%",
-                        animation: animate ? `iso8Spin ${spinSec}s linear infinite` : "none",
-                        mixBlendMode: "screen",
-                    }}
-                />
-            )}
-
-            {/* Glow base */}
-            {radiate && glowBg && (
-                <div
-                    aria-hidden
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                        zIndex: 0,
-                        transform: `scale(${glowCfg.scale})`,
-                        filter: `blur(${glowCfg.blur}px)`,
-                        background: glowBg,
-                        animation: animate ? `iso8Pulse ${pulseSec}s ease-in-out infinite alternate` : "none",
-                    }}
-                />
-            )}
-
-            {/* Ondas (solo con color de animación, no múltiples) */}
-            {radiate && animColorList.length > 0 && (
-                <>
-                    {[0, 1].map(i => {
-                        const c = animColorList[0];
-                        const base = toRGBA(c, Math.min(0.28 + i * 0.07, 0.45));
-                        return (
-                            <div
-                                key={i}
-                                aria-hidden
-                                className="absolute inset-0 pointer-events-none"
-                                style={{
-                                    zIndex: 0,
-                                    background: `radial-gradient(circle at 50% 48%, transparent 0%, transparent 55%, ${base} 65%, transparent 78%)`,
-                                    filter: `blur(${Math.round(glowCfg.blur * 0.7)}px)`,
-                                    transform: `scale(${1 + i * 0.08})`,
-                                    animation: animate ? `iso8Wave ${waveSec + i * 0.6}s ease-out ${i * (waveSec * 0.25)}s infinite` : "none",
-                                }}
-                            />
-                        );
-                    })}
-                </>
-            )}
-
-            {/* PNG */}
-            <img
-                src={src}
-                alt={`ISO-8 grade ${g}`}
-                draggable={false}
-                decoding="async"
-                loading="lazy"
+            {/* Floating wrapper – everything inside floats together */}
+            <div
                 className="absolute inset-0"
                 style={{
-                    zIndex: 2,
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                    imageRendering: "auto",
-                    filter: `${emphasize ? "drop-shadow(0 6px 18px rgba(0,0,0,.35)) " : ""}${dropShadow}`,
-                    pointerEvents: "none",
-                    userSelect: "none",
-                    willChange: "transform, filter, opacity",
+                    transformOrigin: "50% 55%",
+                    willChange: "transform",
+                    animation: animate && float ? `iso8Float ${floatSec}s ease-in-out infinite alternate` : "none",
+                    "--iso8-float-amp": `${floatAmpPx}px`,
+                    "--iso8-float-amp-neg": `${-floatAmpPx}px`,
+                    "--iso8-float-rot": `${floatRotDeg}deg`,
+                    "--iso8-float-rot-neg": `${-floatRotDeg}deg`,
                 }}
-            />
-
-            {/* Tint interno (puede mezclar varios colores) */}
-            {tint && (
-                <>
+            >
+                {/* Rays */}
+                {raysBg && (
                     <div
                         aria-hidden
                         className="absolute inset-0 pointer-events-none"
                         style={{
-                            zIndex: 3,
-                            ...maskStyles,
-                            background: tint,
-                            mixBlendMode: "color",
-                            opacity: 1,
-                            animation: animate ? `iso8Shimmer ${shimmerSec}s ease-in-out infinite alternate` : "none",
+                            zIndex: 0,
+                            transform: `scale(${glowCfg.scale * 1.08})`,
+                            filter: `blur(${Math.round(glowCfg.blur * 0.6)}px)`,
+                            background: raysBg,
+                            opacity: Math.min(glowCfg.opacity * 0.85, 0.9),
+                            borderRadius: "50%",
+                            animation: animate ? `iso8Spin ${spinSec}s linear infinite` : "none",
+                            mixBlendMode: "screen",
                         }}
                     />
+                )}
+
+                {/* Base glow */}
+                {radiate && glowBg && (
                     <div
                         aria-hidden
                         className="absolute inset-0 pointer-events-none"
-                        style={{ zIndex: 3, ...maskStyles, background: tint, mixBlendMode: "multiply", opacity: 0.35 }}
+                        style={{
+                            zIndex: 0,
+                            transform: `scale(${glowCfg.scale})`,
+                            filter: `blur(${glowCfg.blur}px)`,
+                            background: glowBg,
+                            animation: animate ? `iso8Pulse ${pulseSec}s ease-in-out infinite alternate` : "none",
+                        }}
                     />
-                </>
-            )}
+                )}
 
-            {showPill && grade && (
-                <div
-                    className="absolute left-1/2 -translate-x-1/2 text-[11px] px-2 py-[2px] rounded-full bg-black/70 text-white font-semibold"
-                    style={{ bottom: -8, zIndex: 4 }}
-                >
-                    Grade {g}
-                </div>
-            )}
+                {/* Expanding waves */}
+                {radiate && animColorList.length > 0 && (
+                    <>
+                        {[0, 1].map(i => {
+                            const c = animColorList[0];
+                            const base = toRGBA(c, Math.min(0.28 + i * 0.07, 0.45));
+                            return (
+                                <div
+                                    key={i}
+                                    aria-hidden
+                                    className="absolute inset-0 pointer-events-none"
+                                    style={{
+                                        zIndex: 0,
+                                        background: `radial-gradient(circle at 50% 48%, transparent 0%, transparent 55%, ${base} 65%, transparent 78%)`,
+                                        filter: `blur(${Math.round(glowCfg.blur * 0.7)}px)`,
+                                        transform: `scale(${1 + i * 0.08})`,
+                                        animation: animate ? `iso8Wave ${waveSec + i * 0.6}s ease-out ${i * (waveSec * 0.25)}s infinite` : "none",
+                                    }}
+                                />
+                            );
+                        })}
+                    </>
+                )}
 
+                {/* Crystal image */}
+                <img
+                    src={src}
+                    alt={`ISO-8 grade ${g}`}
+                    draggable={false}
+                    decoding="async"
+                    loading="lazy"
+                    className="absolute inset-0"
+                    style={{
+                        zIndex: 2,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        imageRendering: "auto",
+                        filter: `${emphasize ? "drop-shadow(0 6px 18px rgba(0,0,0,.35)) " : ""}${dropShadow}`,
+                        pointerEvents: "none",
+                        userSelect: "none",
+                        willChange: "transform, filter, opacity",
+                    }}
+                />
+
+                {/* Inner tint (can blend multiple colors) */}
+                {tint && (
+                    <>
+                        <div
+                            aria-hidden
+                            className="absolute inset-0 pointer-events-none"
+                            style={{
+                                zIndex: 3,
+                                ...maskStyles,
+                                background: tint,
+                                mixBlendMode: "color",
+                                opacity: 1,
+                                animation: animate ? `iso8Shimmer ${shimmerSec}s ease-in-out infinite alternate` : "none",
+                            }}
+                        />
+                        <div
+                            aria-hidden
+                            className="absolute inset-0 pointer-events-none"
+                            style={{ zIndex: 3, ...maskStyles, background: tint, mixBlendMode: "multiply", opacity: 0.35 }}
+                        />
+                    </>
+                )}
+
+                {/* Grade pill (floats with the crystal) */}
+                {showPill && grade && (
+                    <div
+                        className="absolute left-1/2 -translate-x-1/2 text-[11px] px-2 py-[2px] rounded-full bg-black/70 text-white font-semibold"
+                        style={{ bottom: -8, zIndex: 4 }}
+                    >
+                        Grade {g}
+                    </div>
+                )}
+            </div>
+
+            {/* Keyframes */}
             <style>{`
         @keyframes iso8Spin {
           from { transform: rotate(0deg) scale(${(GLOW[g]?.scale * 1.08) || 1.1}); }
           to   { transform: rotate(360deg) scale(${(GLOW[g]?.scale * 1.08) || 1.1}); }
         }
         @keyframes iso8Pulse {
-          0%   { opacity: 0.85; transform: scale(${(GLOW[g]?.scale) || 1.1}); }
-          100% { opacity: 1.00; transform: scale(${(((GLOW[g]?.scale || 1.1) * 1.05)).toFixed(3)}); }
+          0%   { opacity: 0.82; transform: scale(${(GLOW[g]?.scale) || 1.1}); }
+          100% { opacity: 1.00; transform: scale(${(((GLOW[g]?.scale || 1.1) * 1.06)).toFixed(3)}); }
         }
         @keyframes iso8Wave {
           0%   { opacity: 0.00; transform: scale(0.90); }
-          35%  { opacity: 0.55; }
+          35%  { opacity: 0.58; }
           100% { opacity: 0.00; transform: scale(1.25); }
         }
         @keyframes iso8Shimmer {
-          0%   { opacity: 0.28; }
-          100% { opacity: 0.44; }
+          0%   { opacity: 0.30; }
+          100% { opacity: 0.46; }
+        }
+        /* NEW: stronger floating motion (grade-specific via CSS vars) */
+        @keyframes iso8Float {
+          0%   { transform: translateY(var(--iso8-float-amp-neg)) rotate(var(--iso8-float-rot-neg)); }
+          100% { transform: translateY(var(--iso8-float-amp))     rotate(var(--iso8-float-rot)); }
         }
       `}</style>
         </div>

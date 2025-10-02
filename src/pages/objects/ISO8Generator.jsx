@@ -1,4 +1,3 @@
-// src/pages/objects/ISO8Generator.jsx
 import { useMemo, useState, useEffect, useDeferredValue, memo } from "react";
 import clsx from "clsx";
 
@@ -46,16 +45,39 @@ const STAT_POINTS_BY_GRADE = { "S+": 3, "S": 2, "A": 2, "B": 1, "C": 1, "D": 1, 
 const HP_BY_GRADE = { "S+": 30, "S": 20, "A": 20, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10 };
 const STAT_INCREASE_BY_GRADE = { "S+": 30, "S": 20, "A": 20, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10 };
 
-
 // ---------------- UI HELPERS ----------------
-const Section = ({ title, children, accent = "bg-comic-secondary" }) => (
-    <div className="w-full max-w-6xl px-3 md:px-4">
-        <div className="flex justify-center mb-3">
-            <ComicTitlePanel className={clsx(accent, "px-4")}>
-                <h2 className="text-lg md:text-xl font-semibold text-center">{title}</h2>
-            </ComicTitlePanel>
+
+// Debounce helper: smooths heavy UI updates without affecting the input caret
+function useDebouncedValue(value, delay = 160) {
+    const [debounced, setDebounced] = useState(value);
+    useEffect(() => {
+        const t = setTimeout(() => setDebounced(value), delay);
+        return () => clearTimeout(t);
+    }, [value, delay]);
+    return debounced;
+}
+
+const Section = ({ title, children, text, accent = "bg-comic-secondary" }) => (
+    <div className="w-full px-3 md:px-4">
+        {/* Center the header + text to the same max width */}
+        <div className="w-full mx-0 md:mx-auto">
+            <div className="flex justify-center mb-3">
+                <ComicTitlePanel className={clsx(accent, "px-4")}>
+                    <h2 className="text-lg md:text-xl font-semibold text-center">{title}</h2>
+                </ComicTitlePanel>
+            </div>
+
+            {text && (
+                <p className="text-gray-700 mb-2 text-left px-4 md:px-20 py-2 md:py-4">
+                    {text}
+                </p>
+            )}
         </div>
-        <div className="bg-white/80 rounded-2xl shadow p-3 md:p-4">{children}</div>
+
+        {/* Center the white section */}
+        <div className="w-full max-w-6xl mx-auto bg-white/80 rounded-2xl shadow p-3 md:p-4">
+            {children}
+        </div>
     </div>
 );
 
@@ -63,7 +85,7 @@ const Field = ({ label, value, onChange, placeholder, type = "text", min, max, r
     <label className="flex items-center gap-3 justify-between py-2">
         <span className="text-sm font-semibold w-36 md:w-44">{label}</span>
         <input
-            className="input input-bordered w-24 md:w-28 text-center font-mono"
+            className="input input-bordered w-24 md:w-28 text-center font-mono border border-primary"
             value={value ?? ""}
             onChange={(e) => onChange?.(e.target.value)} // keep as string for smooth typing
             placeholder={placeholder}
@@ -91,33 +113,51 @@ const getEffectText = (grade, roll) => {
 
 // =======================================================
 //                    STEP COMPONENTS
-//  (Local state; each step renders its own nav)
 // =======================================================
 
-/** Fixed bottom nav on mobile; inline on desktop */
-const StepNav = ({ onBack, onContinue, continueDisabled }) => (
-    <>
-        {/* spacer so fixed bar doesn't cover content */}
-        <div className="h-14 md:hidden" />
-        <div className="md:mt-6 md:static fixed bottom-0 left-0 right-0 z-50 md:z-auto bg-white/95 md:bg-transparent backdrop-blur md:backdrop-blur-0 border-t md:border-0 border-black/10">
-            <div className="mx-auto max-w-6xl px-3 py-2 flex items-center justify-between gap-3">
-                <button className="btn btn-sm md:btn md:btn-outline" onClick={onBack}>← Back</button>
-                <button className="btn btn-sm md:btn md:btn-primary" disabled={continueDisabled} onClick={onContinue}>
-                    Continue →
+/** INLINE nav (mobile & desktop): sits right UNDER the step content */
+const StepNav = ({ onBack, onContinue, continueDisabled, showBack = true, showContinue = true }) => (
+    <div className="mt-6 w-full flex items-center justify-between">
+        <div className="flex-1">
+            {showBack && (
+                <button
+                    className="btn btn-outline btn-sm md:btn-md"
+                    onMouseDown={(e) => e.preventDefault()} // keep focus in the input
+                    onClick={onBack}
+                >
+                    <ComicTitlePanel className="bg-white">
+                        ← Back
+                    </ComicTitlePanel>
                 </button>
-            </div>
+            )}
         </div>
-    </>
+        <div className="flex-1 text-right">
+            {showContinue && !continueDisabled && (
+                <button
+                    className="btn btn-primary btn-sm md:btn-md"
+                    onMouseDown={(e) => e.preventDefault()} // keep focus in the input
+                    onClick={onContinue}
+                >
+                    <ComicTitlePanel className="bg-white">
+                        Continue →
+                    </ComicTitlePanel>
+                </button>
+            )}
+        </div>
+    </div>
 );
 
-const ColorStep = memo(function ColorStep({ onBack, onContinue }) {
+const ColorStep = memo(function ColorStep({ onBack, onContinue, showBack, showContinue }) {
     const [input, setInput] = useState("");
     const n = Number.parseInt(input, 10);
     const valid = Number.isInteger(n) && n >= 2 && n <= 8; // block RETRY=1
     const preview = Number.isInteger(n) && n >= 1 && n <= 8 ? COLOR_BY_D8[n] : null;
 
     return (
-        <Section title="Discovery • Determine Color (roll a D8)">
+        <Section
+            title="Discovery • Determine Color (roll a D8)"
+            text="ISO-8 are colorless with first found. To unlock the ISO-8's potential a character must do the discovering process. In this phase, the player will throw 1d8. This will determine the color of the ISO-8. The color of an ISO-8 is closely related to a stat. For example, red ISO-8 will always increase health (HP). Below you can determine the color of your ISO-8 according ot your 1d8 throw."
+        >
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 md:gap-6 items-start">
                 {/* Mobile crystal preview (colorless) */}
                 <div className="md:hidden flex justify-center mb-2">
@@ -132,9 +172,8 @@ const ColorStep = memo(function ColorStep({ onBack, onContinue }) {
                             value={input}
                             onChange={setInput}
                             placeholder="1–8" min={1} max={8}
-                            right={
-                                <div />
-                            }
+                            right={<div />}
+                            autoFocus
                         />
                         <div className="w-52 md:w-72 text-xs md:text-sm">
                             {preview ? (
@@ -149,6 +188,8 @@ const ColorStep = memo(function ColorStep({ onBack, onContinue }) {
                         onBack={onBack}
                         onContinue={() => onContinue(n)}
                         continueDisabled={!valid}
+                        showBack={showBack}
+                        showContinue={showContinue}
                     />
                 </div>
 
@@ -161,7 +202,7 @@ const ColorStep = memo(function ColorStep({ onBack, onContinue }) {
     );
 });
 
-const RainbowStep = memo(function RainbowStep({ onBack, onContinue }) {
+const RainbowStep = memo(function RainbowStep({ onBack, onContinue, showBack, showContinue }) {
     const [count, setCount] = useState(2);
     const [inputs, setInputs] = useState([]); // string[]
 
@@ -180,7 +221,10 @@ const RainbowStep = memo(function RainbowStep({ onBack, onContinue }) {
     const colorsForMobile = parsed.filter(Number.isInteger).slice(0, count).map(n => RAINBOW_D6_TO_COLOR[n]);
 
     return (
-        <Section title="Discovery • Rainbow colors (roll 2–3 D6)">
+        <Section
+            title="Discovery • Rainbow colors (roll 2–3 D6)"
+            text="ISO-8 are colorless with first found. To unlock the ISO-8's potential a character must do the discovering process. In this phase, the player will throw 1d8. This will determine the color of the ISO-8. The color of an ISO-8 is closely related to a stat. For example, red ISO-8 will always increase health (HP). Below you can determine the color of your ISO-8 according ot your 1d8 throw."
+        >
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 md:gap-6 items-start">
                 {/* Mobile crystal */}
                 <div className="md:hidden flex justify-center mb-2">
@@ -215,9 +259,7 @@ const RainbowStep = memo(function RainbowStep({ onBack, onContinue }) {
                                     value={v}
                                     onChange={(val) => setInputs(prev => prev.map((x, idx) => idx === i ? val : x))}
                                     placeholder="1–6" min={1} max={6}
-                                    right={
-                                        <div />
-                                    }
+                                    right={<div />}
                                 />
                                 <div className="w-40 md:w-48 text-xs md:text-sm">
                                     {Number.isInteger(n) ? <span>→ <b>{RAINBOW_D6_TO_COLOR[n]}</b></span>
@@ -236,6 +278,8 @@ const RainbowStep = memo(function RainbowStep({ onBack, onContinue }) {
                         onBack={onBack}
                         onContinue={() => onContinue(parsed.slice(0, count))}
                         continueDisabled={!valid}
+                        showBack={showBack}
+                        showContinue={showContinue}
                     />
                 </div>
 
@@ -248,10 +292,12 @@ const RainbowStep = memo(function RainbowStep({ onBack, onContinue }) {
     );
 });
 
-const GradeStep = memo(function GradeStep({ d8Roll, colorsForCrystal, onBack, onContinue }) {
+const GradeStep = memo(function GradeStep({ d8Roll, colorsForCrystal, onBack, onContinue, showBack, showContinue }) {
     const [input, setInput] = useState("");
-    const deferred = useDeferredValue(input);
-    const n = Number.parseInt(deferred, 10);
+
+    // Debounce only the heavy preview (keeps typing buttery-smooth)
+    const debounced = useDebouncedValue(input, 160);
+    const n = Number.parseInt(debounced, 10);
     const gradePreview = Number.isInteger(n) ? gradeFromD100(n) : null;
 
     const valid = (() => {
@@ -260,7 +306,10 @@ const GradeStep = memo(function GradeStep({ d8Roll, colorsForCrystal, onBack, on
     })();
 
     return (
-        <Section title="Grading • Determine Grade (roll a D100)">
+        <Section
+            title="Grading • Determine Grade (roll a D100)"
+            text="ISO-8 may vary in power and potential. After the color of an ISO-8 is discovered, its true potential will be unlocked in the form of the ISO-8's grade. The grade of an ISO-8 is meassured between F and S+ (F being the lowest grading of an ISO-8 and S+ being the highest). The higher grade ISO-8 have more special effects than the lower grade ones.  To determine the grade of an ISO-8 the player must throw 1d100. It is important to know that the duration of the effects granted by the ISO-8 is limited and once the crystal is activated the effect will last depending on the ISO-8 grade. Each Combat the player has will decrease 1 unit to the duration of the ISO-8."
+        >
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 md:gap-6 items-start">
                 {/* Mobile crystal */}
                 <div className="md:hidden flex justify-center mb-2">
@@ -278,9 +327,8 @@ const GradeStep = memo(function GradeStep({ d8Roll, colorsForCrystal, onBack, on
                             value={input}
                             onChange={setInput}
                             placeholder="1–100" min={1} max={100}
-                            right={
-                                <div></div>
-                            }
+                            right={<div></div>}
+                            autoFocus
                         />
                         <div className="w-60 md:w-80 text-xs md:text-sm">
                             {gradePreview ? (
@@ -300,6 +348,8 @@ const GradeStep = memo(function GradeStep({ d8Roll, colorsForCrystal, onBack, on
                         onBack={onBack}
                         onContinue={() => onContinue(Number.parseInt(input, 10))}
                         continueDisabled={!valid}
+                        showBack={showBack}
+                        showContinue={showContinue}
                     />
                 </div>
 
@@ -312,7 +362,7 @@ const GradeStep = memo(function GradeStep({ d8Roll, colorsForCrystal, onBack, on
     );
 });
 
-const EffectsStep = memo(function EffectsStep({ grade, maxEffects, colorsForCrystal, onBack, onContinue }) {
+const EffectsStep = memo(function EffectsStep({ grade, maxEffects, colorsForCrystal, onBack, onContinue, showBack, showContinue }) {
     const [inputs, setInputs] = useState([]); // string[]
 
     useEffect(() => {
@@ -332,7 +382,10 @@ const EffectsStep = memo(function EffectsStep({ grade, maxEffects, colorsForCrys
         });
 
     return (
-        <Section title="Activation • Roll Effect(s) (D100 per effect)">
+        <Section
+            title="Activation • Roll Effect(s) (D100 per effect)"
+            text="Once you know the grade of your ISO-8 you can determine the effects that it will have on your character. As previously stated, depending on your ISO-8's grade there may up to 3 effects. Each effect will be determined by throwing another 1d100. The effect obtained will vary depending on the grade of your ISO-8 and the number obtained on your 1d100 throw.  Adter the ISO-8 is activated, the user will gain it's effects immediately. Have in mind, F and E rank ISO-8 may have negative effects. There is also the chance that the ISO-8 provides no additional effect. ISO-8 effects will last according to its grade."
+        >
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 md:gap-6 items-start">
                 {/* Mobile crystal */}
                 <div className="md:hidden flex justify-center mb-2">
@@ -360,11 +413,7 @@ const EffectsStep = memo(function EffectsStep({ grade, maxEffects, colorsForCrys
                                         value={val}
                                         onChange={(v) => setInputs(prev => prev.map((x, idx) => idx === i ? v : x))}
                                         placeholder="1–100" min={1} max={100}
-                                        right={
-                                            <div className="flex">
-
-                                            </div>
-                                        }
+                                        right={<div className="flex"></div>}
                                     />
                                     <div className="w-56 md:w-80 text-[11px] md:text-xs">
                                         {text || <span className="opacity-60">— effect preview</span>}
@@ -386,6 +435,8 @@ const EffectsStep = memo(function EffectsStep({ grade, maxEffects, colorsForCrys
                         onBack={onBack}
                         onContinue={() => onContinue(inputs.map(v => Number.parseInt(v, 10)))}
                         continueDisabled={!valid}
+                        showBack={showBack}
+                        showContinue={showContinue}
                     />
                 </div>
 
@@ -459,17 +510,34 @@ export default function ISO8Generator() {
     useEffect(() => { if (stepIdx >= steps.length) setStepIdx(Math.max(0, steps.length - 1)); }, [steps.length, stepIdx]);
     const current = steps[stepIdx] ?? "color";
 
+    const isFirstStep = stepIdx === 0;
+    const isLastStep = stepIdx === steps.length - 1;
+
     const colorsForCrystal = colorInfo?.key === "RAINBOW"
         ? (rainbowColors || [])
         : (hasColor && colorInfo.key !== "RAINBOW" ? [colorInfo.label] : []);
 
+    // Restart handler
+    const Restarter = () => {
+        setD8Roll("");
+        setRainbowD6([]);
+        setD100GradeRoll("");
+        setEffectRolls([]);
+        setStepIdx(0);
+    };
+
     return (
-        <div className="flex flex-col items-center min-h-screen max-w-full py-6 md:py-8 gap-4 md:gap-6 pb-20 md:pb-8">
+        <div className="flex flex-col items-center h-auto max-w-full py-6 md:py-8 gap-4 md:gap-6">
             <div className="px-3 md:px-6 w-full flex justify-center">
                 <ComicTitlePanel>
-                    <h1 className="text-3xl md:text-4xl font-semibold text-center">ISO-8 Generator</h1>
+                    <h1 className="text-4xl md:text-4xl font-semibold text-center p-4 z-50">ISO-8</h1>
                 </ComicTitlePanel>
             </div>
+            <p className='text-gray-700 mb-2 text-left px-6 md:px-20'>
+                Isotope-8, also known as ISO-8 are mysterious energy crystals that appear as residue of events that involve great amounts of cosmic energy. These crystals have the power to improve the capabilities of individuals who activate them, but they also have a chance to weaken the user.
+                The true nature of the Isotope-8 is unknown. Mutable at a subatomic level, the Iso-8 attaches itself to the essential characteristic of a material it touches and intensifies it. According to Otto Octavius, the Isotope-8 can be considered "the perfect catalyst," although Reed Richards has stated it is not because, unlike catalysts, the Isotope-8 also changes itself.
+                There are three important phases in an ISO-8 crystal's lifespan: The discovery, the grading and the activation processes.
+            </p>
 
             <div className="text-sm opacity-70">
                 Step {Math.min(stepIdx + 1, steps.length)} of {Math.max(steps.length, 1)}
@@ -477,6 +545,8 @@ export default function ISO8Generator() {
 
             {current === "color" && (
                 <ColorStep
+                    showBack={false}
+                    showContinue={true}
                     onBack={() => setStepIdx(i => Math.max(0, i))}
                     onContinue={(n) => {
                         setD8Roll(n);
@@ -488,6 +558,8 @@ export default function ISO8Generator() {
 
             {current === "rainbow" && (
                 <RainbowStep
+                    showBack={!isFirstStep}
+                    showContinue={!isLastStep}
                     onBack={() => setStepIdx(i => Math.max(0, i - 1))}
                     onContinue={(arr) => {
                         setRainbowD6(arr);
@@ -500,6 +572,8 @@ export default function ISO8Generator() {
                 <GradeStep
                     d8Roll={d8Roll}
                     colorsForCrystal={colorsForCrystal}
+                    showBack={!isFirstStep}
+                    showContinue={!isLastStep}
                     onBack={() => setStepIdx(i => Math.max(0, i - 1))}
                     onContinue={(n) => {
                         setD100GradeRoll(n);
@@ -514,6 +588,8 @@ export default function ISO8Generator() {
                     grade={grade}
                     maxEffects={maxEffects}
                     colorsForCrystal={colorsForCrystal}
+                    showBack={!isFirstStep}
+                    showContinue={!isLastStep}
                     onBack={() => setStepIdx(i => Math.max(0, i - 1))}
                     onContinue={(vals) => {
                         setEffectRolls(vals);
@@ -563,22 +639,34 @@ export default function ISO8Generator() {
                         </div>
                     </div>
 
-                    {/* Desktop-only nav at summary */}
-                    <div className="hidden md:flex mt-6 justify-between">
-                        <button className="btn btn-outline" onClick={() => setStepIdx(i => Math.max(0, i - 1))}>← Back</button>
-                        <button className="btn btn-primary" disabled>Finished</button>
-                    </div>
-
-                    {/* Mobile fixed nav (same StepNav style) */}
-                    <div className="md:hidden">
-                        <StepNav
-                            onBack={() => setStepIdx(i => Math.max(0, i - 1))}
-                            onContinue={() => { }}
-                            continueDisabled
-                        />
-                    </div>
+                    {/* Back only on summary */}
+                    <StepNav
+                        onBack={() => setStepIdx(i => Math.max(0, i - 1))}
+                        onContinue={() => { }}
+                        continueDisabled
+                        showBack={true}
+                        showContinue={false}
+                    />
                 </Section>
             )}
+
+            {/* ----- GLOBAL RESTART BUTTON (below everything) ----- */}
+            <div className="w-full max-w-6xl mx-auto px-3 md:px-4 mt-8 mb-8">
+                <div className="flex justify-center">
+                    <button
+                        className="btn btn-outline"
+                        onClick={Restarter}
+                        onMouseDown={(e) => e.preventDefault()}
+                        aria-label="Restart ISO-8 Generator"
+                        title="Restart ISO-8 Generator"
+                    >
+                        <ComicTitlePanel className="bg-white">
+                            ↺ Restart
+                        </ComicTitlePanel>
+
+                    </button>
+                </div>
+            </div>
         </div>
     );
 }
