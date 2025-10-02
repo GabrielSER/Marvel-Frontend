@@ -203,7 +203,7 @@ const ColorStep = memo(function ColorStep({ onBack, onContinue, showBack, showCo
 });
 
 const RainbowStep = memo(function RainbowStep({ onBack, onContinue, showBack, showContinue }) {
-    const [count, setCount] = useState(2);
+    const [count] = useState(2);
     const [inputs, setInputs] = useState([]); // string[]
 
     useEffect(() => {
@@ -232,19 +232,10 @@ const RainbowStep = memo(function RainbowStep({ onBack, onContinue, showBack, sh
                 </div>
 
                 <div>
-                    <div className="text-sm font-semibold mb-2">
-                        Roll <b>two or three d6</b>, type them, then press <b>Continue</b>.
+                    <div className="text-sm mb-2">
+                        Roll <b>two d6</b>, type them, then press <b>Continue</b>. Reroll if you get duplicates.
                     </div>
                     <div className="flex items-center gap-3 mb-2">
-                        <span className="text-sm">How many d6?</span>
-                        <select
-                            className="select select-bordered select-sm"
-                            value={count}
-                            onChange={(e) => setCount(Number(e.target.value))}
-                        >
-                            <option value={2}>2</option>
-                            <option value={3}>3</option>
-                        </select>
                         <div className="text-xs opacity-60">1=Blue, 2=Purple, 3=Green, 4=Yellow, 5=Orange, 6=Red.</div>
                     </div>
 

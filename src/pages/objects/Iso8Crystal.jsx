@@ -51,24 +51,24 @@ const HEX = {
 const GLOW = {
     F: { blur: 5, opacity: 0.08, scale: 0.42, layers: 1, speed: 8.0 },
     E: { blur: 8, opacity: 0.12, scale: 1.02, layers: 1, speed: 7.6 },
-    D: { blur: 10, opacity: 0.16, scale: 1.04, layers: 2, speed: 7.2 },
-    C: { blur: 12, opacity: 0.20, scale: 1.07, layers: 2, speed: 6.8 },
-    B: { blur: 14, opacity: 0.25, scale: 1.10, layers: 3, speed: 6.2 },
-    A: { blur: 16, opacity: 0.30, scale: 1.12, layers: 3, speed: 5.6 },
-    S: { blur: 18, opacity: 0.35, scale: 1.15, layers: 4, speed: 5.0 },
-    "S+": { blur: 20, opacity: 0.40, scale: 1.18, layers: 5, speed: 4.4 },
+    D: { blur: 10, opacity: 0.16, scale: 1.04, layers: 2, speed: 6.2 },
+    C: { blur: 12, opacity: 0.25, scale: 1.07, layers: 2, speed: 5.2 },
+    B: { blur: 14, opacity: 0.30, scale: 1.10, layers: 3, speed: 5.2 },
+    A: { blur: 16, opacity: 0.35, scale: 1.12, layers: 3, speed: 6.2 },
+    S: { blur: 18, opacity: 0.45, scale: 1.15, layers: 4, speed: 7.8 },
+    "S+": { blur: 20, opacity: 0.50, scale: 1.18, layers: 5, speed: 8.4 },
 };
 
 // NEW: Float strength (amp/rot/sec) per grade — lower grades = stronger float
 const FLOAT = {
     F: { amp: 14, rot: 2.2, sec: 3.0 },
-    E: { amp: 12, rot: 2.0, sec: 3.2 },
-    D: { amp: 10, rot: 1.8, sec: 3.4 },
-    C: { amp: 8, rot: 1.5, sec: 3.6 },
-    B: { amp: 6, rot: 1.3, sec: 3.9 },
-    A: { amp: 5, rot: 1.1, sec: 4.1 },
-    S: { amp: 4, rot: 0.9, sec: 4.3 },
-    "S+": { amp: 3, rot: 0.8, sec: 4.5 },
+    E: { amp: 13, rot: 2.0, sec: 3.2 },
+    D: { amp: 12, rot: 1.8, sec: 3.4 },
+    C: { amp: 10, rot: 1.5, sec: 3.6 },
+    B: { amp: 8, rot: 1.4, sec: 3.8 },
+    A: { amp: 7, rot: 1.3, sec: 3.8 },
+    S: { amp: 6, rot: 1.2, sec: 3.8 },
+    "S+": { amp: 4, rot: 1.1, sec: 3.9 },
 };
 
 function resolveSrc(grade) {
@@ -157,7 +157,7 @@ export default function Iso8Crystal({
     const g = grade || "F";
     const src = resolveSrc(g);
     const glowCfg = GLOW[g] || GLOW.F;
-    const floatCfg = FLOAT[g] || FLOAT.C;
+    const floatCfg = FLOAT[g] || FLOAT.S;
 
     // Full list (tint can blend)
     const fullColorList = getColors({ colorKey, colors });

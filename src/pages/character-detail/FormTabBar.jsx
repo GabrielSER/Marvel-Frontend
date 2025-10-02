@@ -53,10 +53,10 @@ const FormTabBar = () => {
         'bg-secondary'
       )}
     >
-      <div className='hidden md:flex w-full h-16 justify-center items-center'>
-        <Title className='text-primary'>
+      <div className='hidden md:flex w-full h-8 justify-center items-center'>
+        {character.types[0] != "object" && <Title className='text-primary'>
           {`${character.name}'s forms`}
-        </Title>
+        </Title>}
       </div>
       <div
         className={clsx(
