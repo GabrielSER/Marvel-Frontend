@@ -44,13 +44,8 @@ const EFFECTS_BY_GRADE = { "S+": 3, "S": 3, "A": 2, "B": 2, "C": 1, "D": 1, "E":
 const COMBATS_BY_GRADE = { "S+": 30, "S": 25, "A": 20, "B": 20, "C": 10, "D": 10, "E": 10, "F": 10 };
 const STAT_POINTS_BY_GRADE = { "S+": 3, "S": 2, "A": 2, "B": 1, "C": 1, "D": 1, "E": 1, "F": 1 };
 const HP_BY_GRADE = { "S+": 30, "S": 20, "A": 20, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10 };
+const STAT_INCREASE_BY_GRADE = { "S+": 30, "S": 20, "A": 20, "B": 10, "C": 10, "D": 10, "E": 10, "F": 10 };
 
-const STAT_INCREASE_BY_GRADE = {
-    "S+": "3 or +30 HP (Only red ISO-8)", "S": "2 or +20 HP (Only red ISO-8)", "A": "2 or +20 HP (Only red ISO-8)",
-    "B": "1 or +10 HP (Only red ISO-8)", "C": "1 or +10 HP (Only red ISO-8)", "D": "1 or +10 HP (Only red ISO-8)",
-    "E": "1 or +10 HP (Only red ISO-8)", "F": "1 or +10 HP (Only red ISO-8)",
-};
-const redBonusText = (grade, colorKey) => (colorKey === "RED" ? STAT_INCREASE_BY_GRADE[grade] : null);
 
 // ---------------- UI HELPERS ----------------
 const Section = ({ title, children, accent = "bg-comic-secondary" }) => (
@@ -294,7 +289,7 @@ const GradeStep = memo(function GradeStep({ d8Roll, colorsForCrystal, onBack, on
                                         <b>{gradePreview}</b> • Duration: <b>{COMBATS_BY_GRADE[gradePreview]}</b> combats • Max effects: <b>{EFFECTS_BY_GRADE[gradePreview]}</b>
                                     </div>
                                     {COLOR_BY_D8[d8Roll]?.key === "RED" && (
-                                        <div className="text-[11px] mt-1"><b>Red bonus:</b> {STAT_INCREASE_BY_GRADE[gradePreview]}</div>
+                                        <div className="text-[11px] mt-1"><b>HP bonus:</b> {STAT_INCREASE_BY_GRADE[gradePreview]} HP</div>
                                     )}
                                 </>
                             ) : <span className="opacity-60">Awaiting roll…</span>}
@@ -418,7 +413,6 @@ export default function ISO8Generator() {
 
     const maxEffects = grade ? EFFECTS_BY_GRADE[grade] : 0;
     const durationCombats = grade ? COMBATS_BY_GRADE[grade] : null;
-    const redBonus = redBonusText(grade, colorInfo?.key);
 
     const rainbowColors = useMemo(() => {
         if (!colorInfo || colorInfo.key !== "RAINBOW") return [];
@@ -549,7 +543,6 @@ export default function ISO8Generator() {
                                     <li><b>Grade:</b> {iso8.grade}</li>
                                     <li><b>Duration:</b> {iso8.durationCombats} combats (−1 per combat)</li>
                                     {iso8.bonuses?.length > 0 && <li><b>Bonuses:</b> + {iso8.bonuses.join(", + ")}</li>}
-                                    {redBonus && <li><b>Red ISO-8 stat increase:</b> + {redBonus}</li>}
                                 </ul>
                             </div>
                             <div className="rounded-xl border p-4">

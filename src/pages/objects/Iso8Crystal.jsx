@@ -5,13 +5,13 @@ import clsx from "clsx";
  * Props:
  *  - grade: "F" | "E" | "D" | "C" | "B" | "A" | "S" | "S+"
  *  - colorKey?: "red"|"blue"|"green"|"yellow"|"orange"|"purple"|"rainbow"
- *  - colors?: string[]    // e.g. ["Blue","Red"] for rainbow
+ *  - colors?: string[]    // e.g. ["Blue","Red"] for rainbow (the FIRST one drives animation)
  *  - emphasize?: boolean
  *  - className?: string
  *  - fluid?: boolean
  *  - showPill?: boolean
- *  - radiate?: boolean    // toggle outer glow/radiation (default true)
- *  - animate?: boolean    // toggle animation (default true)
+ *  - radiate?: boolean
+ *  - animate?: boolean
  */
 
 const SIZE = { F: 110, E: 125, D: 140, C: 155, B: 170, A: 190, S: 212, "S+": 228 };
@@ -46,7 +46,7 @@ const HEX = {
     purple: "#9B5DE5",
 };
 
-// Intensidad por grade (escala animaciones y brillo)
+// Intensidad por grade
 const GLOW = {
     F: { blur: 5, opacity: 0.05, scale: 0.4, layers: 1, speed: 8.0 },
     E: { blur: 8, opacity: 0.10, scale: 1.0, layers: 1, speed: 7.6 },
@@ -55,7 +55,7 @@ const GLOW = {
     B: { blur: 24, opacity: 0.25, scale: 1.10, layers: 3, speed: 6.2 },
     A: { blur: 16, opacity: 0.30, scale: 1.12, layers: 3, speed: 5.6 },
     S: { blur: 18, opacity: 0.35, scale: 1.15, layers: 4, speed: 5.0 },
-    "S+": { blur: 20, opacity: 0.40, scale: 1.18, layers: 5, speed: 4.4 },
+    "S+": { blur: 90, opacity: 0.40, scale: 1.18, layers: 5, speed: 4.4 },
 };
 
 function resolveSrc(grade) {
@@ -84,7 +84,7 @@ function getColors({ colorKey, colors }) {
     return [];
 }
 
-// Fondo de glow (multicapa radial) — SIEMPRE visible sobre blanco
+// Fondos
 function buildGlowBackground(hexes, baseOpacity) {
     if (!hexes.length) return null;
     const layers = hexes.map(h => {
@@ -96,7 +96,6 @@ function buildGlowBackground(hexes, baseOpacity) {
     return layers.join(", ");
 }
 
-// Tint interno (enmascarado al alfa del PNG)
 function buildTintBackground({ colorKey, colors }) {
     const list = getColors({ colorKey, colors });
     if (!list.length) return null;
@@ -107,7 +106,6 @@ function buildTintBackground({ colorKey, colors }) {
     return `linear-gradient(135deg, ${stops})`;
 }
 
-// Sombra coloreada como fallback (si nada más se ve, esto sí)
 function buildDropShadow(hexes, gradeCfg) {
     if (!hexes.length) return "none";
     const spread = Math.round(gradeCfg.blur * 0.85);
@@ -124,19 +122,12 @@ function buildDropShadow(hexes, gradeCfg) {
     return parts.join(" ");
 }
 
-// Gradiente cónico para “rayos” (rotación)
+// Rayos (conic)
 function buildRaysGradient(hexes, baseOpacity) {
     if (!hexes.length) return null;
-    if (hexes.length === 1) {
-        const c = toRGBA(hexes[0], baseOpacity * 0.45);
-        return `repeating-conic-gradient(from 0deg, ${c} 0deg 6deg, transparent 6deg 22deg)`;
-    }
-    // Arcoíris: mezcla de colores en sectores
-    const step = 360 / hexes.length;
-    const stops = hexes
-        .map((h, i) => `${toRGBA(h, baseOpacity * 0.35)} ${i * step}deg ${(i + 1) * step}deg`)
-        .join(", ");
-    return `conic-gradient(${stops})`;
+    // For animation we will pass a SINGLE color array → repeating-conic look
+    const c = toRGBA(hexes[0], baseOpacity * 0.45);
+    return `repeating-conic-gradient(from 0deg, ${c} 0deg 6deg, transparent 6deg 22deg)`;
 }
 
 export default function Iso8Crystal({
@@ -154,11 +145,21 @@ export default function Iso8Crystal({
     const src = resolveSrc(g);
     const glowCfg = GLOW[g] || GLOW.F;
 
-    const colorList = getColors({ colorKey, colors }); // hex[]
-    const glowBg = radiate ? buildGlowBackground(colorList, glowCfg.opacity) : null;
-    const raysBg = radiate ? buildRaysGradient(colorList, glowCfg.opacity) : null;
-    const dropShadow = buildDropShadow(colorList, glowCfg);
-    const tint = buildTintBackground({ colorKey, colors });
+    // Full list (used for TINT only)
+    const fullColorList = getColors({ colorKey, colors });
+
+    // *** Animation color: ONLY ONE (first provided, else first of rainbow set, else none) ***
+    const animColorList =
+        fullColorList.length > 0
+            ? [fullColorList[0]]
+            : colorKey === "rainbow"
+                ? [HEX.blue] // fallback if no colors array was passed
+                : [];
+
+    const glowBg = radiate ? buildGlowBackground(animColorList, glowCfg.opacity) : null;
+    const raysBg = radiate ? buildRaysGradient(animColorList, glowCfg.opacity) : null;
+    const dropShadow = buildDropShadow(animColorList, glowCfg);
+    const tint = buildTintBackground({ colorKey, colors }); // can show multi-color blend
 
     const boxStyle = fluid
         ? { width: "100%", position: "relative", isolation: "isolate", overflow: "visible" }
@@ -175,8 +176,8 @@ export default function Iso8Crystal({
         maskPosition: "center",
     };
 
-    // Duraciones animadas por grade (más alto = más vivo/rápido)
-    const spinSec = Math.max(3.2, glowCfg.speed);     // rotación rayos
+    // Duraciones
+    const spinSec = Math.max(3.2, glowCfg.speed);
     const pulseSec = Math.max(2.2, glowCfg.speed * 0.55);
     const waveSec = Math.max(2.6, glowCfg.speed * 0.7);
     const shimmerSec = Math.max(2.0, glowCfg.speed * 0.5);
@@ -185,7 +186,7 @@ export default function Iso8Crystal({
         <div className={clsx("relative", className)} style={boxStyle}>
             {fluid && <div style={{ paddingTop: "125%" }} />}
 
-            {/* ---- Capa de Rayos (rotación lenta) ---- */}
+            {/* Rayos */}
             {raysBg && (
                 <div
                     aria-hidden
@@ -203,7 +204,7 @@ export default function Iso8Crystal({
                 />
             )}
 
-            {/* ---- Glow base (pulso) ---- */}
+            {/* Glow base */}
             {radiate && glowBg && (
                 <div
                     aria-hidden
@@ -218,11 +219,11 @@ export default function Iso8Crystal({
                 />
             )}
 
-            {/* ---- Ondas expansivas (2 anillos) ---- */}
-            {radiate && colorList.length > 0 && (
+            {/* Ondas (solo con color de animación, no múltiples) */}
+            {radiate && animColorList.length > 0 && (
                 <>
                     {[0, 1].map(i => {
-                        const c = colorList[i % colorList.length];
+                        const c = animColorList[0];
                         const base = toRGBA(c, Math.min(0.28 + i * 0.07, 0.45));
                         return (
                             <div
@@ -242,7 +243,7 @@ export default function Iso8Crystal({
                 </>
             )}
 
-            {/* ---- PNG con fallback drop-shadow coloreado ---- */}
+            {/* PNG */}
             <img
                 src={src}
                 alt={`ISO-8 grade ${g}`}
@@ -263,7 +264,7 @@ export default function Iso8Crystal({
                 }}
             />
 
-            {/* ---- Tint interno (enmascarado) + shimmer suave ---- */}
+            {/* Tint interno (puede mezclar varios colores) */}
             {tint && (
                 <>
                     <div
@@ -286,7 +287,6 @@ export default function Iso8Crystal({
                 </>
             )}
 
-            {/* Etiqueta Grade */}
             {showPill && grade && (
                 <div
                     className="absolute left-1/2 -translate-x-1/2 text-[11px] px-2 py-[2px] rounded-full bg-black/70 text-white font-semibold"
@@ -296,7 +296,6 @@ export default function Iso8Crystal({
                 </div>
             )}
 
-            {/* Keyframes locales (no colisionan) */}
             <style>{`
         @keyframes iso8Spin {
           from { transform: rotate(0deg) scale(${(GLOW[g]?.scale * 1.08) || 1.1}); }
