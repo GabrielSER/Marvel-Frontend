@@ -310,7 +310,7 @@ export default function Iso8Crystal({
                         <div
                             aria-hidden
                             className="absolute inset-0 pointer-events-none"
-                            style={{ zIndex: 3, ...maskStyles, background: tint, mixBlendMode: "multiply", opacity: 0.35 }}
+                            style={{ zIndex: 3, ...maskStyles, background: tint, mixBlendMode: "multiply", opacity: 0.95 }}
                         />
                     </>
                 )}

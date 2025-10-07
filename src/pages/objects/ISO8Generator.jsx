@@ -29,14 +29,14 @@ const COLOR_LABEL_TO_STAT = {
 };
 
 function gradeFromD100(n) {
-    if (n === 100) return "S+";
-    if (n >= 97) return "S";
-    if (n >= 90) return "A";
-    if (n >= 80) return "B";
-    if (n >= 65) return "C";
-    if (n >= 46) return "D";
-    if (n >= 26) return "E";
-    return "F";
+    if (n === 100) return "S+";    // 100           → 1%
+    if (n >= 95) return "S";       // 95–99         → 5%
+    if (n >= 86) return "A";       // 86–94         → 9%
+    if (n >= 71) return "B";       // 71–85         → 15%
+    if (n >= 51) return "C";       // 51–70         → 20%
+    if (n >= 36) return "D";       // 36–50         → 15%
+    if (n >= 21) return "E";       // 21–35         → 15%
+    return "F";                    // 1–20          → 20%
 }
 
 const EFFECTS_BY_GRADE = { "S+": 3, "S": 3, "A": 2, "B": 2, "C": 1, "D": 1, "E": 1, "F": 1 };

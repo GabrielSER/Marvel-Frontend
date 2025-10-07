@@ -166,7 +166,7 @@ const Places = () => {
         </Paragraph>
         <div className='flex justify-center w-full h-full'>
           <iframe
-            className='w-3/4 min-h-[1000px] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+            className='w-full sm:w-3/4 min-h-[800px] sm:min-h-[1000px] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 sm:my-0 my-6'
             src='https://app.kanka.io/w/earth-2205/maps/85261/explore'
             title='Marvel Universe Map'
             frameBorder='0'

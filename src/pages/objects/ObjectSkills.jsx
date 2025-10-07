@@ -43,34 +43,37 @@ const ObjectSkills = () => {
   const { form } = useForm()
 
   return (
-    <ComicPanel
-      className={clsx(
-        'relative',
-        'flex flex-col',
-        'w-1/2',
-        'overflow-hidden'
-      )}
-      style={{
-        backgroundImage: `url(${PowerBg})`,
-        backgroundSize: 'contain'
-      }}
-    >
-      <div className='flex flex-col px-5 py-10  w-full h-full p-5 sm:p-10 gap-2 bg-comic-secondary bg-opacity-75'>
-        <div className='flex justify-center'>
-          <ComicTitlePanel>
-            <h1 className='text-2xl font-bold'>Stat or Skill bonus:</h1>
-          </ComicTitlePanel>
+    <div className='flex w-full justify-center'>
+      {form.skills[0].name != 'noskills' && <ComicPanel
+        className={clsx(
+          'relative',
+          'flex flex-col',
+          'w-1/2',
+          'overflow-hidden'
+        )}
+        style={{
+          backgroundImage: `url(${PowerBg})`,
+          backgroundSize: 'contain'
+        }}
+      >
+        <div className='flex flex-col px-5 py-10  w-full h-full p-5 sm:p-10 gap-2 bg-comic-secondary bg-opacity-75'>
+          <div className='flex justify-center'>
+            <ComicTitlePanel>
+              <h1 className='text-2xl font-bold'>Stat or Skill bonus:</h1>
+            </ComicTitlePanel>
+          </div>
+          {[...form.skills, ...form.specialSkills.filter(skill => skill.name.toLowerCase() !== 'flight')]
+            .sort((skill1, skill2) => skill1.name.localeCompare(skill2.name))
+            .map((skill, index) => (
+              <SkillItem
+                key={index}
+                skill={skill}
+              />
+            ))}
         </div>
-        {[...form.skills, ...form.specialSkills.filter(skill => skill.name.toLowerCase() !== 'flight')]
-          .sort((skill1, skill2) => skill1.name.localeCompare(skill2.name))
-          .map((skill, index) => (
-            <SkillItem
-              key={index}
-              skill={skill}
-            />
-          ))}
-      </div>
-    </ComicPanel>
+      </ComicPanel>}
+    </div>
+
   )
 }
 
