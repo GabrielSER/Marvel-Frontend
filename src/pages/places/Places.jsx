@@ -40,7 +40,7 @@ const Places = () => {
         'flex flex-wrap',
         'items-center',
         'justify-center',
-        'py-6 px-8',
+        'py-6 px-2 sm:px-8',
         'min-h-screen gap-y-20'
       )}
     >
