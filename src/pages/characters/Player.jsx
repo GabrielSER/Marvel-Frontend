@@ -90,7 +90,7 @@ const Player = () => {
 
         <Paragraph>
           This is the All-New MARVEL SUPER HEROES Role-Playing Game, your entry
-          point into a universe of imagination and heroic storytelling. This game
+          point into a universe of imagination and heroic storytelling. This guide
           was crafted for first-time role-players and long-time Marvel fans who’ve
           always dreamed of standing alongside the world’s greatest heroes. Whether
           you’ve battled villains in your mind for years or you’re just curious about
@@ -106,7 +106,7 @@ const Player = () => {
         </Paragraph>
 
         <Paragraph>
-          At the center of every game is the Game Master, known in this universe as the One Above All.
+          At the center of every game is the One Above All, known in this universe as the One Above All.
           The One Above All is a player who sets the stage, builds the challenges, and breathes life
           into the world. The One Above All controls the villains’ schemes, the bystanders’ reactions,
           and the chaos that keeps heroes on their toes. They are the unseen narrator, guiding the story
@@ -135,8 +135,43 @@ const Player = () => {
         <Paragraph>
           Everything you need to play is in this website.
           There are different sections that walk you through how to play and how to run battles and adventures.
-          The Heroes is filled with the powers and stats of Marvel’s greatest heroes and villains,
-          along with tips for players and Game Masters on how to bring them to life.
+        </Paragraph>
+
+        <Paragraph>
+          The
+          {' '} <Link
+            onClick={scrollToTop}
+            className='text-primary'
+            to='/types'
+          >
+            Heroes
+          </Link>{' '}
+          Section is filled with the powers and stats of Marvel’s greatest heroes and villains,
+          along with tips for players and One Above Alls on how to bring them to life.
+        </Paragraph>
+
+        <Paragraph>
+          After reading this section, you should check out the
+          {' '} <Link
+            onClick={scrollToTop}
+            className='text-primary'
+            to='/combat'
+          >
+            Combat
+          </Link>{' '}
+          Section to see how you could use your character attributes in battle.
+        </Paragraph>
+
+        <Paragraph>
+          Then, take a look at the
+          {' '} <Link
+            onClick={scrollToTop}
+            className='text-primary'
+            to='/roleplaying'
+          >
+            Roleplay
+          </Link>{' '}
+          Section to see how to act and use your character's abilities and skills to perform and contribute to the storytelling.
         </Paragraph>
 
         <Paragraph>
@@ -814,7 +849,7 @@ const Player = () => {
           A "check" in an RPG refers to a roll of dice (usually a specific type,
           such as a d20 or a percentile die) to determine the outcome of a
           character's attempted action. The result of the check is compared to a
-          target number or difficulty class (DC) set by the Game Master (GM) to
+          target number or difficulty class (DC) set by the One Above All (OAA) to
           determine success or failure. Checks are commonly used for various
           actions, including skill checks, ability checks, and other tasks where
           chance plays a role. For example, a player might make a Lockpickinh
@@ -829,7 +864,7 @@ const Player = () => {
           associated with specific abilities or attributes, such as a Wisdom
           saving throw against telepathic control or an Agility saving throw to
           dodge an area-effect attack. The difficulty class for a saving throw
-          is set by the GM based on the challenge's level or the attack's throw.
+          is set by the OAA based on the challenge's level or the attack's throw.
         </Paragraph>
       </Section>
 
@@ -968,8 +1003,8 @@ const Player = () => {
           A character sheet is a document or form used in role-playing games
           (RPGs) to record and track the details, attributes, abilities, and
           progress of a player's in-game persona, also known as their character.
-          Character sheets are an essential tool for both players and Game
-          Masters (GMs) to maintain consistency and keep track of the game's
+          Character sheets are an essential tool for both players and One Abova Alls
+          (OAAs) to maintain consistency and keep track of the game's
           mechanics.
         </Paragraph>
         <Paragraph>Check out the Marvel Character Sheet model below!</Paragraph>
@@ -981,7 +1016,7 @@ const Player = () => {
           src={documentPath}
         ></iframe>
       </Section>
-    </div>
+    </div >
   )
 }
 

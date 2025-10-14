@@ -650,7 +650,7 @@ const Combat = () => {
           <Paragraph>
             If a character gets 1 in their 1d20 check for any action, not only
             the action fails, but it produces a negative effect on the character
-            which will be determined by the GM according to the circumstances.
+            which will be determined by the OAA according to the circumstances.
             However, if this action is attempted during combat against an enemy,
             the character who failed the action will throw 1d100, and according
             to the result, they will have one of different effects:

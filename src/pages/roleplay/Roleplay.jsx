@@ -362,7 +362,7 @@ const Roleplay = () => {
           A character with the flight skill can move in the air. Every character
           that can fly can attempt to do it without doing any kind of check.
           However, when flying, if the character is required to do any kind of
-          maneuver, a check determined by the GM may be required. In this case,
+          maneuver, a check determined by the OAA may be required. In this case,
           the flight skill will work as a bonus, just like with common actions.
           The flight speed is determined by the flight skill. The flight skill
           is scaled from 1 to 9
@@ -462,7 +462,7 @@ const Roleplay = () => {
             Every character has an initial amount of popularity points,
             representing how much the character is known by the public in the
             entire universe. These initial popularity points are determined by
-            the GM, according to the campaign or the character that is going to
+            the OAA, according to the campaign or the character that is going to
             be played. For every public action, a character can gain popularity
             points depending on how much attention that action creates. These
             points determine how civilians or certain NPCs will interact with
@@ -522,7 +522,7 @@ const Roleplay = () => {
         <p className='text-gray-700 mb-6 text-center'>
           Every character has an initial amount of Reputation points,
           representing how good or bad is the opinion of civilians about that
-          character. These initial popularity points are determined by the GM,
+          character. These initial popularity points are determined by the OAA,
           according to the campaign or character that is going to be played. For
           every public action, a character can gain or lose Reputation points
           depending on how the public perceives that action. These points

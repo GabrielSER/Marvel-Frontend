@@ -73,7 +73,7 @@ const Rules = () => {
         <div className='flex flex-row self-center gap-4 max-w-full'>
           <ComicTitlePanel>
             <h1 className='text-3xl sm:text-5xl font-semibold m-4 text-center'>
-              GAME MASTER'S GUIDE
+              ONE ABOVE ALL'S GUIDE
             </h1>
           </ComicTitlePanel>
         </div>
@@ -97,20 +97,20 @@ const Rules = () => {
           background, narrate what the player characters observe, and control
           the non-player characters, ranging from significant threats to the
           universe to minor criminals, innocent bystanders, and other heroes and
-          law enforcement. The Game Master determines the success of a
+          law enforcement. The One Above All determines the success of a
           character's actions or if a villain manages to escape. They create
           challenges for the heroes and share information that enables their
           success.
         </Paragraph>
         <Paragraph>
-          To suggest that the Game Master works against the players, merely
+          To suggest that the One Above All works against the players, merely
           because they control the antagonists, is a misnomer and entirely
-          inaccurate. Instead, the Game Master collaborates with the players to
+          inaccurate. Instead, the One Above All collaborates with the players to
           craft a delightful, entertaining tale that can be fondly remembered
           and retold with a smile ("Hey, remember when Dogpool challenged
           Molecule Man to a duel?"). Entertainment is the core objective. The
-          Game Master and players, in tandem, compose the narrative for their
-          own comic book. Together, the Game Master and players create a final
+          One Above All and players, in tandem, compose the narrative for their
+          own comic book. Together, the One Above All and players create a final
           product that is worth discussing and sharing.
         </Paragraph>
         <div className='flex justify-center'>
@@ -123,13 +123,13 @@ const Rules = () => {
           />
         </div>
         <Paragraph>
-          The essence lies in entertainment. The Game Master (GM) and players
+          The essence lies in entertainment. The One Above All (OAA) and players
           collaborate to craft the storyline for their personalized comic book.
-          Together, the GM and players generate a finished product that sparks
+          Together, the OAA and players generate a finished product that sparks
           discussions.
         </Paragraph>
         <Paragraph>
-          The distinct responsibilities of the Game Master encompass:
+          The distinct responsibilities of the One Above All encompass:
         </Paragraph>
         <Paragraph>
           - Describing the scenario to players, offering insights from the
@@ -180,16 +180,16 @@ const Rules = () => {
         </div>
 
         <Paragraph>
-          The Game Master (GM) controls roleplay by serving as the storyteller,
-          referee, and facilitator of the game world. The GM is responsible for
+          The One Above All (OAA) controls roleplay by serving as the storyteller,
+          referee, and facilitator of the game world. The OAA is responsible for
           creating the setting, presenting challenges, portraying non-player
           characters (NPCs), and guiding the overall narrative. Here are some
-          key ways in which a Game Master controls roleplay:
+          key ways in which a One Above All controls roleplay:
         </Paragraph>
 
         <Title>World-Building</Title>
         <Paragraph>
-          The GM establishes the game world, including its history, geography,
+          The OAA establishes the game world, including its history, geography,
           cultures, and political systems. This sets the stage for the players'
           characters (PCs) to inhabit and interact with the environment. Check
           out the{' '}
@@ -202,7 +202,7 @@ const Rules = () => {
           </Link>{' '}
           section to read about key locations, planets, cultures and places from
           the Marvel Comics.
-          World-building is the backbone of your campaign—it provides the context in which heroes rise, villains scheme, and players get to shape their own legacies. As the Game Master (GM), your role is not only to describe places and events, but also to breathe life into the Marvel Universe so that it feels both familiar and open to discovery.
+          World-building is the backbone of your campaign—it provides the context in which heroes rise, villains scheme, and players get to shape their own legacies. As the One Above All (OAA), your role is not only to describe places and events, but also to breathe life into the Marvel Universe so that it feels both familiar and open to discovery.
           Treat the Marvel Universe like clay—it already has rich lore, but you can reshape it. Decide what’s canon, what’s changed, and what’s brand new. That blend of familiarity and surprise will keep players hooked.
         </Paragraph>
 
@@ -234,7 +234,7 @@ const Rules = () => {
 
         <Title>Narration and Description</Title>
         <Paragraph>
-          Narration is the GM’s primary tool for immersing players in the world. Your words bring the Marvel setting to life—turning maps, notes, and rules into vivid experiences. Through description, you set the tone of each scene, capture the feel of environments, and guide the flow of events as they unfold.
+          Narration is the OAA’s primary tool for immersing players in the world. Your words bring the Marvel setting to life—turning maps, notes, and rules into vivid experiences. Through description, you set the tone of each scene, capture the feel of environments, and guide the flow of events as they unfold.
         </Paragraph>
         <Paragraph>
           <b>Setting the Scene: </b>Each encounter begins with atmosphere. Describe the sights, sounds, and mood of a location: the neon haze of Madripoor’s alleys, the hum of alien machinery on Knowhere, or the still silence before a Sentinel attack. Keep details focused but evocative, giving just enough for players to picture the scene while leaving space for their imagination.
@@ -264,9 +264,9 @@ const Rules = () => {
 
         <Title>NPC Portrayal</Title>
         <Paragraph>
-          The GM brings NPCs to life by role-playing their personalities,
+          The OAA brings NPCs to life by role-playing their personalities,
           mannerisms, and dialogues. This adds depth to the game world and
-          provides the players with characters to interact with. NPCs are the heartbeat of the game world. Through them, the GM gives players someone to trust, fear, challenge, or deceive. By role-playing their personalities, mannerisms, and voices, you make these characters feel like real individuals rather than just story devices.
+          provides the players with characters to interact with. NPCs are the heartbeat of the game world. Through them, the OAA gives players someone to trust, fear, challenge, or deceive. By role-playing their personalities, mannerisms, and voices, you make these characters feel like real individuals rather than just story devices.
         </Paragraph>
         <Paragraph>
           <b>Personalities and Motivations: </b>Every NPC should have clear goals, values, and flaws. A S.H.I.E.L.D. handler might genuinely want to protect civilians but resent superheroes overshadowing her. A street-level informant may be greedy yet loyal to old friends. These internal drives shape how NPCs respond, adding authenticity to interactions.
@@ -296,10 +296,10 @@ const Rules = () => {
 
         <Title>Setting the Tone</Title>
         <Paragraph>
-          The GM establishes the tone and atmosphere of the game, whether it's a
+          The OAA establishes the tone and atmosphere of the game, whether it's a
           serious epic, a lighthearted adventure, or a mixture of both. This
           influences the style of roleplay and the overall experience for the
-          players. Tone is the emotional backdrop of your campaign. It defines whether your Marvel story feels like a gritty noir, a cosmic epic, or a lighthearted romp. As the GM, your narration, pacing, and style of description establish this atmosphere, shaping how players engage with the world and each other.
+          players. Tone is the emotional backdrop of your campaign. It defines whether your Marvel story feels like a gritty noir, a cosmic epic, or a lighthearted romp. As the OAA, your narration, pacing, and style of description establish this atmosphere, shaping how players engage with the world and each other.
         </Paragraph>
 
         <Paragraph>
@@ -312,7 +312,7 @@ const Rules = () => {
           <b>Roleplay Impact: </b>How an NPC speaks says as much about them as what they say. Use tone, rhythm, or vocabulary to set them apart. For example, Doctor Doom speaks in grand, commanding phrases; Peter Parker jokes nervously; Nick Fury cuts to the point with sharp brevity. Shaping dialogue in this way reinforces their role in the Marvel world.
         </Paragraph>
         <Paragraph>
-          <b>Tools for GMs: </b>Tone is reinforced through description, NPC portrayal, and even background details. Music, props, or visual aids can deepen immersion. A neon-soaked city street sets up a very different vibe than the shining halls of Asgard. Every detail you share contributes to the overall emotional palette of the game.
+          <b>Tools for OAAs: </b>Tone is reinforced through description, NPC portrayal, and even background details. Music, props, or visual aids can deepen immersion. A neon-soaked city street sets up a very different vibe than the shining halls of Asgard. Every detail you share contributes to the overall emotional palette of the game.
         </Paragraph>
 
         <div className='flex justify-center'>
@@ -327,10 +327,10 @@ const Rules = () => {
 
         <Title>Presenting Challenges</Title>
         <Paragraph>
-          The GM introduces challenges and obstacles for the players to
+          The OAA introduces challenges and obstacles for the players to
           overcome. These challenges can be in the form of puzzles, combat
           encounters, diplomatic negotiations, or other situations that require
-          the players to make decisions and roleplay their responses. Challenges are the driving force of gameplay. As the GM, you provide obstacles that test the players’ creativity, skills, and teamwork. These can take many forms—combat, puzzles, social conflicts, or moral dilemmas—and each one pushes the story forward while giving the heroes a chance to shine.
+          the players to make decisions and roleplay their responses. Challenges are the driving force of gameplay. As the OAA, you provide obstacles that test the players’ creativity, skills, and teamwork. These can take many forms—combat, puzzles, social conflicts, or moral dilemmas—and each one pushes the story forward while giving the heroes a chance to shine.
         </Paragraph>
 
         <Paragraph>
@@ -361,10 +361,10 @@ const Rules = () => {
 
         <Title>Managing Rules and Mechanics</Title>
         <Paragraph>
-          The GM enforces the game rules and mechanics, ensuring a fair and
+          The OAA enforces the game rules and mechanics, ensuring a fair and
           consistent experience for the players. This includes resolving
           conflicts, determining the outcomes of actions through dice rolls, and
-          applying the rules of the game. The GM is the steward of the rules, ensuring the game runs fairly and smoothly. By applying mechanics consistently, you create trust between players and maintain balance in the story. Rules provide structure, but they should also serve the flow of the narrative rather than slow it down.
+          applying the rules of the game. The OAA is the steward of the rules, ensuring the game runs fairly and smoothly. By applying mechanics consistently, you create trust between players and maintain balance in the story. Rules provide structure, but they should also serve the flow of the narrative rather than slow it down.
         </Paragraph>
 
         <Paragraph>
@@ -395,9 +395,9 @@ const Rules = () => {
 
         <Title>Adapting to Player Choices</Title>
         <Paragraph>
-          The GM adjusts the narrative based on the choices made by the players.
+          The OAA adjusts the narrative based on the choices made by the players.
           This flexibility allows for a dynamic and responsive story that
-          evolves organically based on the characters' decisions. Flexibility is at the heart of good GMing. While you may plan story arcs and encounters, the players’ decisions shape how events unfold. By adjusting the narrative to their choices, you create a story that feels alive and collaborative rather than pre-written.
+          evolves organically based on the characters' decisions. Flexibility is at the heart of good OAAing. While you may plan story arcs and encounters, the players’ decisions shape how events unfold. By adjusting the narrative to their choices, you create a story that feels alive and collaborative rather than pre-written.
         </Paragraph>
 
         <Paragraph>
@@ -429,9 +429,9 @@ const Rules = () => {
 
         <Title>Encouraging Player Creativity</Title>
         <Paragraph>
-          The GM fosters a collaborative storytelling environment by encouraging
+          The OAA fosters a collaborative storytelling environment by encouraging
           players to contribute to the narrative, describe their character's
-          actions, and engage in creative problem-solving. One of the GM’s most rewarding roles is nurturing player imagination. A campaign thrives when players feel empowered to shape the story, experiment with solutions, and add to the shared world. By encouraging creativity, you transform the game into a collaborative narrative rather than a one-sided performance.
+          actions, and engage in creative problem-solving. One of the OAA’s most rewarding roles is nurturing player imagination. A campaign thrives when players feel empowered to shape the story, experiment with solutions, and add to the shared world. By encouraging creativity, you transform the game into a collaborative narrative rather than a one-sided performance.
         </Paragraph>
 
         <Paragraph>
@@ -447,7 +447,7 @@ const Rules = () => {
           <b>Building Confidence: </b>Not every player is equally comfortable improvising. Provide gentle prompts or spotlight moments for quieter players, such as asking what detail their character notices or how they’d handle a tense situation. Supporting all levels of creativity ensures everyone feels included.
         </Paragraph>
         <Paragraph>
-          <b>Shared Ownership: </b>When players see their creative contributions shaping the campaign, they invest more deeply. A throwaway NPC they invent might become a recurring ally; a unique strategy might inspire a whole story arc. By validating and expanding on their ideas, you show that the game is a shared creation, not just the GM’s story.
+          <b>Shared Ownership: </b>When players see their creative contributions shaping the campaign, they invest more deeply. A throwaway NPC they invent might become a recurring ally; a unique strategy might inspire a whole story arc. By validating and expanding on their ideas, you show that the game is a shared creation, not just the OAA’s story.
         </Paragraph>
 
         <div className='flex justify-center'>
@@ -462,9 +462,9 @@ const Rules = () => {
 
         <Title>Facilitating Roleplay Between Players</Title>
         <Paragraph>
-          The GM creates opportunities for roleplay interactions between player
+          The OAA creates opportunities for roleplay interactions between player
           characters, fostering character development, relationships, and
-          collaborative storytelling within the group. Roleplay isn’t limited to interactions with NPCs—the richest storytelling often comes from how player characters connect with each other. The GM’s role is to create space and opportunities for these interactions, encouraging relationships, conflicts, and alliances that deepen both the characters and the overall narrative.
+          collaborative storytelling within the group. Roleplay isn’t limited to interactions with NPCs—the richest storytelling often comes from how player characters connect with each other. The OAA’s role is to create space and opportunities for these interactions, encouraging relationships, conflicts, and alliances that deepen both the characters and the overall narrative.
         </Paragraph>
 
 
@@ -475,13 +475,13 @@ const Rules = () => {
           <b>Encouraging Character Development: </b>Interactions between PCs allow players to explore their characters’ beliefs, flaws, and goals. A lawful hero may clash with a more reckless vigilante, while two outsiders might bond over shared struggles. These exchanges reveal depth and make characters feel like part of a living world.
         </Paragraph>
         <Paragraph>
-          <b>Building Relationships: </b>Friendships, rivalries, romances, and mentorships all emerge through roleplay. The GM doesn’t need to script these, but can prompt them with scenarios—such as an NPC questioning the group’s unity, or a challenge requiring two characters to rely on each other. These connections strengthen the party’s cohesion and emotional stakes.
+          <b>Building Relationships: </b>Friendships, rivalries, romances, and mentorships all emerge through roleplay. The OAA doesn’t need to script these, but can prompt them with scenarios—such as an NPC questioning the group’s unity, or a challenge requiring two characters to rely on each other. These connections strengthen the party’s cohesion and emotional stakes.
         </Paragraph>
         <Paragraph>
           <b>Supporting Collaborative Storytelling: </b>By spotlighting PC-to-PC interactions, you encourage players to tell the story together. Let them argue, reconcile, plan, or celebrate in-character. These scenes often become as memorable as major battles, giving the campaign a personal dimension beyond missions and villains.
         </Paragraph>
         <Paragraph>
-          <b>Balancing Spotlight: </b>Not every player is equally comfortable with deep roleplay. The GM can balance by prompting quieter players with direct but open questions (“How does your character react to that decision?”) while ensuring dominant voices don’t overshadow others. This keeps the roleplay collaborative and inclusive.
+          <b>Balancing Spotlight: </b>Not every player is equally comfortable with deep roleplay. The OAA can balance by prompting quieter players with direct but open questions (“How does your character react to that decision?”) while ensuring dominant voices don’t overshadow others. This keeps the roleplay collaborative and inclusive.
         </Paragraph>
 
         <div className='flex justify-center'>
@@ -496,7 +496,7 @@ const Rules = () => {
 
         <BigTitle>Heroism</BigTitle>
         <Paragraph>
-          Heroism is a resource that the Game Master can grant to players as a reward for various reasons. Every 10 points of Heroism equal a +1 bonus to a roll.
+          Heroism is a resource that the One Above All can grant to players as a reward for various reasons. Every 10 points of Heroism equal a +1 bonus to a roll.
           Before making any roll—whether in combat or during roleplay—a player may choose to spend a certain amount of Heroism to improve their potential result.
 
           For example, if a player decides to spend 50 Heroism points, their next roll will gain a +5 bonus.
@@ -509,9 +509,9 @@ const Rules = () => {
         </Paragraph>
 
         <Paragraph>
-          The Game Master can use this resource to encourage engagement, motivation, and commitment among players. There are several situations in which Heroism may be awarded by the GM—for example, when a player delivers strong roleplay performance, achieves a significant milestone in their character arc, or contributes valuable feedback to improve the game.
+          The One Above All can use this resource to encourage engagement, motivation, and commitment among players. There are several situations in which Heroism may be awarded by the OAA—for example, when a player delivers strong roleplay performance, achieves a significant milestone in their character arc, or contributes valuable feedback to improve the game.
 
-          Heroism may also be granted for punctuality or other positive behaviors that enhance the group experience. Ultimately, this resource is managed at the GM’s discretion, but it is highly recommended as a tool to both motivate players and provide them with a means to enhance rolls they consider crucial to the story.
+          Heroism may also be granted for punctuality or other positive behaviors that enhance the group experience. Ultimately, this resource is managed at the OAA’s discretion, but it is highly recommended as a tool to both motivate players and provide them with a means to enhance rolls they consider crucial to the story.
         </Paragraph>
 
         <div className='flex justify-center'>
@@ -525,7 +525,7 @@ const Rules = () => {
         </div>
 
         <Paragraph>
-          By effectively managing these aspects, a skilled Game Master can guide
+          By effectively managing these aspects, a skilled One Above All can guide
           and enhance the roleplay experience, creating a rich and immersive
           world for the players to explore and influence through their
           characters.
