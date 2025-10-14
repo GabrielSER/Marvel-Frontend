@@ -11,20 +11,20 @@ const CustomActions = () => {
                 During a play session, a player can come up with different kind of
                 actions that are not described on the roleplaying actions section or
                 as a power, skill, or ability for a certain character. These are
-                custom actions. On these situations, the GM may or may not allow the
+                custom actions. On these situations, the OAA may or may not allow the
                 player to perform given action, and if the custom action is permitted,
                 he can ask for a certain dice check according to how difficult may it
                 be to perform that specific custom action for the player's character.
                 If the player's character is an already existing Marvel character, the
-                GM may consider if that character has performed that custom action
+                OAA may consider if that character has performed that custom action
                 before in some media, or how hard would it be for a that character to
                 perform this custom action. If the player's character is a custom
-                character, the GM may evaluate the character's powers, stats, skills,
+                character, the OAA may evaluate the character's powers, stats, skills,
                 and abilities to stablish if the character can perform given custom
                 action and the dice check necessary for that action to be successful,
                 according to how hard may that action be for this custom character.
                 Custom actions can also be performed in battle, and they can also rest
-                power points if the GM considers it would do so.
+                power points if the OAA considers it would do so.
             </p>
             <div className='flex justify-center'>
                 <LazyImage

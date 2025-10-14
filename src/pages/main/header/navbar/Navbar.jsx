@@ -34,7 +34,7 @@ const Navbar = () => {
           to='/player'
         />
         <NavigationLink
-          text={"Master's Guide"}
+          text={"OOA's Guide"}
           to='/rules'
         />
         <NavigationLink

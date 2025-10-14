@@ -14,7 +14,7 @@ const CustomActions = () => {
                 according to the skill, stat or attribute required to perform given
                 action. For example, hiding from another character requires the skill
                 'stealth', so the user must throw 1d20 and add the stealth skill value
-                to the dice result. The GM will decide the check required for the
+                to the dice result. The OAA will decide the check required for the
                 action to be successful according to the circumstances, but the most
                 basic successful action requires a result of 10.
             </SectionParagraph>

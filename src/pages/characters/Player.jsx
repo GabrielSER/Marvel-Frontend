@@ -106,7 +106,7 @@ const Player = () => {
         </Paragraph>
 
         <Paragraph>
-          At the center of every game is the One Above All, known in this universe as the One Above All.
+          At the center of every game is the One Above All (OAA), known in this universe as the One Above All.
           The One Above All is a player who sets the stage, builds the challenges, and breathes life
           into the world. The One Above All controls the villains’ schemes, the bystanders’ reactions,
           and the chaos that keeps heroes on their toes. They are the unseen narrator, guiding the story

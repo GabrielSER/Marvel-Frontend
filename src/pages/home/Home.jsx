@@ -38,7 +38,7 @@ const Home = () => {
             to='/rules'
           >
             <p className="text-xl font-extrabold uppercase mb-2 drop-shadow-[2px_2px_0_#fff]">
-              Want to Lead as the Game&nbsp;Master?
+              Want to Lead as the One Above All?
             </p>
             <ComicTitlePanel>Take the Helm!</ComicTitlePanel>
           </Link>
