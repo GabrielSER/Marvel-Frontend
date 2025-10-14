@@ -1,6 +1,6 @@
 import { Route, Navigate, Routes } from 'react-router-dom'
 import Home from '../home/Home'
-import Character from '../characters/Character'
+import Player from '../characters/Player'
 import Rules from '../characters/Rules'
 import Characters from '../characters/Characters'
 import CharacterDetail from '../character-detail/CharacterDetail'
@@ -18,7 +18,7 @@ const MainBodyRoutes = () => {
       <Route
         path='/player'
         exact
-        element={<Character />}
+        element={<Player />}
       />
       <Route
         path='/heroes'

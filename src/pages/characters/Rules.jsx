@@ -11,6 +11,7 @@ import doom from '../../assets/images/places/DOOM-BANNER.webp'
 import namor from '../../assets/images/places/namor.png'
 import dnd from '../../assets/images/places/dnd.avif'
 import creativity from '../../assets/images/places/creativity.jpg'
+import heroism from '../../assets/images/places/cap.webp'
 import { Link } from 'react-router-dom'
 
 const BigTitle = (props) => (
@@ -490,6 +491,36 @@ const Rules = () => {
             className='max-w-3xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
             src={Watcher}
             alt='The Watcher'
+          />
+        </div>
+
+        <BigTitle>Heroism</BigTitle>
+        <Paragraph>
+          Heroism is a resource that the Game Master can grant to players as a reward for various reasons. Every 10 points of Heroism equal a +1 bonus to a roll.
+          Before making any roll—whether in combat or during roleplay—a player may choose to spend a certain amount of Heroism to improve their potential result.
+
+          For example, if a player decides to spend 50 Heroism points, their next roll will gain a +5 bonus.
+
+          Heroism can also be used after a roll has already been made, but doing so costs double. In other words, if a player wants to add +5 to a roll that has already been made, they must spend 100 Heroism points.
+
+          This post-roll bonus can only be applied if the roll was not a natural 1. If the player rolls a natural 1, they must spend 200 Heroism points to make a reroll.
+
+          Once Heroism has been used for any of these purposes, no additional Heroism may be spent on that same roll.
+        </Paragraph>
+
+        <Paragraph>
+          The Game Master can use this resource to encourage engagement, motivation, and commitment among players. There are several situations in which Heroism may be awarded by the GM—for example, when a player delivers strong roleplay performance, achieves a significant milestone in their character arc, or contributes valuable feedback to improve the game.
+
+          Heroism may also be granted for punctuality or other positive behaviors that enhance the group experience. Ultimately, this resource is managed at the GM’s discretion, but it is highly recommended as a tool to both motivate players and provide them with a means to enhance rolls they consider crucial to the story.
+        </Paragraph>
+
+        <div className='flex justify-center'>
+          {' '}
+          {/* Added a flex container for centering */}
+          <img
+            className='max-w-3xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+            src={heroism}
+            alt='Captain America'
           />
         </div>
 

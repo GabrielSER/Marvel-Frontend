@@ -56,6 +56,7 @@
     "react-reveal": "^1.2.2",
     "react-reveal-responsive-carousel": "^1.0.0",
     "react-router-dom": "^6.26.2",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "^5.0.1",
     "react-scroll-to-component": "^1.0.2",
     "use-sound": "^4.0.1"

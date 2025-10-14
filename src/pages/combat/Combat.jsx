@@ -83,7 +83,7 @@ const Combat = () => {
             </h1>
           </ComicTitlePanel>
         </div>
-        <ComicPanel className='p-10 bg-comic-primary-light'>
+        <ComicPanel className='p-10 bg-comic-primary-light md:w-3/4 self-center'>
           <div className='flex flex-wrap w-full justify-center items-center gap-4'>
             {Object.values(DiceType).map((type, index) => (
               <Content
@@ -684,10 +684,10 @@ const Combat = () => {
 
 
 
-      <Section>
+      <Section id='powers'>
         <BigTitle>Powers</BigTitle>
         <Paragraph className='py-4'>
-          Powers are special abilities that are unique to each character. For
+          Powers are special combat abilities that are unique to each character. For
           using these powers, you must spend points from your power meter. Every long
           rest, your power meter fully recharges. Powers are classified
           according to a level: LV1 powers, LV2 powers, LV3 powers, LV4 powers,
@@ -817,7 +817,7 @@ const Combat = () => {
             />
             <Paragraph>
               Increasing negative stats or skills have the same cost that their
-              positive counterparts
+              positive counterparts. Additionally, you can only level up a skill up to two times your current level.
             </Paragraph>
           </div>
         </div>

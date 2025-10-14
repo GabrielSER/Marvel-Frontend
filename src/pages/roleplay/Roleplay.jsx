@@ -97,11 +97,11 @@ const Roleplay = () => {
         </div>
       </Section>
       <Section name='throwing-objects'>
-        <div className='max-w-5xl p-2 mx-auto items-center'>
+        <div className='max-w-full p-2 sm:p-10 mx-auto items-center'>
 
           <Title>Throwing Objects</Title>
 
-          <p className='text-gray-700 mb-6 text-center'>
+          <p className='text-gray-700 mb-10 text-center'>
             Just like with other special actions, to throw different kinds of
             objects, a character must throw 1d20. For the character to be able to
             throw an object, he must be able to lift it. To throw an object to the
@@ -143,7 +143,7 @@ const Roleplay = () => {
         </div>
       </Section>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
+      <div className='max-w-full p-2 sm:p-10 mx-auto items-center'>
         <Title>Crushing Damage</Title>
         <p className='text-gray-700 mb-6 text-center'>
           When falling objects crush or fall on a certain character they do an
@@ -174,7 +174,7 @@ const Roleplay = () => {
         </div>
       </div>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
+      <div className='max-w-full p-2 sm:p-10 mx-auto items-center'>
         <Title>Traffic Collisions</Title>
         <p className='text-gray-700 mb-6 text-center'>
           When riding a vehicle, if it crashes a person, the victim will receive
@@ -356,7 +356,7 @@ const Roleplay = () => {
         </div>
       </div>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
+      <div className='max-w-full p-2 sm:p-10 mx-auto items-center'>
         <Title>Flying</Title>
         <p className='text-gray-700 mb-6 text-center'>
           A character with the flight skill can move in the air. Every character
@@ -517,7 +517,7 @@ const Roleplay = () => {
         </div>
       </div>
 
-      <div className='max-w-5xl p-2 mx-auto items-center'>
+      <div className='max-w-full p-2 sm:p-10 mx-auto items-center'>
         <Title>Reputation</Title>
         <p className='text-gray-700 mb-6 text-center'>
           Every character has an initial amount of Reputation points,

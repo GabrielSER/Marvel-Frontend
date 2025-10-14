@@ -9,7 +9,7 @@ const ObjectBio = () => {
   const { character, update } = useCharacterDetail()
 
   return (
-    <ComicPanel className='flex relative flex-col w-full h-auto overflow-hidden bg-opacity-75 bg-comic-primary-light p-40 sm:p-10'>
+    <ComicPanel className='flex relative flex-col w-full h-auto overflow-hidden bg-opacity-75 bg-comic-primary-light p-5 sm:p-10'>
       <ComicTitlePanel>
         <h1 className='text-2xl font-bold'>Description:</h1>
       </ComicTitlePanel>

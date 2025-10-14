@@ -30,20 +30,12 @@ const Navbar = () => {
           to='/types'
         />
         <NavigationLink
-          text={"Marvel Universe"}
-          to='/places'
-        />
-        <NavigationLink
-          text={"Objects"}
-          to='/objects'
-        />
-        <NavigationLink
-          text={"Campaign Rules"}
-          to='/rules'
-        />
-        <NavigationLink
           text={"Player Guide"}
           to='/player'
+        />
+        <NavigationLink
+          text={"Master's Guide"}
+          to='/rules'
         />
         <NavigationLink
           text={"Combat"}
@@ -52,6 +44,14 @@ const Navbar = () => {
         <NavigationLink
           text={"Roleplaying"}
           to='/roleplaying'
+        />
+        <NavigationLink
+          text={"Marvel Universe"}
+          to='/places'
+        />
+        <NavigationLink
+          text={"Objects"}
+          to='/objects'
         />
       </NavigationContainer>
     </div>

@@ -48,7 +48,7 @@ const ObjectSkills = () => {
         className={clsx(
           'relative',
           'flex flex-col',
-          'w-1/2',
+          'w-full sm:w-1/2',
           'overflow-hidden'
         )}
         style={{
