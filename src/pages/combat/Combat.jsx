@@ -725,10 +725,10 @@ const Combat = () => {
               • CL = Current Level
             </p>
             <p className='text-gray-700 text-left'>
-              • On a failure (10 or less), the character’s HP is reduced by 10 + (5*CL) + Durability.
+              • On a failure (10 or less), the character’s HP is reduced by 10 + (5*CL).
             </p>
             <p className='text-gray-700 text-left'>
-              • On a success, the character’s HP increases by 10 + (5*CL) + Durability.
+              • On a success, the character’s HP increases by 10 + (5*CL).
             </p>
           </div>
         </div>
