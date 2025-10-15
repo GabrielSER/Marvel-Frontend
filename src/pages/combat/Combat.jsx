@@ -776,7 +776,7 @@ const Combat = () => {
               • <b>Medicine</b> A successful check restores 30 + (8*CL) + Medicine HP.
             </p>
             <p className='text-gray-700 text-left'>
-              • Other healing abilities or powers can be added normally.
+              • Any healing power or ability will also add an amount of HP equal to a succesful medicine check depending on the level.
             </p>
           </div>
         </div>
@@ -792,6 +792,19 @@ const Combat = () => {
             alt='Medicine Check Table'
           />
         </div>
+        <Paragraph className=''>
+          The HP restored through Durability or Medicine checks only applies while the character’s HP is below 1.
+          Once the character’s HP reaches 1 or higher, no additional HP can be gained from these sources.
+        </Paragraph>
+        <Paragraph className=''>
+          <b>Example: </b>
+          If a character is at -10 HP and their Durability check would normally restore 80 + Durability HP,
+          only the amount required to stabilize them will be added — in this case, 11 HP instead of 80.
+        </Paragraph>
+        <Paragraph className=''>
+          Any extra HP recovery will only be applied based on the d100 roll result and its corresponding effect on the Death Table.
+        </Paragraph>
+
         <Title>
           The Death Table
         </Title>
