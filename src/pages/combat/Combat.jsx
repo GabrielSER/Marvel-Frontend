@@ -725,10 +725,10 @@ const Combat = () => {
               • CL = Current Level
             </p>
             <p className='text-gray-700 text-left'>
-              • On a failure (10 or less), the character’s HP is reduced by 10 + (5*CL).
+              • On a failure (10 or less), the character’s HP is reduced by 10 + (2*CL).
             </p>
             <p className='text-gray-700 text-left'>
-              • On a success, the character’s HP increases by 10 + (5*CL).
+              • On a success, the character’s HP increases by 10 + (2*CL).
             </p>
           </div>
         </div>
@@ -746,7 +746,7 @@ const Combat = () => {
         </div>
         <Paragraph className=''>
           The character is no longer dying once their HP rises above 0.
-          However, they die permanently if their HP drops below -(40 + 10*CL).
+          However, they die permanently if their HP drops below -(30 + 5*CL).
         </Paragraph>
         <Paragraph className=''>
           The following table shows the Negative HP that could kill a character depending on their level:
@@ -770,10 +770,10 @@ const Combat = () => {
           <div className='sm:px-10'>
 
             <p className='text-gray-700 text-left'>
-              • <b>First Aid:</b> A successful check restores 15 + (5*CL) + First Aid HP.
+              • <b>First Aid:</b> A successful check restores 10 + (3*CL) + First Aid HP.
             </p>
             <p className='text-gray-700 text-left'>
-              • <b>Medicine</b> A successful check restores 30 + (8*CL) + Medicine HP.
+              • <b>Medicine</b> A successful check restores  15 + (4*CL) + Medicine HP.
             </p>
             <p className='text-gray-700 text-left'>
               • Any healing power or ability will also add an amount of HP equal to a succesful medicine check depending on the level.
@@ -781,7 +781,7 @@ const Combat = () => {
           </div>
         </div>
         <Paragraph className=''>
-          This table shows the amount of healing made by a succesful Medicine or First Aid check depending on the level:
+          This table shows the healing bonus that comes with a succesful Medicine or First Aid check depending on the level:
         </Paragraph>
         <div className='flex justify-center'>
           {' '}
@@ -793,13 +793,13 @@ const Combat = () => {
           />
         </div>
         <Paragraph className=''>
-          The HP restored through Durability or Medicine checks only applies while the character’s HP is below 1.
+          The HP restored through Willpower or Medicine checks only applies while the character’s HP is below 1.
           Once the character’s HP reaches 1 or higher, no additional HP can be gained from these sources.
         </Paragraph>
         <Paragraph className=''>
           <b>Example: </b>
-          If a character is at -10 HP and their Durability check would normally restore 80 + Durability HP,
-          only the amount required to stabilize them will be added — in this case, 11 HP instead of 80.
+          If a character is at -10 HP and their Willpower check would normally restore 30 HP,
+          only the amount required to stabilize them will be added — in this case, 11 HP instead of 30.
         </Paragraph>
         <Paragraph className=''>
           Any extra HP recovery will only be applied based on the d100 roll result and its corresponding effect on the Death Table.
