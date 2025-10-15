@@ -780,6 +780,12 @@ const Combat = () => {
           />
         </div>
 
+        <Paragraph className=''>
+          Since all throws and checks made by the fallen character are private between their player and the OAA.
+          Other players can only get to know the status of the fallen character (the result from the death table)
+          by performing a succesful Medicine or First Aid Check on the fallen character.
+        </Paragraph>
+
         <div className='max-w-5xl p-2 mx-auto items-center'>
           <div className='flex justify-center'>
             {' '}
