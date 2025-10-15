@@ -14,8 +14,11 @@ import Critical from '../../assets/images/combat/Critical.PNG'
 import CombatImage from '../../assets/images/combat/conbat.png'
 import Failure from '../../assets/images/combat/Failure.PNG'
 import Death from '../../assets/images/combat/death.png'
+import Durability from '../../assets/images/combat/durability.png'
 import elektra2 from '../../assets/images/combat/Elektra-death.avif'
 import Elektra from '../../assets/images/combat/elektradeath.jpg'
+import Medicine from '../../assets/images/combat/medicine.png'
+import Negative from '../../assets/images/combat/negative.png'
 import Gwen from '../../assets/images/combat/spiderfailure.png'
 import PowersDesc from '../../assets/images/combat/Powers.PNG'
 import PowerExample from '../../assets/images/combat/PowerExample.PNG'
@@ -718,23 +721,45 @@ const Combat = () => {
         </Paragraph>
         <div className='flex'>
           <div className='sm:px-10'>
-
             <p className='text-gray-700 text-left'>
-              • On a failure (10 or less), the character’s HP is reduced by 1d8 + Durability.
+              • CL = Current Level
             </p>
             <p className='text-gray-700 text-left'>
-              • On a success, the character’s HP increases by 1d8 + Durability.
+              • On a failure (10 or less), the character’s HP is reduced by 10 + (5*CL) + Durability.
+            </p>
+            <p className='text-gray-700 text-left'>
+              • On a success, the character’s HP increases by 10 + (5*CL) + Durability.
             </p>
           </div>
         </div>
         <Paragraph className=''>
+          This table shows the amount of HP that a character may increase or reduce depending on their level and their willpower check:
+        </Paragraph>
+        <div className='flex justify-center'>
+          {' '}
+          {/* Added a flex container for centering */}
+          <LazyImage2
+            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+            src={Durability}
+            alt='Durability Table'
+          />
+        </div>
+        <Paragraph className=''>
           The character is no longer dying once their HP rises above 0.
-          However, they die permanently if their HP drops below the negative value equal to half of their maximum HP.
+          However, they die permanently if their HP drops below -(40 + 10*CL).
         </Paragraph>
         <Paragraph className=''>
-          <b>Example: </b>
-          If the character’s maximum HP is 120, they die if their HP reaches -60.
+          The following table shows the Negative HP that could kill a character depending on their level:
         </Paragraph>
+        <div className='flex justify-center'>
+          {' '}
+          {/* Added a flex container for centering */}
+          <LazyImage2
+            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+            src={Negative}
+            alt='Negative HP Table'
+          />
+        </div>
         <Title>
           Assistance from Other Characters
         </Title>
@@ -745,31 +770,34 @@ const Combat = () => {
           <div className='sm:px-10'>
 
             <p className='text-gray-700 text-left'>
-              • <b>First Aid:</b> A successful check restores 1d8 + First Aid HP.
+              • <b>First Aid:</b> A successful check restores 15 + (5*CL) + First Aid HP.
             </p>
             <p className='text-gray-700 text-left'>
-              • <b>Medicine</b> A successful check restores 2d8 + Medicine HP.
+              • <b>Medicine</b> A successful check restores 30 + (8*CL) + Medicine HP.
             </p>
             <p className='text-gray-700 text-left'>
               • Other healing abilities or powers can be added normally.
             </p>
           </div>
         </div>
-
+        <Paragraph className=''>
+          This table shows the amount of healing made by a succesful Medicine or First Aid check depending on the level:
+        </Paragraph>
+        <div className='flex justify-center'>
+          {' '}
+          {/* Added a flex container for centering */}
+          <LazyImage2
+            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+            src={Medicine}
+            alt='Medicine Check Table'
+          />
+        </div>
         <Title>
           The Death Table
         </Title>
         <Paragraph className=''>
           This table shows the possible effects of the d100 Survival Check:
         </Paragraph>
-        <div className='flex'>
-          <div className='sm:px-10'>
-
-            <p className='text-gray-700 text-left'>
-              • CL = Current Level
-            </p>
-          </div>
-        </div>
         <div className='flex justify-center'>
           {' '}
           {/* Added a flex container for centering */}
