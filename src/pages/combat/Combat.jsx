@@ -755,6 +755,10 @@ const Combat = () => {
             </p>
           </div>
         </div>
+
+        <Title>
+          The Death Table
+        </Title>
         <Paragraph className=''>
           This table shows the possible effects of the d100 Survival Check:
         </Paragraph>
