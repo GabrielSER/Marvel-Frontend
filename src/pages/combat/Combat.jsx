@@ -730,6 +730,12 @@ const Combat = () => {
             <p className='text-gray-700 text-left'>
               • On a success, the character’s HP increases by 10 + (2*CL).
             </p>
+            <p className='text-gray-700 text-left'>
+              • Heroism cannot be used to add to this Willpower roll.
+            </p>
+            <p className='text-gray-700 text-left'>
+              • However, the player may spend 200 Heroism points to reroll the die.
+            </p>
           </div>
         </div>
         <Paragraph className=''>
@@ -770,10 +776,10 @@ const Combat = () => {
           <div className='sm:px-10'>
 
             <p className='text-gray-700 text-left'>
-              • <b>First Aid:</b> A successful check restores 10 + (3*CL) + First Aid HP.
+              • <b>First Aid:</b> A successful check (12 DC) restores 10 + (3*CL) + First Aid HP.
             </p>
             <p className='text-gray-700 text-left'>
-              • <b>Medicine</b> A successful check restores  15 + (4*CL) + Medicine HP.
+              • <b>Medicine</b> A successful check (15 DC) restores  15 + (4*CL) + Medicine HP.
             </p>
             <p className='text-gray-700 text-left'>
               • Any healing power or ability will also add an amount of HP equal to a succesful medicine check depending on the level.
