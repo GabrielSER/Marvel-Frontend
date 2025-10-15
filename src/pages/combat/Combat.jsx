@@ -13,6 +13,8 @@ import Psychic from '../../assets/images/combat/psychic.jpg'
 import Critical from '../../assets/images/combat/Critical.PNG'
 import CombatImage from '../../assets/images/combat/conbat.png'
 import Failure from '../../assets/images/combat/Failure.PNG'
+import Death from '../../assets/images/combat/death.png'
+import elektra2 from '../../assets/images/combat/Elektra-death.avif'
 import Elektra from '../../assets/images/combat/elektradeath.jpg'
 import Gwen from '../../assets/images/combat/spiderfailure.png'
 import PowersDesc from '../../assets/images/combat/Powers.PNG'
@@ -682,10 +684,116 @@ const Combat = () => {
 
 
 
+      <Section>
+        <BigTitle id='fall'>Falling in Battle</BigTitle>
+        <Paragraph className='pt-2'>
+          When a character reaches 0 HP, they must roll a d100.
+          Only the player and the One Above All may see the result.
+          All the rolls thrown by the fallen character are private between him and the OAA until they stabilize.
+        </Paragraph>
+        <div className='flex'>
+          <div className='sm:px-10'>
+
+            <p className='text-gray-700 text-left'>
+              • Heroism cannot be used to add to the roll.
+            </p>
+            <p className='text-gray-700 text-left'>
+              • However, the player may spend 200 Heroism points to reroll the die.
+            </p>
+          </div>
+        </div>
+        <Paragraph className=''>
+          The d100 result determines the character’s base negative HP value.
+          To this value, add any excess damage from the attack that reduced the character to 0 HP.
+        </Paragraph>
+        <Paragraph className=''>
+          <b>Example: </b>
+          If the character had 10 HP and received 15 damage, add 5 points of damage to the negative base HP result.
+        </Paragraph>
+        <Title>
+          Survival Checks
+        </Title>
+        <Paragraph className=''>
+          While in a dying state, the character must make a Willpower saving throw at the start of each turn.
+        </Paragraph>
+        <div className='flex'>
+          <div className='sm:px-10'>
+
+            <p className='text-gray-700 text-left'>
+              • On a failure (10 or less), the character’s HP is reduced by 1d8 + Durability.
+            </p>
+            <p className='text-gray-700 text-left'>
+              • On a success, the character’s HP increases by 1d8 + Durability.
+            </p>
+          </div>
+        </div>
+        <Paragraph className=''>
+          The character is no longer dying once their HP rises above 0.
+          However, they die permanently if their HP drops below the negative value equal to half of their maximum HP.
+        </Paragraph>
+        <Paragraph className=''>
+          <b>Example: </b>
+          If the character’s maximum HP is 120, they die if their HP reaches -60.
+        </Paragraph>
+        <Title>
+          Assistance from Other Characters
+        </Title>
+        <Paragraph className=''>
+          During this process, allies may use healing abilities, First Aid, or Medicine to help the fallen character recover HP.
+        </Paragraph>
+        <div className='flex'>
+          <div className='sm:px-10'>
+
+            <p className='text-gray-700 text-left'>
+              • <b>First Aid:</b> A successful check restores 1d8 + First Aid HP.
+            </p>
+            <p className='text-gray-700 text-left'>
+              • <b>Medicine</b> A successful check restores 2d8 + Medicine HP.
+            </p>
+            <p className='text-gray-700 text-left'>
+              • Other healing abilities or powers can be added normally.
+            </p>
+          </div>
+        </div>
+        <Paragraph className=''>
+          This table shows the possible effects of the d100 Survival Check:
+        </Paragraph>
+        <div className='flex'>
+          <div className='sm:px-10'>
+
+            <p className='text-gray-700 text-left'>
+              • CL = Current Level
+            </p>
+          </div>
+        </div>
+        <div className='flex justify-center'>
+          {' '}
+          {/* Added a flex container for centering */}
+          <LazyImage2
+            className='max-w-full lg:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 my-6'
+            src={Death}
+            alt='Death Table'
+          />
+        </div>
+
+        <div className='max-w-5xl p-2 mx-auto items-center'>
+          <div className='flex justify-center'>
+            {' '}
+            {/* Added a flex container for centering */}
+            <LazyImage2
+              className='max-w-full xl:max-w-7xl rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mb-6'
+              src={elektra2}
+              alt="Elektra's Death"
+            />
+          </div>
+        </div>
+      </Section>
 
 
-      <Section id='powers'>
-        <BigTitle>Powers</BigTitle>
+
+
+      <Section>
+        <BigTitle id='powers'>Powers</BigTitle>
         <Paragraph className='py-4'>
           Powers are special combat abilities that are unique to each character. For
           using these powers, you must spend points from your power meter. Every long
