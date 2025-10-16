@@ -808,9 +808,13 @@ const Combat = () => {
           only the amount required to stabilize them will be added — in this case, 11 HP instead of 30.
         </Paragraph>
         <Paragraph className=''>
-          Any extra HP recovery will only be applied based on the d100 roll result and its corresponding effect on the Death Table.
+          Any extra HP recovery will only be applied based on the d100 roll result
+          and its corresponding effect on the Death Table.
         </Paragraph>
 
+        <Paragraph className=''>
+          Characters with regenerative factors will still have these abilities active through this process.
+        </Paragraph>
         <Title>
           The Death Table
         </Title>
