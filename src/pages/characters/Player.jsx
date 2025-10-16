@@ -180,7 +180,7 @@ const Player = () => {
           at any hobby or gaming store.
         </Paragraph>
 
-        <ComicPanel className='p-10 bg-comic-primary-light md:w-3/4 self-center'>
+        <ComicPanel className='p-10 bg-comic-primary-light md:w-3/4 self-center items-center justify-center'>
           <div className='flex flex-wrap w-full justify-between items-center '>
             {Object.values(DiceType).map((type, index) => (
               <Content
@@ -238,9 +238,9 @@ const Player = () => {
           foundation for determining a character's overall effectiveness in
           different aspects of the game. A character Stats include:
         </Paragraph>
-        <div className='flex flex-col md:flex-row justify-center items-center p-10'>
+        <div className='flex flex-col md:flex-row justify-center items-center p-2 sm:p-10'>
           <div className='flex flex-col w-full md:w-1/2'>
-            <div className='flex flex-col  items-center w-full p-5'>
+            <div className='flex flex-col  items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>HP (Hit Points):</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -249,7 +249,7 @@ const Player = () => {
                 to 0 the character falls and is in danger of dying.
               </p>
             </div>
-            <div className='flex flex-col  items-center w-full p-5'>
+            <div className='flex flex-col  items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Speed:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -257,7 +257,7 @@ const Player = () => {
                 represents the amount of distance a character can move in a turn.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Defense:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -265,26 +265,26 @@ const Player = () => {
                 surpass a character's defense to succeed.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Energy Projection:</Title>
               <p className='text-gray-700 '>
                 Measures the character's proficiency in projecting energy-based
                 attacks.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Strength:</Title>
               <p className='text-gray-700 '>
                 Represents the character's physical power.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Intelligence:</Title>
               <p className='text-gray-700 '>
                 Reflects the character's mental acuity.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Durability:</Title>
               <p className='text-gray-700 '>
                 Indicates the character's resilience to damage.
@@ -292,47 +292,47 @@ const Player = () => {
             </div>
           </div>
           <div className='flex flex-col w-full md:w-1/2'>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Agility:</Title>
               <p className='text-gray-700 '>
                 Represents the character's speed and dexterity.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Wisdom:</Title>
               <p className='text-gray-700 '>
                 Reflects the character's knowledge and intuition.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Power:</Title>
               <p className='text-gray-700 '>
                 Represents the amount of power points a character has depending on
                 their level.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Combo:</Title>
               <p className='text-gray-700 '>
                 {' '}
                 Represents the amount of times a character can perform a normal attack in a combo.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Perception:</Title>
               <p className='text-gray-700 '>
                 {' '}
                 Reflects the character's awareness and ability to notice details.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Charisma:</Title>
               <p className='text-gray-700 '>
                 {' '}
                 Indicates the character's charm and persuasiveness.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Luck:</Title>
               <p className='text-gray-700 '>
                 Represents the character's fortune or chance.
@@ -365,9 +365,9 @@ const Player = () => {
           the success of specific actions or endeavors in the game.
         </Paragraph>
 
-        <div className='flex flex-col md:flex-row justify-center items-center p-10'>
+        <div className='flex flex-col md:flex-row justify-center items-center p-2 sm:p-10'>
           <div className='flex flex-col w-full md:w-1/2'>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Acrobatics:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -376,7 +376,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Aerial Piloting:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -384,7 +384,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Animal Handling:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -392,7 +392,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Arcana:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -400,7 +400,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Athletics:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -409,7 +409,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Bike Piloting:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -418,7 +418,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Body Stretching:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -427,7 +427,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Chi Control:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -435,7 +435,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Cryokinesis:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -443,7 +443,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Deception:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -452,7 +452,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Electronics Knowledge:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -460,7 +460,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Environmental Awareness:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -469,7 +469,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Espionage:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -477,7 +477,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Etiquette:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -485,7 +485,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Explosives:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -493,7 +493,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Firearms:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -501,7 +501,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>First Aid:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -509,7 +509,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Flight:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -518,7 +518,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Gravitokinesis:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -526,7 +526,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Heavy Equipment Piloting:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -534,7 +534,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>History Knowledge:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -542,7 +542,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Hydrokinesis:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -550,7 +550,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Intimidation:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -558,7 +558,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Intuition:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -566,7 +566,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Investigation:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -575,7 +575,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Lockpicking:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -583,7 +583,7 @@ const Player = () => {
                 tools or specialized techniques.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Magic:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -593,7 +593,7 @@ const Player = () => {
 
           </div>
           <div className='flex flex-col w-full md:w-1/2'>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Marksman:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -602,7 +602,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Mechanic:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -610,7 +610,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Medicine:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -618,14 +618,14 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Melee:</Title>
               <p className='text-gray-700 '>
                 {' '}
                 Represents the character's effectiveness in close combat.
               </p>
             </div>
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Melee Weapons:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -634,7 +634,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Motor Vehicle Piloting:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -642,7 +642,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Natural Sciences Knowledge:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -650,7 +650,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Persuasion:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -658,7 +658,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Pickpocket:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -667,7 +667,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Power Cosmic:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -675,7 +675,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Pyrokinesis:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -683,7 +683,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Ranged Weapons:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -692,7 +692,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Radiation:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -700,7 +700,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Religion:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -709,7 +709,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Software Knowledge:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -718,7 +718,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Spiritual Affinity:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -726,7 +726,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Stealth:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -735,7 +735,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Survivalist:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -744,7 +744,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Telekinesis:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -752,7 +752,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Telepathy:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -761,7 +761,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Thermokinesis:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -769,7 +769,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Throw:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -778,7 +778,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Tracking:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -787,7 +787,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Underwater:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -796,7 +796,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Wall Crawling:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -804,7 +804,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Water Piloting:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -812,7 +812,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Weather Control:</Title>
               <p className='text-gray-700 '>
                 {' '}
@@ -820,7 +820,7 @@ const Player = () => {
               </p>
             </div>
 
-            <div className='flex flex-col   items-center w-full p-5'>
+            <div className='flex flex-col   items-center w-full px-0 py-2 sm:p-5'>
               <Title className='self-start'>Willpower:</Title>
               <p className='text-gray-700 '>
                 {' '}

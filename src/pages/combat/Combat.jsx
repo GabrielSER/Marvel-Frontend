@@ -27,9 +27,7 @@ import Skilllvl from '../../assets/images/combat/Levelup.PNG'
 import Powerlvl from '../../assets/images/combat/powerlevelskill.PNG'
 import Skilvl from '../../assets/images/combat/skillskill.PNG'
 import Content from '../ui/Content'
-import { DiceType } from '../content/dice/Dice'
 import ComicTitlePanel from '../ui/ComicTitlePanel'
-import ComicPanel from '../ui/ComicPanel'
 import LazyImage2 from '../ui/LazyImage2'
 
 const BigTitle = (props) => (
@@ -88,17 +86,6 @@ const Combat = () => {
             </h1>
           </ComicTitlePanel>
         </div>
-        <ComicPanel className='p-10 bg-comic-primary-light md:w-3/4 self-center'>
-          <div className='flex flex-wrap w-full justify-center items-center gap-4'>
-            {Object.values(DiceType).map((type, index) => (
-              <Content
-                key={index}
-                id='roll'
-                params={{ type }}
-              />
-            ))}
-          </div>
-        </ComicPanel>
         <BigTitle>Actions in Battle</BigTitle>
         <Section>
           <Paragraph>
