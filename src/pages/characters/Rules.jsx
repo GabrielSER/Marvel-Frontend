@@ -78,7 +78,7 @@ const Rules = () => {
           </ComicTitlePanel>
         </div>
         <div className='flex flex-row self-center max-w-full'>
-          <BigTitle>The One Above All</BigTitle>
+          <BigTitle id='oaa'>The One Above All</BigTitle>
         </div>
       </Section>
 
@@ -149,7 +149,7 @@ const Rules = () => {
       </Section>
 
       <Section>
-        <BigTitle>Your Marvel Universe</BigTitle>
+        <BigTitle id='ooaing'>Your Marvel Universe</BigTitle>
         <Paragraph>
           The old comic line of "What If?" played with these possible variant
           universes, where the Avengers never happened, Spider-Man joined the
@@ -494,7 +494,7 @@ const Rules = () => {
           />
         </div>
 
-        <BigTitle>Heroism</BigTitle>
+        <BigTitle id='heroism'>Heroism</BigTitle>
         <Paragraph>
           Heroism is a resource that the One Above All can grant to players as a reward for various reasons. Every 10 points of Heroism equal a +1 bonus to a roll.
           Before making any roll—whether in combat or during roleplay—a player may choose to spend a certain amount of Heroism to improve their potential result.

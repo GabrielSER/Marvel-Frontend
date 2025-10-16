@@ -86,7 +86,7 @@ const Combat = () => {
             </h1>
           </ComicTitlePanel>
         </div>
-        <BigTitle>Actions in Battle</BigTitle>
+        <BigTitle id='actions'>Actions in Battle</BigTitle>
         <Section>
           <Paragraph>
             When in combat a character has an Action, a Bonus Action and a Free Action during his turn, they might also do a reaction once per round, once done he can't do another reaction until a new round of combat starts.
@@ -148,7 +148,7 @@ const Combat = () => {
       </Section>
 
       <Section>
-        <BigTitle>Combat Actions</BigTitle>
+        <BigTitle id='combatactions'>Combat Actions</BigTitle>
         <Title>Normal Attacks</Title>
         <Paragraph>
           When in combat a character can do a normal attack. For attempting a
@@ -542,7 +542,7 @@ const Combat = () => {
       <Content id='concentrated' />
 
       <div className='flex flex-col'>
-        <Section>
+        <Section id='dmgtypes'>
           <div className='flex-col mb-4'>
             <div className='align-center'>
               <BigTitle>Damage types</BigTitle>
@@ -605,7 +605,7 @@ const Combat = () => {
 
       <Section>
         <div className='max-w-full sm:px-10 mx-auto items-center'>
-          <BigTitle>Critical Hit</BigTitle>
+          <BigTitle id='critical'>Critical Hit</BigTitle>
           <Paragraph>
             If a character or creature gets a natural 20 when throwing the check
             for attacking another character or creature it deals a critical hit.
@@ -638,7 +638,7 @@ const Combat = () => {
 
       <Section>
         <div className='max-w-full sm:px-10 mx-auto items-center'>
-          <BigTitle>Failure</BigTitle>
+          <BigTitle id='fail'>Failure</BigTitle>
           <Paragraph>
             If a character gets 1 in their 1d20 check for any action, not only
             the action fails, but it produces a negative effect on the character
@@ -931,7 +931,7 @@ const Combat = () => {
 
 
       <div className='flex flex-col gap-8 max-w-full'>
-        <BigTitle>Level Up</BigTitle>
+        <BigTitle id='levelup'>Level Up</BigTitle>
 
         <div className='flex xl:flex-row flex-col lg:px-0 px-2'>
           <div className='lg:max-w-5xl max-w-full mx-auto items-center align-middle lg:px-24 my-auto px-0'>
@@ -980,7 +980,7 @@ const Combat = () => {
       </div>
 
       <div className='px-10 mx-auto items-center'>
-        <BigTitle>Status Effects</BigTitle>
+        <BigTitle id='status'>Status Effects</BigTitle>
         <p className='text-gray-700 mb-2 text-center py-4'>
           A character can be affected by many different kinds of status effects
           during combat. This is a list of different statuses and their

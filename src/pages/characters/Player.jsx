@@ -79,7 +79,7 @@ const Player = () => {
         </div>
 
         <div className='flex flex-row self-center  max-w-full'>
-          <BigTitle>All the fun begins here.</BigTitle>
+          <BigTitle id='introduction'>All the fun begins here.</BigTitle>
         </div>
       </Section>
       <Section>
@@ -199,7 +199,7 @@ const Player = () => {
       </Section>
       <Section>
         <div className='flex flex-row self-center  max-w-full'>
-          <BigTitle>What is a character?</BigTitle>
+          <BigTitle id='character'>What is a character?</BigTitle>
         </div>
 
 
@@ -227,7 +227,7 @@ const Player = () => {
         </Paragraph>
       </Section>
 
-      <Section>
+      <Section id='stats'>
         <BigTitle>Stats</BigTitle>
         <Paragraph>
           Stats represent numerical values that quantitatively describe a
@@ -352,7 +352,7 @@ const Player = () => {
         </div>
       </Section>
 
-      <Section>
+      <Section id='skills'>
         <BigTitle>Skills</BigTitle>
         <Paragraph>
           In a character sheet, "skills" represent the character's proficiency
@@ -868,7 +868,7 @@ const Player = () => {
         </Paragraph>
       </Section>
 
-      <Section>
+      <Section id='abilities'>
         <BigTitle>Abilities</BigTitle>
         <Paragraph>
           Abilities refer to the unique powers, traits, or special skills that
@@ -900,7 +900,7 @@ const Player = () => {
         </div>
       </Section>
 
-      <Section>
+      <Section id='weaknesses'>
         <BigTitle>Weaknesses</BigTitle>
         <Paragraph>
           Weaknesses represent the flaws, limitations, or vulnerabilities that balance a character’s strengths
@@ -934,7 +934,7 @@ const Player = () => {
         </div>
       </Section>
 
-      <Section>
+      <Section id='powers'>
         <BigTitle>Powers</BigTitle>
         <Paragraph>
           Powers refer to the unique combar abilities or skills that the character
@@ -954,7 +954,7 @@ const Player = () => {
         </div>
       </Section>
 
-      <Section>
+      <Section id='bio'>
         <BigTitle>Bio</BigTitle>
         <Paragraph>
           "Bio" or "biography" refers to a narrative or description of the
@@ -997,7 +997,7 @@ const Player = () => {
         </Paragraph>
       </Section>
 
-      <Section>
+      <Section id='sheet'>
         <BigTitle>Character Sheet</BigTitle>
         <Paragraph>
           A character sheet is a document or form used in role-playing games

@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <HomeCarousell />
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-56 px-2 py-10">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-56 px-5 sm:px-2 py-10">
         {/* New Player Section */}
 
         <div className="flex flex-col items-center bg-gradient-to-b from-yellow-400 to-amber-500 text-black rounded-2xl shadow-[4px_4px_0_#000] border-4 border-black p-6 hover:scale-105 hover:rotate-1 transition-transform duration-300">
