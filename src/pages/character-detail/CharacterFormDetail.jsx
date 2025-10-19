@@ -17,6 +17,7 @@ import ArmorCost from './ArmorCost'
 import CharacterProgression from './CharacterProgression'
 import CharacterWeapons from './CharacterWeapons'
 import CharacterCompanions from './CharacterCompanions'
+import CharacterObjects from './CharacterObjects'
 
 const Section = (props) => (
   <div
@@ -89,6 +90,7 @@ const CharacterFormDetail = () => {
         <CharacterPowers />
         <CharacterWeapons />
         <CharacterCompanions />
+        <CharacterObjects />
       </div>
     </FormProvider>
   )
